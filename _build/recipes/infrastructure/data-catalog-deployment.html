@@ -164,31 +164,37 @@ $ cp datacatalog/settings.py.template datacatalog/settings.py
 </li>
 </ol>
 <h3 id="2.-Maintenance-of-docker-compose">2. Maintenance of docker-compose<a class="anchor-link" href="#2.-Maintenance-of-docker-compose"> </a></h3><p>Docker container keeps the application in the state it was when  built. Therefore, <strong>if you change any files in the project, the container has to be rebuilt in order to see changes in application</strong> :</p>
-<div class="highlight"><pre><span></span>$ docker-compose up --build
-</pre></div>
+
+<pre><code>shell=
+$ docker-compose up --build</code></pre>
 <p>If you wanted to delete Solr data, you'd need to run:</p>
-<div class="highlight"><pre><span></span>$ docker-compose down --volumes
-</pre></div>
+
+<pre><code>shell=
+$ docker-compose down --volumes</code></pre>
 <p>This will remove any persisted data - you must redo <code>solr create_core</code> (see step 4 in the previous section) to recreate the Solr cores.</p>
 <h3 id="3.-Modifying-the-datasets">3. Modifying the datasets<a class="anchor-link" href="#3.-Modifying-the-datasets"> </a></h3><p>The datasets are all defined in the file <code>tests/data/records.json</code>. This file can me modified to add, delete and modify datasets. <strong>After saving the file, rebuild and restart docker-compose</strong>.</p>
 <p>First, to stop all the containers:</p>
-<div class="highlight"><pre><span></span>$ CTRL+D
-</pre></div>
+
+<pre><code>shell=
+$ CTRL+D</code></pre>
 <p>Then rebuild and restart the containers:</p>
-<div class="highlight"><pre><span></span>$ docker-compose up --build
-</pre></div>
+
+<pre><code>shell=
+$ docker-compose up --build</code></pre>
 <p>Finally, reindex the datasets using:</p>
-<div class="highlight"><pre><span></span><span class="o">(</span><span class="nb">local</span><span class="o">)</span> $ docker-compose <span class="nb">exec</span> web /bin/bash
-<span class="o">(</span>web container<span class="o">)</span> $ python manage.py import_entities Json dataset
-</pre></div>
+
+<pre><code>shell=
+(local) $ docker-compose exec web /bin/bash
+(web container) $ python manage.py import_entities Json dataset</code></pre>
 <blockquote><p>:bell: to kill the container, press "<code>CTRL+D</code>" or type: "<code>exit</code>" from the terminal</p>
 </blockquote>
 <hr>
 <h2 id="Single-Docker-deployment">Single Docker deployment<a class="anchor-link" href="#Single-Docker-deployment"> </a></h2><p>In some cases, you might not want Solr and Nginx to run (for example, if there are <strong>multiple instances</strong> of <code>Data Catalog</code> running).
 Then, simply use:</p>
-<div class="highlight"><pre><span></span><span class="o">(</span><span class="nb">local</span><span class="o">)</span> $ docker build . -t <span class="s2">&quot;data-catalog&quot;</span>
-<span class="o">(</span><span class="nb">local</span><span class="o">)</span> $ docker run --name data-catalog --entrypoint <span class="s2">&quot;gunicorn&quot;</span> -p <span class="m">5000</span>:5000 -t data-catalog -t <span class="m">600</span> -w <span class="m">2</span> datacatalog:app --bind <span class="m">0</span>.0.0.0:5000
-</pre></div>
+
+<pre><code>shell=
+(local) $ docker build . -t "data-catalog"
+(local) $ docker run --name data-catalog --entrypoint "gunicorn" -p 5000:5000 -t data-catalog -t 600 -w 2 datacatalog:app --bind 0.0.0.0:5000</code></pre>
 <h2 id="Manual-deployment">Manual deployment<a class="anchor-link" href="#Manual-deployment"> </a></h2><p>If you would prefer not to use Docker and compile and run the data catalogue manually instead, please follow the instructions in the <a href="https://github.com/FAIRplus/imi-data-catalogue/blob/master/README.md">README file</a></p>
 <hr>
 <h2 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:"> </a></h2><p>This recipe provides a step-by-step guide to deploying the <code>IMI data catalogue</code> developed at <a href="https://wwwen.uni.lu/lcsb">University of Luxembourg</a>, as parrt of <a href="https://fairplus-project.eu/">IMI FAIRplus</a> to a local system.</p>

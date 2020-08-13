@@ -82,8 +82,8 @@ ___
 ___
 
 
-[TOC]
-
+<!-- [TOC]
+ -->
 <!-- # Table of Contents
 1. [Main FAIRification Objectives](#Main%20FAIRification%20Objectives)
 2. [Graphical Overview of the FAIRification Recipe Objectives](#Graphical%20Overview%20of%20the%20FAIRification%20Recipe%20Objectives)
@@ -1079,6 +1079,7 @@ Hripcsak, George et al. “Observational Health Data Sciences and Informatics (O
 
 
 ___
+
 ## Authors:
 
 | Name | Affiliation  | orcid | CrediT role  |
@@ -1087,6 +1088,9 @@ ___
 | Susanna-Assunta Sansone |  University of Oxford, Data Readiness Group | | Writing - Review & Editing, Funding acquisition | 
 
 ___
+
 ## License:
 
 <a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a>
+
+___

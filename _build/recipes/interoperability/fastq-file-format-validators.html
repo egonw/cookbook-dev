@@ -1,0 +1,503 @@
+---
+title: |-
+  How to validate file formats
+prev_page:
+  url: /recipes/interoperability/ontology-robot/MSIO-robot-build-process.html
+  title: |-
+    MSIO robot build process
+next_page:
+  url: /recipes/interoperability/from-proprietary-to-open-standard-mzml-exemplar.html
+  title: |-
+    How to convert to open format from propriatory
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="File-format-validation,-an-example-with-FASTQ-files">File format validation, an example with FASTQ files<a class="anchor-link" href="#File-format-validation,-an-example-with-FASTQ-files"> </a></h1><hr>
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-qrcode fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Recipe metadata</b></h4>
+        <p> identifier: <a href="">RX.X</a> </p>
+        <p> version: <a href="">v1.0</a> </p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-fire fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Difficulty level</b></h4>
+        <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
+        <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-clock-o fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Reading Time</b></h4>
+        <p><i class="fa fa-clock-o fa-lg" style="color:#7e0038;"></i> 15 minutes</p>
+        <h4><b>Recipe Type</b></h4>
+        <p><i class="fa fa-laptop fa-lg" style="color:#7e0038;"></i> Hands-on</p>
+        <h4><b>Executable Code</b></h4>
+        <p><i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> Yes</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-group fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Intended Audience</b></h4>
+        <p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigators </p>
+        <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Managers </p>
+        <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientists </p>
+      </div>
+    </div>
+  </div>
+</div><!-- - [Main objectives](#Main-Objectives)
+- [Graphical Overview of the FAIRification Recipe Objectives](#Graphical-Overview-of-the-FAIRification-Recipe-Objectives)
+- [User Stories](#User-Stories)
+- [Capability & Maturity Table](#Capability-amp-Maturity-Table)
+- [FAIRification Objectives, Inputs and Outputs](#FAIRification-Objectives-Inputs-and-Outputs)
+- [Table of Data Standards](#Table-of-Data-Standards)
+    - [Requirements](#Requirements)
+    - [Step 1: Install fastq-utils](#Step-1-Install-fastq-utils)
+    - [Step 2: Get example file for testing*](#Step-2-Get-example-file-for-testing)
+    - [Step 3: Perform validation](#Step-3-Perform-validation)
+    - [FASTA-utils feature summary](#FASTA-utils-feature-summary)
+- [Summary](#Summary)
+- [Related Recipes](#Related-recipes)
+- [References](#References)
+- [Authors](#Authors)
+- [License](#License) -->
+
+
+<hr>
+<h2 id="Main-Objectives">Main Objectives<a class="anchor-link" href="#Main-Objectives"> </a></h2><p>The main purpose of this recipe is to:</p>
+<blockquote><ul>
+<li>provide a FASTQ file validation solution</li>
+<li>propose a general file validation workflow. </li>
+</ul>
+</blockquote>
+<h2 id="Graphical-Overview-of-the-FAIRification-Recipe-Objectives">Graphical Overview of the FAIRification Recipe Objectives<a class="anchor-link" href="#Graphical-Overview-of-the-FAIRification-Recipe-Objectives"> </a></h2>
+<pre><code>mermaid
+graph TD;
+    A[Data Acquisition] --&gt;B(Raw Data)
+    B --&gt; C{Is standard format?}
+    C --&gt;|Yes| D{File format valid?}
+    C --&gt;|No| E[Convert to standard file format]
+    D --&gt; |Yes|F[- Data deposition &lt;br&gt;  - Data sharing &lt;br&gt; - Downstream analysis ]
+    D --&gt; |No|G[Revise file]
+    E --&gt;  D
+    G --&gt; |revise|D</code></pre>
+<p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19"><img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19" alt=""></a></p>
+<h2 id="User-Stories">User Stories<a class="anchor-link" href="#User-Stories"> </a></h2><p>The table below lists common file validation use cases. This recipe provides solutions with FASTQ files as an example.</p>
+<table>
+<thead><tr>
+<th>As a ..</th>
+<th>I want to ..</th>
+<th>So that I can ..</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Data owner</td>
+<td>Validate my sequencing files before depositing to public archives</td>
+<td>Reduce the risk of submitting invalid files or submission rejection</td>
+</tr>
+<tr>
+<td>Data consumer</td>
+<td>Validate files before running analysis</td>
+<td>Avoid wasting time and resource processing corrupted files</td>
+</tr>
+<tr>
+<td>Data consumer</td>
+<td>Integrate file format validation into my data process pipeline</td>
+<td>Build a more reproducible and error-proof pipeline</td>
+</tr>
+<tr>
+<td>Data librarian</td>
+<td>Check files downloaded from unknown sources before deposition</td>
+<td>Ensure the file is usable in the future.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><table>
+<thead><tr>
+<th style="text-align:left">Capability</th>
+<th style="text-align:left">Initial Maturity Level</th>
+<th style="text-align:left">Final Maturity Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Interoperability</td>
+<td style="text-align:left">minimal</td>
+<td style="text-align:left">repeatable</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="FAIRification-Objectives,-Inputs-and-Outputs">FAIRification Objectives, Inputs and Outputs<a class="anchor-link" href="#FAIRification-Objectives,-Inputs-and-Outputs"> </a></h2><table>
+<thead><tr>
+<th style="text-align:left">Actions.Objectives.Tasks</th>
+<th style="text-align:left">Input</th>
+<th style="text-align:left">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://edamontology.org/operation_0336">Format validation</a></td>
+<td style="text-align:left"><a href="http://edamontology.org/format_2182">FASTQ file</a></td>
+<td style="text-align:left">Validation results</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Table-of-Data-Standards">Table of Data Standards<a class="anchor-link" href="#Table-of-Data-Standards"> </a></h2><table>
+<thead><tr>
+<th style="text-align:left">Data Formats</th>
+<th style="text-align:left">Terminologies</th>
+<th style="text-align:left">Models</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="http://edamontology.org/format_2182">FASTQ</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://www.ebi.ac.uk/ols/ontologies/edam/terms?iri=http%3A%2F%2Fedamontology.org%2Fformat_4006">Compressed Format</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><a href="edamontology.org/format_2182">FASTQ</a> is the <em>de facto</em> sequencing file format and one of the most common file formats in bioinformatics analysis. Researchers receive FASTQ files from various sources. These files are used intensively in automated bioinformatics analysis pipelines. Therefore, it is important to validate FASTQ files to improve the data reusability and build error-proof data analysis process.</p>
+<p>FASTQ validators detect truncated reads, base calls and quality score mismatches, invalid encoding, etc. For paired-end reads, they also check if the forward reads match with the reverse reads. Most validators can process different FASTQ variants automatically and handle compressed FASTQ files.</p>
+<p><a href="https://github.com/nunofonseca/fastq_utils">FASTQ-utils</a> is an open-source software to validate and process FASTQ files. It has been applied in the <a href="https://www.ebi.ac.uk/ena">European Nucleotide Archive(ENA)</a>, and several research initiatives.</p>
+<p>This recipe provides an example of validating FASTQ files with <em>FASTQ-utils</em> on MacOS and Linux machines.</p>
+<blockquote><p>:bulb: Quality control is out of the scope of file format validation.</p>
+</blockquote>
+<p><img src="https://i.imgur.com/jOYK2ZM.jpg" alt=""></p>
+<h3 id="Requirements">Requirements<a class="anchor-link" href="#Requirements"> </a></h3><p>The users are expected to be comfortable with Unix-based OS and basic Bash programming syntax and commands.</p>
+<table>
+<thead><tr>
+<th>Software</th>
+<th>Description</th>
+<th>Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/">conda</a></td>
+<td>Package manager for installing validators</td>
+<td>4.8.3</td>
+</tr>
+<tr>
+<td><a href="https://github.com/nunofonseca/fastq_utils">FASTQ-utils</a></td>
+<td>FASTQ validator</td>
+<td>0.23.0</td>
+</tr>
+<tr>
+<td><a href="https://www.gnu.org/software/wget/">wget</a></td>
+<td>File downloader</td>
+<td>1.19.4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Step-1:-Install-fastq-utils">Step 1: Install fastq-utils<a class="anchor-link" href="#Step-1:-Install-fastq-utils"> </a></h3><p>The command below installs <em>fastq-utils</em> via Conda. It is also possible to install <em>fastq-utils</em> from <a href="https://github.com/nunofonseca/fastq_utils">the source code</a>.</p>
+<div class="highlight"><pre><span></span>conda install -c bioconda fastq_utils
+</pre></div>
+<h3 id="Step-2:-Get-example-file-for-testing*">Step 2: Get example file for testing*<a class="anchor-link" href="#Step-2:-Get-example-file-for-testing*"> </a></h3><p><em>:bulb:*  Users can skip this step and test with their own files.</em></p>
+<p>In this step, we download example FASTQ files from ENA for testing. The first example file is a single read file, the other ones are paired-end read files.</p>
+<p><strong>Example 1: Get single read FASTQ file</strong></p>
+<p>The command below downloads an <em>Ion Torrent S5</em> fastq file from ENA. <a href="https://www.ebi.ac.uk/ena/browser/view/SRR12132977">This file</a> is the whole genome sequencing file of SARS-CoV-2. The complete file is 192Mb.</p>
+<div class="highlight"><pre><span></span>wget -c ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR121/077/SRR12132977/SRR12132977.fastq.gz
+</pre></div>
+<p>Uses can inspect the <em>fastq.gz</em> file using <code>gzip -cd SRR12132977.fastq.gz | head -8</code>. Below is the header of this FASTQ file.</p>
+
+<pre><code>@SRR12132977.1 1/1
+AACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAACGAACAAACTAAAATGTCTGATAATGGACCCCAAAATCAGCGAAATGCACCCCGCATTACGTTTGGTGGACCCTCAG
++
+C@CCD&gt;DBC?B692;;;09?&lt;BBBBC&gt;BBBBBBBBB@?ABB@BC&lt;BBB&gt;@A?:999992;=&gt;&gt;@??==:=C;&gt;=&lt;:'555)8;;;;;AG:AAAAADD;CCBB&gt;?@;;;0:&lt;@A&gt;CEE?CFCC
+@SRR12132977.2 2/1
+AACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAACTAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTGTTGCAGCCGATCATCAGCAC
++
+A&gt;A@@=@@F@D@C&lt;999,:&lt;@ABBBB@B=&gt;=BB@BBB?@@&gt;&lt;;;7&gt;??=BBB&gt;BDD;D&gt;????@@;@CDC@@@BBB&gt;BBB@AAC&gt;&gt;9BBBB;;;@@?;&gt;&lt;::;99&lt;9&lt;;A;&gt;&gt;&lt;@@A:=:&gt;@@@&gt;A@&gt;:&gt;===&gt;:=&lt;&lt;&gt;&gt;;;;&gt;=BCAA?&gt;=A&gt;&gt;&gt;:==&gt;;998&lt;=;===@@@&lt;&gt;&gt;9&gt;&gt;&gt;?;??==:=&gt;&gt;&gt;&gt;:&gt;&gt;;;;;;;;&lt;;;</code></pre>
+<p><strong>Example 2: Get paired-read FASTQ files</strong></p>
+<p>The command below downloads Illumina iSeq 100 paired end sequencing files from ENA. <a href="https://www.ebi.ac.uk/ena/data/view/SRR11542244">These files</a> are raw sequence reads of a SARS-CoV-2 sample. Each file is 26 Mb.</p>
+<div class="highlight"><pre><span></span>wget -c <span class="se">\</span>
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/044/SRR11542244/SRR11542244_1.fastq.gz <span class="se">\</span>
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/044/SRR11542244/SRR11542244_2.fastq.gz
+</pre></div>
+<p>Below is the headers of the two files. The read pairs info is listed in the read IDs.</p>
+
+<pre><code># Header of the forward read, SRR11542244_1.fastq.gz
+@SRR11542244.1 1/1
+GTGTGTGTATACATATATATATATATCACATTTTCTTTATCCATTTATCTGTTGTTGGACACTTAGGTTGATTCCATATCTTGGCTATTGTGAATAGTG
++
+,,FFFFFFFFFFFFFFFFFFFFFFFF:FFF:FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFFFF
+@SRR11542244.2 2/1
+GTGATTCCTCAAAGATTTAGAACCAGAAATACCATGTGACCCAGCAATTCCATTACCAGGTCTAAACCCAAAGGAATATAAATCATTCTGTAATGAAGATA
++
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+
+
+# Header of the reverse read, SRR11542244_2.fastq.gz
+@SRR11542244.1 1/2
+CTATTGGGTATTTAATCCAAAGAAAGGAAATCGGTATATCAAAGAGACATCTGCATGCCCATGTTTATTGTAGCACTATTCACAATAGCCAAGATATGGAA
++
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF:FFFFFFFFFFFFFFFFFFFF
+@SRR11542244.2 2/2
+GAACATATGTGTGCATGTATCTTCATTACAGAATGATTTATATTCCTTTGGGTTTAGACCTGGTAATGGAATTGCTGGGTCACATGGTATTTCTGGTTCTA
++
+FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</code></pre>
+<h3 id="Step-3:-Perform-validation">Step 3: Perform validation<a class="anchor-link" href="#Step-3:-Perform-validation"> </a></h3><p>The command below validates the single read file in <em>Example 1</em>.</p>
+<div class="highlight"><pre><span></span>fastq_info -r SRR12132977.fastq.gz
+</pre></div>
+<p>Below are the validation results. <em>fastq-utils</em> returns the number of reads, read length details, and encoding info. Field <code>Quality encoding</code> indicates the fastq file variant. FASTQ-utils returns <code>OK</code> for a valid fastq file. Otherwise, it will return the validation details in the Error message.</p>
+
+<pre><code>Skipping check for duplicated read names
+1900000
+------------------------------------
+Number of reads: 1919741
+Quality encoding range: 34 77
+Quality encoding: 33
+Read length: 25 352 215
+OK</code></pre>
+<p>The validation of paired end reads is similar to single read file validation.</p>
+<div class="highlight"><pre><span></span>fastq_info SRR11542244_1.fastq.gz SRR11542244_2.fastq.gz
+</pre></div>
+<p>Here are the validation results.</p>
+
+<pre><code>fastq_utils 0.23.0
+DEFAULT_HASHSIZE=39000001
+Scanning and indexing all reads from SRR11542244_1.fastq.gz
+700000Scanning complete.
+
+Reads processed: 733611
+Memory used in indexing: ~47 MB
+File SRR11542244_1.fastq.gz processed
+Next file SRR11542244_2.fastq.gz
+700000
+------------------------------------
+Number of reads: 733611
+Quality encoding range: 35 70
+Quality encoding: 33
+Read length: 35 101 96
+OK</code></pre>
+<p>_fastq<em>util</em> also provides additional arguments to tune the validation:</p>
+<p><code>-s</code>: to validate if reads in two files have the same ordering.</p>
+<p><code>-r</code>: to skip duplicated read names validation. It uses less memory and runs faster.</p>
+<p><code>-e</code>: to allow empty files pass the validation</p>
+<p><code>-q</code>: not to fail if the encoding can't be decided.</p>
+<h4 id="Error-messages-for-invalid-files">Error messages for invalid files<a class="anchor-link" href="#Error-messages-for-invalid-files"> </a></h4><p>FASTQ-utils returns an error message with the location of invalid lines and type of errors if the files are invalid. Below are examples of error messages.</p>
+<ul>
+<li><p>Invalid file example 1, duplicated reads</p>
+<blockquote><p>ERROR: Error in file SRR11542244_2.fastq: line 16: duplicated sequence SRR11542244.5 5/</p>
+</blockquote>
+</li>
+<li><p>Invalid file example 2, wrong base call encoding</p>
+<blockquote><p>ERROR: Error in file SRR11542244_2.fastq: line 5: invalid character 'e' (hex. code:'65'), expected ACGTacgt0123nN.</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="FASTA-utils-feature-summary">FASTA-utils feature summary<a class="anchor-link" href="#FASTA-utils-feature-summary"> </a></h3><p>The table lists technical considerations when selecting the validator, including basic validation function, performance, interface, etc. It also provides a detailed summary of <em>fastq-utils</em> features.</p>
+<table>
+<thead><tr>
+<th>Aspects</th>
+<th>Validation content</th>
+<th>Description</th>
+<th>FASTQ-utils</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Basic validation</td>
+<td>4-line format</td>
+<td>Check if the FASTQ file is a 4-line file</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Character encoding</td>
+<td>Check if the base calls and quality score encoding are correct.</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Read length</td>
+<td>Check if the length of the base calls are the same as that of the quality scores</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>File truncation</td>
+<td>Check if the file is truncated or not</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>Paired-end reads validation</td>
+<td>Deinterleaved paired reads</td>
+<td>Validate when the forward and reverse reads are in two files.</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>Interleaved <em>"8-line"</em> files</td>
+<td>Validate when the forward and reverse reads are listed together as an 8-line file</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>Compressed file validation</td>
+<td>gzip</td>
+<td>Validate compressed fastq files, with extension <code>fastq.gz</code></td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>FASTQ variants* validation</td>
+<td>fastq-illumina</td>
+<td>Validate the <em>fastq-illumina</em> format</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>fastq-sanger</td>
+<td>Validate the <em>fastq-sanger</em> format</td>
+<td>:heavy_check_mark:</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>fastq-solexa</td>
+<td>Validate the <em>fastq-solexa</em> format</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>Performance</td>
+<td>Memory</td>
+<td></td>
+<td><code>N/A</code></td>
+</tr>
+<tr>
+<td></td>
+<td>Speed</td>
+<td></td>
+<td><code>N/A</code></td>
+</tr>
+<tr>
+<td>Archieve compatiablity</td>
+<td>ENA</td>
+<td>File validated can be submitted to the ENA archive.</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>ArrayExpress</td>
+<td>File validated can be submitted to Array Express.</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td></td>
+<td>SRA</td>
+<td>File validated can be submitted to the SRA archive.</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>Interface</td>
+<td>Command line interface</td>
+<td>Can be used in shell and intergerated in pipe commands</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>License</td>
+<td>Licensed</td>
+<td></td>
+<td>:heavy_check_mark:<a href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3</a></td>
+</tr>
+<tr>
+<td></td>
+<td>Commercial use</td>
+<td>Can be used for commercial purpose</td>
+<td>:heavy_check_mark:</td>
+</tr>
+<tr>
+<td>Code</td>
+<td>Open source</td>
+<td>Source code available on public platforms</td>
+<td>:heavy_check_mark:</td>
+</tr>
+</tbody>
+</table>
+<p><em>*See details in the <a href="">FASTQ specification recipe</a>.</em></p>
+<h2 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:"> </a></h2><p>In this recipe, we have shown how to validate fastq files, and proposed indicators to evaluate a FASTQ validator. We also identified common file validation related use cases and provided a general file validation workflow. This recipe can be expanded to other file formats and other use cases.</p>
+<h4 id="What-to-read-next">What to read next<a class="anchor-link" href="#What-to-read-next"> </a></h4><ul>
+<li>:octopus:<a href="https://github.com/FAIRplus/the-fair-cookbook/blob/mzml-format/docs/content/recipes/interoperability/from-proprietary-to-open-standard-mzml-exemplar.md">From proprietary format to open standard format: an exemplar</a> </li>
+<li>:octopus:<a href="TBD">FASTQ file specification recipe</a></li>
+<li>:octopus:<a href="TBD">FASTQ file validator in Biopython</a></li>
+</ul>
+<hr>
+<h2 id="References">References<a class="anchor-link" href="#References"> </a></h2><ul>
+<li>Cock, Peter J. A., Christopher J. Fields, Naohisa Goto, Michael L. Heuer, and Peter M. Rice. ‘The Sanger FASTQ File Format for Sequences with Quality Scores, and the Solexa/Illumina FASTQ Variants’. Nucleic Acids Research 38, no. 6 (1 April 2010): 1767–71. <a href="https://doi.org/10.1093/nar/gkp1137">https://doi.org/10.1093/nar/gkp1137</a>.</li>
+<li>ENA. ‘Accepted Read Data Formats — ENA Training Modules 1 Documentation’. Accessed 6 July 2020. <a href="https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html#fastq-format">https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html#fastq-format</a>.</li>
+<li>NCBI. ‘File Format Guide’. Accessed 14 July 2020. <a href="https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/#fastq-files">https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/#fastq-files</a>.</li>
+<li>Nuno Fonseca, and Jonathan Manning. Nunofonseca/Fastq_utils 0.24.0. Zenodo, 2020. <a href="https://doi.org/10.5281/zenodo.3936692">https://doi.org/10.5281/zenodo.3936692</a>.</li>
+</ul>
+<hr>
+<h2 id="Authors">Authors<a class="anchor-link" href="#Authors"> </a></h2><table>
+<thead><tr>
+<th>Name</th>
+<th>Institute</th>
+<th>ORCID</th>
+<th>Contributions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fuqi Xu</td>
+<td><a href="https://www.ebi.ac.uk/">EMBL-EBI</a></td>
+<td><a href="https://orcid.org/0000-0002-5923-3859">0000-0002-5923-3859</a></td>
+<td>Writing - Original Draft</td>
+</tr>
+<tr>
+<td>Eva Martin</td>
+<td><a href="https://www.bsc.es/">Barcelona Supercomputing Center (BSC)</a></td>
+<td><a href="https://orcid.org/0000-0001-8324-2897">0000-0001-8324-2897</a></td>
+<td>Reviewing and editing</td>
+</tr>
+<tr>
+<td>Peter Woollard</td>
+<td><a href="https://www.gsk.com/en-gb/">GSK</a></td>
+<td><a href="https://orcid.org/0000-0002-7654-6902">0000-0002-7654-6902</a></td>
+<td>Reviewing</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="License">License<a class="anchor-link" href="#License"> </a></h2><p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    

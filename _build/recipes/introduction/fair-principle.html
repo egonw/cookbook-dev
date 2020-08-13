@@ -1,0 +1,335 @@
+---
+title: |-
+  The FAIR principles
+prev_page:
+  url: /recipes/introduction/FAIR-in-IMI-context.html
+  title: |-
+    FAIR in IMI context
+next_page:
+  url: /recipes/introduction/FAIRplus-values.html
+  title: |-
+    The Values of FAIR
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="What-are-the-FAIR-Principles?">What are the FAIR Principles?<a class="anchor-link" href="#What-are-the-FAIR-Principles?"> </a></h1><hr>
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-qrcode fa-2x" style="color:#7e0038"></i>
+        <h4><b>Recipe metadata</b></h4>
+        <p> identifier: <a href="">RX.X</a> </p>
+        <p> version: <a href="">v1.0</a> </p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-fire fa-2x" style="color:#7e0038"></i>
+        <h4><b>Difficulty level</b></h4>
+        <i class="fa fa-fire fa-lg" style="color:#7e0038"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-clock-o fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Reading Time</b></h4>
+        <p><i class="fa fa-clock-o fa-lg" style="color:#7e0038;"></i> 10 minutes</p>
+        <h4><b>Recipe Type</b></h4>
+        <p><i class="fa fa-laptop fa-lg" style="color:#7e0038;"></i> Background Information</p>
+        <h4><b>Executable Code</b></h4>
+        <p><i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> No</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-group fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Intended Audience</b></h4>
+        <p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigators </p>
+        <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Managers </p>
+        <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientists </p>
+<!--         <p> <i class="fa fa-money fa-lg" style="color:#7e0038;"></i> Funders</p> -->
+      </div>
+    </div>
+  </div>
+</div><hr>
+<h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction"> </a></h2><p>The goal of this section is to go over each of the principles for FAIR data management as described by Wilkinson and coworkers in their Nature Springer Scientific Data manuscript published in 2016.
+Owing to the success of the principles, now endorsed by funding agencies (IMI, Wellcome Trust to name only two), but also by the G20 and by industry leaders, it is essential to remind the reader about those.</p>
+<h2 id="The-FAIR-Guiding-Principles">The FAIR Guiding Principles<a class="anchor-link" href="#The-FAIR-Guiding-Principles"> </a></h2><div>
+    <img src="https://i.imgur.com/RxkoNed.png" width="350" style="border:1px solid black;align:center"/>
+</div><p>doi: 10.1038/sdata.2016.18</p>
+<div class="highlight"><pre><span></span><span class="c1">### F. To be Findable:</span>
+
+<span class="p p-Indicator">&gt;</span><span class="err">F1. (meta)data are assigned a **globally unique and persistent identifier**</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">F2. data are described with **rich metadata** (defined by R1 below)</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">F3. metadata clearly and explicitly include the identifier of the data it describes</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">F4. (meta)data are registered or **indexed in a searchable resource**</span>
+
+<span class="c1">### A. To be Accessible:</span>
+
+<span class="p p-Indicator">&gt;</span><span class="err">A1. (meta)data are retrievable by their identifier using **a standardized communications protocol**</span>
+
+<span class="p p-Indicator">&gt;</span><span class="err">A1.</span><span class="p p-Indicator">1</span><span class="err"> the protocol is **open, free, and universally implementable**</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">A1.</span><span class="p p-Indicator">2</span><span class="err"> the protocol allows for an authentication and authorization procedure, where necessary</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">A2. **metadata are accessible**, even when the data are no longer available</span>
+
+<span class="c1">### I. To be Interoperable:</span>
+
+<span class="p p-Indicator">&gt;</span><span class="err">I1. (meta)data use a **formal, accessible, shared, and broadly applicable language for knowledge representation**.</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">I2. (meta)data use **vocabularies that follow FAIR principles**</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">I3. (meta)data include **qualified references** to other (meta)data</span>
+
+<span class="c1">### R. To be Reusable:</span>
+
+<span class="p p-Indicator">&gt;</span><span class="err">R1. meta(data) are richly described with a **plurality of accurate and relevant attributes**</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">R1.1. (meta)data are released with a **clear and accessible data usage license**</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">R1.2. (meta)data are associated with **detailed provenance**</span>
+<span class="p p-Indicator">&gt;</span>
+<span class="p p-Indicator">&gt;</span><span class="err">R1.3. (meta)data meet domain-relevant **community standards**</span>
+</pre></div>
+<h2 id="The-FAIR-principles-and-FAIRplus.">The FAIR principles and FAIRplus.<a class="anchor-link" href="#The-FAIR-principles-and-FAIRplus."> </a></h2><p>The principles will be the organizing principle for the FAIRplus Cookbook. While the book itself can be search in many different ways and its content exposed through a number of angles, personas and facets, the main <code>Table of Content</code> organizes a number of atomic recipes around of the principles and their associated sub themes.</p>
+<h2 id="FAIRplus-Recipe-&amp;-FAIR-principles">FAIRplus Recipe &amp; FAIR principles<a class="anchor-link" href="#FAIRplus-Recipe-&amp;-FAIR-principles"> </a></h2><div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-search fa-2x" style="color:#fc7a4a;"></i>
+        <h4><b>FINDABILITY</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#fc7a4a;"></i>
+        <h4><b>Search Engine Optimitization</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#fc7a4a;"></i>
+        <br/>
+        <h4><b>Open Archive Deposition</b></h4>
+        <p>TODO: add text here </p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#fc7a4a;"></i>
+        <h4><b>Annotation</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+ </div>
+</div>
+<div> 
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cloud fa-2x" style="color:#8038d1;"></i>
+        <h4><b>ACCESSIBILITY</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#8038d1;"></i>
+        <h4><b>Access condition</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#8038d1;"></i>
+        <h4><b>License selection</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#8038d1;"></i>
+        <h4><b>Standards</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+</div><div class="row">
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-puzzle-piece fa-2x" style="color:#300861;"></i>
+        <h4><b>INTEROPERABILITY</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#300861;"></i>
+        <h4><b>Metadata Standards</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#300861;"></i>
+        <h4><b>Open Syntax</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#300861;"></i>
+        <h4><b>Ontology</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+ </div><div class="row">
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-recycle fa-2x" style="color:#7e0038;"></i>
+        <h4><b>REUSABILITY</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#7e0038;"></i>
+        <h4><b>Standards</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#7e0038;"></i>
+        <h4><b>Ontology</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-cog fa-lg" style="color:#7e0038;"></i>
+        <h4><b>SMART API</b></h4>
+        <p>TODO: add text here</p>
+      </div>
+    </div>
+  </div>
+</div><hr>
+<h2 id="Conclusions:">Conclusions:<a class="anchor-link" href="#Conclusions:"> </a></h2><p>This section should be seen as a refresher for any one unclear about the FAIR principles. Now that key background information has been provided, shining a light on an number of ethical issues driving both the development and implementation of the FAIR principles in the context of Life Science data as well as learning about the overall FAIRification process represent a natural progression in the content of the FAIR Cookbook.</p>
+<blockquote><h4 id="What-to-read-read-next?">What to read read next?<a class="anchor-link" href="#What-to-read-read-next?"> </a></h4><ul>
+<li><a href="">the values of FAIR</a></li>
+<li><a href="">the IMI FAIRplus FAIRification Process overview</a></li>
+<li><a href="">Assessing FAIRness</a></li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="Reference:">Reference:<a class="anchor-link" href="#Reference:"> </a></h1><ol>
+<li>Wilkinson, M., Dumontier, M., Aalbersberg, I. et al. The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3, 160018 (2016). <a href="https://doi.org/10.1038/sdata.2016.18">https://doi.org/10.1038/sdata.2016.18</a></li>
+<li>Wilkinson, M.D., Dumontier, M., Jan Aalbersberg, I. et al. Addendum: The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 6, 6 (2019). <a href="https://doi.org/10.1038/s41597-019-0009-6">https://doi.org/10.1038/s41597-019-0009-6</a></li>
+</ol>
+<hr>
+<h2 id="Authors:">Authors:<a class="anchor-link" href="#Authors:"> </a></h2><table>
+<thead><tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Affiliation</th>
+<th style="text-align:left">orcid</th>
+<th style="text-align:left">CrediT role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Philippe Rocca-Serra</td>
+<td style="text-align:left">University of Oxford, Data Readiness Group</td>
+<td style="text-align:left"><a href="https://orcid.org/orcid.org/0000-0001-9853-5668">0000-0001-9853-5668</a></td>
+<td style="text-align:left">Writing - Original Draft</td>
+</tr>
+<tr>
+<td style="text-align:left">Susanna Assunta Sansone</td>
+<td style="text-align:left">University of Oxford, Data Readiness Group</td>
+<td style="text-align:left"><a href="https://orcid.org/orcid.org/0000-0001-5306-5690">0000-0001-5306-5690</a></td>
+<td style="text-align:left">Writing - Original Draft</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Review</td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">Review</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="License:">License:<a class="anchor-link" href="#License:"> </a></h2><p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a></p>
+<hr>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
