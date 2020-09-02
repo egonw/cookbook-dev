@@ -10,16 +10,9 @@ next_page:
   title: |-
     Fast File Transfer via Aspera
 suffix: .md
+# How to use SFTP to transfer data files between collaborating institutions.
 
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
 
-    <main class="jupyter-page">
-    <div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-to-use-SFTP-to-transfer-data-files-between-collaborating-institutions.">How to use SFTP to transfer data files between collaborating institutions.<a class="anchor-link" href="#How-to-use-SFTP-to-transfer-data-files-between-collaborating-institutions."> </a></h1><hr>
 <div class="row">
 
   <div class="column">
@@ -42,7 +35,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
       </div>
     </div>
   </div>  
@@ -70,194 +62,237 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
       </div>
     </div>
   </div>
-</div><hr>
-<h2 id="Abstract">Abstract<a class="anchor-link" href="#Abstract"> </a></h2><p>Collaborating teams at two or more organizations often need to transfer and share data files. There are a number of ways to share files, all with various degrees of ease and usability.
+</div>
+
+
+## Abstract
+
+Collaborating teams at two or more organizations often need to transfer and share data files. There are a number of ways to share files, all with various degrees of ease and usability.
 The particular information security risk management (ISRM) protocols at the sending and receiving institutions need to be considered when one chooses and optimizes file-transfer solutions.
 One common method for transferring files is SFTP or scp (secure copy).
-[final sentence missing]</p>
-<h2 id="Background-info">Background info<a class="anchor-link" href="#Background-info"> </a></h2><ul>
-<li>SFTP: Secure or SSH File Transfer protocol is a standard way to transfer files securely using a remote server.</li>
-<li>SFTP is not to be confused with FTP or FTPS. While FTP does not use encryption at all and therefore can be considered insecure, FTPS adds a layer of encryption on top of FTP but it still comes with a number of drawbacks from the FTP protocol, e.g. requiring a range of open ports. SFTP uses an entirely different protocol based on SSH (secure shell) and uses strong encryption for authentication information as well as the data transferred.</li>
-<li>In order to upload and download files, the client needs to communicate with the server over port 22 (which is the default port for SFTP) and the network configurations on the sender as well as the recipient side need to allow this traffic. If network restrictions block this communication, one might try to run the SFTP server on a different port (e.g. 443).</li>
-<li>In this scenario, a SFTP server is a pure file transfer server, i.e. it lives outside of any sensitive network area and both parties (the sender and recipient) need to use a SFTP client to upload from and download to their internal storage systems. After transfer and integrity check, files would be typically removed by the receiver.</li>
-</ul>
-<h2 id="Graphical-Overview:">Graphical Overview:<a class="anchor-link" href="#Graphical-Overview:"> </a></h2><p>not existent</p>
-<h2 id="Requirements:">Requirements:<a class="anchor-link" href="#Requirements:"> </a></h2><p>For client (receiver/sender):</p>
-<ul>
-<li>Basic understanding of SFTP client configurations</li>
-<li>(optional) Basic programming skills to automate upload or download process</li>
-</ul>
-<p>For server (system administrator):</p>
-<ul>
-<li>Compliance with company IT-security policies</li>
-<li>Understanding firewall configurations</li>
-<li>Ability to use terminal (bash)</li>
-</ul>
-<h2 id="Recipe-instructions:">Recipe instructions:<a class="anchor-link" href="#Recipe-instructions:"> </a></h2><p>Overview:</p>
-<ul>
-<li>(1)   Setting up SFTP server<ul>
-<li>1.a.    Instructions</li>
-<li>1.b.    Security considerations</li>
-</ul>
-</li>
-<li>(2)   Data upload/download<ul>
-<li>2a. Manual</li>
-<li>2b. Automatic</li>
-</ul>
-</li>
-<li>(3) Correctness and completeness of transfer</li>
-</ul>
-<h3 id="(1)-Setting-up-a-SFTP-server">(1) Setting up a SFTP server<a class="anchor-link" href="#(1)-Setting-up-a-SFTP-server"> </a></h3><p>While you can run an SFTP server also in a Windows environment (e.g. using the open source software FileZilla Server), a Linux server is certainly recommended. Most Linux distributions come with all required libraries (libssh2, OpenSSH) pre-installed. Following is a step-by-step summary for a CentOS server:</p>
-<p>a.  Create a dedicated group for all future SFTP users:</p>
+[final sentence missing]
 
-<pre><code>$ groupadd sftpusers</code></pre>
-<p>b.  First create a folder on a volume with sufficient free space:</p>
 
-<pre><code>$ mkdir -p /data/sftp</code></pre>
-<p>c.  Set permissions:</p>
+## Background info
+- SFTP: Secure or SSH File Transfer protocol is a standard way to transfer files securely using a remote server.
+- SFTP is not to be confused with FTP or FTPS. While FTP does not use encryption at all and therefore can be considered insecure, FTPS adds a layer of encryption on top of FTP but it still comes with a number of drawbacks from the FTP protocol, e.g. requiring a range of open ports. SFTP uses an entirely different protocol based on SSH (secure shell) and uses strong encryption for authentication information as well as the data transferred.
+- In order to upload and download files, the client needs to communicate with the server over port 22 (which is the default port for SFTP) and the network configurations on the sender as well as the recipient side need to allow this traffic. If network restrictions block this communication, one might try to run the SFTP server on a different port (e.g. 443).
+- In this scenario, a SFTP server is a pure file transfer server, i.e. it lives outside of any sensitive network area and both parties (the sender and recipient) need to use a SFTP client to upload from and download to their internal storage systems. After transfer and integrity check, files would be typically removed by the receiver.
 
-<pre><code>$ chown root:sftpusers /data/sftp
-$ chmod 775 /data/sftp</code></pre>
-<p>d.  Create one or more SFTP users, assigning them to the previously created group:</p>
 
-<pre><code>$ useradd -g sftpusers -d / -s /sbin/nologin USERNAME</code></pre>
-<p>e.  Set the password for the new user:</p>
+## Graphical Overview:
 
-<pre><code>$ passwd USERNAME</code></pre>
-<p>f.  Edit the SSHD configuration at /etc/ssh/sshd_config (e.g. using vi or nano) by adding the following lines:</p>
+not existent
 
-<pre><code>Match Group sftpusers
+
+## Requirements:
+
+For client (receiver/sender):
+-	Basic understanding of SFTP client configurations
+-	(optional) Basic programming skills to automate upload or download process
+
+For server (system administrator):
+-	Compliance with company IT-security policies
+-	Understanding firewall configurations
+-	Ability to use terminal (bash)
+
+
+## Recipe instructions:
+
+Overview:
+
+- (1)	Setting up SFTP server
+  - 1.a.	Instructions
+  - 1.b.	Security considerations
+- (2)	Data upload/download
+  - 2a.	Manual
+  - 2b.	Automatic
+- (3) Correctness and completeness of transfer
+
+### (1)	Setting up a SFTP server
+
+While you can run an SFTP server also in a Windows environment (e.g. using the open source software FileZilla Server), a Linux server is certainly recommended. Most Linux distributions come with all required libraries (libssh2, OpenSSH) pre-installed. Following is a step-by-step summary for a CentOS server:
+
+a.	Create a dedicated group for all future SFTP users:
+```
+$ groupadd sftpusers
+```
+
+b.	First create a folder on a volume with sufficient free space:
+```
+$ mkdir -p /data/sftp
+```
+
+c.	Set permissions:
+```
+$ chown root:sftpusers /data/sftp
+$ chmod 775 /data/sftp
+```
+
+d.	Create one or more SFTP users, assigning them to the previously created group:
+```
+$ useradd -g sftpusers -d / -s /sbin/nologin USERNAME
+```
+
+e.	Set the password for the new user:
+```
+$ passwd USERNAME
+```
+
+f.	Edit the SSHD configuration at /etc/ssh/sshd_config (e.g. using vi or nano) by adding the following lines:
+```
+Match Group sftpusers
 ChrootDirectory /data/sftp
-ForceCommand internal-sftp</code></pre>
-<p>g.  Restart the SSH services</p>
+ForceCommand internal-sftp
+```
 
-<pre><code>$ service sshd restart</code></pre>
-<p>h.  Now you have to make sure you open port 22 in your network to the outside world under a specific domain name or static IP address.</p>
-<h3 id="(2)-Data-upload-and-download">(2) Data upload and download<a class="anchor-link" href="#(2)-Data-upload-and-download"> </a></h3><h4 id="2.a.-Manual,-i.e.-drag'n'drop">2.a. Manual, i.e. drag'n'drop<a class="anchor-link" href="#2.a.-Manual,-i.e.-drag'n'drop"> </a></h4><p>Data could be transferred to/from SFTP server using multiple clients. Here there are some examples:</p>
-<p>FileZilla</p>
-<p>OS: Windows, Mac OS, Linux</p>
-<p>License: Free Software (GPL)</p>
-<p>Pros:</p>
-<ul>
-<li>easy to setup;</li>
-<li>portable version available (no installation, i.e. administrator rights, required)</li>
-<li>cross-platform</li>
-</ul>
-<p>Cons:</p>
-<ul>
-<li>By default installs adware</li>
-</ul>
-<p>WinSCP</p>
-<p>OS: Windows</p>
-<p>License: Free Software (GPL)</p>
-<p>Pros:</p>
-<ul>
-<li>easy to setup;</li>
-<li>portable version available (no installation, i.e. administrator rights, required)</li>
-</ul>
-<p>Cons:</p>
-<ul>
-<li>Only Windows</li>
-<li>No x64 version (as of 07.07.2020)</li>
-</ul>
-<p>Other SFTP clients: Cyberduck, MonstaFTP (Free and paid) and many others</p>
-<p>Tipp:
-The portable version of WinSCP can be preconfigured so that a user only needs to enter the password, without requiring knowledge of host names, protocols, ports or user name!</p>
-<h4 id="2.b.-Automatic">2.b. Automatic<a class="anchor-link" href="#2.b.-Automatic"> </a></h4><p>Libraries implementing SFTP are available for different programming languages.</p>
-<ul>
-<li>Python – pysftp (<a href="https://pysftp.readthedocs.io/en/release_0.2.8/index.html#">https://pysftp.readthedocs.io/en/release_0.2.8/index.html#</a>)</li>
-<li>Perl – Net::SFTP (<a href="https://metacpan.org/pod/Net::SFTP">https://metacpan.org/pod/Net::SFTP</a>)</li>
-<li>JavaScript - ssh2-sftp-client (<a href="https://www.npmjs.com/package/ssh2-sftp-client">https://www.npmjs.com/package/ssh2-sftp-client</a>)</li>
-<li>Bash – sftp (similar to scp)</li>
-</ul>
-<h3 id="(3)-Correctness-and-completeness-of-transfer">(3) Correctness and completeness of transfer<a class="anchor-link" href="#(3)-Correctness-and-completeness-of-transfer"> </a></h3><p>It is a good practice to ensure that file transfer is correct and complete. See recipe on checksum creation and validation.</p>
-<p>TODO: Kick out the following block:</p>
-<div class="highlight"><pre><span></span>Sender should calculate checksum <span class="o">(</span>md5, sha512, etc<span class="o">)</span> <span class="k">for</span> every file:
-bash: md5sum * &gt; md5sum.txt
+g.	Restart the SSH services
+```
+$ service sshd restart
+```
+
+h.	Now you have to make sure you open port 22 in your network to the outside world under a specific domain name or static IP address.
+
+
+### (2) Data upload and download
+
+#### 2.a. Manual, i.e. drag'n'drop
+
+Data could be transferred to/from SFTP server using multiple clients. Here there are some examples:
+
+FileZilla
+
+OS: Windows, Mac OS, Linux
+
+License: Free Software (GPL)
+
+Pros:
+- easy to setup;
+- portable version available (no installation, i.e. administrator rights, required)
+- cross-platform
+
+Cons:
+-	By default installs adware
+
+
+WinSCP
+
+OS: Windows
+
+License: Free Software (GPL)
+
+Pros:
+- easy to setup;
+- portable version available (no installation, i.e. administrator rights, required)
+
+Cons:
+-	Only Windows
+-	No x64 version (as of 07.07.2020)
+
+
+Other SFTP clients: Cyberduck, MonstaFTP (Free and paid) and many others
+
+Tipp:
+The portable version of WinSCP can be preconfigured so that a user only needs to enter the password, without requiring knowledge of host names, protocols, ports or user name!
+
+
+#### 2.b. Automatic
+
+Libraries implementing SFTP are available for different programming languages.
+
+- Python – pysftp (https://pysftp.readthedocs.io/en/release_0.2.8/index.html#)
+- Perl – Net::SFTP (https://metacpan.org/pod/Net::SFTP)
+- JavaScript - ssh2-sftp-client (https://www.npmjs.com/package/ssh2-sftp-client)
+- Bash – sftp (similar to scp)
+
+
+### (3) Correctness and completeness of transfer
+
+It is a good practice to ensure that file transfer is correct and complete. See recipe on checksum creation and validation.
+
+TODO: Kick out the following block:
+
+```bash
+Sender should calculate checksum (md5, sha512, etc) for every file:
+bash: md5sum * > md5sum.txt
 or
-bash: sha512sum * &gt; sha512sum.txt
+bash: sha512sum * > sha512sum.txt
 or
 Windows: CertUtil -hashfile FILENAME MD5
 Recipient compares checksums:
 Bash: md5sum -c md5sum.txt *
 Or
 Bash: sha512sum -c sha512sum.txt *
-</pre></div>
-<p>The sender can use the sender organization’s HPC node to</p>
-<ul>
-<li>(1)   set up a shell which runs in the background,</li>
-<li>(2)   launch the FTP session in the same local network as the server and directory of files to be transferred.</li>
-<li>(3)   Transfer the files via the filesystem on both the local and remote system</li>
-</ul>
-<p>For example, an IMI collaboration project requires transfer and sharing of a number of image data folders, each approximately ~300-500 GB.
-The process involved copying the files over to a secure FTP server, the receiving institution copies to their server, then the sender deletes the files on the FTP server</p>
-<p>Pros and cons:</p>
-<ul>
-<li>Double copy process with an intermediate space</li>
-<li>Cumbersome</li>
-<li>Works for mid size data (Gigabyte range)</li>
-<li>It works in most cases, especially if the file transfer is "one-time" batch of files.</li>
-<li>It can be considered a good short term or “one-off” solution.</li>
-</ul>
-<p>This common process is described in a number of publically available resources, examples in the Further Reading section below.</p>
-<h2 id="Possible-improvements-from-the-state-of-this-recipe:">Possible improvements from the state of this recipe:<a class="anchor-link" href="#Possible-improvements-from-the-state-of-this-recipe:"> </a></h2><ul>
-<li>One could provide for increased automation by writing a small script to iterate through each directory when one is transferring a set of directories, each containing a number of data files.</li>
-</ul>
-<hr>
-<h2 id="Further-reading:">Further reading:<a class="anchor-link" href="#Further-reading:"> </a></h2><ul>
-<li>Wikipedia article on SFTP: <a href="https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol">https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol</a></li>
-<li>The Geek Stuff, FTP and SFTP Beginners guide with 10 examples <a href="https://www.thegeekstuff.com/2010/06/ftp-sftp-tutorial/">https://www.thegeekstuff.com/2010/06/ftp-sftp-tutorial/</a></li>
-<li>Example of customization for a specific institution:<ul>
-<li><a href="https://hpc.uni.lu/users/docs/filetransfer.html">https://hpc.uni.lu/users/docs/filetransfer.html</a></li>
-</ul>
-</li>
-<li><a href="https://www.howtoforge.com/tutorial/how-to-setup-an-sftp-server-on-centos/">https://www.howtoforge.com/tutorial/how-to-setup-an-sftp-server-on-centos/</a></li>
-</ul>
-<hr>
-<h2 id="Capability-and-Maturity-Table.">Capability and Maturity Table.<a class="anchor-link" href="#Capability-and-Maturity-Table."> </a></h2><p>Capability Initial Maturity Level Final Maturity Level
-Interoperability – minimal - repeatable</p>
-<h2 id="FAIRification-Objectives,-Inputs-and-Outputs"><a href="#FAIRification Objectives, Inputs and Outputs">FAIRification Objectives, Inputs and Outputs</a><a class="anchor-link" href="#FAIRification-Objectives,-Inputs-and-Outputs"> </a></h2><p>COMMENT: the concepts in this recipe did not map to any terms from the EDAM ontology.</p>
-<hr>
-<h2 id="Table-of-Data-Standards">Table of Data Standards<a class="anchor-link" href="#Table-of-Data-Standards"> </a></h2><p>COMMENT: the concepts in this recipe did not map to any terms from the FAIRsharing.org database.</p>
-<hr>
-<h2 id="Authors:">Authors:<a class="anchor-link" href="#Authors:"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Affiliation</th>
-<th style="text-align:left">orcid</th>
-<th style="text-align:left">CrediT role</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Dorothy S. Reilly</td>
-<td style="text-align:left">Novartis</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">Writing - Original Draft</td>
-</tr>
-<tr>
-<td style="text-align:left">Vitaly Sedlyarov</td>
-<td style="text-align:left">CeMM</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">Writing - Original Draft</td>
-</tr>
-<tr>
-<td style="text-align:left">Ulrich Goldmann</td>
-<td style="text-align:left">CeMM</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">Writing - Original Draft</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="License:">License:<a class="anchor-link" href="#License:"> </a></h2><p>(<a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a>)</p>
+```
 
-</div>
-</div>
-</div>
-</div>
 
- 
+The sender can use the sender organization’s HPC node to
+- (1)	set up a shell which runs in the background,
+- (2)	launch the FTP session in the same local network as the server and directory of files to be transferred.
+- (3)	Transfer the files via the filesystem on both the local and remote system
+
+For example, an IMI collaboration project requires transfer and sharing of a number of image data folders, each approximately ~300-500 GB.
+The process involved copying the files over to a secure FTP server, the receiving institution copies to their server, then the sender deletes the files on the FTP server
+
+Pros and cons:
+- Double copy process with an intermediate space
+- Cumbersome
+- Works for mid size data (Gigabyte range)
+- It works in most cases, especially if the file transfer is "one-time" batch of files.
+- It can be considered a good short term or “one-off” solution.
+
+This common process is described in a number of publically available resources, examples in the Further Reading section below.
+
+
+## Possible improvements from the state of this recipe:
+
+- One could provide for increased automation by writing a small script to iterate through each directory when one is transferring a set of directories, each containing a number of data files.
+
+
+## Further reading:
+
+- Wikipedia article on SFTP: https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol
+- The Geek Stuff, FTP and SFTP Beginners guide with 10 examples https://www.thegeekstuff.com/2010/06/ftp-sftp-tutorial/
+- Example of customization for a specific institution:
+  - https://hpc.uni.lu/users/docs/filetransfer.html
+- https://www.howtoforge.com/tutorial/how-to-setup-an-sftp-server-on-centos/
+
+
+## Capability and Maturity Table.
+
+Capability Initial Maturity Level Final Maturity Level
+Interoperability – minimal - repeatable
+
+
+## [FAIRification Objectives, Inputs and Outputs](#FAIRification Objectives, Inputs and Outputs)
+
+COMMENT: the concepts in this recipe did not map to any terms from the EDAM ontology.
+
+
+## Table of Data Standards
+
+COMMENT: the concepts in this recipe did not map to any terms from the FAIRsharing.org database.
+
+___
+
+## Authors:
+
+| Name           | Affiliation    | orcid          | CrediT role   |
+| :- | :- | :- |:- |
+| Dorothy S. Reilly | Novartis | | Writing - Original Draft |
+| Vitaly Sedlyarov  | CeMM     | | Writing - Original Draft |
+| Ulrich Goldmann   | CeMM     | | Writing - Original Draft |
+
+___
+
+## License:
+
+(https://creativecommons.org/licenses/by/4.0/)
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+     
 
 
     </main>

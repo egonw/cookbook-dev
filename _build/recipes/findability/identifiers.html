@@ -10,16 +10,10 @@ next_page:
   title: |-
     Depositing to Zenodo
 suffix: .md
+# How to generate globally unique, resolvable and persistent identifiers
 
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
+___
 
-    <main class="jupyter-page">
-    <div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="How-to-generate-globally-unique,-resolvable-and-persistent-identifiers">How to generate globally unique, resolvable and persistent identifiers<a class="anchor-link" href="#How-to-generate-globally-unique,-resolvable-and-persistent-identifiers"> </a></h1><hr>
 <div class="row">
 
   <div class="column">
@@ -42,7 +36,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <i class="fa fa-fire fa-lg" style="color:#7e0038"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
       </div>
     </div>
   </div>  
@@ -67,431 +60,421 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigators </p>
         <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Managers </p>
         <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientists </p>
-<!--         <p> <i class="fa fa-money fa-lg" style="color:#7e0038;"></i> Funders</p> -->
       </div>
     </div>
   </div>
-</div><hr>
-<p>The <strong>FAIR principles</strong>, under the <code>Findability</code> and the <code>Accessibility</code> chapters respectively, state that:</p>
-<blockquote><p>F1. (Meta)data are assigned a globally unique and persistent identifier
-A1. (Meta)data are retrievable by their identifier using a standardised communications protocol</p>
-</blockquote>
-<h2 id="Main-Objectives">Main Objectives<a class="anchor-link" href="#Main-Objectives"> </a></h2><p>The main goals of this recipe are therefore:</p>
-<blockquote><p>To understand the purpose of a globally unique and persistent identifier and how they can be used to retrieve the associated (meta)data using a standardized communication protocol.
-To provide explanations on how to generate globaly unique identifiers, explain what IRI are and how they can be generated, retrieved and resolved.</p>
-</blockquote>
-<p>From these principles, it is necessary to explain three key processes, which are:</p>
-<ol>
-<li><p>Identifier minting</p>
-<p><strong><code>Identifier minting</code></strong> is fundamentally about the <strong><code>authority deciding identity</code></strong>.</p>
-<ul>
-<li>the tax office</li>
-<li>the HR department</li>
-<li>the company registry</li>
-<li>the EMBL-EBI</li>
-</ul>
-</li>
-<li><p>URI construction</p>
-</li>
-</ol>
-<p><strong><code>URI construction</code></strong> is fundamentally about <strong><code>scoping the authority</code></strong>.</p>
-
-<pre><code>&gt;for example, should the web address be:
-    &gt; http://organization/people/1123 
-    &gt; or
-    &gt; http://organization/commercial/people/1123
-
-
-</code></pre>
-<ol>
-<li>URI Resolution: </li>
-</ol>
-<p><strong><code>URI resolution</code></strong> is fundamentally about <strong><code>directing requests to the relevant identified entity</code></strong></p>
-
-<pre><code>The standard approach would be to have a `REST service with content negotiation`.
-
-</code></pre>
-<p>All these key points will be developed in this recipe.</p>
-<hr>
+</div>
+___
+The **FAIR principles**, under the `Findability` and the `Accessibility` chapters respectively, state that: 
+> F1. (Meta)data are assigned a globally unique and persistent identifier
+> 
+>A1. (Meta)data are retrievable by their identifier using a standardised communications protocol 
+## Main Objectives
+The main goals of this recipe are therefore:
+> To understand the purpose of a globally unique and persistent identifier and how they can be used to retrieve the associated (meta)data using a standardized communication protocol.
+> To provide explanations on how to generate globaly unique identifiers, explain what IRI are and how they can be generated, retrieved and resolved.
+From these principles, it is necessary to explain three key processes, which are: 
+1. Identifier minting
+ **`Identifier minting`** is fundamentally about the **`authority deciding identity`**. 
+ - the tax office
+ - the HR department
+ - the company registry
+ - the EMBL-EBI
+2. URI construction
+**`URI construction`** is fundamentally about **`scoping the authority`**.
+    > for example, should the web address be:
+        > http://organization/people/1123 
+        > or
+        > http://organization/commercial/people/1123
+3. URI Resolution: 
+**`URI resolution`** is fundamentally about **`directing requests to the relevant identified entity`**
+    The standard approach would be to have a `REST service with content negotiation`.
+All these key points will be developed in this recipe.
+___
 <div class="mermaid">
 graph TD
-
   Process2[Identifier Minting]:::bix --> A1(authority decide identity):::box
   Process2 --> Process3
   Process3[URI construction]:::bix --> A2(scoping the authority):::box
   Process3 --> Process4
   Process4[URI resolution]:::bix --> A3(directing requests to the relevant identified entity):::box
-
   classDef bix font-family:avenir,font-size:14px,fill:#7e0038,stroke:#222,color:#fff,stroke-width:1px
   classDef box font-family:avenir,font-size:14px,fill:#2a9fc9,stroke:#222,color:#fff,stroke-width:1px
-</div><hr>
-<h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Capability</th>
-<th style="text-align:left">Initial Maturity Level</th>
-<th style="text-align:left">Final Maturity Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Findability</td>
-<td style="text-align:left">minimal</td>
-<td style="text-align:left">repeatable</td>
-</tr>
-<tr>
-<td style="text-align:left">Accessibility</td>
-<td style="text-align:left">minimal</td>
-<td style="text-align:left">repeatable</td>
-</tr>
-<tr>
-<td style="text-align:left">Identifier minting</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">repeatable</td>
-</tr>
-<tr>
-<td style="text-align:left">URI construction</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">repeatable</td>
-</tr>
-<tr>
-<td style="text-align:left">Identifier resolution</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">repeatable</td>
-</tr>
-<tr>
-<td style="text-align:left">content negotiation</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">repeatable</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<!-- 
+</div>
+
+
+## Capability & Maturity Table
+
+| Capability  | Initial Maturity Level | Final Maturity Level  |
+| :- | :- | :- |
+| Findability | minimal | repeatable |
+| Accessibility | minimal | repeatable |
+| Identifier minting||repeatable|
+| URI construction||repeatable|
+| Identifier resolution||repeatable|
+| content negotiation||repeatable|
+
+-
 ## FAIRification Objectives, Inputs and Outputs
 
 | Actions.Objectives.Tasks  | Input | Output  |
-| :------------- | :------------- | :------------- |
+| :- | :- | :- |
 | [Identifier](http://edamontology.org/data_0842) |   |   |
  -->
 
-<h2 id="Table-of-Data-Standards">Table of Data Standards<a class="anchor-link" href="#Table-of-Data-Standards"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Data Formats</th>
-<th style="text-align:left">Terminologies</th>
-<th style="text-align:left">Models</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc3987">IRI</a></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://www.w3.org/TR/2010/NOTE-curie-20101216/">CURIE</a></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://tools.ietf.org/html/rfc1738">URL</a></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="">HTTP</a></td>
-<td style="text-align:left"></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="">RDF</a></td>
-<td style="text-align:left"></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="Minting-identifiers">Minting identifiers<a class="anchor-link" href="#Minting-identifiers"> </a></h2><blockquote><p>:notebook_with_decorative_cover: <strong>"Identifier minting is fundamentally about the <em>authority deciding identity</em></strong>."</p>
-</blockquote>
-<p>Identifiers are used to tag, identify, find and retrieve entities which are part of a collection or a resource maintained by some organization. This organization is the <code>authority</code> which rules over that area of knowledge. The core assumption is that identifiers must be unique, that is they can not be shared and there is a 1 to 1 relation between the 'identifier' and the entity it identifies.</p>
-<p>With isolated systems, disconnected from any other system, the risk of identifier collision is null but two isolated systems can create local identifiers which could be completely identical but which denote completely different entities. In fact, this happens all the time.</p>
-<p>So these identifiers are said to be locally unique, as there is no guarantee these are unique to all other systems that exist, in other words, that they are globally unique.</p>
-<h2 id="How-to-produce-globally-unique-identifiers?">How to produce globally unique identifiers?<a class="anchor-link" href="#How-to-produce-globally-unique-identifiers?"> </a></h2><p>There are 2 ways to produce non-resolvable, globally unique identifiers:</p>
-<h3 id="UUID-based-identifiers">UUID based identifiers<a class="anchor-link" href="#UUID-based-identifiers"> </a></h3><p>With this approach, the notion of <code>universally unique</code> is a probabilistic one. <em>The probability to find a duplicate within 103 trillion version-4 UUIDs is one in a billion</em>. The likelihood of collision (generation of the exact same identifier) is extremely small but not null. Therefore, with an ever increase in digital resources to index, collisions should not be ruled out.
-According to the <a href="https://tools.ietf.org/html/rfc4122">RFC4122 specifications</a>, a UUID is an identifier that is unique across both space and time, with respect to the space of all UUIDs.  Since a UUID is a fixed  size and contains a time field, it is possible for values to rollover (around A.D. 3400, depending on the specific algorithm  used).  A UUID can be used for multiple purposes, from tagging objects with an extremely short lifetime, to reliably identifying very persistent objects across a network.</p>
-<hr>
-<blockquote><p>:information_source: 
-Key Fact about UUID:</p>
-<ul>
-<li><code>no centralized authority is required to administer them</code></li>
-<li><code>content independent, entirely disconnected from the identify they can be associated with for identification purpose</code></li>
-<li><code>generation on demand can be completely automated</code></li>
-<li><code>non resolvable</code></li>
-<li><code>completely semantic free (opaque) identifier</code></li>
-</ul>
-</blockquote>
-<hr>
-<h4 id="using-Python-uuid-package:">using Python uuid package:<a class="anchor-link" href="#using-Python-uuid-package:"> </a></h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">uuid</span>
-<span class="nb">id</span> <span class="o">=</span> <span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">()</span> 
+## Table of Data Standards
 
-<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
-<span class="mi">5</span><span class="n">b6d0be2</span><span class="o">-</span><span class="n">d47f</span><span class="o">-</span><span class="mf">11e8</span><span class="o">-</span><span class="mi">9</span><span class="n">f9d</span><span class="o">-</span><span class="n">ccaf789d94a0</span>
-</pre></div>
-<h3 id="Hash-based-identifiers">Hash based identifiers<a class="anchor-link" href="#Hash-based-identifiers"> </a></h3><p>This approach uses 2 inputs:</p>
-<ul>
-<li>a cryptographic hashing algorithm implementing as a software function</li>
-<li>a digital resource (e.g. a file)</li>
-</ul>
-<p>Indeed, the approach generates an identifier by using all or some of the content of the digital resource as input to the cryptographic hashing function to compute a unique string, which is therefore a signature (or fingerprint) of the the digital resource.
-A number of algorithms can be used and some are already widely used such as <code>Message Digest algorithm MD5</code> specified by the RFC1321[1], the <code>Secure Hash Algorithm (SHA1)</code>,  <code>Secure Hash Algorithm 2 (SHA256)</code>, <code>Secure Hash Algorithm 3 (SHA3)</code> or <code>BLAKE2b-256</code> (RFC 7693). 
-The first two are considered obsolete, while the latter two are most advanced and approved by NIST.</p>
-<hr>
-<blockquote><p>:information_source: 
-It is not possible to reconstruct the original data from these hashes strings. These are only <strong>fingerprints</strong>, which can therefore only be used to do the following tasks:</p>
-<ul>
-<li>message authentication</li>
-<li>digital signature</li>
-<li>public key encryption</li>
-</ul>
-<hr>
-</blockquote>
-<h4 id="using-Python-hashlib-package:">using Python hashlib package:<a class="anchor-link" href="#using-Python-hashlib-package:"> </a></h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">hashlib</span>
+| Data Formats  | Terminologies | Models  |
+| :- | :- | :- |
+| [IRI](https://tools.ietf.org/html/rfc3987) |   |   |
+| [CURIE](https://www.w3.org/TR/2010/NOTE-curie-20101216/) |   |   |
+| [URL](https://tools.ietf.org/html/rfc1738) |  |  |
+| [HTTP]() |  |  |
+| [RDF]() |  |  |
 
-<span class="c1"># encode it to bytes using UTF-8 encoding</span>
-<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;creating globally unique identifiers for FAIR data&quot;</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+___
 
-<span class="c1"># hash with MD5 (not recommended)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;MD5:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">md5</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
 
-<span class="c1"># hash with SHA-2 (SHA-256 bits &amp; SHA-512 bits long)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SHA-256:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha256</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SHA-512:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha512</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
+## Minting identifiers
 
-<span class="c1"># hash with SHA-3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SHA-3-256:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha3_256</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;SHA-3-512:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">sha3_512</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
 
-<span class="c1"># hash with BLAKE2 (256-bits BLAKE2s &amp; 512-bits BLAKE2c)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BLAKE2s:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">blake2s</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;BLAKE2b:&quot;</span><span class="p">,</span> <span class="n">hashlib</span><span class="o">.</span><span class="n">blake2b</span><span class="p">(</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">())</span>
-</pre></div>
-<h4 id="using-curl">using <a href="https://curl.haxx.se/"><code>curl</code></a><a class="anchor-link" href="#using-curl"> </a></h4><div class="highlight"><pre><span></span>curl https://fairplus.github.io/cookbook-dev/intro <span class="p">|</span> b2sum --length <span class="m">256</span> --binary
+> :notebook_with_decorative_cover: **"Identifier minting is fundamentally about the *authority deciding identity***."
+
+Identifiers are used to tag, identify, find and retrieve entities which are part of a collection or a resource maintained by some organization. This organization is the `authority` which rules over that area of knowledge. The core assumption is that identifiers must be unique, that is they can not be shared and there is a 1 to 1 relation between the 'identifier' and the entity it identifies.
+
+With isolated systems, disconnected from any other system, the risk of identifier collision is null but two isolated systems can create local identifiers which could be completely identical but which denote completely different entities. In fact, this happens all the time.
+
+So these identifiers are said to be locally unique, as there is no guarantee these are unique to all other systems that exist, in other words, that they are globally unique.
+
+
+## How to produce globally unique identifiers?
+
+There are 2 ways to produce non-resolvable, globally unique identifiers:
+
+### UUID based identifiers
+
+With this approach, the notion of `universally unique` is a probabilistic one. *The probability to find a duplicate within 103 trillion version-4 UUIDs is one in a billion*. The likelihood of collision (generation of the exact same identifier) is extremely small but not null. Therefore, with an ever increasing number of digital resources to index, collisions should not be ruled out.
+According to the [RFC4122 specifications](https://tools.ietf.org/html/rfc4122), a UUID is an identifier that is unique across both space and time, with respect to the space of all UUIDs.  Since a UUID is a fixed  size and contains a time field, it is possible for values to rollover (around A.D. 3400, depending on the specific algorithm  used).  A UUID can be used for multiple purposes, from tagging objects with an extremely short lifetime, to reliably identifying very persistent objects across a network.
+
+
+___
+>:information_source: 
+Key Fact about UUID: 
+  > - `no centralized authority is required to administer them`
+  > - `content independent, entirely disconnected from the identify they can be associated with for identification purpose`
+  > - `generation on demand can be completely automated`
+  > - `non resolvable`
+  > - `completely semantic free (opaque) identifier`
+
+___
+
+
+#### Generation in Python
+The following code snippet shows the generation of a UUID using the Python uuid package.
+
+
+```Python
+import uuid
+id = uuid.uuid4() 
+
+print(id)
+5b6d0be2-d47f-11e8-9f9d-ccaf789d94a0
+```
+
+
+
+### Hash based identifiers
+
+This approach uses 2 inputs: 
+- a cryptographic hashing algorithm implemented as a software function
+- a digital resource (e.g. a file)
+
+Indeed, the approach generates an identifier by using all or some of the content of the digital resource as input to the cryptographic hashing function to compute a unique string, which is therefore a signature (or fingerprint) of the the digital resource.
+A number of algorithms can be used and some are already widely used such as `Message Digest algorithm MD5` specified by the RFC1321[1], the `Secure Hash Algorithm (SHA1)`,  `Secure Hash Algorithm 2 (SHA256)`, `Secure Hash Algorithm 3 (SHA3)` or `BLAKE2b-256` (RFC 7693). 
+The first two are considered obsolete, while the latter two are most advanced and approved by NIST.
+
+>:information_source: 
+>Key fact about hash identifiers: It is not possible to reconstruct the original data from these hash strings. These are only **fingerprints**, which can therefore only be used to do the following tasks:
+>- message authentication
+>- digital signature
+>- public key encryption
+
+#### Generation in Python
+The following code snippet shows the generation of a hash for a string using the Python hashlib package:
+
+```python
+import hashlib
+
+# encode it to bytes using UTF-8 encoding
+message = "creating globally unique identifiers for FAIR data".encode()
+
+# hash with MD5 (not recommended)
+print("MD5:", hashlib.md5(message).hexdigest())
+
+# hash with SHA-2 (SHA-256 bits & SHA-512 bits long)
+print("SHA-256:", hashlib.sha256(message).hexdigest())
+print("SHA-512:", hashlib.sha512(message).hexdigest())
+
+# hash with SHA-3
+print("SHA-3-256:", hashlib.sha3_256(message).hexdigest())
+print("SHA-3-512:", hashlib.sha3_512(message).hexdigest())
+
+# hash with BLAKE2 (256-bits BLAKE2s & 512-bits BLAKE2c)
+print("BLAKE2s:", hashlib.blake2s(message).hexdigest())
+print("BLAKE2b:", hashlib.blake2b(message).hexdigest())
+```
+
+#### Generation of hashes using curl
+The following snippet shows how a b2sum hash can be generated using [`curl`](https://curl.haxx.se/)
+
+```bash
+curl https://fairplus.github.io/cookbook-dev/intro | b2sum --length 256 --binary
 
 24d470987fda1278c63c3f97ab30869b821906449f3ecf290ee48086b8215668
-</pre></div>
-<p>In our context, the use of hashing function is to generate a unique key which may be used to generate a URL. This simply indicates a technical option for generating opaque URL, not that it is necessarily the most widespread approach.</p>
-<h2 id="Understanding-Uniform-Resource-Locators-and-Generating-resolvable-identifiers">Understanding Uniform Resource Locators and Generating resolvable identifiers<a class="anchor-link" href="#Understanding-Uniform-Resource-Locators-and-Generating-resolvable-identifiers"> </a></h2><blockquote><p>:notebook_with_decorative_cover: <strong>URI construction is fundamentally about scoping the authority</strong>.</p>
-</blockquote>
-<p>Having covered the technical details to generated globally unique identifiers, it is now necessary to discuss the issue making identifiers <em>resolvable (a notion also known as <code>dereferencable</code>)</em>.</p>
-<p>In other words, in order to create globally unique identifiers <code>for the web</code>, it is necessary to understand what <a href="">Uniform Resource Locators</a> (a.k.a <code>url</code>) are and how to construct them for use with the <a href="">Hypertext Transfer Protocol</a></p>
-<p>In order to this, one needs to be reminded about the structure of <code>url</code>, which according to the W3C specifications, have the following form:</p>
-<div class="highlight"><pre><span></span><span class="nv">URI</span> <span class="o">=</span> scheme:<span class="o">[</span>//authority<span class="o">]</span>path<span class="o">[</span>?query<span class="o">][</span><span class="c1">#fragment]</span>
-</pre></div>
-<h4 id="scheme:"><code>scheme</code>:<a class="anchor-link" href="#scheme:"> </a></h4><p>In this structure, the notion of <code>scheme</code> defined the nature of the protocol or application to use to obtain the resource. The list of official <code>scheme</code> is maintained by the <strong>Internet Assigned Numbers Authority</strong> and the following link (<a href="https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml">https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml</a>) holds the most up to date version.</p>
-<p>The most relevant <code>uri scheme</code> in the context of FAIR data and Linked Open Data are <code>http</code> and <code>https</code> which denote the <code>Internet Hypertext Transfer Protocol</code> and <code>Secure</code> version  protocols.</p>
-<h4 id="authority:"><code>authority</code>:<a class="anchor-link" href="#authority:"> </a></h4><p>Besides setting the <code>scheme</code>, the other essential fragment of a URI is the <code>authority</code>, which according to the IETF specifications, presents the following characteristics:</p>
+```
 
-<pre><code>authority = [userinfo@]host[:port]</code></pre>
-<p>Note how the required part is the <code>host</code>, with <code>userinfo</code> and <code>port</code> information being optional</p>
 
-<pre><code>          userinfo       host      port
+
+
+In our context, the use of the hashing function is to generate a unique key which may be used to generate a URL. This simply indicates a technical option for generating opaque URL, not that it is necessarily the most widespread approach.
+
+
+## Understanding Uniform Resource Locators and Generating resolvable identifiers
+
+>:notebook_with_decorative_cover: **URI construction is fundamentally about scoping the authority**.
+
+Having covered the technical details to generated globally unique identifiers, it is now necessary to discuss the issue making identifiers *resolvable (a notion also known as `dereferencable`)*.
+
+In other words, in order to create globally unique identifiers `for the web`, it is necessary to understand what [Uniform Resource Locators]() (a.k.a `url`) are and how to construct them for use with the [Hypertext Transfer Protocol]()
+
+In order to this, one needs to be reminded about the structure of `url`, which according to the W3C specifications, have the following form:
+
+```bash
+URI = scheme:[//authority]path[?query][#fragment]
+```
+
+#### `scheme`:
+In this structure, the notion of `scheme` defined the nature of the protocol or application to use to obtain the resource. The list of official `scheme` is maintained by the **Internet Assigned Numbers Authority** and the following link (https://www.iana.org/assignments/uri-schemes/uri-schemes.xhtml) holds the most up to date version.
+
+The most relevant `uri scheme` in the context of FAIR data and Linked Open Data are `http` and `https` which denote the `Internet Hypertext Transfer Protocol` and `Secure` version  protocols.
+
+#### `authority`:
+
+Besides setting the `scheme`, the other essential fragment of a URI is the `authority`, which according to the IETF specifications, presents the following characteristics:
+```
+authority = [userinfo@]host[:port]
+```
+Note how the required part is the `host`, with `userinfo` and `port` information being optional
+
+```
+          userinfo       host      port
           ┌──┴───┐ ┌──────┴──────┐ ┌┴┐
-  https://john.doe@www.example.com:123/forum/questions/?tag=networking&amp;order=newest#top
+  https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
   └─┬─┘   └───────────┬──────────────┘└───────┬───────┘ └───────────┬─────────────┘ └┬┘
-  scheme          authority                  path                 query           fragment</code></pre>
-<p>source:<a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">https://en.wikipedia.org/wiki/Uniform_Resource_Identifier</a></p>
-<h4 id="host:"><code>host</code>:<a class="anchor-link" href="#host:"> </a></h4><p>In the <code>authority</code>, the notion of <code>host</code> corresponds to the <code>Internet Protocol (IP) address</code> of a server hosting a resource. Often, the IP address corresponding to the <code>host</code> is given a <code>host name</code> such as <code>www.example.org</code>. The <code>host name</code> should be a <code>Qualified Domain Name</code> at minima, or a <code>Fully Qualified Domain Name (FQDN)</code> ideally and registered with <code>Domain Name Service (DNS)</code> which allows the resolution (lookup) between the <code>ip address</code> and the <code>hostname</code>.</p>
-<hr>
-<blockquote><p>:information_source:
-it is often the case the <code>authority</code> is reduced to the <code>host</code> , which is then referred to 'namespace' or 'domain name' in an abuse of language.
-<code>host</code> is in fact further specified by 3 element</p>
-<ul>
-<li>top-level domain , <code>com</code> in the www.example.com web address</li>
-<li>second-level domain,  <code>example</code> in the www.example.com web address<ul>
-<li>hostname subdomain,<code>www</code> in the www.example.com web address</li>
-</ul>
-</li>
-</ul>
-</blockquote>
-<hr>
-<blockquote><p>:information_source:
-<code>subdomain</code> can be defined in the Domain Name Service and belong to the main domain.  Technically, to add a subdomain pointing to the domain name, one needs to create/add a CNAME to the DNS for a registered domain name</p>
-<hr>
-</blockquote>
-<h2 id="Generating-a-resolvable-url:">Generating a resolvable url:<a class="anchor-link" href="#Generating-a-resolvable-url:"> </a></h2><p>In the context of FAIR data, resources on the web must have <strong>unique</strong>, <strong>persistent</strong>, <strong>resolvable</strong> identifiers.
-In order to achieve the capability of <code>persistence</code>, it is necessary for the resource identifiers to comply to the RFC 3986 IETF standard for URIs (and IRIs, which are URI extended to cope with unicode).</p>
-<ol>
-<li>scheme: https</li>
-<li>an authority: www.example.com</li>
-<li>a local identifier (such as database accession number, such as P12133 from uniprot) or a globally unique identifier (such as a uuid or hash code).</li>
-</ol>
-<ul>
-<li>In a virtual example, it looks like this</li>
-</ul>
-<div class="highlight"><pre><span></span>https://www.example.com/5b6d0be2-d47f-11e8-9f9d-ccaf789d94a0
-</pre></div>
-<ul>
-<li><p>Taking a real life example, to make the <code>UniProt accession number</code> globally unique, one needs to provide the context in which the accession number is unique. This can either be done by converting it into an <code>International Resource Identifier</code> (IRI – commonly referred to as a URL)</p>
-<p>To convert a <code>local identifier into an IRI</code>, one simply needs to provide a <code>namespace</code> to the identifier.</p>
-<p>This should be a <code>namespace</code> over which one has ownership (the authority), otherwise one cannot guarantee that the minted IRI will be <strong>globally unique</strong>; the organization or person who owns the namespace may already, or at some point in the future, use the IRI that you created for some other purpose.
-  In the case of UniProt, the resource has provided IRIs for each page about a protein as well as separate IRIs for the protein itself. This is achieved by using different namespaces for the different types of resource.</p>
-<ul>
-<li>UniProt P38398 web page IRI: <a href="https://www.uniprot.org/uniprot/P38398">https://www.uniprot.org/uniprot/P38398</a></li>
-<li>UniProt protein P38398 IRI: <a href="http://purl.uniprot.org/uniprot/P38398">http://purl.uniprot.org/uniprot/P38398</a></li>
-</ul>
-</li>
-</ul>
-<p>Once such URIs are available, one may also turn them into a CURIE – a form of compact identifier. This will be discussed further in the next section.</p>
-<h2 id="Identifier-Resolution---Enabling-persistence-through-indirection">Identifier Resolution - Enabling persistence through indirection<a class="anchor-link" href="#Identifier-Resolution---Enabling-persistence-through-indirection"> </a></h2><p>This relates to this other FAIR principle mentioned in the introduction.</p>
-<blockquote><p>A1. (Meta)data are retrievable by their identifier using a standardised communications protocol.</p>
-</blockquote>
-<p>:notebook_with_decorative_cover: <strong><code>URI resolution</code> is fundamentally about directing requests to the relevant identified entity</strong>
-Here, the <strong>standard</strong> would be to have a <code>REST service with content negotiation</code>.</p>
-<p>A PURL is a <strong><code>persistent URL</code></strong>, meaning that it provides a ++permanent address to access a resource on the web++.</p>
-<p>To understand the notion of PURL, one needs to first get familiar with the notion of <code>url indirection</code> (also known as <code>url redirect</code> or <code>url forwarding</code> ), which refers to the practice of providing a stable, fixed web address/url, but setting it up so that it points to another content, which may be periodically modified.</p>
-<p>When a user retrieves a PURL, they will be <strong><code>redirected</code></strong> to the current location of the resource.
-When an author needs to move a page, they can update the PURL to point to the new location.</p>
-<p>The practice of <strong>indirection</strong> comes handy as it ensures invariant url address for resources which are known to change, owing to version changes for instance or owing to change in ownership,</p>
-<p>We can see this practice in action with the reliance on purl.org url for identifying OBO Foundry resources. For instance, the following url <a href="http://purl.obolibrary.org/obo/stato.owl"><code>http://purl.obolibrary.org/obo/stato.owl</code></a> is a redirect to the latest release of the file, which is <a href="https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl">https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl</a>.</p>
-<p>PURLs with a <code>common prefix</code> are grouped together into <strong>domains</strong>. Each domain has a single maintainer who can add new PURLs to the domain and make changes to existing PURLs within the domain.</p>
-<p>FAIR Principle A1 states that:</p>
-<blockquote><p>(meta)data should be retrievable by its identifier.</p>
-</blockquote>
-<p>When the identifier is not a resolvable URL, then <code>Identifier Resolution Services</code> are required that know how to map an IRI to a location for the data.</p>
-<h4 id="Introducing-CURIES-or-Compact-URIs">Introducing CURIES or Compact URIs<a class="anchor-link" href="#Introducing-CURIES-or-Compact-URIs"> </a></h4><p>CURIEs (short for compact URIs) are defined by a World Wide Web Consortium Working Group Note <a href="https://www.w3.org/TR/2010/NOTE-curie-20101216/">CURIE Syntax 1.0</a>, and provide a human readable shortening of IRIs.</p>
-<p>The CURIE consists of a <strong><code>namespace prefix</code></strong> followed by the <strong><code>local identifier</code></strong>.</p>
-<p>There are some widely used and defined CURIEs such as DOIs and ISBN numbers. For example the DOI <code>[doi:10.1038/sdata.2016.18]</code> refers to the FAIR Principles paper<sup class="footnote-ref" id="fnref-safe-curie"><a href="#fn-safe-curie">1</a></sup>. The Digital Object Identifier System web site (<a href="https://www.doi.org/">https://www.doi.org/</a>) provides a resolution service for DOIs. The service is available as a web form on the site or can be used by appending a DOI to the website.The client will be redirected to the URL where the resource about the concept is located, e.g. for the FAIR Data Principles paper we can use the URL <a href="https://www.doi.org/10.1038/sdata.2016.18">https://www.doi.org/10.1038/sdata.2016.18</a> to resolve the paper's DOI. This results in the client being taken to the page at <a href="https://www.nature.com/articles/sdata201618">https://www.nature.com/articles/sdata201618</a>.</p>
-<p><code>Namespaces</code> can be defined <em>by convention</em>, such as the case with <code>doi</code>, and registered with services to allow for the resolution of CURIEs (see <a href="##identifier-resolution-services">Identifier Resolution Services</a> below). These are extensively used to map CURIEs to URLs that can be resolved.</p>
-<p>Going back to our <em>Life Science context</em>, we can use the following CURIE <code>[uniprot:P38398]</code> to refer to the UniProt record for the protein.</p>
-<p>This is very useful for including unambiguous, global identifiers in scientific articles.</p>
-<h4 id="Identifier-Resolution-services">Identifier Resolution services<a class="anchor-link" href="#Identifier-Resolution-services"> </a></h4><ul>
-<li><p><a href="https://archive.org/services/purl/">purl.org</a></p>
-<blockquote><p>The PURL system is a service of the Internet Archive, which provides an interface to administer domain. For more information about the service, visit <a href="https://archive.org/services/purl/help">https://archive.org/services/purl/help</a></p>
-</blockquote>
-</li>
-<li><p><a href="https://w3id.org/">w3ids</a></p>
-<blockquote><p>Permanent Identifiers for the Web. Secure, permanent URLs for your Web application that will stand the test of time.</p>
-<ul>
-<li>authority registration service</li>
-<li>resolution service</li>
-<li>redirection service:</li>
-</ul>
-<p>Send a request to add a redirect to the public-perma-id@w3.org mailing list. Make sure to include the URL that you want on w3id.org, the URL that you want to redirect to, and the HTTP code that you want to use when redirecting. An administrator will then create the redirect for you.</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><a href="http://identifiers.org/">Identifiers.org</a></p>
-<blockquote><p><a href="https://identifiers.org">Identifiers.org</a> is a <strong>Resolution Service</strong> provides consistent access to life science data using <a href="https://www.w3.org/TR/2010/NOTE-curie-20101216/"><code>Compact Uniform Resource Identifiers</code></a>, hosted by the EBI provides a resolution service, both as a web form and through the URL pattern. 
-<code>Compact Identifiers</code> consist of an <code>assigned</code>, <code>unique</code> <code>prefix</code> and a <code>local provider designated</code> <strong><code>accession number</code></strong> (prefix:accession).
-The resolving location of <code>Compact Identifiers</code> is determined using information that is stored in the <a href="http://identifiers.org/">Identifiers.org Registry</a>.
-Datasets can register their <em>namespace <code>prefix</code></em> together with their <code>identifier pattern</code>. The service can then be used in the same way as the DOI resolution service. So for the UniProt page about BRCA1, we can resolve the CURIE <code>[uniprot:P38938]</code> using Identifiers.org. This means that the URL <a href="https://identifiers.org/uniprot:P38938">https://identifiers.org/uniprot:P38938</a> resolves to the UniProt page <a href="https://www.uniprot.org/uniprot/P38938">https://www.uniprot.org/uniprot/P38938</a>.</p>
-</blockquote>
-</li>
-</ul>
-<ul>
-<li><p><a href="https://n2t.net/">Name2Things</a></p>
-<blockquote><p><a href="https://n2t.net/">Name2Things</a> (N2T) is a <strong>Resolution Service</strong>, maintained at the California Digital Library (CDL) within the University of California (UC) Office of the President. CDL supports electronic library services for ten UC campuses and affiliated law schools, medical centers, and national laboratories, as well as hundreds of museums, herbaria, botanical gardens, etc. Similar to URL shorteners like bit.ly, N2T serves content <strong>indirectly</strong>.
-N2T can store more than one "target" (forwarding link) for an identifier, as well as any kind or amount of metadata (descriptive information)
-N2T.net is also a "meta-resolver". In collaboration with identifiers.org, it recognizes over 600 well-known identifier types and knows where their respective servers are. Failing to find forwarding information for a specific individual identifier, it uses the identifier's type to look for an overall target rule.</p>
-</blockquote>
-</li>
-</ul>
-<p><em>For more details, see the <a href="./identifier-services/id-resolution.html">Identifier Resolution Services recipe</a>.</em></p>
-<hr>
-<h2 id="Conclusion:">Conclusion:<a class="anchor-link" href="#Conclusion:"> </a></h2><blockquote><p>In this recipe, we have given an overview of globally unique and persistent identifier, i.e. FAIR principle F1. We have covered:</p>
-<ul>
-<li>The difference between global and local identifiers;</li>
-<li>How to convert a local identifier into a global one;</li>
-<li>Opaque and transparent identifiers</li>
-</ul>
-<p>We have given an overview of the different services available for handling identifiers.</p>
-<p>But we can not conclude this section on persistent identifiers without stressing how central they are to the production of Linked Data or Linked Open Data, which rely on 3 W3C standards: URI, RDF and HTTP.</p>
-<h4 id="What-should-I-read-next?">What should I read next?<a class="anchor-link" href="#What-should-I-read-next?"> </a></h4><ul>
-<li><a href="https://fairtoolkit.pistoiaalliance.org/use-cases/adoption-and-impact-of-an-identifier-policy-astrazeneca/">The Pistoia Alliance FAIRtoolkit use cases: Adoption and Impact of an identifier policy at Astra-Zeneca</a></li>
-<li><a href="./infrastructure/minids.html">Identifier Minting with Minid Client</a></li>
-<li><a href="./findability/why-identifiers.html">Why resolvable identifiers matter?</a></li>
-<li><a href="./identifier-services/id-resolution.html">Identifier Resolution Services</a></li>
-<li><a href="./identifier-services/identifier-mapping.html">Identifier Mapping Services</a></li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="References:">References:<a class="anchor-link" href="#References:"> </a></h2><ol>
-<li>IRI. <a href="https://tools.ietf.org/html/rfc3987">https://tools.ietf.org/html/rfc3987</a></li>
-<li>CURIE. <a href="https://www.w3.org/TR/2010/NOTE-curie-20101216/">https://www.w3.org/TR/2010/NOTE-curie-20101216/</a></li>
-<li>URL. <a href="https://tools.ietf.org/html/rfc1738">https://tools.ietf.org/html/rfc1738</a></li>
-<li>RDF concepts. <a href="https://www.w3.org/TR/rdf-concepts/">https://www.w3.org/TR/rdf-concepts/</a> </li>
-<li>MD5 specifications. <a href="https://tools.ietf.org/html/rfc1321">https://tools.ietf.org/html/rfc1321</a></li>
-<li>Blake2 specifications. <a href="https://tools.ietf.org/html/rfc7693">https://tools.ietf.org/html/rfc7693</a></li>
-<li>Cool URIs don't change. <a href="https://www.w3.org/Provider/Style/URI">https://www.w3.org/Provider/Style/URI</a></li>
-<li>Leo Sauermann and Richard Cyganiak (eds.) (2008 December 3). Cool URIs for the Semantic Web, W3C Semantic Web Education and Outreach Interest Group Note, <a href="http://w3.org/TR/cooluris/">http://w3.org/TR/cooluris/</a></li>
-<li><a href="https://blog.adamretter.org.uk/archival-identifiers-for-digital-files/">https://blog.adamretter.org.uk/archival-identifiers-for-digital-files/</a></li>
-<li><a href="https://blog.adamretter.org.uk/archival-catalog-identifiers/">https://blog.adamretter.org.uk/archival-catalog-identifiers/</a></li>
-<li>Identifiers for the 21st century: How to design, provision, and reuse persistent identifiers to maximize utility and impact of life science data. <a href="https://doi.org/10.1371/journal.pbio.2001414">https://doi.org/10.1371/journal.pbio.2001414</a></li>
-<li>Nick Juty, Sarala M Wimalaratne, Stian Soiland-Reyes, John Kunze, Carole A Goble, and Tim Clark. 2020. Unique, persistent, resolvable: Identifiers as the foundation of FAIR. Data Intelligence (2020), 30–39. <a href="https://doi.org/10.1162/dint_a_00025">https://doi.org/10.1162/dint_a_00025</a></li>
-<li>Nick Juty, Nicolas Le Novere, and Camille Laibe. 2012. Identifiers.org and MIRIAM Registry: Community resources to provide persistent identification. Nucleic Acids Research 40, D1 (2012), D580–D586. <a href="https://doi.org/10.1093/nar/gkr1097">https://doi.org/10.1093/nar/gkr1097</a></li>
-<li>Rachana Ananthakrishnan, Kyle  Chard, Mike  D'Arcy, Ian T Foster, Carl F Kesselman , Brendan  McCollam , Jim Christopher Pruyne , Philippe  Rocca-Serra, Robert E Schuler, Rick P Wagner. An Open Ecosystem for Pervasive Use of Persistent Identifiers. <a href="https://doi.org/10.1145/3311790.3396660">https://doi.org/10.1145/3311790.3396660</a></li>
-</ol>
-<hr>
-<h2 id="Authors:">Authors:<a class="anchor-link" href="#Authors:"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Affiliation</th>
-<th style="text-align:left">orcid</th>
-<th style="text-align:left">CrediT role</th>
-<th style="text-align:left">specific contribution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Alasdair Gray</td>
-<td style="text-align:left">Heriot-Watt University / ELIXIR-UK</td>
-<td style="text-align:left"><a href="https://orcid.org/0000-0002-5711-4872">0000-0002-5711-4872</a></td>
-<td style="text-align:left">Writing - Original Draft</td>
-<td style="text-align:left">Original format<br />Converting to online format</td>
-</tr>
-<tr>
-<td style="text-align:left">Chris Evelo</td>
-<td style="text-align:left">Maastricht University</td>
-<td style="text-align:left"><a href="https://orcid.org/0000-0002-5301-3142">0000-0002-5301-3142</a></td>
-<td style="text-align:left">Writing - Original Draft</td>
-<td style="text-align:left">Original format</td>
-</tr>
-<tr>
-<td style="text-align:left">Egon Willighagen</td>
-<td style="text-align:left">Maastricht University</td>
-<td style="text-align:left"><a href="https://orcid.org/0000-0001-7542-0286">0000-0001-7542-0286</a></td>
-<td style="text-align:left">Writing - Original Draft</td>
-<td style="text-align:left">Original format</td>
-</tr>
-<tr>
-<td style="text-align:left">Philippe Rocca-Serra</td>
-<td style="text-align:left">University of Oxford</td>
-<td style="text-align:left"><a href="https://orcid.org/orcid.org/0000-0001-9853-5668">0000-0001-9853-5668</a></td>
-<td style="text-align:left">Writing – Review &amp; Editing, Conceptualization</td>
-<td style="text-align:left">Markdown</td>
-</tr>
-<tr>
-<td style="text-align:left">Andrea Splendiani</td>
-<td style="text-align:left">Novartis AG</td>
-<td style="text-align:left"><a href="https://orcid.org/0000-0002-3201-9617">0000-0002-3201-9617</a></td>
-<td style="text-align:left">Conceptualization</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="License:">License:<a class="anchor-link" href="#License:"> </a></h2><p>This page is released under the Creative Commons 4.0 BY license.</p>
-<p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a></p>
-<div class="footnotes">
-<hr>
-<ol><li id="fn-safe-curie"><p>The CURIES are included in square brackets to make them <em>safe CURIEs</em>, meaning that they should not be confused for URIs.<a href="#fnref-safe-curie" class="footnote">&#8617;</a></p></li>
-</ol>
-</div>
+  scheme          authority                  path                 query           fragment
+```
+source:[https://en.wikipedia.org/wiki/Uniform_Resource_Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)
 
-</div>
-</div>
-</div>
-</div>
+
+#### `host`:
+
+In the `authority`, the notion of `host` corresponds to the `Internet Protocol (IP) address` of a server hosting a resource. Often, the IP address corresponding to the `host` is given a `host name` such as `www.example.org`. The `host name` should be a `Qualified Domain Name` at minima, or a `Fully Qualified Domain Name (FQDN)` ideally and registered with `Domain Name Service (DNS)` which allows the resolution (lookup) between the `ip address` and the `hostname`.
+
+___
+>:information_source:
+it is often the case the `authority` is reduced to the `host` , which is then referred to 'namespace' or 'domain name' in an abuse of language.
+`host` is in fact further specified by 3 element
+>  - top-level domain , `com` in the www.example.com web address
+>  - second-level domain,  `example` in the www.example.com web address
+> - hostname subdomain,`www` in the www.example.com web address
+
+___
+>:information_source:
+>`subdomain` can be defined in the Domain Name Service and belong to the main domain.  Technically, to add a subdomain pointing to the domain name, one needs to create/add a CNAME to the DNS for a registered domain name
+___
+
+## Generating a resolvable url:
+
+
+In the context of FAIR data, resources on the web must have **unique**, **persistent**, **resolvable** identifiers.
+In order to achieve the capability of `persistence`, it is necessary for the resource identifiers to comply to the RFC 3986 IETF standard for URIs (and IRIs, which are URI extended to cope with unicode).
+
+1. scheme: https
+2. an authority: www.example.com
+3. a local identifier (such as database accession number, such as P12133 from uniprot) or a globally unique identifier (such as a uuid or hash code).
+
+* In a virtual example, it looks like this
+
+```bash
+https://www.example.com/5b6d0be2-d47f-11e8-9f9d-ccaf789d94a0
+```
+
+* Taking a real life example, to make the `UniProt accession number` globally unique, one needs to provide the context in which the accession number is unique. This can either be done by converting it into an `International Resource Identifier` (IRI – commonly referred to as a URL)
+
+    To convert a `local identifier into an IRI`, one simply needs to provide a `namespace` to the identifier. 
+
+    This should be a `namespace` over which one has ownership (the authority), otherwise one cannot guarantee that the minted IRI will be **globally unique**; the organization or person who owns the namespace may already, or at some point in the future, use the IRI that you created for some other purpose.
+    In the case of UniProt, the resource has provided IRIs for each page about a protein as well as separate IRIs for the protein itself. This is achieved by using different namespaces for the different types of resource.
+
+    - UniProt P38398 web page IRI: https://www.uniprot.org/uniprot/P38398
+    - UniProt protein P38398 IRI: http://purl.uniprot.org/uniprot/P38398
+
+
+Once such URIs are available, one may also turn them into a CURIE – a form of compact identifier. This will be discussed further in the next section.
+
+## Identifier Resolution - Enabling persistence through indirection
+
+
+This relates to this other FAIR principle mentioned in the introduction.
+
+> A1. (Meta)data are retrievable by their identifier using a standardised communications protocol.
+
+
+:notebook_with_decorative_cover: **`URI resolution` is fundamentally about directing requests to the relevant identified entity**
+Here, the **standard** would be to have a `REST service with content negotiation`.
+
+A PURL is a **`persistent URL`**, meaning that it provides a ++permanent address to access a resource on the web++.
+
+To understand the notion of PURL, one needs to first get familiar with the notion of `url indirection` (also known as `url redirect` or `url forwarding` ), which refers to the practice of providing a stable, fixed web address/url, but setting it up so that it points to another content, which may be periodically modified. 
+
+When a user retrieves a PURL, they will be **`redirected`** to the current location of the resource.
+When an author needs to move a page, they can update the PURL to point to the new location.
+
+The practice of **indirection** comes handy as it ensures invariant url address for resources which are known to change, owing to version changes for instance or owing to change in ownership, 
+
+We can see this practice in action with the reliance on purl.org url for identifying OBO Foundry resources. For instance, the following url [`http://purl.obolibrary.org/obo/stato.owl`](http://purl.obolibrary.org/obo/stato.owl) is a redirect to the latest release of the file, which is [https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl](https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/latest_release/stato.owl).
+
+PURLs with a `common prefix` are grouped together into **domains**. Each domain has a single maintainer who can add new PURLs to the domain and make changes to existing PURLs within the domain.
+
+
+FAIR Principle A1 states that:
+>(meta)data should be retrievable by its identifier.
+
+When the identifier is not a resolvable URL, then `Identifier Resolution Services` are required that know how to map an IRI to a location for the data. 
+
+
+
+#### Introducing CURIES or Compact URIs
+CURIEs (short for compact URIs) are defined by a World Wide Web Consortium Working Group Note [CURIE Syntax 1.0](https://www.w3.org/TR/2010/NOTE-curie-20101216/), and provide a human readable shortening of IRIs. 
+
+The CURIE consists of a **`namespace prefix`** followed by the **`local identifier`**.
+
+There are some widely used and defined CURIEs such as DOIs and ISBN numbers. For example the DOI `[doi:10.1038/sdata.2016.18]` refers to the FAIR Principles paper[^safe-CURIE]. The Digital Object Identifier System web site (https://www.doi.org/) provides a resolution service for DOIs. The service is available as a web form on the site or can be used by appending a DOI to the website.The client will be redirected to the URL where the resource about the concept is located, e.g. for the FAIR Data Principles paper we can use the URL https://www.doi.org/10.1038/sdata.2016.18 to resolve the paper's DOI. This results in the client being taken to the page at https://www.nature.com/articles/sdata201618.
+
+`Namespaces` can be defined *by convention*, such as the case with `doi`, and registered with services to allow for the resolution of CURIEs (see [Identifier Resolution Services](##identifier-resolution-services) below). These are extensively used to map CURIEs to URLs that can be resolved.
+
+Going back to our *Life Science context*, we can use the following CURIE `[uniprot:P38398]` to refer to the UniProt record for the protein. 
+
+This is very useful for including unambiguous, global identifiers in scientific articles.
+
+[^safe-CURIE]: The CURIES are included in square brackets to make them *safe CURIEs*, meaning that they should not be confused for URIs.
 
  
+
+
+
+#### Identifier Resolution services
+
+* [purl.org](https://archive.org/services/purl/)
+
+    > The PURL system is a service of the Internet Archive, which provides an interface to administer domain. For more information about the service, visit https://archive.org/services/purl/help
+    >
+
+* [w3ids](https://w3id.org/)
+    
+    > Permanent Identifiers for the Web. Secure, permanent URLs for your Web application that will stand the test of time.
+    > - authority registration service
+    > - resolution service
+    > - redirection service:
+    > 
+    > Send a request to add a redirect to the public-perma-id@w3.org mailing list. Make sure to include the URL that you want on w3id.org, the URL that you want to redirect to, and the HTTP code that you want to use when redirecting. An administrator will then create the redirect for you.
+
+
+* [Identifiers.org](http://identifiers.org/)
+
+    > [Identifiers.org](https://identifiers.org) is a **Resolution Service** provides consistent access to life science data using [`Compact Uniform Resource Identifiers`](https://www.w3.org/TR/2010/NOTE-curie-20101216/), hosted by the EBI provides a resolution service, both as a web form and through the URL pattern. 
+    >`Compact Identifiers` consist of an `assigned`, `unique` `prefix` and a `local provider designated` **`accession number`** (prefix:accession).
+    > The resolving location of `Compact Identifiers` is determined using information that is stored in the [Identifiers.org Registry](http://identifiers.org/).
+    > Datasets can register their *namespace `prefix`* together with their `identifier pattern`. The service can then be used in the same way as the DOI resolution service. So for the UniProt page about BRCA1, we can resolve the CURIE `[uniprot:P38938]` using Identifiers.org. This means that the URL https://identifiers.org/uniprot:P38938 resolves to the UniProt page https://www.uniprot.org/uniprot/P38938.
+
+
+
+* [Name2Things](https://n2t.net/)
+
+    > [Name2Things](https://n2t.net/) (N2T) is a **Resolution Service**, maintained at the California Digital Library (CDL) within the University of California (UC) Office of the President. CDL supports electronic library services for ten UC campuses and affiliated law schools, medical centers, and national laboratories, as well as hundreds of museums, herbaria, botanical gardens, etc. Similar to URL shorteners like bit.ly, N2T serves content **indirectly**.
+    > N2T can store more than one "target" (forwarding link) for an identifier, as well as any kind or amount of metadata (descriptive information)
+        > N2T.net is also a "meta-resolver". In collaboration with identifiers.org, it recognizes over 600 well-known identifier types and knows where their respective servers are. Failing to find forwarding information for a specific individual identifier, it uses the identifier's type to look for an overall target rule.
+
+*For more details, see the [Identifier Resolution Services recipe](./identifier-services/id-resolution.html).*
+
+___
+
+## Conclusion:
+
+> In this recipe, we have given an overview of globally unique and persistent identifier, i.e. FAIR principle F1. We have covered:
+>
+> - The difference between global and local identifiers;
+> - How to convert a local identifier into a global one;
+> - Opaque and transparent identifiers
+>
+> We have given an overview of the different services available for handling identifiers.
+> 
+> But we can not conclude this section on persistent identifiers without stressing how central they are to the production of Linked Data or Linked Open Data, which rely on 3 W3C standards: URI, RDF and HTTP.
+> 
+>
+> #### What should I read next?
+> * [The Pistoia Alliance FAIRtoolkit use cases: Adoption and Impact of an identifier policy at Astra-Zeneca](https://fairtoolkit.pistoiaalliance.org/use-cases/adoption-and-impact-of-an-identifier-policy-astrazeneca/)
+> * [Identifier Minting with Minid Client
+](./infrastructure/minids.html)
+> * [Why resolvable identifiers matter?](./findability/why-identifiers.html)
+> * [Identifier Resolution Services](./identifier-services/id-resolution.html)
+> * [Identifier Mapping Services](./identifier-services/identifier-mapping.html)
+
+
+___
+
+## References:
+
+1. IRI. [https://tools.ietf.org/html/rfc3987](https://tools.ietf.org/html/rfc3987)
+2. CURIE. [https://www.w3.org/TR/2010/NOTE-curie-20101216/](https://www.w3.org/TR/2010/NOTE-curie-20101216/)
+3. URL. [https://tools.ietf.org/html/rfc1738](https://tools.ietf.org/html/rfc1738)
+4. RDF concepts. https://www.w3.org/TR/rdf-concepts/ 
+5. MD5 specifications. https://tools.ietf.org/html/rfc1321
+6. Blake2 specifications. https://tools.ietf.org/html/rfc7693
+7. Cool URIs don't change. https://www.w3.org/Provider/Style/URI
+8. Leo Sauermann and Richard Cyganiak (eds.) (2008 December 3). Cool URIs for the Semantic Web, W3C Semantic Web Education and Outreach Interest Group Note, http://w3.org/TR/cooluris/
+9. https://blog.adamretter.org.uk/archival-identifiers-for-digital-files/
+10. https://blog.adamretter.org.uk/archival-catalog-identifiers/
+11. Identifiers for the 21st century: How to design, provision, and reuse persistent identifiers to maximize utility and impact of life science data. https://doi.org/10.1371/journal.pbio.2001414
+12. Nick Juty, Sarala M Wimalaratne, Stian Soiland-Reyes, John Kunze, Carole A Goble, and Tim Clark. 2020. Unique, persistent, resolvable: Identifiers as the foundation of FAIR. Data Intelligence (2020), 30–39. https://doi.org/10.1162/dint_a_00025
+13. Nick Juty, Nicolas Le Novere, and Camille Laibe. 2012. Identifiers.org and MIRIAM Registry: Community resources to provide persistent identification. Nucleic Acids Research 40, D1 (2012), D580–D586. https://doi.org/10.1093/nar/gkr1097
+14. Rachana Ananthakrishnan, Kyle  Chard, Mike  D'Arcy, Ian T Foster, Carl F Kesselman , Brendan  McCollam , Jim Christopher Pruyne , Philippe  Rocca-Serra, Robert E Schuler, Rick P Wagner. An Open Ecosystem for Pervasive Use of Persistent Identifiers. https://doi.org/10.1145/3311790.3396660
+
+
+___
+
+## Authors:
+
+| Name | Affiliation  | orcid | CrediT role  | specific contribution |
+| :- | :- | :- |:- |:- |
+| Alasdair Gray | Heriot-Watt University / ELIXIR-UK | [0000-0002-5711-4872](https://orcid.org/0000-0002-5711-4872) | Writing - Original Draft | Original format<br />Converting to online format |
+| Chris Evelo | Maastricht University | [0000-0002-5301-3142](https://orcid.org/0000-0002-5301-3142) | Writing - Original Draft | Original format |
+| Egon Willighagen | Maastricht University | [0000-0001-7542-0286](https://orcid.org/0000-0001-7542-0286) | Writing - Original Draft | Original format |
+| Philippe Rocca-Serra| University of Oxford |[0000-0001-9853-5668](https://orcid.org/orcid.org/0000-0001-9853-5668) | Writing – Review & Editing, Conceptualization|Markdown|
+| Andrea Splendiani |Novartis AG|[0000-0002-3201-9617](https://orcid.org/0000-0002-3201-9617) |Conceptualization ||
+
+___
+
+## License:
+
+This page is released under the Creative Commons 4.0 BY license.
+
+<a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a>
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+     
 
 
     </main>

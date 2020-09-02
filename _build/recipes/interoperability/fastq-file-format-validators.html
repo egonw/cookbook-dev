@@ -10,16 +10,9 @@ next_page:
   title: |-
     How to convert to open format from propriatory
 suffix: .md
+# File format validation, an example with FASTQ files
 
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
 
-    <main class="jupyter-page">
-    <div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="File-format-validation,-an-example-with-FASTQ-files">File format validation, an example with FASTQ files<a class="anchor-link" href="#File-format-validation,-an-example-with-FASTQ-files"> </a></h1><hr>
 <div class="row">
 
   <div class="column">
@@ -42,7 +35,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
       </div>
     </div>
   </div>  
@@ -70,7 +62,11 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
       </div>
     </div>
   </div>
-</div><!-- - [Main objectives](#Main-Objectives)
+</div>
+
+
+
+
 - [Graphical Overview of the FAIRification Recipe Objectives](#Graphical-Overview-of-the-FAIRification-Recipe-Objectives)
 - [User Stories](#User-Stories)
 - [Capability & Maturity Table](#Capability-amp-Maturity-Table)
@@ -88,141 +84,102 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 - [License](#License) -->
 
 
-<hr>
-<h2 id="Main-Objectives">Main Objectives<a class="anchor-link" href="#Main-Objectives"> </a></h2><p>The main purpose of this recipe is to:</p>
-<blockquote><ul>
-<li>provide a FASTQ file validation solution</li>
-<li>propose a general file validation workflow. </li>
-</ul>
-</blockquote>
-<h2 id="Graphical-Overview-of-the-FAIRification-Recipe-Objectives">Graphical Overview of the FAIRification Recipe Objectives<a class="anchor-link" href="#Graphical-Overview-of-the-FAIRification-Recipe-Objectives"> </a></h2>
-<pre><code>mermaid
+
+## Main Objectives
+
+The main purpose of this recipe is to:
+
+> - provide a FASTQ file validation solution
+> - propose a general file validation workflow. 
+
+## Graphical Overview of the FAIRification Recipe Objectives
+
+```mermaid
 graph TD;
-    A[Data Acquisition] --&gt;B(Raw Data)
-    B --&gt; C{Is standard format?}
-    C --&gt;|Yes| D{File format valid?}
-    C --&gt;|No| E[Convert to standard file format]
-    D --&gt; |Yes|F[- Data deposition &lt;br&gt;  - Data sharing &lt;br&gt; - Downstream analysis ]
-    D --&gt; |No|G[Revise file]
-    E --&gt;  D
-    G --&gt; |revise|D</code></pre>
-<p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19"><img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19" alt=""></a></p>
-<h2 id="User-Stories">User Stories<a class="anchor-link" href="#User-Stories"> </a></h2><p>The table below lists common file validation use cases. This recipe provides solutions with FASTQ files as an example.</p>
-<table>
-<thead><tr>
-<th>As a ..</th>
-<th>I want to ..</th>
-<th>So that I can ..</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Data owner</td>
-<td>Validate my sequencing files before depositing to public archives</td>
-<td>Reduce the risk of submitting invalid files or submission rejection</td>
-</tr>
-<tr>
-<td>Data consumer</td>
-<td>Validate files before running analysis</td>
-<td>Avoid wasting time and resource processing corrupted files</td>
-</tr>
-<tr>
-<td>Data consumer</td>
-<td>Integrate file format validation into my data process pipeline</td>
-<td>Build a more reproducible and error-proof pipeline</td>
-</tr>
-<tr>
-<td>Data librarian</td>
-<td>Check files downloaded from unknown sources before deposition</td>
-<td>Ensure the file is usable in the future.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Capability</th>
-<th style="text-align:left">Initial Maturity Level</th>
-<th style="text-align:left">Final Maturity Level</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Interoperability</td>
-<td style="text-align:left">minimal</td>
-<td style="text-align:left">repeatable</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="FAIRification-Objectives,-Inputs-and-Outputs">FAIRification Objectives, Inputs and Outputs<a class="anchor-link" href="#FAIRification-Objectives,-Inputs-and-Outputs"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Actions.Objectives.Tasks</th>
-<th style="text-align:left">Input</th>
-<th style="text-align:left">Output</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="http://edamontology.org/operation_0336">Format validation</a></td>
-<td style="text-align:left"><a href="http://edamontology.org/format_2182">FASTQ file</a></td>
-<td style="text-align:left">Validation results</td>
-</tr>
-</tbody>
-</table>
-<h2 id="Table-of-Data-Standards">Table of Data Standards<a class="anchor-link" href="#Table-of-Data-Standards"> </a></h2><table>
-<thead><tr>
-<th style="text-align:left">Data Formats</th>
-<th style="text-align:left">Terminologies</th>
-<th style="text-align:left">Models</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="http://edamontology.org/format_2182">FASTQ</a></td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://www.ebi.ac.uk/ols/ontologies/edam/terms?iri=http%3A%2F%2Fedamontology.org%2Fformat_4006">Compressed Format</a></td>
-</tr>
-</tbody>
-</table>
-<hr>
-<p><a href="edamontology.org/format_2182">FASTQ</a> is the <em>de facto</em> sequencing file format and one of the most common file formats in bioinformatics analysis. Researchers receive FASTQ files from various sources. These files are used intensively in automated bioinformatics analysis pipelines. Therefore, it is important to validate FASTQ files to improve the data reusability and build error-proof data analysis process.</p>
-<p>FASTQ validators detect truncated reads, base calls and quality score mismatches, invalid encoding, etc. For paired-end reads, they also check if the forward reads match with the reverse reads. Most validators can process different FASTQ variants automatically and handle compressed FASTQ files.</p>
-<p><a href="https://github.com/nunofonseca/fastq_utils">FASTQ-utils</a> is an open-source software to validate and process FASTQ files. It has been applied in the <a href="https://www.ebi.ac.uk/ena">European Nucleotide Archive(ENA)</a>, and several research initiatives.</p>
-<p>This recipe provides an example of validating FASTQ files with <em>FASTQ-utils</em> on MacOS and Linux machines.</p>
-<blockquote><p>:bulb: Quality control is out of the scope of file format validation.</p>
-</blockquote>
-<p><img src="https://i.imgur.com/jOYK2ZM.jpg" alt=""></p>
-<h3 id="Requirements">Requirements<a class="anchor-link" href="#Requirements"> </a></h3><p>The users are expected to be comfortable with Unix-based OS and basic Bash programming syntax and commands.</p>
-<table>
-<thead><tr>
-<th>Software</th>
-<th>Description</th>
-<th>Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/">conda</a></td>
-<td>Package manager for installing validators</td>
-<td>4.8.3</td>
-</tr>
-<tr>
-<td><a href="https://github.com/nunofonseca/fastq_utils">FASTQ-utils</a></td>
-<td>FASTQ validator</td>
-<td>0.23.0</td>
-</tr>
-<tr>
-<td><a href="https://www.gnu.org/software/wget/">wget</a></td>
-<td>File downloader</td>
-<td>1.19.4</td>
-</tr>
-</tbody>
-</table>
-<h3 id="Step-1:-Install-fastq-utils">Step 1: Install fastq-utils<a class="anchor-link" href="#Step-1:-Install-fastq-utils"> </a></h3><p>The command below installs <em>fastq-utils</em> via Conda. It is also possible to install <em>fastq-utils</em> from <a href="https://github.com/nunofonseca/fastq_utils">the source code</a>.</p>
-<div class="highlight"><pre><span></span>conda install -c bioconda fastq_utils
-</pre></div>
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>B --&gt; C{Is standard format?}
+C --&gt;|Yes| D{File format valid?}
+C --&gt;|No| E[Convert to standard file format]
+D --&gt; |Yes|F[- Data deposition &lt;br&gt;  - Data sharing &lt;br&gt; - Downstream analysis ]
+D --&gt; |No|G[Revise file]
+E --&gt;  D
+G --&gt; |revise|D
+
+</code></pre>
+
+<pre><code>[![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19)
+
+## User Stories
+
+The table below lists common file validation use cases. This recipe provides solutions with FASTQ files as an example.
+
+|As a ..| I want to .. |So that I can ..|
+|---|--|--|
+|Data owner| Validate my sequencing files before depositing to public archives| Reduce the risk of submitting invalid files or submission rejection|
+|Data consumer| Validate files before running analysis|Avoid wasting time and resource processing corrupted files|
+|Data consumer| Integrate file format validation into my data process pipeline| Build a more reproducible and error-proof pipeline| 
+|Data librarian| Check files downloaded from unknown sources before deposition| Ensure the file is usable in the future.|
+
+
+## Capability &amp; Maturity Table
+
+| Capability  | Initial Maturity Level | Final Maturity Level  |
+| :------------- | :------------- | :------------- |
+|Interoperability |minimal |    repeatable|
+
+----
+
+## FAIRification Objectives, Inputs and Outputs
+
+| Actions.Objectives.Tasks  | Input | Output  |
+| :------------- | :------------- | :------------- |
+| [Format validation](http://edamontology.org/operation_0336)  | [FASTQ file](http://edamontology.org/format_2182)  | Validation results  |
+
+
+## Table of Data Standards
+
+| Data Formats  | Terminologies | Models  |
+| :------------- | :------------- | :------------- |
+| [FASTQ](http://edamontology.org/format_2182)  | |
+| [Compressed Format](https://www.ebi.ac.uk/ols/ontologies/edam/terms?iri=http%3A%2F%2Fedamontology.org%2Fformat_4006)| |
+___
+
+[FASTQ](edamontology.org/format_2182) is the _de facto_ sequencing file format and one of the most common file formats in bioinformatics analysis. Researchers receive FASTQ files from various sources. These files are used intensively in automated bioinformatics analysis pipelines. Therefore, it is important to validate FASTQ files to improve the data reusability and build error-proof data analysis process.
+
+FASTQ validators detect truncated reads, base calls and quality score mismatches, invalid encoding, etc. For paired-end reads, they also check if the forward reads match with the reverse reads. Most validators can process different FASTQ variants automatically and handle compressed FASTQ files. 
+
+[FASTQ-utils](https://github.com/nunofonseca/fastq_utils) is an open-source software to validate and process FASTQ files. It has been applied in the [European Nucleotide Archive(ENA)](https://www.ebi.ac.uk/ena), and several research initiatives. 
+
+This recipe provides an example of validating FASTQ files with _FASTQ-utils_ on MacOS and Linux machines.
+
+&gt;:bulb: Quality control is out of the scope of file format validation.
+
+![](https://i.imgur.com/jOYK2ZM.jpg)
+
+### Requirements
+
+The users are expected to be comfortable with Unix-based OS and basic Bash programming syntax and commands.
+
+|Software|Description|Version|
+|--|--|--|
+|[conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/)|Package manager for installing validators |4.8.3
+|[FASTQ-utils](https://github.com/nunofonseca/fastq_utils)| FASTQ validator|0.23.0
+|[wget](https://www.gnu.org/software/wget/)|File downloader|1.19.4|
+
+### Step 1: Install fastq-utils
+
+The command below installs _fastq-utils_ via Conda. It is also possible to install _fastq-utils_ from [the source code](https://github.com/nunofonseca/fastq_utils).
+
+```shell
+conda install -c bioconda fastq_utils</code></pre>
 <h3 id="Step-2:-Get-example-file-for-testing*">Step 2: Get example file for testing*<a class="anchor-link" href="#Step-2:-Get-example-file-for-testing*"> </a></h3><p><em>:bulb:*  Users can skip this step and test with their own files.</em></p>
 <p>In this step, we download example FASTQ files from ENA for testing. The first example file is a single read file, the other ones are paired-end read files.</p>
 <p><strong>Example 1: Get single read FASTQ file</strong></p>

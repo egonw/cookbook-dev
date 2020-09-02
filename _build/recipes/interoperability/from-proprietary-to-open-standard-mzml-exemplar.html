@@ -10,16 +10,9 @@ next_page:
   title: |-
     Reusability
 suffix: .md
+# From proprietary format to open standard format: an exemplar
 
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
 
-    <main class="jupyter-page">
-    <div class="jb_cell">
-
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="From-proprietary-format-to-open-standard-format:-an-exemplar">From proprietary format to open standard format: an exemplar<a class="anchor-link" href="#From-proprietary-format-to-open-standard-format:-an-exemplar"> </a></h1><hr>
 <div class="row">
 
   <div class="column">
@@ -42,7 +35,6 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <i class="fa fa-fire fa-lg" style="color:#7e0038"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
       </div>
     </div>
   </div>  
@@ -67,11 +59,13 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigators </p>
         <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Managers </p>
         <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientists </p>
-<!--         <p> <i class="fa fa-money fa-lg" style="color:#7e0038;"></i> Funders</p> -->
       </div>
     </div>
   </div>
-</div><!-- # Table of Contents
+</div>
+ 
+
+
 1. [Main FAIRification Objectives](#Main%20FAIRification%20Objectives)
 2. [Graphical Overview of the FAIRification Recipe Objectives](#Graphical%20Overview%20of%20the%20FAIRification%20Recipe%20Objectives)
 3. [FAIRification Objectives, Inputs and Outputs](#FAIRification%20Objectives,%20Inputs%20and%20Outputs)
@@ -81,23 +75,40 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 7. [How to create workflow figures](#How%20to%20create%20workflow%20figures)
 8. [License](#License) -->
 
-<hr>
-<h2 id="Main-Objectives">Main Objectives<a class="anchor-link" href="#Main-Objectives"> </a></h2><ul>
-<li>Document how to convert raw data from a propriatory, vendor specific format to an open standard format.</li>
-<li>Apply the approach to an IMI dataset, more specifically  a targeted metabolic profiling using Biocrates kit produced by IMI Resolute project.</li>
-</ul>
-<hr>
-<h2 id="Graphical-Overview-of-the-FAIRification-Recipe-Objectives">Graphical Overview of the FAIRification Recipe Objectives<a class="anchor-link" href="#Graphical-Overview-of-the-FAIRification-Recipe-Objectives"> </a></h2><div class="mermaid">
+
+## Main Objectives
+
+- Document how to convert raw data from a propriatory, vendor specific format to an open standard format.
+- Apply the approach to an IMI dataset, more specifically  a targeted metabolic profiling using Biocrates kit produced by IMI Resolute project.
+
+
+___
+
+
+
+## Graphical Overview of the FAIRification Recipe Objectives
+
+<div class="mermaid">
 
 graph LR;
-    A[Data Acquisition] -->B(Raw Data)
-    B --> C{FAIR by Design}
-    C -->|Yes| D[Standard Compliant Data]
-    C -->|No| E[Vendor locked Data]
-    F[Metadata available] --> G(sample metadata)
-    G
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
 
-</div><hr>
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>B --&gt; C{FAIR by Design}
+C --&gt;|Yes| D[Standard Compliant Data]
+C --&gt;|No| E[Vendor locked Data]
+F[Metadata available] --&gt; G(sample metadata)
+G
+
+</code></pre>
+<p>&lt;/div&gt;</p>
+<hr>
 <h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><table>
 <thead><tr>
 <th style="text-align:left">Capability</th>
