@@ -10,15 +10,18 @@ next_page:
   title: |-
     Infrastructure for FAIR
 suffix: .md
-# High level data sharing models. LCSB How-To cards analysis.
+dummy: dummy
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
 
-**identifier:**
+    <main class="jupyter-page">
+    <div class="jb_cell">
 
-**version:** First draft.
-
-___
-
-
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="High-level-data-sharing-models.-LCSB-How-To-cards-analysis.">High level data sharing models. LCSB How-To cards analysis.<a class="anchor-link" href="#High-level-data-sharing-models.-LCSB-How-To-cards-analysis."> </a></h1><p><strong>identifier:</strong></p>
+<p><strong>version:</strong> First draft.</p>
+<hr>
 <div class="row">
 
   <div class="column">
@@ -41,6 +44,7 @@ ___
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
       </div>
     </div>
   </div>  
@@ -69,32 +73,34 @@ ___
       </div>
     </div>
   </div>
-</div>
+</div><hr>
+<h2 id="Main-Objectives">Main Objectives<a class="anchor-link" href="#Main-Objectives"> </a></h2><p>The main purpose of this recipe is to evaluate the current Data Sharing procedure offered by the Luxembourg Centre for Systems Biomedicine (<a href="https://www.uni.lu/lcsb">LCSB</a>) of the University of Luxembourg as found <a href="https://r3.pages.uni.lu/howto-cards/stable/">here</a>.</p>
+<p>To provide a transparent Evaluation the recipe will:</p>
+<ul>
+<li>Define an abstract model to explain what data sharing is</li>
+<li>Define the common criteria for evaluating data sharing procedures</li>
+<li>Evaluate the common criteria against the LCSB offering</li>
+<li>Propose potential improvements for the LCSB offering </li>
+</ul>
+<hr>
+<h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><!-- TO DO -->
 
-## Main Objectives
-
-The main purpose of this recipe is to evaluate the current Data Sharing procedure offered by the Luxembourg Centre for Systems Biomedicine ([LCSB](https://www.uni.lu/lcsb)) of the University of Luxembourg as found [here](https://r3.pages.uni.lu/howto-cards/stable/).
-
-To provide a transparent Evaluation the recipe will:
-* Define an abstract model to explain what data sharing is
-* Define the common criteria for evaluating data sharing procedures
-* Evaluate the common criteria against the LCSB offering
-* Propose potential improvements for the LCSB offering 
-
-___
-
-## Capability & Maturity Table
-
-
-| Capability  | Initial Maturity Level | Final Maturity Level  |
-| :- | :- | :- |
-|  |  |  |
-
--
-
-## Data Sharing
-This chapter explains what data sharing is. It defines a high-level logical data sharing model, to help a user who is not familiar with data sharing get an overview of the major components. Please note that in the real world the defined components are not always explicitly defined. Often implicit concept definitions are used and people are not always aware of the implicit definitions. Sometimes some of the components may even not exist, because for the given data sharing use case they might not be needed.
-
+<table>
+<thead><tr>
+<th style="text-align:left">Capability</th>
+<th style="text-align:left">Initial Maturity Level</th>
+<th style="text-align:left">Final Maturity Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Data-Sharing">Data Sharing<a class="anchor-link" href="#Data-Sharing"> </a></h2><p>This chapter explains what data sharing is. It defines a high-level logical data sharing model, to help a user who is not familiar with data sharing get an overview of the major components. Please note that in the real world the defined components are not always explicitly defined. Often implicit concept definitions are used and people are not always aware of the implicit definitions. Sometimes some of the components may even not exist, because for the given data sharing use case they might not be needed.</p>
 <div class="mermaid" align="left">
 classDiagram
   SharedData <-- DataOwner: owns
@@ -104,20 +110,12 @@ classDiagram
   class DataOwner
   class DataProvider
   class DataConsumer
-  
-</div>
 
-*Figure 1: The core model of data sharing*
-
-
-The Figure 1 depicts the three roles that can be distinguished in a data sharing context: ***DataOwner***, ***DataConsumer***, and ***DataProvider***. The roles are typically played by different entities, which can be both organizations or persons. Then, a brief description of the roles is presented.  
-
-The ***DataOwner*** role is played by the entity that has legal ownership of the data being shared.
-
-The ***DataConsumer*** role is played by the entity that has been granted access to the data being shared, according to the license agreement signed with the Data Owner.
-
-The ***DataProvider*** role is played by the entity that provides the technical infrastructure to support the sharing of data.
-
+</div><p><em>Figure 1: The core model of data sharing</em></p>
+<p>The Figure 1 depicts the three roles that can be distinguished in a data sharing context: <strong><em>DataOwner</em></strong>, <strong><em>DataConsumer</em></strong>, and <strong><em>DataProvider</em></strong>. The roles are typically played by different entities, which can be both organizations or persons. Then, a brief description of the roles is presented.</p>
+<p>The <strong><em>DataOwner</em></strong> role is played by the entity that has legal ownership of the data being shared.</p>
+<p>The <strong><em>DataConsumer</em></strong> role is played by the entity that has been granted access to the data being shared, according to the license agreement signed with the Data Owner.</p>
+<p>The <strong><em>DataProvider</em></strong> role is played by the entity that provides the technical infrastructure to support the sharing of data.</p>
 <div class="mermaid"  align="left">
 classDiagram
   SharedData "1" *-- "1..*" Dataset: has
@@ -140,29 +138,17 @@ classDiagram
   class DatasetLevelMetadata
   class ColumnMetadata
   class ProvenanceMetadata
-</div>
-
-*Figure 2: The SharedData entity components*
-
-The Figure 2 depicts the structure of the bundle of the data being shared, represented by the ***SharedData*** entity. It has a complex structure, as depicted following.
-
-The ***DataSet*** entity is the main component of the SharedData entity, and it comprises the ***Data***, ***DatasetProfile***, and ***DatasetMetadata*** entities.
-
-The ***Data*** entity represents the data object of the exchange. 
-
-The ***DatasetProfile*** depicts statistics and informative summaries about that data being shared. 
-
-The ***DatasetMetadata***, is structured information that describes, explains, locates, or otherwise makes it easier to retrieve, use, or manage an information resource (More information can be found in [European Data Portal](https://www.europeandataportal.eu/) and the [National Information Standards Organization](https://www.niso.org/)). The metadata categories are depicted following.
-
-The ***DatasetLevelMetadata*** entity briefly depicts the dataset the metadata is related to. It presents general information on the dataset level, e.g., summary or description, author, date of creation, date of sharing, main concepts, size, etc. 
-
-The ***ColumnMetadata*** entity describes the features or attributes of the dataset. This metadata can include external sources of knowledge - e.g., upper or domain ontologies, taxonomies, vocabularies, standards, etc. - to establish the type of entities a specific dataset attribute/feature is related to, or to constrain the set of values or data-types the attribute/feature is associated with. A label, tag, or column header for each dataset attribute/feature is a ColumnMetadata minimal requirement.
-
-The ***ProvenanceMatadata*** entity describes entities and processes involved in producing, delivering, and/or otherwise influencing the dataset. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. 
-The required provenance metadata strongly depends on the subject matter the dataset belongs to. For example, establishing the origin and ownership of a cultural artifact is sufficient to determine its authenticity.  Instead, a scientific context establishes data integration pipelines according to the collection and pre-processing methods used, and the reproducibility of the experiment requires details about protocols, instruments, etc. 
-
-The ***QualityMetadata*** entity depicts dataset quality measures and indicators. Jointly with provenance metadata, it should provide a basis for enabling the trust and reproducibility of the results depicted by the dataset.
-
+</div><p><em>Figure 2: The SharedData entity components</em></p>
+<p>The Figure 2 depicts the structure of the bundle of the data being shared, represented by the <strong><em>SharedData</em></strong> entity. It has a complex structure, as depicted following.</p>
+<p>The <strong><em>DataSet</em></strong> entity is the main component of the SharedData entity, and it comprises the <strong><em>Data</em></strong>, <strong><em>DatasetProfile</em></strong>, and <strong><em>DatasetMetadata</em></strong> entities.</p>
+<p>The <strong><em>Data</em></strong> entity represents the data object of the exchange.</p>
+<p>The <strong><em>DatasetProfile</em></strong> depicts statistics and informative summaries about that data being shared.</p>
+<p>The <strong><em>DatasetMetadata</em></strong>, is structured information that describes, explains, locates, or otherwise makes it easier to retrieve, use, or manage an information resource (More information can be found in <a href="https://www.europeandataportal.eu/">European Data Portal</a> and the <a href="https://www.niso.org/">National Information Standards Organization</a>). The metadata categories are depicted following.</p>
+<p>The <strong><em>DatasetLevelMetadata</em></strong> entity briefly depicts the dataset the metadata is related to. It presents general information on the dataset level, e.g., summary or description, author, date of creation, date of sharing, main concepts, size, etc.</p>
+<p>The <strong><em>ColumnMetadata</em></strong> entity describes the features or attributes of the dataset. This metadata can include external sources of knowledge - e.g., upper or domain ontologies, taxonomies, vocabularies, standards, etc. - to establish the type of entities a specific dataset attribute/feature is related to, or to constrain the set of values or data-types the attribute/feature is associated with. A label, tag, or column header for each dataset attribute/feature is a ColumnMetadata minimal requirement.</p>
+<p>The <strong><em>ProvenanceMatadata</em></strong> entity describes entities and processes involved in producing, delivering, and/or otherwise influencing the dataset. Provenance provides a critical foundation for assessing authenticity, enabling trust, and allowing reproducibility. 
+The required provenance metadata strongly depends on the subject matter the dataset belongs to. For example, establishing the origin and ownership of a cultural artifact is sufficient to determine its authenticity.  Instead, a scientific context establishes data integration pipelines according to the collection and pre-processing methods used, and the reproducibility of the experiment requires details about protocols, instruments, etc.</p>
+<p>The <strong><em>QualityMetadata</em></strong> entity depicts dataset quality measures and indicators. Jointly with provenance metadata, it should provide a basis for enabling the trust and reproducibility of the results depicted by the dataset.</p>
 <div class="mermaid"  align="left">
 classDiagram
   SharedData *-- ConsumerLicenceDefinition: has
@@ -184,17 +170,11 @@ classDiagram
   class DataConsumer
   class ProviderLicenceDefinition
   class ConsumerLicenceDefinition
-</div>
-
-*Figure 3: The data sharing agreements*
-
-The Figure 3 depicts the agreements that must be reached for the sharing of data, and the artifacts generated as results of the commitment signed by the involved roles. The sharing of data implies the definition of two different agreements formally established through specific licenses.
-
-The ***ConsumerLicenseDefinition*** establishes the terms under which the data being shared can be used by the DataConsumer. These terms are agreed upon by the DataOwner and the DataConsumer by signing the ***DataSharingAgreement***. 
-This agreement can be negotiated and signed on a per sharing basis, i.e. the DataOwner and the DataConsumer negotiate the terms of the license for a specific SharedData entity or set of SharedData entities. On the other hand, the DataOwner could establish a specific license or set of licenses for sharing a SharedData entity or set of SharedData entities the DataConsumer must agree to get access to the data.
-
-The ***ProviderLicenseDefinition*** establishes the terms under which the data being shared can be made available on the DataProvider infrastructure. These terms are agreed by the DataOwner and the DataProvider by signing the ***DataProvisioningAgreement***. 
-
+</div><p><em>Figure 3: The data sharing agreements</em></p>
+<p>The Figure 3 depicts the agreements that must be reached for the sharing of data, and the artifacts generated as results of the commitment signed by the involved roles. The sharing of data implies the definition of two different agreements formally established through specific licenses.</p>
+<p>The <strong><em>ConsumerLicenseDefinition</em></strong> establishes the terms under which the data being shared can be used by the DataConsumer. These terms are agreed upon by the DataOwner and the DataConsumer by signing the <strong><em>DataSharingAgreement</em></strong>. 
+This agreement can be negotiated and signed on a per sharing basis, i.e. the DataOwner and the DataConsumer negotiate the terms of the license for a specific SharedData entity or set of SharedData entities. On the other hand, the DataOwner could establish a specific license or set of licenses for sharing a SharedData entity or set of SharedData entities the DataConsumer must agree to get access to the data.</p>
+<p>The <strong><em>ProviderLicenseDefinition</em></strong> establishes the terms under which the data being shared can be made available on the DataProvider infrastructure. These terms are agreed by the DataOwner and the DataProvider by signing the <strong><em>DataProvisioningAgreement</em></strong>.</p>
 <div class="mermaid" align="left">
 classDiagram
     DataCatalogue --> SharedData: registers
@@ -208,7 +188,7 @@ classDiagram
     DataProvider --> DataSharingPlatform: provides
     DataOwner --> DataOwnerInterface: uses
     DataConsumer --> DataConsumerInterface: uses
-    
+
     class SharedData
     class DataCatalogue
     class DataProcessingPlatform
@@ -221,30 +201,20 @@ classDiagram
     class DataOwner
     class DataConsumer
     class DataProvider
-</div>
-
-*Figure 4: The DataSharingComponents platform components*
-
-The Figure 4 depicts the ***DataSharingPlatform*** components, which is hosted by the  ***DataProvider*** role as the technical infrastructure aimed to support the sharing of data. The platform components are depicted following.
-
-The ***DataCatalog*** provides a way to register the SharedData. 
-
-The ***DataProcessingPlatform*** provides the infrastructure to host and execute data processing pipelines. Typically, such infrastructure provides an environment or sandbox - through virtual machines and/or container-based technology- where the DataConsumer can deploy custom data processing workflows and the corresponding technological stack.  
-
-The ***DataQueryInterface*** supports the execution of queries over the dataset and its associated metadata, e.g. by providing a SPARQL endpoint.
-
-The ***DataSharingCommunication*** provides an informal communication channel to the roles involved in the sharing of data. A chat, wiki, comments platform, or any environment allowing those involved to interact with each other could be used in this way.
-
-The ***DataSharingWorkflow*** provides the environment to reach an agreement (DataSharingAgreement or DataProvisioningAgreement) and establish a license (***ConsumerLicenseDefinition*** or ***ProviderLicenseDefinition*** ), and to cancel an agreement when the agreed conditions have not been satisfied by either party.
-
-The ***DataOwnerInterface*** provides the DataOwner a unified interface to interact with the DataSharingPlatform.
-
+</div><p><em>Figure 4: The DataSharingComponents platform components</em></p>
+<p>The Figure 4 depicts the <strong><em>DataSharingPlatform</em></strong> components, which is hosted by the  <strong><em>DataProvider</em></strong> role as the technical infrastructure aimed to support the sharing of data. The platform components are depicted following.</p>
+<p>The <strong><em>DataCatalog</em></strong> provides a way to register the SharedData.</p>
+<p>The <strong><em>DataProcessingPlatform</em></strong> provides the infrastructure to host and execute data processing pipelines. Typically, such infrastructure provides an environment or sandbox - through virtual machines and/or container-based technology- where the DataConsumer can deploy custom data processing workflows and the corresponding technological stack.</p>
+<p>The <strong><em>DataQueryInterface</em></strong> supports the execution of queries over the dataset and its associated metadata, e.g. by providing a SPARQL endpoint.</p>
+<p>The <strong><em>DataSharingCommunication</em></strong> provides an informal communication channel to the roles involved in the sharing of data. A chat, wiki, comments platform, or any environment allowing those involved to interact with each other could be used in this way.</p>
+<p>The <strong><em>DataSharingWorkflow</em></strong> provides the environment to reach an agreement (DataSharingAgreement or DataProvisioningAgreement) and establish a license (<strong><em>ConsumerLicenseDefinition</em></strong> or <strong><em>ProviderLicenseDefinition</em></strong> ), and to cancel an agreement when the agreed conditions have not been satisfied by either party.</p>
+<p>The <strong><em>DataOwnerInterface</em></strong> provides the DataOwner a unified interface to interact with the DataSharingPlatform.</p>
 <div class="mermaid"  align="left">
 classDiagram
     DataSharingPlatform *-- DataOwnerInterface: provides
     DataSharingPlatform *-- DataSharingWorkflow: provides
     DataSharingPlatform *-- DataSharingCommunication: provides
-    
+
     DataOwnerInterface *-- GetAccessWorkflow: provides
     DataOwnerInterface *-- Connect: provides
     DataOwnerInterface *-- Upload: provides
@@ -254,7 +224,7 @@ classDiagram
     GetAccessWorkflow *-- SecurityUpdateWorkflow: has
     AdminDataSharing *-- SharedData: administrate
     AdminDataSharing *-- DataSharingConsumptionReport: provide
-    
+
     class SharedData
     claas GetAccessWorkflow
     class SecurityUpdateWorkflow
@@ -265,20 +235,12 @@ classDiagram
     class Connect
     class DataOwnerInterface
     class DataSharingPlatform
-</div>
-
-*Figure 5: The DataOwnerInterface components*
-
-The Figure 5 depicts the ***DataOwnerInterface*** components, which provides the DataOwner a unified interface to interact with the DataSharingPlatform. The interface components are depicted following.
-
-The ***Connect*** module allows the DataOwner to initiate an authenticated session on the DataSharingPlatform.
-
-The ***GetAccessWorkflow*** module allows the DataOwner to set the authentication details to get access to the platform through the ***FirstAccessWorkflow*** module - e.g. setting of username a passwords accounts-, and to perform security maintenance tasks - e.g., reset a password account- by using the ***SecurityUpdateWorkflow***.
-
-The ***Upload*** module allows the DataOwner to provide access to physical data so that it can be physically consumed. This does not necessarily mean uploading the SharedData to the DataSharingPlatform. Granting access to the data stored on the infrastructure of the DataOwner is also a possible alternative.
-
-The ***AdminDataSharing*** module allows the DataOwner to manage the SharedData and to get summaries and statistics about the usage and consumption of the data being shared through the ***DataSharingConsumptionReport***. The usage and consumption reports can be generated on different levels of granularity: from a per sharing agreement to the set of all SharedData managed by the DataOwner.
-
+</div><p><em>Figure 5: The DataOwnerInterface components</em></p>
+<p>The Figure 5 depicts the <strong><em>DataOwnerInterface</em></strong> components, which provides the DataOwner a unified interface to interact with the DataSharingPlatform. The interface components are depicted following.</p>
+<p>The <strong><em>Connect</em></strong> module allows the DataOwner to initiate an authenticated session on the DataSharingPlatform.</p>
+<p>The <strong><em>GetAccessWorkflow</em></strong> module allows the DataOwner to set the authentication details to get access to the platform through the <strong><em>FirstAccessWorkflow</em></strong> module - e.g. setting of username a passwords accounts-, and to perform security maintenance tasks - e.g., reset a password account- by using the <strong><em>SecurityUpdateWorkflow</em></strong>.</p>
+<p>The <strong><em>Upload</em></strong> module allows the DataOwner to provide access to physical data so that it can be physically consumed. This does not necessarily mean uploading the SharedData to the DataSharingPlatform. Granting access to the data stored on the infrastructure of the DataOwner is also a possible alternative.</p>
+<p>The <strong><em>AdminDataSharing</em></strong> module allows the DataOwner to manage the SharedData and to get summaries and statistics about the usage and consumption of the data being shared through the <strong><em>DataSharingConsumptionReport</em></strong>. The usage and consumption reports can be generated on different levels of granularity: from a per sharing agreement to the set of all SharedData managed by the DataOwner.</p>
 <div class="mermaid"  align="left">
 classDiagram
   DataSharingPlatform *-- DataCatalogue: provides
@@ -287,7 +249,7 @@ classDiagram
   DataSharingPlatform *-- DataSharingWorkflow: provides
   DataSharingPlatform *-- DataSharingCommunication: provides
   DataSharingPlatform *-- DataConsumerInterface: provides
-  
+
   DataConsumerInterface *-- GetAccessWorkflow: provides
   DataConsumerInterface *-- Connect: provides
   DataConsumerInterface *-- Download: provides
@@ -295,7 +257,7 @@ classDiagram
 
   GetAccessWorkflow --* FirstAccessWorkflow: provides
   GetAccessWorkflow --* SecurityUpdateWorkflow: provides
-  
+
   class GetAccessWorkflow
   class SecurityUpdateWorkflow
   class FirstAccessWorkflow
@@ -308,87 +270,80 @@ classDiagram
   class DataQueryInterface
   class DataConsumerInterface
   class DataSharingPlatform
-</div>
-
-*Figure 6: The DataConsumerInterface components*
-
-The Figure 6 depicts the ***DataConsumerInterface*** components, which provides the DataConsumer a unified interface to interact with the DataSharingPlatform. The interface components are depicted following.
-
-
-
-The ***Connect*** module allows the DataConsumer to initiate an authenticated session on the DataSharingPlatform.
-
-The ***GetAccessWorkflow*** module allows the DataConsumer to set the authentication details to get access to the platform through the ***FirstAccessWorkflow*** module - e.g. setting of username a passwords accounts-, and to perform security maintenance tasks - e.g., reset a password account- by using the ***SecurityUpdateWorkflow***.
-
-The ***Download*** module allows the DataConsumer to get access to physical data so that it can be physically consumed. This does not necessarily mean downloading the SharedData from the DataSharingPlatform. Getting access to the data stored on the infrastructure of the DataOwner is also a possible alternative.
-
-The ***DataSharingConsumptionReport*** module allows the DataConsumer to get a summary and statistics about its usage and consumption of the data being shared. Typically, the usage and consumption reports are generated in a per sharing agreement granularity level.
-
-
-
-## Data Sharing Process Evaluation Criteria
-This chapter will define the main criteria for evaluating the given data sharing processes.
+</div><p><em>Figure 6: The DataConsumerInterface components</em></p>
+<p>The Figure 6 depicts the <strong><em>DataConsumerInterface</em></strong> components, which provides the DataConsumer a unified interface to interact with the DataSharingPlatform. The interface components are depicted following.</p>
+<p>The <strong><em>Connect</em></strong> module allows the DataConsumer to initiate an authenticated session on the DataSharingPlatform.</p>
+<p>The <strong><em>GetAccessWorkflow</em></strong> module allows the DataConsumer to set the authentication details to get access to the platform through the <strong><em>FirstAccessWorkflow</em></strong> module - e.g. setting of username a passwords accounts-, and to perform security maintenance tasks - e.g., reset a password account- by using the <strong><em>SecurityUpdateWorkflow</em></strong>.</p>
+<p>The <strong><em>Download</em></strong> module allows the DataConsumer to get access to physical data so that it can be physically consumed. This does not necessarily mean downloading the SharedData from the DataSharingPlatform. Getting access to the data stored on the infrastructure of the DataOwner is also a possible alternative.</p>
+<p>The <strong><em>DataSharingConsumptionReport</em></strong> module allows the DataConsumer to get a summary and statistics about its usage and consumption of the data being shared. Typically, the usage and consumption reports are generated in a per sharing agreement granularity level.</p>
+<hr>
+<h2 id="Data-Sharing-Process-Evaluation-Criteria">Data Sharing Process Evaluation Criteria<a class="anchor-link" href="#Data-Sharing-Process-Evaluation-Criteria"> </a></h2><p>This chapter will define the main criteria for evaluating the given data sharing processes.
 Because there is a wide range of different data sharing solutions driven by a broad range of different use cases, the goal is to define those characteristics that are common for all data sharing processes.
-For a specific data sharing process evaluation, the classification criteria might be further refined and weighted according to the specific patterns of the use case.
-
-Evaluating a single data sharing workflow has always to look at two aspects:
-* Does the workflow support the final goal defined by the data sharing role?
-* How optimal do the workflow steps support the data sharing role to reach the goal?
-
-The workflows that are evaluated are:
-* Data Sharing Workflow
-* Upload/Download
-* Maintaining Shared Data
-* Using common platform components
-
-The evaluation criteria are classified into the following major categories:
-* **Generic criteria**
-These are criteria that are given by the inherent structure of the shared data and the data sharing roles.
-* **Platform criteria**
-These criteria define how optimal the given platform supports the data sharing workflows.
-
-### Generic criteria
-1. **Role Perspective**
-The data sharing workflows have to be evaluated from a data sharing role perspective because they might be very different per role. The  DataPlatformOwner role is seen only as a role that finally enables data sharing and will be ignored. The evaluation will only be done for the DataOwner and DataConsumer perspectives.
-
-2. **Data Profile**
-The data profile classifies the base structural properties of the shared data that have a major impact on the sharing workflows. The following properties are considered:
-    * **Dynamic versus static data**
+For a specific data sharing process evaluation, the classification criteria might be further refined and weighted according to the specific patterns of the use case.</p>
+<p>Evaluating a single data sharing workflow has always to look at two aspects:</p>
+<ul>
+<li>Does the workflow support the final goal defined by the data sharing role?</li>
+<li>How optimal do the workflow steps support the data sharing role to reach the goal?</li>
+</ul>
+<p>The workflows that are evaluated are:</p>
+<ul>
+<li>Data Sharing Workflow</li>
+<li>Upload/Download</li>
+<li>Maintaining Shared Data</li>
+<li>Using common platform components</li>
+</ul>
+<p>The evaluation criteria are classified into the following major categories:</p>
+<ul>
+<li><strong>Generic criteria</strong>
+These are criteria that are given by the inherent structure of the shared data and the data sharing roles.</li>
+<li><strong>Platform criteria</strong>
+These criteria define how optimal the given platform supports the data sharing workflows.</li>
+</ul>
+<h3 id="Generic-criteria">Generic criteria<a class="anchor-link" href="#Generic-criteria"> </a></h3><ol>
+<li><p><strong>Role Perspective</strong>
+The data sharing workflows have to be evaluated from a data sharing role perspective because they might be very different per role. The  DataPlatformOwner role is seen only as a role that finally enables data sharing and will be ignored. The evaluation will only be done for the DataOwner and DataConsumer perspectives.</p>
+</li>
+<li><p><strong>Data Profile</strong>
+The data profile classifies the base structural properties of the shared data that have a major impact on the sharing workflows. The following properties are considered:</p>
+<ul>
+<li><strong>Dynamic versus static data</strong>
 Static data are loaded only once and not changed afterward.
 Dynamic data is changed typically periodically after the first upload.
-A high update frequency may lead to an automatic workflow requirement.
-    * **Data Volume**
-The volume of the shared data may have a big impact on the processing time of some of the workflows.
-    * **Number of Files**
-A high number of shared datasets may lead to automatic workflow requirements because manual interaction might become impractical. Also, a completeness overview can become a challenge.
-    * **Complexity of metadata**
-The complexity of metadata also has an impact on the practicability of workflows. E.g. maintenance of metadata might get challenging if metadata complexity is increasing.
-
-3. **Understandability**
-Evaluates how easy it is to understand the workflow(s). Two levels of understanding are considered:
-    * **Single Workflow**
-Evaluates how easy a single workflow is understood
-    * **Overall Workflow**
-Evaluates how easy the overall approach of the workflows is understood.
-
-### Platform criteria
-1. **Speed** 
-Evaluates how fast a workflow is processed on the platform
-2. **Simplicity** 
-Evaluates how simple a workflow is implemented on the platform
-3. **Completeness**
-Evaluates whether there are any gaps  not provided by the platform workflow implementation
-4. **Reliability**
-Evaluates how reliable workflows are implemented by the platform
-5. **Robustness**
-Evaluates how easy temporary malfunctioning of the platform workflow processing can be overcome
-6. **Security**
-Evaluates how secure the platform workflows are implemented
-
-
-## Data Sharing Process Evaluation Workflow
-
-<div class="mermaid">
+A high update frequency may lead to an automatic workflow requirement.</li>
+<li><strong>Data Volume</strong>
+The volume of the shared data may have a big impact on the processing time of some of the workflows.</li>
+<li><strong>Number of Files</strong>
+A high number of shared datasets may lead to automatic workflow requirements because manual interaction might become impractical. Also, a completeness overview can become a challenge.</li>
+<li><strong>Complexity of metadata</strong>
+The complexity of metadata also has an impact on the practicability of workflows. E.g. maintenance of metadata might get challenging if metadata complexity is increasing.</li>
+</ul>
+</li>
+<li><p><strong>Understandability</strong>
+Evaluates how easy it is to understand the workflow(s). Two levels of understanding are considered:</p>
+<ul>
+<li><strong>Single Workflow</strong>
+Evaluates how easy a single workflow is understood</li>
+<li><strong>Overall Workflow</strong>
+Evaluates how easy the overall approach of the workflows is understood.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Platform-criteria">Platform criteria<a class="anchor-link" href="#Platform-criteria"> </a></h3><ol>
+<li><strong>Speed</strong> 
+Evaluates how fast a workflow is processed on the platform</li>
+<li><strong>Simplicity</strong> 
+Evaluates how simple a workflow is implemented on the platform</li>
+<li><strong>Completeness</strong>
+Evaluates whether there are any gaps  not provided by the platform workflow implementation</li>
+<li><strong>Reliability</strong>
+Evaluates how reliable workflows are implemented by the platform</li>
+<li><strong>Robustness</strong>
+Evaluates how easy temporary malfunctioning of the platform workflow processing can be overcome</li>
+<li><strong>Security</strong>
+Evaluates how secure the platform workflows are implemented</li>
+</ol>
+<hr>
+<h2 id="Data-Sharing-Process-Evaluation-Workflow">Data Sharing Process Evaluation Workflow<a class="anchor-link" href="#Data-Sharing-Process-Evaluation-Workflow"> </a></h2><div class="mermaid">
 graph TD
 
     subgraph Analyse Use Cases
@@ -400,44 +355,35 @@ graph TD
     DCExpectations[What are the requirements of the data consumers?]
     AnalyseUseCaseEnd[End of use cases analysis]
     end
-comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
----
 
-    <main class="jupyter-page">
-    <div class="jb_cell">
+    WhatUseCases --> WhatSharedData --> DOAudience --> DOExpectations --> AnalyseUseCaseEnd
+    WhatSharedData --> DCAudience --> DCExpectations --> AnalyseUseCaseEnd
+    AnalyseUseCaseEnd --> SelectRelevantEC
 
-<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
+    subgraph Evaluation Criteria Scoping
+    SelectRelevantEC[Select the relevant evaluation criteria]
+    DefineECImportance[Weighten the importance for each relevant evaluation criteria]
+    RefineEC[Optional Refinement of the relevant evaluation criteria]
 
-<pre><code>WhatSharedData --&gt; DCAudience --&gt; DCExpectations --&gt; AnalyseUseCaseEnd
-AnalyseUseCaseEnd --&gt; SelectRelevantEC
+    SelectRelevantEC --> DefineECImportance --> RefineEC
+    end
 
-subgraph Evaluation Criteria Scoping
-SelectRelevantEC[Select the relevant evaluation criteria]
-DefineECImportance[Weighten the importance for each relevant evaluation criteria]
-RefineEC[Optional Refinement of the relevant evaluation criteria]
+    RefineEC --> WfL
 
-SelectRelevantEC --&gt; DefineECImportance --&gt; RefineEC
-end
-
-RefineEC --&gt; WfL
-
-subgraph Evaluation of single Workflows
-WfL&gt;For each: DataSharingWorkflow]
-style WfL fill:darkgrey
-DSWorkflow[Evaluate data sharing workflow]
-EndWfL[End of single workflow loop]
-end
-WfL --&gt; DSWorkflow
-WfL --&gt; EndWfL --&gt; OverallEvalutationCriteria
+    subgraph Evaluation of single Workflows
+    WfL>For each: DataSharingWorkflow]
+    style WfL fill:darkgrey
+    DSWorkflow[Evaluate data sharing workflow]
+    EndWfL[End of single workflow loop]
+    end
+    WfL --> DSWorkflow
+    WfL --> EndWfL --> OverallEvalutationCriteria
 
 
-subgraph Perform Overall Evaluation
-OverallEvalutationCriteria[Evaluate criteria from overall perspective]
-end
-</code></pre>
-<p>&lt;/div&gt;</p>
-<p><em>Figure 7: The data sharing process evaluation workflow</em></p>
+    subgraph Perform Overall Evaluation
+    OverallEvalutationCriteria[Evaluate criteria from overall perspective]
+    end
+</div><p><em>Figure 7: The data sharing process evaluation workflow</em></p>
 <p>The figure shows the proposed evaluation steps group into the following major steps:</p>
 <ol>
 <li><strong>Analyse Use Cases</strong>
