@@ -1,3 +1,7 @@
+---
+empty_frontmatter: true
+---
+
 # FAIR Cookbook
 
 ---
