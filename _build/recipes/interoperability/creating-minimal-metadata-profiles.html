@@ -22,7 +22,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <h1 id="Creating-a-Metadata-Profile">Creating a Metadata Profile<a class="anchor-link" href="#Creating-a-Metadata-Profile"> </a></h1><hr>
 <div class="row">
 
-<p><div class="column">
+  <div class="column">
     <div class="card">
       <div class="container">
         <i class="fa fa-qrcode fa-2x" style="color:#7e0038"></i>
@@ -30,9 +30,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <p> identifier: <a href="">RX.X</a> </p>
         <p> version: <a href="">v1.0</a> </p>
       </div>
-    &lt;/div&gt;
-  &lt;/div&gt;
-  <div class="column">
+    </div>
+  </div><div class="column">
     <div class="card">
       <div class="container">
         <i class="fa fa-fire fa-2x" style="color:#7e0038"></i>
@@ -42,11 +41,9 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <i class="fa fa-fire fa-lg" style="color:#7e0038"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
         <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
       </div>
-    &lt;/div&gt;
-  &lt;/div&gt;<br>
-  <div class="column">
+    </div>
+  </div><div class="column">
     <div class="card">
       <div class="container">
         <i class="fa fa-clock-o fa-2x" style="color:#7e0038;"></i>
@@ -57,9 +54,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <h4><b>Executable Code</b></h4>
         <p><i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> Yes</p>
       </div>
-    &lt;/div&gt;
-  &lt;/div&gt;
-  <div class="column">
+    </div>
+  </div><div class="column">
     <div class="card">
       <div class="container">
         <i class="fa fa-group fa-2x" style="color:#7e0038;"></i>
@@ -69,51 +65,37 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
         <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientists </p>
 <!--         <p> <i class="fa fa-money fa-lg" style="color:#7e0038;"></i> Funders</p> -->
       </div>
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;!-- ---</p>
-<p><strong>identifier:</strong> <a href="RX.X.X">RX.X.X</a></p>
-<p><strong>version:</strong> <a href="v0.1">v0.1</a></p>
-<hr>
-<p><strong><em>Difficulty level:</em></strong> :triangular_flag_on_post: :triangular_flag_on_post: :triangular_flag_on_post: :triangular_flag_on_post: :white_circle:</p>
-<p><strong><em>Reading time:</em></strong> 45 minutes</p>
-<p><strong><em>Intended Audience:</em></strong></p>
-<blockquote><p>:heavy_check_mark:  Terminology Manager</p>
-<p>:heavy_check_mark:  Ontologist</p>
-<p>:heavy_check_mark:  Data Scientist</p>
-</blockquote>
-<p><strong><em>Recipe Type</em></strong>: Practical</p>
-<p><strong><em>Executable code</em></strong>: No
- --&gt;</p>
-<hr>
-<h2 id="Graphical-Overview:">Graphical Overview:<a class="anchor-link" href="#Graphical-Overview:"> </a></h2>
-<pre><code>graph TD
-  A[Defining a Metadata Requirement Profile: Transcriptomics Data]:::box --&gt; Z:::box
-  Z(fa:fa-pie-chart Requirement  Analysis) --&gt; W[fa:fa-file-text fa:fa-bars List of  Requirements: Minimal vs Recommended]
+    </div>
+  </div>
+</div><hr>
+<h2 id="Graphical-Overview:">Graphical Overview:<a class="anchor-link" href="#Graphical-Overview:"> </a></h2><div class="mermaid">
 
-  W:::box --&gt; |Survey State of the Art| C{fa:fa-binoculars &lt;br&gt; Is there&lt;br&gt; prior work?}:::box
+graph TD
+  A[Defining a Metadata Requirement Profile: Transcriptomics Data]:::box --> Z:::box
+  Z(fa:fa-pie-chart Requirement  Analysis) --> W[fa:fa-file-text fa:fa-bars List of  Requirements: Minimal vs Recommended]
+
+  W:::box --> |Survey State of the Art| C{fa:fa-binoculars <br> Is there<br> prior work?}:::box
 
 
-  C --&gt; |No| E[fa:fa-magic Create Checklist &lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-square-o&lt;br&gt;fa:fa-check-square]:::box
-  C --&gt; |Yes| D[Minimum Information Checklist]:::box
-  D --&gt; G{Evaluation:&lt;br&gt; is it enough?}:::box
-  G --&gt; |Yes| H[fa:fa-recycle Reuse Checklist &lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-square-o&lt;br&gt;fa:fa-check-square]:::box
-  G --&gt; |No| I[fa:fa-code-fork Extend Checklist &lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-square-o&lt;br&gt;fa:fa-check-square&lt;br&gt;fa:fa-check-square]:::box
-  H --&gt; K{Machine&lt;br&gt; actionable&lt;br&gt; checklist?&lt;br&gt;fa:fa-code&lt;br&gt; fa:fa-cogs}:::box
-  E --&gt; K{Machine&lt;br&gt; actionable&lt;br&gt; checklist?&lt;br&gt;fa:fa-code&lt;br&gt; fa:fa-cogs}:::box
-  I --&gt; K{Machine&lt;br&gt; actionable&lt;br&gt; checklist?&lt;br&gt;fa:fa-code&lt;br&gt; fa:fa-cogs}:::box
-  K --&gt; |Entity Mapping to Ontology| L[ontology&lt;br&gt; tagged &lt;br&gt;requirements]:::box
+  C --> |No| E[fa:fa-magic Create Checklist <br>fa:fa-check-square<br>fa:fa-check-square<br>fa:fa-square-o<br>fa:fa-check-square]:::box
+  C --> |Yes| D[Minimum Information Checklist]:::box
+  D --> G{Evaluation:<br> is it enough?}:::box
+  G --> |Yes| H[fa:fa-recycle Reuse Checklist <br>fa:fa-check-square<br>fa:fa-check-square<br>fa:fa-square-o<br>fa:fa-check-square]:::box
+  G --> |No| I[fa:fa-code-fork Extend Checklist <br>fa:fa-check-square<br>fa:fa-check-square<br>fa:fa-square-o<br>fa:fa-check-square<br>fa:fa-check-square]:::box
+  H --> K{Machine<br> actionable<br> checklist?<br>fa:fa-code<br> fa:fa-cogs}:::box
+  E --> K{Machine<br> actionable<br> checklist?<br>fa:fa-code<br> fa:fa-cogs}:::box
+  I --> K{Machine<br> actionable<br> checklist?<br>fa:fa-code<br> fa:fa-cogs}:::box
+  K --> |Entity Mapping to Ontology| L[ontology<br> tagged <br>requirements]:::box
 
-  K --&gt; |Entity Data Typing| M[Data&lt;br&gt; typed&lt;br&gt; requirements]:::box
-  M --&gt; |Definition of value sets| N[Ontology&lt;br&gt; constrained&lt;br&gt; fa:fa-link requirements]:::box
-  K --&gt; |Formalization| J[Machine Readable Metadata Profile &lt;br&gt;fa:fa-code&lt;br&gt; fa:fa-cogs&lt;br&gt;fa:fa-code]:::box
-  J --&gt; |Implementation| O[User Friendly Metadata Collection &lt;br&gt; e.g. Form, Tabular template &lt;br&gt; fa:fa-file-excel-o fa:fa-file-excel-o fa:fa-file-excel-o&lt;br&gt; fa:fa-group fa:fa-group fa:fa-group]:::box
+  K --> |Entity Data Typing| M[Data<br> typed<br> requirements]:::box
+  M --> |Definition of value sets| N[Ontology<br> constrained<br> fa:fa-link requirements]:::box
+  K --> |Formalization| J[Machine Readable Metadata Profile <br>fa:fa-code<br> fa:fa-cogs<br>fa:fa-code]:::box
+  J --> |Implementation| O[User Friendly Metadata Collection <br> e.g. Form, Tabular template <br> fa:fa-file-excel-o fa:fa-file-excel-o fa:fa-file-excel-o<br> fa:fa-group fa:fa-group fa:fa-group]:::box
 
   linkStyle 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 stroke:#2a9fc9,stroke-width:1px,color:#2a9fc9,font-family:avenir;
-  classDef box font-family:avenir,font-size:14px,fill:#2a9fc9,stroke:#222,color:#fff,stroke-width:1px</code></pre>
-<p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgQVtEZWZpbmluZyBhIE1ldGFkYXRhIFJlcXVpcmVtZW50IFByb2ZpbGU6IFRyYW5zY3JpcHRvbWljcyBEYXRhXTo6OmJveCAtLT4gWjo6OmJveFxuICBaKGZhOmZhLXBpZS1jaGFydCBSZXF1aXJlbWVudCAgQW5hbHlzaXMpIC0tPiBXW2ZhOmZhLWZpbGUtdGV4dCBmYTpmYS1iYXJzIExpc3Qgb2YgIFJlcXVpcmVtZW50czogTWluaW1hbCB2cyBSZWNvbW1lbmRlZF1cblxuICBXOjo6Ym94IC0tPiB8U3VydmV5IFN0YXRlIG9mIHRoZSBBcnR8IEN7ZmE6ZmEtYmlub2N1bGFycyA8YnI-IElzIHRoZXJlPGJyPiBwcmlvciB3b3JrP306Ojpib3hcblxuXG4gIEMgLS0-IHxOb3wgRVtmYTpmYS1tYWdpYyBDcmVhdGUgQ2hlY2tsaXN0IDxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLXNxdWFyZS1vPGJyPmZhOmZhLWNoZWNrLXNxdWFyZV06Ojpib3hcbiAgQyAtLT4gfFllc3wgRFtNaW5pbXVtIEluZm9ybWF0aW9uIENoZWNrbGlzdF06Ojpib3hcbiAgRCAtLT4gR3tFdmFsdWF0aW9uOjxicj4gaXMgaXQgZW5vdWdoP306Ojpib3hcbiAgRyAtLT4gfFllc3wgSFtmYTpmYS1yZWN5Y2xlIFJldXNlIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmVdOjo6Ym94XG4gIEcgLS0-IHxOb3wgSVtmYTpmYS1jb2RlLWZvcmsgRXh0ZW5kIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlXTo6OmJveFxuICBIIC0tPiBLe01hY2hpbmU8YnI-IGFjdGlvbmFibGU8YnI-IGNoZWNrbGlzdD88YnI-ZmE6ZmEtY29kZTxicj4gZmE6ZmEtY29nc306Ojpib3hcbiAgRSAtLT4gS3tNYWNoaW5lPGJyPiBhY3Rpb25hYmxlPGJyPiBjaGVja2xpc3Q_PGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3N9Ojo6Ym94XG4gIEkgLS0-IEt7TWFjaGluZTxicj4gYWN0aW9uYWJsZTxicj4gY2hlY2tsaXN0Pzxicj5mYTpmYS1jb2RlPGJyPiBmYTpmYS1jb2dzfTo6OmJveFxuICBLIC0tPiB8RW50aXR5IE1hcHBpbmcgdG8gT250b2xvZ3l8IExbb250b2xvZ3k8YnI-IHRhZ2dlZCA8YnI-cmVxdWlyZW1lbnRzXTo6OmJveFxuXG4gIEsgLS0-IHxFbnRpdHkgRGF0YSBUeXBpbmd8IE1bRGF0YTxicj4gdHlwZWQ8YnI-IHJlcXVpcmVtZW50c106Ojpib3hcbiAgTSAtLT4gfERlZmluaXRpb24gb2YgdmFsdWUgc2V0c3wgTltPbnRvbG9neTxicj4gY29uc3RyYWluZWQ8YnI-IGZhOmZhLWxpbmsgcmVxdWlyZW1lbnRzXTo6OmJveFxuICBLIC0tPiB8Rm9ybWFsaXphdGlvbnwgSltNYWNoaW5lIFJlYWRhYmxlIE1ldGFkYXRhIFByb2ZpbGUgPGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3M8YnI-ZmE6ZmEtY29kZV06Ojpib3hcbiAgSiAtLT4gfEltcGxlbWVudGF0aW9ufCBPW1VzZXIgRnJpZW5kbHkgTWV0YWRhdGEgQ29sbGVjdGlvbiA8YnI-IGUuZy4gRm9ybSwgVGFidWxhciB0ZW1wbGF0ZSA8YnI-IGZhOmZhLWZpbGUtZXhjZWwtbyBmYTpmYS1maWxlLWV4Y2VsLW8gZmE6ZmEtZmlsZS1leGNlbC1vPGJyPiBmYTpmYS1ncm91cCBmYTpmYS1ncm91cCBmYTpmYS1ncm91cF06Ojpib3hcbiAgXG4gIGxpbmtTdHlsZSAwLDEsMiwzLDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1IHN0cm9rZTojMmE5ZmM5LHN0cm9rZS13aWR0aDoxcHgsY29sb3I6IzJhOWZjOSxmb250LWZhbWlseTphdmVuaXI7XG4gIGNsYXNzRGVmIGJveCBmb250LWZhbWlseTphdmVuaXIsZm9udC1zaXplOjE0cHgsZmlsbDojMmE5ZmM5LHN0cm9rZTojMjIyLGNvbG9yOiNmZmYsc3Ryb2tlLXdpZHRoOjFweFxuXG5cblxuICAiLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ"><img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgQVtEZWZpbmluZyBhIE1ldGFkYXRhIFJlcXVpcmVtZW50IFByb2ZpbGU6IFRyYW5zY3JpcHRvbWljcyBEYXRhXTo6OmJveCAtLT4gWjo6OmJveFxuICBaKGZhOmZhLXBpZS1jaGFydCBSZXF1aXJlbWVudCAgQW5hbHlzaXMpIC0tPiBXW2ZhOmZhLWZpbGUtdGV4dCBmYTpmYS1iYXJzIExpc3Qgb2YgIFJlcXVpcmVtZW50czogTWluaW1hbCB2cyBSZWNvbW1lbmRlZF1cblxuICBXOjo6Ym94IC0tPiB8U3VydmV5IFN0YXRlIG9mIHRoZSBBcnR8IEN7ZmE6ZmEtYmlub2N1bGFycyA8YnI-IElzIHRoZXJlPGJyPiBwcmlvciB3b3JrP306Ojpib3hcblxuXG4gIEMgLS0-IHxOb3wgRVtmYTpmYS1tYWdpYyBDcmVhdGUgQ2hlY2tsaXN0IDxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLXNxdWFyZS1vPGJyPmZhOmZhLWNoZWNrLXNxdWFyZV06Ojpib3hcbiAgQyAtLT4gfFllc3wgRFtNaW5pbXVtIEluZm9ybWF0aW9uIENoZWNrbGlzdF06Ojpib3hcbiAgRCAtLT4gR3tFdmFsdWF0aW9uOjxicj4gaXMgaXQgZW5vdWdoP306Ojpib3hcbiAgRyAtLT4gfFllc3wgSFtmYTpmYS1yZWN5Y2xlIFJldXNlIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmVdOjo6Ym94XG4gIEcgLS0-IHxOb3wgSVtmYTpmYS1jb2RlLWZvcmsgRXh0ZW5kIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlXTo6OmJveFxuICBIIC0tPiBLe01hY2hpbmU8YnI-IGFjdGlvbmFibGU8YnI-IGNoZWNrbGlzdD88YnI-ZmE6ZmEtY29kZTxicj4gZmE6ZmEtY29nc306Ojpib3hcbiAgRSAtLT4gS3tNYWNoaW5lPGJyPiBhY3Rpb25hYmxlPGJyPiBjaGVja2xpc3Q_PGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3N9Ojo6Ym94XG4gIEkgLS0-IEt7TWFjaGluZTxicj4gYWN0aW9uYWJsZTxicj4gY2hlY2tsaXN0Pzxicj5mYTpmYS1jb2RlPGJyPiBmYTpmYS1jb2dzfTo6OmJveFxuICBLIC0tPiB8RW50aXR5IE1hcHBpbmcgdG8gT250b2xvZ3l8IExbb250b2xvZ3k8YnI-IHRhZ2dlZCA8YnI-cmVxdWlyZW1lbnRzXTo6OmJveFxuXG4gIEsgLS0-IHxFbnRpdHkgRGF0YSBUeXBpbmd8IE1bRGF0YTxicj4gdHlwZWQ8YnI-IHJlcXVpcmVtZW50c106Ojpib3hcbiAgTSAtLT4gfERlZmluaXRpb24gb2YgdmFsdWUgc2V0c3wgTltPbnRvbG9neTxicj4gY29uc3RyYWluZWQ8YnI-IGZhOmZhLWxpbmsgcmVxdWlyZW1lbnRzXTo6OmJveFxuICBLIC0tPiB8Rm9ybWFsaXphdGlvbnwgSltNYWNoaW5lIFJlYWRhYmxlIE1ldGFkYXRhIFByb2ZpbGUgPGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3M8YnI-ZmE6ZmEtY29kZV06Ojpib3hcbiAgSiAtLT4gfEltcGxlbWVudGF0aW9ufCBPW1VzZXIgRnJpZW5kbHkgTWV0YWRhdGEgQ29sbGVjdGlvbiA8YnI-IGUuZy4gRm9ybSwgVGFidWxhciB0ZW1wbGF0ZSA8YnI-IGZhOmZhLWZpbGUtZXhjZWwtbyBmYTpmYS1maWxlLWV4Y2VsLW8gZmE6ZmEtZmlsZS1leGNlbC1vPGJyPiBmYTpmYS1ncm91cCBmYTpmYS1ncm91cCBmYTpmYS1ncm91cF06Ojpib3hcbiAgXG4gIGxpbmtTdHlsZSAwLDEsMiwzLDQsNSw2LDcsOCw5LDEwLDExLDEyLDEzLDE0LDE1IHN0cm9rZTojMmE5ZmM5LHN0cm9rZS13aWR0aDoxcHgsY29sb3I6IzJhOWZjOSxmb250LWZhbWlseTphdmVuaXI7XG4gIGNsYXNzRGVmIGJveCBmb250LWZhbWlseTphdmVuaXIsZm9udC1zaXplOjE0cHgsZmlsbDojMmE5ZmM5LHN0cm9rZTojMjIyLGNvbG9yOiNmZmYsc3Ryb2tlLXdpZHRoOjFweFxuXG5cblxuICAiLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ" alt=""></a></p>
-<!--
+  classDef box font-family:avenir,font-size:14px,fill:#2a9fc9,stroke:#222,color:#fff,stroke-width:1px
+
+</div><!--
 [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgQVtEZWZpbmluZyBhIE1ldGFkYXRhIFJlcXVpcmVtZW50IFByb2ZpbGU6IFRyYW5zY3JpcHRvbWljcyBEYXRhXSAtLT4gWlxuICBaKGZhOmZhLXBpZS1jaGFydCBSZXF1aXJlbWVudCAgQW5hbHlzaXMpIC0tPiBXW2ZhOmZhLWZpbGUtdGV4dCBmYTpmYS1iYXJzIExpc3Qgb2YgIFJlcXVpcmVtZW50czogTWluaW1hbCB2cyBSZWNvbW1lbmRlZF1cblxuICBXIC0tPiB8U3VydmV5IFN0YXRlIG9mIHRoZSBBcnR8IEN7ZmE6ZmEtYmlub2N1bGFycyA8YnI-IElzIHRoZXJlPGJyPiBwcmlvciB3b3JrP31cblxuXG4gIEMgLS0-IHxOb3wgRVtmYTpmYS1tYWdpYyBDcmVhdGUgQ2hlY2tsaXN0IDxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLXNxdWFyZS1vPGJyPmZhOmZhLWNoZWNrLXNxdWFyZV1cbiAgQyAtLT4gfFllc3wgRFtNaW5pbXVtIEluZm9ybWF0aW9uIENoZWNrbGlzdF1cbiAgRCAtLT4gR3tFdmFsdWF0aW9uOjxicj4gaXMgaXQgZW5vdWdoP31cbiAgRyAtLT4gfFllc3wgSFtmYTpmYS1yZWN5Y2xlIFJldXNlIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmVdXG4gIEcgLS0-IHxOb3wgSVtmYTpmYS1jb2RlLWZvcmsgRXh0ZW5kIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlXVxuICBIIC0tPiBLe01hY2hpbmU8YnI-IGFjdGlvbmFibGU8YnI-IGNoZWNrbGlzdD88YnI-ZmE6ZmEtY29kZTxicj4gZmE6ZmEtY29nc31cbiAgRSAtLT4gS3tNYWNoaW5lPGJyPiBhY3Rpb25hYmxlPGJyPiBjaGVja2xpc3Q_PGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3N9XG4gIEkgLS0-IEt7TWFjaGluZTxicj4gYWN0aW9uYWJsZTxicj4gY2hlY2tsaXN0Pzxicj5mYTpmYS1jb2RlPGJyPiBmYTpmYS1jb2dzfVxuICBLIC0tPiB8RW50aXR5IE1hcHBpbmcgdG8gT250b2xvZ3l8IExbb250b2xvZ3k8YnI-IHRhZ2dlZCA8YnI-cmVxdWlyZW1lbnRzXVxuXG4gIEsgLS0-IHxFbnRpdHkgRGF0YSBUeXBpbmd8IE1bRGF0YTxicj4gdHlwZWQ8YnI-IHJlcXVpcmVtZW50c11cbiAgTSAtLT4gfERlZmluaXRpb24gb2YgdmFsdWUgc2V0c3wgTltPbnRvbG9neTxicj4gY29uc3RyYWluZWQ8YnI-IGZhOmZhLWxpbmsgcmVxdWlyZW1lbnRzXVxuICBLIC0tPiB8Rm9ybWFsaXphdGlvbnwgSltNYWNoaW5lIFJlYWRhYmxlIE1ldGFkYXRhIFByb2ZpbGUgPGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3M8YnI-ZmE6ZmEtY29kZV1cbiAgSiAtLT4gfEltcGxlbWVudGF0aW9ufCBPW1VzZXIgRnJpZW5kbHkgTWV0YWRhdGEgQ29sbGVjdGlvbiA8YnI-IGUuZy4gRm9ybSwgVGFidWxhciB0ZW1wbGF0ZSA8YnI-IGZhOmZhLWZpbGUtZXhjZWwtbyBmYTpmYS1maWxlLWV4Y2VsLW8gZmE6ZmEtZmlsZS1leGNlbC1vPGJyPiBmYTpmYS1ncm91cCBmYTpmYS1ncm91cCBmYTpmYS1ncm91cF1cblxuXG5cblxuICAiLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgQVtEZWZpbmluZyBhIE1ldGFkYXRhIFJlcXVpcmVtZW50IFByb2ZpbGU6IFRyYW5zY3JpcHRvbWljcyBEYXRhXSAtLT4gWlxuICBaKGZhOmZhLXBpZS1jaGFydCBSZXF1aXJlbWVudCAgQW5hbHlzaXMpIC0tPiBXW2ZhOmZhLWZpbGUtdGV4dCBmYTpmYS1iYXJzIExpc3Qgb2YgIFJlcXVpcmVtZW50czogTWluaW1hbCB2cyBSZWNvbW1lbmRlZF1cblxuICBXIC0tPiB8U3VydmV5IFN0YXRlIG9mIHRoZSBBcnR8IEN7ZmE6ZmEtYmlub2N1bGFycyA8YnI-IElzIHRoZXJlPGJyPiBwcmlvciB3b3JrP31cblxuXG4gIEMgLS0-IHxOb3wgRVtmYTpmYS1tYWdpYyBDcmVhdGUgQ2hlY2tsaXN0IDxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLXNxdWFyZS1vPGJyPmZhOmZhLWNoZWNrLXNxdWFyZV1cbiAgQyAtLT4gfFllc3wgRFtNaW5pbXVtIEluZm9ybWF0aW9uIENoZWNrbGlzdF1cbiAgRCAtLT4gR3tFdmFsdWF0aW9uOjxicj4gaXMgaXQgZW5vdWdoP31cbiAgRyAtLT4gfFllc3wgSFtmYTpmYS1yZWN5Y2xlIFJldXNlIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmVdXG4gIEcgLS0-IHxOb3wgSVtmYTpmYS1jb2RlLWZvcmsgRXh0ZW5kIENoZWNrbGlzdCA8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlPGJyPmZhOmZhLWNoZWNrLXNxdWFyZTxicj5mYTpmYS1zcXVhcmUtbzxicj5mYTpmYS1jaGVjay1zcXVhcmU8YnI-ZmE6ZmEtY2hlY2stc3F1YXJlXVxuICBIIC0tPiBLe01hY2hpbmU8YnI-IGFjdGlvbmFibGU8YnI-IGNoZWNrbGlzdD88YnI-ZmE6ZmEtY29kZTxicj4gZmE6ZmEtY29nc31cbiAgRSAtLT4gS3tNYWNoaW5lPGJyPiBhY3Rpb25hYmxlPGJyPiBjaGVja2xpc3Q_PGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3N9XG4gIEkgLS0-IEt7TWFjaGluZTxicj4gYWN0aW9uYWJsZTxicj4gY2hlY2tsaXN0Pzxicj5mYTpmYS1jb2RlPGJyPiBmYTpmYS1jb2dzfVxuICBLIC0tPiB8RW50aXR5IE1hcHBpbmcgdG8gT250b2xvZ3l8IExbb250b2xvZ3k8YnI-IHRhZ2dlZCA8YnI-cmVxdWlyZW1lbnRzXVxuXG4gIEsgLS0-IHxFbnRpdHkgRGF0YSBUeXBpbmd8IE1bRGF0YTxicj4gdHlwZWQ8YnI-IHJlcXVpcmVtZW50c11cbiAgTSAtLT4gfERlZmluaXRpb24gb2YgdmFsdWUgc2V0c3wgTltPbnRvbG9neTxicj4gY29uc3RyYWluZWQ8YnI-IGZhOmZhLWxpbmsgcmVxdWlyZW1lbnRzXVxuICBLIC0tPiB8Rm9ybWFsaXphdGlvbnwgSltNYWNoaW5lIFJlYWRhYmxlIE1ldGFkYXRhIFByb2ZpbGUgPGJyPmZhOmZhLWNvZGU8YnI-IGZhOmZhLWNvZ3M8YnI-ZmE6ZmEtY29kZV1cbiAgSiAtLT4gfEltcGxlbWVudGF0aW9ufCBPW1VzZXIgRnJpZW5kbHkgTWV0YWRhdGEgQ29sbGVjdGlvbiA8YnI-IGUuZy4gRm9ybSwgVGFidWxhciB0ZW1wbGF0ZSA8YnI-IGZhOmZhLWZpbGUtZXhjZWwtbyBmYTpmYS1maWxlLWV4Y2VsLW8gZmE6ZmEtZmlsZS1leGNlbC1vPGJyPiBmYTpmYS1ncm91cCBmYTpmYS1ncm91cCBmYTpmYS1ncm91cF1cblxuXG5cblxuICAiLCJtZXJtYWlkIjp7InRoZW1lIjoibmV1dHJhbCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ)
 -->
 
