@@ -19,7 +19,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="RDF-Metadata-Profile-Validation-with-Shape-Expression:">RDF Metadata Profile Validation with Shape Expression:<a class="anchor-link" href="#RDF-Metadata-Profile-Validation-with-Shape-Expression:"> </a></h1><h2 id="the-Covid-19-sample-metadata-use-case">the Covid-19 sample metadata use case<a class="anchor-link" href="#the-Covid-19-sample-metadata-use-case"> </a></h2><hr>
+<h1 id="RDF-Metadata-Profile-Validation-with-Shape-Expression:">RDF Metadata Profile Validation with Shape Expression:<a class="anchor-link" href="#RDF-Metadata-Profile-Validation-with-Shape-Expression:"> </a></h1><h2 id="The-Covid-19-sample-metadata-use-case">The Covid-19 sample metadata use case<a class="anchor-link" href="#The-Covid-19-sample-metadata-use-case"> </a></h2><hr>
 <div class="row">
 
   <div class="column">
@@ -72,6 +72,9 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
     </div>
   </div>
 </div><hr>
+<h2 id="Overview:">Overview:<a class="anchor-link" href="#Overview:"> </a></h2><p>The purpose of this recipe is to show how to create a metadata collection form complying with a community minimal information checklist (MIUViG), in the context of Covid-19 strain sequencing assays carried on patient collected samples.
+In addition, the recipe includes the conversion of sample metadata to an RDF/Linked Data graph and checks its structure for conformance to requirement using the ShapeExpression specifications.
+Finally, use queries expressed in SPARQL are shown to demonstrate potential data integration scenarios.</p>
 <h2 id="Introduction:">Introduction:<a class="anchor-link" href="#Introduction:"> </a></h2><blockquote><p>:information_source: 
 This recipe is adapted from work carried during the Elixir Covid-19 biohackathon, by the ontology and workflow tracks and presented <a href="http://covid19.genenetwork.org/">here</a> and detailed in the <a href="https://github.com/arvados/bh20-seq-resource/blob/master/paper/paper.md">following manuscript</a> while all the code and associated material is hosted on this <a href="https://github.com/arvados/bh20-seq-resource">github repository</a>.</p>
 <p>:information_source: 
@@ -114,8 +117,8 @@ classDef box1 font-family:avenir,font-size:14px,fill:purple,stroke:#222,color:#f
 classDef box5 font-family:avenir,font-size:14px,fill:#FF3371,stroke:#222,color:#fff,stroke-width:1px
 
 </div><p>The following sections detail each of these steps</p>
-<h2 id="Defining-the-metadata-fields">Defining the metadata fields<a class="anchor-link" href="#Defining-the-metadata-fields"> </a></h2><div><img src="https://i.imgur.com/lwV1cPd.png" width="300" border="1"/></div>
-<div><img src="https://i.imgur.com/1ahQLjy.png" width="300" border="1"/></div><p><br>Based on the <a href="https://gensc.org/">Genome Standards Consortium</a> metadata requirement profile for uncultivated viral sample, also known as the <a href="https://github.com/GenomicsStandardsConsortium/mixs/blob/master/UViGs_MIxS.xlsx">Minimum Information About an Uncultivated Virus Genome (MIUViG)</a>, the first step is to anchor the tags defined by GSC and approved by the those <strong>International Nucleotide Sequence Database Collaboration</strong> (<a href="http://www.insdc.org/">INSDC</a>) tags to one (or more) semantic framework(s).</p>
+<h2 id="Defining-the-metadata-fields">Defining the metadata fields<a class="anchor-link" href="#Defining-the-metadata-fields"> </a></h2><div><img src="https://i.imgur.com/lwV1cPd.png" width="300" style="border:1px solid black"/></div>
+<div><img src="https://i.imgur.com/1ahQLjy.png" width="300" style="border:1px solid black"/></div><p><br>Based on the <a href="https://gensc.org/">Genome Standards Consortium</a> metadata requirement profile for uncultivated viral sample, also known as the <a href="https://github.com/GenomicsStandardsConsortium/mixs/blob/master/UViGs_MIxS.xlsx">Minimum Information About an Uncultivated Virus Genome (MIUViG)</a>, the first step is to anchor the tags defined by GSC and approved by the those <strong>International Nucleotide Sequence Database Collaboration</strong> (<a href="http://www.insdc.org/">INSDC</a>) tags to one (or more) semantic framework(s).</p>
 <h2 id="Semantic-anchoring-of-metadata-element:">Semantic anchoring of metadata element:<a class="anchor-link" href="#Semantic-anchoring-of-metadata-element:"> </a></h2><p>Several distinct to the following resources mappings have been made by the developers :</p>
 <ul>
 <li><a href="https://obofoundry.org">OBO Foundry</a></li>
@@ -124,9 +127,9 @@ classDef box5 font-family:avenir,font-size:14px,fill:#FF3371,stroke:#222,color:#
 </ul>
 <!-- ![](https://i.imgur.com/Ro92a7D.png) -->
 
-<div><img src="https://i.imgur.com/Ro92a7D.png" width="800" border="1"/></div><p><br></p>
+<div><img src="https://i.imgur.com/Ro92a7D.png" width="800" style="border:1px solid black"/></div><p><br></p>
 <p>However, for the final implementation, only the OBO related mappings have been used as show in the following figure.</p>
-<div><img src="https://i.imgur.com/Lc7FcPs.png" width="800" border="1"/></div><!-- ![](https://i.imgur.com/Lc7FcPs.png) -->
+<div><img src="https://i.imgur.com/Lc7FcPs.png" width="800" style="border:1px solid black"/></div><!-- ![](https://i.imgur.com/Lc7FcPs.png) -->
 
 <p><br></p>
 <h2 id="1.-metadata-schema-definition-using-SALAD-schema-language:">1. metadata schema definition using SALAD schema language:<a class="anchor-link" href="#1.-metadata-schema-definition-using-SALAD-schema-language:"> </a></h2><p>Quoting the project's documentation, "<em><a href="https://github.com/common-workflow-language/schema_salad">the Semantic Annotations for Linked Avro Data (SALAD)</a> is a schema language for describing JSON or YAML structured linked data documents. <code>SALAD schema</code> describes rules for preprocessing, structural validation, and hyperlink checking for documents described by a Salad schema. Salad supports rich data modeling with inheritance, template specialization, object identifiers, object references, documentation generation, code generation, and transformation to RDF. SALAD provides a bridge between document and record oriented data modeling and the Semantic Web."</em></p>
@@ -193,10 +196,10 @@ But in this example, we are using the SALAD schema to capture the annotation req
       jsonldPredicate:
           _id: http://www.ebi.ac.uk/efo/EFO_0000727
 </pre></div>
-<p>source: <a href="https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-schema.yml">https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-schema.yml</a></p>
-<h3 id="The-corresponding-metadata-acquisition-web-form:">The corresponding metadata acquisition web form:<a class="anchor-link" href="#The-corresponding-metadata-acquisition-web-form:"> </a></h3><div><img src="https://i.imgur.com/5eQN9hw.png" width="800" border="1"/></div><!-- ![](https://i.imgur.com/5eQN9hw.png) -->
+<p><code>source</code>: <a href="https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-schema.yml">https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-schema.yml</a></p>
+<h3 id="The-corresponding-metadata-acquisition-web-form:">The corresponding metadata acquisition web form:<a class="anchor-link" href="#The-corresponding-metadata-acquisition-web-form:"> </a></h3><div><img src="https://i.imgur.com/5eQN9hw.png" width="800" style="border:1px solid black"/></div><!-- ![](https://i.imgur.com/5eQN9hw.png) -->
 
-<div><img src="https://i.imgur.com/RR5GSgi.png" width="800" border="1"/></div><!-- ![](https://i.imgur.com/RR5GSgi.png) -->
+<div><img src="https://i.imgur.com/RR5GSgi.png" width="800" style="border:1px solid black"/></div><!-- ![](https://i.imgur.com/RR5GSgi.png) -->
 
 
 
@@ -248,7 +251,7 @@ submitter:
     submitter_orcid: <span class="o">[</span>https://orcid.org/0000-0000-0000-0000,https://orcid.org/0000-0000-0000-0001<span class="o">]</span>
     additional_submitter_information: Optional free text field <span class="k">for</span> additional information
 </pre></div>
-<p>source: <a href="https://github.com/arvados/bh20-seq-resource/blob/master/example/maximum_metadata_example.yaml">https://github.com/arvados/bh20-seq-resource/blob/master/example/maximum_metadata_example.yaml</a></p>
+<p><code>source</code>: <a href="https://github.com/arvados/bh20-seq-resource/blob/master/example/maximum_metadata_example.yaml">https://github.com/arvados/bh20-seq-resource/blob/master/example/maximum_metadata_example.yaml</a></p>
 <h2 id="3.-Conversion-from-YAML-to-RDF:">3. Conversion from YAML to RDF:<a class="anchor-link" href="#3.-Conversion-from-YAML-to-RDF:"> </a></h2><p>Using the schema SALAD python package, the YAML instance file can be easily converted to RDF as shown in the code snippet below:</p>
 <div class="highlight"><pre><span></span>$ pip install schema_salad
 </pre></div>
@@ -258,7 +261,10 @@ submitter:
 <p>Convert a document to JSON-LD::</p>
 <div class="highlight"><pre><span></span>$ schema-salad-tool --print-pre myschema.yml mydocument.yml &gt; mydocument.jsonld
 </pre></div>
-<h2 id="4.-SHEX-expression:">4. SHEX expression:<a class="anchor-link" href="#4.-SHEX-expression:"> </a></h2><p>Working with a domain expert (<a href="http://di002.edv.uniovi.es/~labra/">Dr Jose Emilio Labra Gayo - (Oviedo Uni)</a>, using <a href="https://shex.io/shex-semantics/">Shape Expression syntax</a> the following profile was developed and used to validate the RDF before persistence to the SPARQL endpoint:</p>
+<h2 id="4.-RDF-graph-validation-with-ShEx-expression:">4. RDF graph validation with ShEx expression:<a class="anchor-link" href="#4.-RDF-graph-validation-with-ShEx-expression:"> </a></h2><h3 id="4.1-What-is-ShEx?">4.1 What is ShEx?<a class="anchor-link" href="#4.1-What-is-ShEx?"> </a></h3><p>ShEx stands for <code>Shape Expression</code> and is a syntax for validating and describing RDF graphs. ShEx expressions can be used both to describe RDF and check the conformance of RDF data. The ShEx language  specification was published by the W3C Shape Expressions Community Group but it is not a W3C Standard nor is it on the W3C Standards Track.</p>
+<p>It should be noted that the current W3C Technical Recommendations for RDF shape validation is the <a href="https://www.w3.org/TR/shacl/">SHACL specification</a>.</p>
+<p>ShEx was selected owing to its simplicity, ease of use and availability of experts.</p>
+<h3 id="4.2-Why-is-this-needed?">4.2 Why is this needed?<a class="anchor-link" href="#4.2-Why-is-this-needed?"> </a></h3><p>While defining a SALAD schema using YAML allows to list key entities and their attributes, it does not allow to check constraints. This has to be done on the RDF which needs to be checks for compliancee against a set of constraints which can be expressed using ShEx. Working with a ShEx expert (<a href="http://di002.edv.uniovi.es/~labra/">Dr Jose Emilio Labra Gayo - (Oviedo Uni)</a>, the following <a href="https://shex.io/shex-semantics/">Shape Expression syntax</a> profile was developed and used to validate the RDF before persistence to the SPARQL endpoint.</p>
 <div class="highlight"><pre><span></span>PREFIX : &lt;https://raw.githubusercontent.com/arvados/bh20-seq-resource/master/bh20sequploader/bh20seq-shex.rdf#&gt;
 PREFIX MainSchema: &lt;http://biohackathon.org/bh20-seq-schema#MainSchema/&gt;
 PREFIX hostSchema: &lt;http://biohackathon.org/bh20-seq-schema#hostSchema/&gt;
@@ -328,9 +334,9 @@ PREFIX wikidata: &lt;http://www.wikidata.org/entity/&gt;
     sio:SIO_010055 xsd:string ?<span class="p">;</span>
 <span class="o">}</span>
 </pre></div>
-<p>source: <a href="https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-shex.rdf">https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-shex.rdf</a></p>
-<p>Using the <a href="http://www.weso.es/">WESO</a> developed <a href="http://rdfshape.weso.es/">dedicated tool</a>,  Shape Expression can be viewed. In the example below a <a href="https://schema.org">schema.org</a> base shex expression in presented.</p>
-<div><img src="https://i.imgur.com/z2rriQu.png" link="http://rdfshape.weso.es/shExVisualize?activeSchemaTab=%23schemaTextArea&schema=PREFIX%20%3A%20%3Chttp%3A%2F%2Fwhatever%2F%3E%0APREFIX%20MainSchema%3A%20%3Chttp%3A%2F%2Fbiohackathon.org%2Fbh20-seq-schema%23MainSchema%2F%3E%0APREFIX%20hostSchema%3A%20%3Chttp%3A%2F%2Fbiohackathon.org%2Fbh20-seq-schema%23hostSchema%2F%3E%0APREFIX%20xsd%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20efo%3A%20%20%20%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2F%3E%0Aprefix%20my%3A%20%3Chttp%3A%2F%2Fexample.org%2F%3E%0Aprefix%20ex%3A%20%3Chttp%3A%2F%2Fexample.org%2F%3E%0Aprefix%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix%20sdo%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0Aprefix%20geo%3A%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0Aprefix%20sdo%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0A%0A%3ASubmissionShape%20%7B%0A%20%20MainSchema%3Ahost%20%20%20%20%20%20%20%40%3AHost%20%3B%20%0A%20%20MainSchema%3Asubmitter%20%20%40%3ASubmitter%20%3B%0A%20%20MainSchema%3Asample%20%20%20%20%20%40%3ASample%20%3B%0A%20%20MainSchema%3Asubmitter%20%20%40%3ASubmitter%20%3B%0A%20%20MainSchema%3Atechnology%20%40%3ATechnology%20%3B%0A%7D%0A%20%20%0A%3ASubmitter%20%7B%0A%20%20%09sdo%3AinfectiousAgentClass%20xsd%3Astring%3B%0A%20%20%09sdo%3AinfectiousAgent%20xsd%3Astring%0A%7D%20%0A%20%20%0A%3AHost%20%7B%0A%20a%20%5B%20sdo%3APerson%20%20%0A%20%20%20%20%20sdo%3APatient%20%0A%20%20%20%20%20sdo%3AAnimal%20%20%20%23not%20defined%20yet%20in%20sdo%0A%20%5D%3B%20%0A%20sdo%3Aidentifier%20IRI%2B%3B%0A%20sdo%3Aname%20xsd%3Astring%3B%0A%20sdo%3Agender%20%5B%22female%22%20%22male%22%20%22other%22%20%22NA%22%5D%3B%0A%20sdo%3Aage%20xsd%3Ainteger%3B%0A%20sdo%3Aunit%20IRI%2B%3B%0A%20sdo%3AhealthCondition%20IRI%2B%3B%0A%20sdo%3Adrug%20%40%3ADrug%20%2B%3B%0A%20sdo%3AprimaryPrevention%20%40%3APrimaryPrevention%20%3B%0A%20sdo%3Acomment%20xsd%3Astring%20%2B%0A%7D%20%20%0A%20%0A%3ADrug%20IRI%0A%0A%3APrimaryPrevention%20%7B%0A%7D%0A%0A%3ASample%20%7B%0A%20%20%09sdo%3AdateCreated%20xsd%3ADate%3B%0A%20%20%09sdo%3AfromLocation%20IRI%2B%3B%0A%20%20%09sdo%3AfromLocation%20%40geo%3AGeoLocation%3B%20%23to%20defined%20or%20fetch%20from%20existing%0A%20%20%09sdo%3Aidentifier%20IRI%3B%0A%20%20%09sdo%3Asender%20IRI%0A%7D%20%0A%0A%3ASubmitter%20%7B%0A%20%20%09rdf%3Atype%20%5B%20sdo%3APerson%20%5D%3B%0A%20%20%09sdo%3Aidentifier%20IRI%3B%0A%20%20%09sdo%3Afullname%20xsd%3Astring%3B%0A%20%20%09sdo%3Arolename%20xsd%3Astring%3B%0A%20%20%7D%20%0A%0A%3ATechnology%20%7B%0A%20%20%09sdo%3AmeasurementTechnique%20IRI%2B%20%3B%0A%20%20%09sdo%3AmedicalDevice%20IRI%2B%3B%0A%7D%20%0A%0Ageo%3AGeoLocation%20%7B%7D&schemaEmbedded=false&schemaEngine=ShEx&schemaFormat=ShExC&schemaFormatTextArea=ShExC" width="800" border="1"></div><!-- ![](https://i.imgur.com/z2rriQu.png) -->
+<p><code>source:</code> <a href="https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-shex.rdf">https://github.com/arvados/bh20-seq-resource/blob/master/bh20sequploader/bh20seq-shex.rdf</a></p>
+<p>Using the <a href="http://www.weso.es/">WESO</a> developed <a href="http://rdfshape.weso.es/">RDF shape viewer</a>,  Shape Expression can be rendered graphical. In the example below a <a href="https://schema.org">schema.org</a> base shex expression in presented.</p>
+<div><img src="https://i.imgur.com/z2rriQu.png" link="http://rdfshape.weso.es/shExVisualize?activeSchemaTab=%23schemaTextArea&schema=PREFIX%20%3A%20%3Chttp%3A%2F%2Fwhatever%2F%3E%0APREFIX%20MainSchema%3A%20%3Chttp%3A%2F%2Fbiohackathon.org%2Fbh20-seq-schema%23MainSchema%2F%3E%0APREFIX%20hostSchema%3A%20%3Chttp%3A%2F%2Fbiohackathon.org%2Fbh20-seq-schema%23hostSchema%2F%3E%0APREFIX%20xsd%3A%20%20%3Chttp%3A%2F%2Fwww.w3.org%2F2001%2FXMLSchema%23%3E%0APREFIX%20efo%3A%20%20%20%3Chttp%3A%2F%2Fwww.ebi.ac.uk%2Fefo%2F%3E%0Aprefix%20my%3A%20%3Chttp%3A%2F%2Fexample.org%2F%3E%0Aprefix%20ex%3A%20%3Chttp%3A%2F%2Fexample.org%2F%3E%0Aprefix%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%0Aprefix%20sdo%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0Aprefix%20geo%3A%20%3Chttp%3A%2F%2Fwww.opengis.net%2Font%2Fgeosparql%23%3E%0Aprefix%20sdo%3A%20%3Chttp%3A%2F%2Fschema.org%2F%3E%0A%0A%3ASubmissionShape%20%7B%0A%20%20MainSchema%3Ahost%20%20%20%20%20%20%20%40%3AHost%20%3B%20%0A%20%20MainSchema%3Asubmitter%20%20%40%3ASubmitter%20%3B%0A%20%20MainSchema%3Asample%20%20%20%20%20%40%3ASample%20%3B%0A%20%20MainSchema%3Asubmitter%20%20%40%3ASubmitter%20%3B%0A%20%20MainSchema%3Atechnology%20%40%3ATechnology%20%3B%0A%7D%0A%20%20%0A%3ASubmitter%20%7B%0A%20%20%09sdo%3AinfectiousAgentClass%20xsd%3Astring%3B%0A%20%20%09sdo%3AinfectiousAgent%20xsd%3Astring%0A%7D%20%0A%20%20%0A%3AHost%20%7B%0A%20a%20%5B%20sdo%3APerson%20%20%0A%20%20%20%20%20sdo%3APatient%20%0A%20%20%20%20%20sdo%3AAnimal%20%20%20%23not%20defined%20yet%20in%20sdo%0A%20%5D%3B%20%0A%20sdo%3Aidentifier%20IRI%2B%3B%0A%20sdo%3Aname%20xsd%3Astring%3B%0A%20sdo%3Agender%20%5B%22female%22%20%22male%22%20%22other%22%20%22NA%22%5D%3B%0A%20sdo%3Aage%20xsd%3Ainteger%3B%0A%20sdo%3Aunit%20IRI%2B%3B%0A%20sdo%3AhealthCondition%20IRI%2B%3B%0A%20sdo%3Adrug%20%40%3ADrug%20%2B%3B%0A%20sdo%3AprimaryPrevention%20%40%3APrimaryPrevention%20%3B%0A%20sdo%3Acomment%20xsd%3Astring%20%2B%0A%7D%20%20%0A%20%0A%3ADrug%20IRI%0A%0A%3APrimaryPrevention%20%7B%0A%7D%0A%0A%3ASample%20%7B%0A%20%20%09sdo%3AdateCreated%20xsd%3ADate%3B%0A%20%20%09sdo%3AfromLocation%20IRI%2B%3B%0A%20%20%09sdo%3AfromLocation%20%40geo%3AGeoLocation%3B%20%23to%20defined%20or%20fetch%20from%20existing%0A%20%20%09sdo%3Aidentifier%20IRI%3B%0A%20%20%09sdo%3Asender%20IRI%0A%7D%20%0A%0A%3ASubmitter%20%7B%0A%20%20%09rdf%3Atype%20%5B%20sdo%3APerson%20%5D%3B%0A%20%20%09sdo%3Aidentifier%20IRI%3B%0A%20%20%09sdo%3Afullname%20xsd%3Astring%3B%0A%20%20%09sdo%3Arolename%20xsd%3Astring%3B%0A%20%20%7D%20%0A%0A%3ATechnology%20%7B%0A%20%20%09sdo%3AmeasurementTechnique%20IRI%2B%20%3B%0A%20%20%09sdo%3AmedicalDevice%20IRI%2B%3B%0A%7D%20%0A%0Ageo%3AGeoLocation%20%7B%7D&schemaEmbedded=false&schemaEngine=ShEx&schemaFormat=ShExC&schemaFormatTextArea=ShExC" width="800" style="border:1px solid black"></div><!-- ![](https://i.imgur.com/z2rriQu.png) -->
 
 <p>There is a blog focusing mainly on the sequence analysis but there is a section on metadata validation.</p>
 <h2 id="5.-SPARQL-queries-available-here:">5. SPARQL queries available here:<a class="anchor-link" href="#5.-SPARQL-queries-available-here:"> </a></h2><p><a href="http://covid19.genenetwork.org/blog?id=using-covid-19-pubseq-part1">http://covid19.genenetwork.org/blog?id=using-covid-19-pubseq-part1</a></p>
@@ -369,6 +375,11 @@ Another improvement could be a better integration with repositories such FAIRsha
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left"><a href="">semantic markup</a></td>
+<td style="text-align:left"><a href="">text</a></td>
+<td style="text-align:left"><a href="">URI</a></td>
+</tr>
+<tr>
 <td style="text-align:left"><a href="">constraint validation</a></td>
 <td style="text-align:left"><a href="">text</a></td>
 <td style="text-align:left"><a href="">DOI</a></td>
@@ -389,27 +400,32 @@ Another improvement could be a better integration with repositories such FAIRsha
 <tbody>
 <tr>
 <td style="text-align:left"><a href="https://yaml.org">YAML</a></td>
-<td style="text-align:left"><a href="">EFO</a></td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://fairsharing.org/FAIRsharing.1gr4tz">EFO</a></td>
+<td style="text-align:left"><a href="https://fairsharing.org/bsg-s000518/">MIxS</a></td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://www.w3.org/TR/rdf11-concepts/">RDF</a></td>
-<td style="text-align:left"><a href="">SIO</a></td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://fairsharing.org/FAIRsharing.dpkb5f">SIO</a></td>
+<td style="text-align:left"><a href="">MIUVIG</a></td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1</a></td>
-<td style="text-align:left"><a href="https://schema.org">SDO</a></td>
+<td style="text-align:left"><a href="https://fairsharing.org/FAIRsharing.hzdzq8">schema.org</a></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="https://shex.io/shex-semantics/">Shape Expression Syntax (SHEX)</a></td>
-<td style="text-align:left"><a href="">EDAM</a></td>
+<td style="text-align:left"><a href="https://fairsharing.org/FAIRsharing.a6r7zs">EDAM</a></td>
 <td style="text-align:left"></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="">OBO</a></td>
+<td style="text-align:left"><a href="https://fairsharing.org/biodbcore-001083/">OBO foundry</a></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://fairsharing.org/FAIRsharing.PB6595">Wikidata</a></td>
 </tr>
 </tbody>
 </table>
@@ -435,7 +451,12 @@ Another improvement could be a better integration with repositories such FAIRsha
 </tbody>
 </table>
 <hr>
-<h2 id="Bibliographic-reference:">Bibliographic reference:<a class="anchor-link" href="#Bibliographic-reference:"> </a></h2><hr>
+<h2 id="Bibliographic-reference:">Bibliographic reference:<a class="anchor-link" href="#Bibliographic-reference:"> </a></h2><p>[1]. Avro - <a href="http://avro.apache.org">http://avro.apache.org</a>
+[2]. metaschema - <a href="https://github.com/common-workflow-language/schema_salad/blob/main/schema_salad/metaschema/metaschema.yml">https://github.com/common-workflow-language/schema_salad/blob/main/schema_salad/metaschema/metaschema.yml</a>
+[3]. schema salad - <a href="http://www.commonwl.org/v1.0/SchemaSalad.html">http://www.commonwl.org/v1.0/SchemaSalad.html</a>
+[4]. <a href="https://www.w3.org/RDF/">https://www.w3.org/RDF/</a>
+[5]. <a href="https://shex.io/shex-semantics/">https://shex.io/shex-semantics/</a></p>
+<hr>
 <h2 id="Authors:">Authors:<a class="anchor-link" href="#Authors:"> </a></h2><table>
 <thead><tr>
 <th style="text-align:left">Name</th>
