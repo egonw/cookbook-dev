@@ -112,7 +112,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <table>
 <thead><tr>
 <th>Metadata field</th>
-<th>Required</th>
+<th>Required?</th>
+<th>Definition</th>
 <th>Comment</th>
 </tr>
 </thead>
@@ -120,116 +121,133 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <tr>
 <td>unique ID</td>
 <td>required</td>
+<td>Identifier for a sample that is at least unique within the project</td>
 <td></td>
 </tr>
 <tr>
 <td>sample type</td>
 <td>required</td>
+<td>The type of the collected specimen, eg tissue biopsy, blood draw or throat swab</td>
 <td>ontology field - eg OBI or EFO</td>
 </tr>
 <tr>
 <td>species</td>
 <td>required</td>
-<td>ontolofy field - NCBITaxonomy</td>
+<td>The primary species of the specimen, preferably the taxonomic identifier</td>
+<td>This may not be the same as the "host" organism, eg in the case of a PDX tissue sample, the host may be a mouse but the tissue may be human. Ontology field - NCBITaxonomy</td>
 </tr>
 <tr>
 <td>tissue/organism part</td>
 <td>required</td>
+<td>The tissue from which the sample was taken</td>
 <td>ontology field - eg Uberon</td>
 </tr>
 <tr>
 <td>disease</td>
 <td>required</td>
-<td>ontology field - eg MONDO or DO</td>
+<td>Any diseases that may affect the sample</td>
+<td>This may not necessarily be the same as the host's disease, eg healthy brain tissue might be collected from a host with type II diabetes while cirrhotic liver tissue might be collected from an otherwise healthy individual. Ontology field - eg MONDO or DO</td>
 </tr>
 <tr>
 <td>sex</td>
 <td>required</td>
+<td>The biological/genetic sex of the sample</td>
 <td>ontology field - eg PATO</td>
 </tr>
 <tr>
 <td>development stage</td>
 <td>required</td>
+<td>The developmental stage of the sample</td>
 <td>ontology field - eg Uberon or Hsadpdv; species dependent</td>
 </tr>
 <tr>
 <td>collection date</td>
 <td>required</td>
-<td></td>
+<td>The date on which the sample was collected, in a standardised format</td>
+<td>Collection date in combination with other fields such as location and disease may be sufficient to de-anonymise a sample</td>
 </tr>
 <tr>
 <td>external accessions</td>
 <td>recommended</td>
+<td>Accession numbers from any external resources to which the sample was submitted</td>
 <td>eg Biosamples, Biostudies</td>
 </tr>
 <tr>
 <td>strain</td>
 <td>recommended</td>
+<td>Strain of the species from which the sample was collected, if applicable</td>
 <td>ontology field - eg NCBITaxonomy</td>
 </tr>
 <tr>
 <td>ancestry/ethnicity</td>
 <td>recommended</td>
+<td>Ancestry or ethnic group of the individual from which the sample was collected</td>
 <td>ontology field - eg HANCESTRO</td>
 </tr>
 <tr>
 <td>age</td>
 <td>recommended</td>
+<td>Age of the organism from which the sample was collected</td>
 <td></td>
 </tr>
 <tr>
 <td>age unit</td>
 <td>recommended</td>
+<td>Unit of the value of the age field</td>
 <td>ontology field - eg UO</td>
 </tr>
 <tr>
 <td>BMI</td>
 <td>recommended</td>
-<td></td>
+<td>Body mass index of the individual from which the sample was collected</td>
+<td>Only applies to human samples</td>
 </tr>
 <tr>
 <td>treatment category</td>
 <td>recommended</td>
+<td>Treatments that the sample might have undergone after collection</td>
 <td>ontology field - eg OBI, NCIt or OGMS</td>
 </tr>
 <tr>
 <td>cell type</td>
 <td>recommended</td>
+<td>The cell type(s) known or selected to be present in the sample</td>
 <td>ontology field - eg CL</td>
 </tr>
 <tr>
 <td>growth conditions</td>
 <td>recommended</td>
+<td>Features relating to the growth and/or maintenance of the sample</td>
 <td></td>
-</tr>
-<tr>
-<td>strain</td>
-<td>recommended</td>
-<td>ontology field - species dependent</td>
 </tr>
 <tr>
 <td>genetic variation</td>
 <td>recommended</td>
+<td>Any relevant genetic differences from the specimen or sample to the expected genomic information for this species, eg abnormal chromosome counts, major translocations or indels</td>
 <td></td>
 </tr>
 <tr>
 <td>sample collection technique</td>
 <td>recommended</td>
+<td>The technique used to collect the specimen, eg blood draw or surgical resection</td>
 <td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>phenotype</td>
 <td>recommended</td>
+<td>Any relevant (usually abnormal) phenotypes of the specimen or sample</td>
 <td>ontology field - eg HP or MP; species dependent</td>
 </tr>
 <tr>
 <td>cell cycle</td>
 <td>recommended</td>
+<td>The cell cycle phase of the sample (for synchronized growing cells or a single-cell sample), if known</td>
 <td>ontology field - eg GO</td>
 </tr>
 <tr>
 <td>cell location</td>
 <td>recommended</td>
+<td>The cell location from which genetic material was collected (usually either nucleus or mitochondria)</td>
 <td>ontology field - eg GO</td>
 </tr>
 </tbody>
@@ -248,7 +266,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <table>
 <thead><tr>
 <th>Metadata field</th>
-<th>Required</th>
+<th>Required?</th>
+<th>Definition</th>
 <th>Comment</th>
 </tr>
 </thead>
@@ -256,121 +275,139 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <tr>
 <td>unique ID</td>
 <td>required</td>
+<td>Identifier for the assay that is at least unique within the project</td>
 <td></td>
 </tr>
 <tr>
 <td>experiment type</td>
 <td>required</td>
+<td>The type of experiment performed, eg ATAC-seq or seqFISH</td>
 <td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>extracted nucleic acid/material type</td>
 <td>required</td>
+<td>The type of material that was extracted from the sample, eg polyA RNA</td>
 <td>ontology field - eg ChEBI or EFO</td>
 </tr>
 <tr>
 <td>platform</td>
 <td>required</td>
-<td>ontology field - eg EFO or OBI</td>
-</tr>
-<tr>
-<td>instrument model</td>
-<td>required</td>
+<td>The type of instrument used to perform the assay, eg Illumina HiSeq 4000 or Fluidigm C1 microfluidics platform</td>
 <td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>nucleic acid extraction method</td>
 <td>required</td>
+<td>Technique used to extract the nucleic acid from the cell</td>
 <td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>cDNA library amplication method</td>
 <td>required</td>
+<td>Technique used to amplify a cDNA library</td>
 <td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>array or sequencing method</td>
 <td>required</td>
+<td>The array or sequencing technology used - may be the same as <code>experiment type</code> or can be a more specific term</td>
 <td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>biological or technical replicate</td>
 <td>required</td>
+<td>Information whether the sample on which the assay was performed was biological or technical replicate.</td>
 <td>boolean or CV</td>
 </tr>
 <tr>
 <td>end bias</td>
 <td>required</td>
+<td>The type of tag or end bias the library has, eg 3 prime tag or 5 prime end bias</td>
 <td>standardised field or ontology</td>
 </tr>
 <tr>
 <td>external accessions</td>
 <td>recommended</td>
+<td>Accession numbers from external resources to which assay or protocol information was submitted</td>
 <td>eg protocols.io, AE</td>
+</tr>
+<tr>
+<td>instrument model</td>
+<td>required</td>
+<td>The specific instrument on which the assay was performed. Essential for QC purposes.</td>
+<td>ontology field - eg EFO or OBI</td>
 </tr>
 <tr>
 <td>assay start time</td>
 <td>recommended</td>
+<td>The exact time at which the assay was started</td>
 <td></td>
 </tr>
 <tr>
 <td>assay end time</td>
 <td>recommended</td>
+<td>The exact time at which the assay was completed</td>
 <td></td>
 </tr>
 <tr>
 <td>assay duration</td>
 <td>recommended</td>
+<td>The duration, in a relevant time unit (eg minutes or hours), of the assay from start to finish</td>
 <td></td>
 </tr>
 <tr>
 <td>array quality</td>
 <td>recommended</td>
-<td></td>
-</tr>
-<tr>
-<td>cell quality</td>
-<td>recommended</td>
+<td>The overall quality of the array</td>
 <td></td>
 </tr>
 <tr>
 <td>chemical compound</td>
 <td>recommended</td>
+<td>Any relevant chemical compounds used in the assay</td>
 <td>ontology field - eg ChEBI</td>
 </tr>
 <tr>
 <td>labeling molecule used</td>
 <td>recommended</td>
+<td>The type of labeling molecule used in an array-based experiment</td>
 <td>ontology field - eg ChEBI</td>
 </tr>
 <tr>
 <td>spike-in kit used</td>
 <td>recommended</td>
+<td>Information about the spike-in kit used during sequencing library preparation</td>
 <td></td>
 </tr>
 <tr>
 <td>cDNA primer</td>
 <td>recommended</td>
+<td>Type of primer used for cDNA synthesis from RNA, eg polyA or random</td>
 <td>standardised field or ontology</td>
 </tr>
 <tr>
 <td>library strandedness</td>
 <td>recommended</td>
+<td>The strandedness of the cDNA library</td>
 <td>standardised field or ontology</td>
 </tr>
 <tr>
 <td>cell quality</td>
 <td>recommended</td>
+<td>Information about the quality of a single cell such as morphology or percent viability</td>
 <td>standardised field or ontology</td>
 </tr>
 <tr>
 <td>cell barcode</td>
 <td>recommended</td>
+<td>Information about the cell identifier barcode used to tag individual cells in single cell sequencing</td>
 <td></td>
 </tr>
 <tr>
 <td>UMI barcode</td>
 <td>recommended</td>
+<td>Information about the Unique Molecular Identifier barcodes used to tag DNA fragments</td>
 </tr>
 </tbody>
 </table>
@@ -385,7 +422,8 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <table>
 <thead><tr>
 <th>Metadata field</th>
-<th>Required</th>
+<th>Required?</th>
+<th>Definition</th>
 <th>Comment</th>
 </tr>
 </thead>
@@ -393,61 +431,73 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 <tr>
 <td>analysis type</td>
 <td>required</td>
+<td>The type of analysis performed, eg genome assembly or variant calling</td>
 <td>ontology field - eg EFO, OBI or EDAM</td>
 </tr>
 <tr>
 <td>computational method</td>
 <td>required</td>
+<td>The specific computational method or algorithm used as part of the analysis</td>
 <td>ontology field - eg EFO or EDAM</td>
 </tr>
 <tr>
 <td>normalisation strategy</td>
 <td>required</td>
+<td>The approach used to normalise the data</td>
 <td>ontology field - eg EFO or EDAM</td>
 </tr>
 <tr>
 <td>file format</td>
 <td>required</td>
+<td>The file format in which the analysis is provided</td>
 <td>ontology field - eg EDAM</td>
 </tr>
 <tr>
 <td>file storage location</td>
 <td>required</td>
+<td>The location in which the data files are stored</td>
 <td></td>
 </tr>
 <tr>
 <td>software package</td>
 <td>recommended</td>
+<td>The software package used for data analysis</td>
 <td></td>
 </tr>
 <tr>
 <td>software version</td>
 <td>recommended</td>
+<td>The exact version number of the software package</td>
 <td></td>
 </tr>
 <tr>
 <td>analysis date</td>
 <td>recommended</td>
+<td>The date on which the analysis was performed</td>
 <td></td>
 </tr>
 <tr>
 <td>read index</td>
 <td>recommended</td>
+<td>The sequencing read a specific file represents, eg read1 or index1</td>
 <td></td>
 </tr>
 <tr>
 <td>read length</td>
 <td>recommended</td>
+<td>The length of a sequenced read in this file, in nucleotides.</td>
 <td></td>
 </tr>
 <tr>
 <td>assembly type</td>
 <td>recommended</td>
-<td></td>
+<td>The assembly type of the genome reference file, eg primary, complete or patch assembly.</td>
+<td>standardised field or ontology</td>
 </tr>
 <tr>
 <td>reference genome version</td>
 <td>recommended</td>
+<td>The genome version of the reference file.</td>
 </tr>
 </tbody>
 </table>
