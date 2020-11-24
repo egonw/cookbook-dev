@@ -6,9 +6,9 @@ prev_page:
   title: |-
     Interoperability
 next_page:
-  url: /recipes/interoperability/creating-minimal-metadata-profiles.html
+  url: /recipes/interoperability/ontology-new-term-request-recipe.html
   title: |-
-    Minimal MetaData Profiles
+    How to request new terms in existing ontologies
 suffix: .md
 dummy: dummy
 comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
@@ -19,7 +19,7 @@ comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /con
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Which-ontology-should-I-use?">Which ontology should I use?<a class="anchor-link" href="#Which-ontology-should-I-use?"> </a></h1><!-- **identifier:** [RX.X](RX.X)
+<h1 id="Which-ontology-orr-terminology-to-use?">Which ontology orr terminology to use?<a class="anchor-link" href="#Which-ontology-orr-terminology-to-use?"> </a></h1><!-- **identifier:** [RX.X](RX.X)
 
 **version:** [v1.0](v1.0)
 
@@ -96,38 +96,27 @@ ___
     </div>
   </div>
 </div><hr>
-<p><!-- [TOC]
- -->
-&lt;!-- # Table of Contents</p>
-<ol>
-<li><a href="#Main%20FAIRification%20Objectives">Main FAIRification Objectives</a></li>
-<li><a href="#Graphical%20Overview%20of%20the%20FAIRification%20Recipe%20Objectives">Graphical Overview of the FAIRification Recipe Objectives</a></li>
-<li><a href="#FAIRification%20Objectives,%20Inputs%20and%20Outputs">FAIRification Objectives, Inputs and Outputs</a></li>
-<li><a href="#Capability%20&amp;%20Maturity%20Table">Capability &amp; Maturity Table</a></li>
-<li><a href="#Table%20of%20Data%20Standards">Table of Data Standards</a></li>
-<li><a href="#Executable%20Code%20in%20Notebook">Executable Code in Notebook</a></li>
-<li><a href="#How%20to%20create%20workflow%20figures">How to create workflow figures</a></li>
-<li><a href="#License">License</a>
---&gt;</li>
-</ol>
-<hr>
 <h2 id="Main-Objectives">Main Objectives<a class="anchor-link" href="#Main-Objectives"> </a></h2><p>The main purpose of this recipe to provide guidances on how to select the most suitable semantic artefacts given a specific research context in general, and when it comes to IMI projects, their main themes, i.e. <em>risk assessment</em>, <em>clinical trial</em>, <em>drug discovery</em> or <em>fundamental research</em>.</p>
 <h2 id="Graphical-Overview-of-the-FAIRification-Recipe-Objectives">Graphical Overview of the FAIRification Recipe Objectives<a class="anchor-link" href="#Graphical-Overview-of-the-FAIRification-Recipe-Objectives"> </a></h2><p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgSTEoZmE6ZmEtdW5pdmVyc2l0eSB3aGF0IGlzIHRoZSBjb250ZXh0Pyk6Ojpib3ggLS0-fGZyYW1ld29ya3wgTTEoZmE6ZmEtY3ViZSBjbGluaWNhbCB0cmlhbCBjb250ZXh0KTo6OmJveFxuICBJMShmYTpmYS11bml2ZXJzaXR5IHdoYXQgaXMgdGhlIGNvbnRleHQ_KSAtLT58ZnJhbWV3b3JrfCBNMihmYTpmYS1jdWJlIG9ic2VydmF0aW9uYWwgcGF0aWVudCBvdXRjb21lKTo6OmJveFxuICBJMShmYTpmYS11bml2ZXJzaXR5IHdoYXQgaXMgdGhlIGNvbnRleHQ_KSAtLT58ZnJhbWV3b3JrfCBNMyhmYTpmYS1jdWJlIGJhc2ljIHJlc2VhcmNoKTo6OmJveFxuXG4gIE0xIC0tPiB8Y29uc2lkZXJ8IFIxKGZhOmZhLWN1YmVzIENESVNDIFZvY2FidWxhcnkpOjo6Ym94XG4gIE0yIC0tPiB8Y29uc2lkZXJ8IFIyKGZhOmZhLWN1YmVzIE9IRFNJIEF0aGVuYSB0ZXJtaW5vbG9naWVzKTo6OmJveFxuICBNMyAtLT4gfGNvbnNpZGVyfCBSMyhmYTpmYS1jdWJlcyBPQk8gRm91bmRyeSByZXNvdXJjZXMpOjo6Ym94XG4gIFxuICBJMntmYTpmYS11bml2ZXJzaXR5IGlzIHB1YmxpYzxicj4gYXJjaGl2ZTxicj4gZGVwb3NpdGlvbiA8YnI-cmVxdWlyZWQ_IH06Ojpib3ggLS0-fE5vIHxSMzo6OmJveFxuICBJMntmYTpmYS11bml2ZXJzaXR5IGlzIHB1YmxpYzxicj4gYXJjaGl2ZTxicj4gZGVwb3NpdGlvbiA8YnI-cmVxdWlyZWQ_IH0gLS0-fFllc3xNNChjb25zdWx0IEZBSVJzaGFyaW5nKTo6OmJveFxuXG4gIE00IC0tPiB8RUJJIHJlc291cmNlc3xNNShFRk8pOjo6Ym94XG5cbiAgbGlua1N0eWxlIDAsMSwyLDMsNCw1LDYsNyw4IHN0cm9rZTojMmE5ZmM5LHN0cm9rZS13aWR0aDoxcHgsY29sb3I6IzJhOWZjOSxmb250LWZhbWlseTphdmVuaXI7XG4gIGNsYXNzRGVmIGJveCBmb250LWZhbWlseTphdmVuaXIsZm9udC1zaXplOjE0cHgsZmlsbDojMmE5ZmM5LHN0cm9rZTojMjIyLGNvbG9yOiNmZmYsc3Ryb2tlLXdpZHRoOjFweFxuXHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9"><img src="https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbiAgSTEoZmE6ZmEtdW5pdmVyc2l0eSB3aGF0IGlzIHRoZSBjb250ZXh0Pyk6Ojpib3ggLS0-fGZyYW1ld29ya3wgTTEoZmE6ZmEtY3ViZSBjbGluaWNhbCB0cmlhbCBjb250ZXh0KTo6OmJveFxuICBJMShmYTpmYS11bml2ZXJzaXR5IHdoYXQgaXMgdGhlIGNvbnRleHQ_KSAtLT58ZnJhbWV3b3JrfCBNMihmYTpmYS1jdWJlIG9ic2VydmF0aW9uYWwgcGF0aWVudCBvdXRjb21lKTo6OmJveFxuICBJMShmYTpmYS11bml2ZXJzaXR5IHdoYXQgaXMgdGhlIGNvbnRleHQ_KSAtLT58ZnJhbWV3b3JrfCBNMyhmYTpmYS1jdWJlIGJhc2ljIHJlc2VhcmNoKTo6OmJveFxuXG4gIE0xIC0tPiB8Y29uc2lkZXJ8IFIxKGZhOmZhLWN1YmVzIENESVNDIFZvY2FidWxhcnkpOjo6Ym94XG4gIE0yIC0tPiB8Y29uc2lkZXJ8IFIyKGZhOmZhLWN1YmVzIE9IRFNJIEF0aGVuYSB0ZXJtaW5vbG9naWVzKTo6OmJveFxuICBNMyAtLT4gfGNvbnNpZGVyfCBSMyhmYTpmYS1jdWJlcyBPQk8gRm91bmRyeSByZXNvdXJjZXMpOjo6Ym94XG4gIFxuICBJMntmYTpmYS11bml2ZXJzaXR5IGlzIHB1YmxpYzxicj4gYXJjaGl2ZTxicj4gZGVwb3NpdGlvbiA8YnI-cmVxdWlyZWQ_IH06Ojpib3ggLS0-fE5vIHxSMzo6OmJveFxuICBJMntmYTpmYS11bml2ZXJzaXR5IGlzIHB1YmxpYzxicj4gYXJjaGl2ZTxicj4gZGVwb3NpdGlvbiA8YnI-cmVxdWlyZWQ_IH0gLS0-fFllc3xNNChjb25zdWx0IEZBSVJzaGFyaW5nKTo6OmJveFxuXG4gIE00IC0tPiB8RUJJIHJlc291cmNlc3xNNShFRk8pOjo6Ym94XG5cbiAgbGlua1N0eWxlIDAsMSwyLDMsNCw1LDYsNyw4IHN0cm9rZTojMmE5ZmM5LHN0cm9rZS13aWR0aDoxcHgsY29sb3I6IzJhOWZjOSxmb250LWZhbWlseTphdmVuaXI7XG4gIGNsYXNzRGVmIGJveCBmb250LWZhbWlseTphdmVuaXIsZm9udC1zaXplOjE0cHgsZmlsbDojMmE5ZmM5LHN0cm9rZTojMjIyLGNvbG9yOiNmZmYsc3Ryb2tlLXdpZHRoOjFweFxuXHRcdCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn0sInVwZGF0ZUVkaXRvciI6ZmFsc2V9" alt=""></a></p>
-<p>&lt;<div class="mermaid">
+<div class="mermaid">
 graph TD
-  I1(fa:fa-university what is the context?):::box --&gt;|framework| M1(fa:fa-cube clinical trial context):::box
-  I1(fa:fa-university what is the context?) --&gt;|framework| M2(fa:fa-cube observational patient outcome):::box
-  I1(fa:fa-university what is the context?) --&gt;|framework| M3(fa:fa-cube basic research):::box</p>
-<p>M1 --&gt; |consider| R1(fa:fa-cubes CDISC Vocabulary):::box
-  M2 --&gt; |consider| R2(fa:fa-cubes OHDSI Athena terminologies):::box
-  M3 --&gt; |consider| R3(fa:fa-cubes OBO Foundry resources):::box</p>
-<p>I2{fa:fa-university is public<br> archive<br> deposition <br>required? }:::box --&gt;|No |R3:::box
-  I2{fa:fa-university is public<br> archive<br> deposition <br>required? } --&gt;|Yes|M4(consult FAIRsharing):::box</p>
-<p>M4 --&gt; |EBI resources|M5(EFO):::box</p>
-<p>linkStyle 0,1,2,3,4,5,6,7,8 stroke:#2a9fc9,stroke-width:1px,color:#2a9fc9,font-family:avenir;
-  classDef box font-family:avenir,font-size:14px,fill:#2a9fc9,stroke:#222,color:#fff,stroke-width:1px</p>
-<p>&lt;/div&gt;</p>
-<hr>
+  I1(fa:fa-university what is the context?):::box -->|framework| M1(fa:fa-cube clinical trial context):::box
+  I1(fa:fa-university what is the context?) -->|framework| M2(fa:fa-cube observational patient outcome):::box
+  I1(fa:fa-university what is the context?) -->|framework| M3(fa:fa-cube basic research):::box
+
+  M1 --> |consider| R1(fa:fa-cubes CDISC Vocabulary):::box
+  M2 --> |consider| R2(fa:fa-cubes OHDSI Athena terminologies):::box
+  M3 --> |consider| R3(fa:fa-cubes OBO Foundry resources):::box
+
+  I2{fa:fa-university is public<br> archive<br> deposition <br>required? }:::box -->|No |R3:::box
+  I2{fa:fa-university is public<br> archive<br> deposition <br>required? } -->|Yes|M4(consult FAIRsharing):::box
+
+  M4 --> |EBI resources|M5(EFO):::box
+
+  linkStyle 0,1,2,3,4,5,6,7,8 stroke:#2a9fc9,stroke-width:1px,color:#2a9fc9,font-family:avenir;
+  classDef box font-family:avenir,font-size:14px,fill:#2a9fc9,stroke:#222,color:#fff,stroke-width:1px
+
+</div><hr>
 <h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><table>
 <thead><tr>
 <th style="text-align:left">Capability</th>
@@ -144,9 +133,9 @@ graph TD
 </tbody>
 </table>
 <hr>
-<h2 id="The-context-is-everything:">The context is everything:<a class="anchor-link" href="#The-context-is-everything:"> </a></h2><p>The domain of operation will somehow dictate the semantic framework that makes most sense selecting. This is simply a consequence of the fact that the advances in data standardization in specific fields is such that it is a sound decision to adopt a complete stack of standards, both syntactic and semantic.</p>
+<h2 id="The-context-is-everything">The context is everything<a class="anchor-link" href="#The-context-is-everything"> </a></h2><p>The domain of operation will somehow dictate the semantic framework that makes most sense selecting. This is simply a consequence of the fact that the advances in data standardization in specific fields is such that it is a sound decision to adopt a complete stack of standards, both syntactic and semantic.</p>
 <p>We will be giving two examples of such situations now:</p>
-<h3 id="Clinical-Trial-Data:">Clinical Trial Data:<a class="anchor-link" href="#Clinical-Trial-Data:"> </a></h3><p>Operating in the field of Clinical Trials means that datasets are generated during <code>interventional studies</code>, meaning that researchers influence and control the predictor variables, which are usually different intensity levels of therapeutic agents in order to gain insights in terms of benefits in patient outcomes.
+<h3 id="Clinical-Trial-Data">Clinical Trial Data<a class="anchor-link" href="#Clinical-Trial-Data"> </a></h3><p>Operating in the field of Clinical Trials means that datasets are generated during <code>interventional studies</code>, meaning that researchers influence and control the predictor variables, which are usually different intensity levels of therapeutic agents in order to gain insights in terms of benefits in patient outcomes.
 In this context, regulatory requirements make it so that data must be recorded in standard forms to allow for review and appraisal by US FDA reviewers. This means that the <a href="">CDISC standards</a> are the <em><code>de-facto standard</code></em> in the area, which mandates the use of semantics resources such as:</p>
 <table>
 <thead><tr>

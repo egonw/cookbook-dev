@@ -1,0 +1,583 @@
+---
+title: |-
+  A Transcriptomics MetaData Profile
+prev_page:
+  url: /recipes/interoperability/creating-minimal-metadata-profiles.html
+  title: |-
+    Minimal MetaData Profiles
+next_page:
+  url: /recipes/interoperability/covid19-sample-metadata-profile-shex-use-case.html
+  title: |-
+    Covid19 Sample MetaData Profile Shex Validation
+suffix: .md
+
+comment: "***PROGRAMMATICALLY GENERATED, DO NOT EDIT. SEE ORIGINAL FILES IN /content***"
+---
+
+    <main class="jupyter-page">
+    <div class="jb_cell">
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="UC9.3-Transcriptomics-metadata">UC9.3 Transcriptomics metadata<a class="anchor-link" href="#UC9.3-Transcriptomics-metadata"> </a></h1><hr>
+<div class="row">
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-qrcode fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Recipe metadata</b></h4>
+        <p> identifier: <a href="">RX.x</a> </p>
+        <p> version: <a href="">v0.1</a> </p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-fire fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Difficulty level</b></h4>
+        <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
+        <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
+        <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+        <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
+  <!--       <p><span data-v-013baba1="" title="" class=""><svg data-v-013baba1="" viewBox="0 0 16 16" width="1em" height="1em" focusable="false" role="img" alt="icon" xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi-bar-chart-fill b-icon bi medium-level"><g data-v-013baba1=""><rect width="4" height="5" x="1" y="10" rx="1"></rect><rect width="4" height="9" x="6" y="6" rx="1"></rect><rect width="4" height="14" x="11" y="1" rx="1"></rect></g></svg> Medium </span></p> -->
+      </div>
+    </div>
+  </div>  
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-clock-o fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Reading Time</b></h4>
+        <p><i class="fa fa-clock-o fa-lg" style="color:#7e0038;"></i> 30 minutes</p>
+        <h4><b>Recipe Type</b></h4>
+        <p><i class="fa fa-globe fa-lg" style="color:#7e0038;"></i> Guidance</p>
+        <h4><b>Executable Code</b></h4>
+        <p><i class="fa fa-play-circle" style="color:#fc7a4a;"></i> No</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <i class="fa fa-group fa-2x" style="color:#7e0038;"></i>
+        <h4><b>Intended Audience</b></h4>
+        <p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigators </p>
+        <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Managers </p>
+        <p> <i class="fa fa-tags fa-lg" style="color:#7e0038;"></i> Terminology Managers </p> 
+        <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientists </p>
+        <p> <i class="fa fa-cogs fa-lg" style="color:#7e0038;"></i> Ontologists </p>
+<!--         <p> <i class="fa fa-terminal fa-lg" style="color:#7e0038;"></i> System Administrators</p>  -->       
+      </div>
+    </div>
+  </div>
+</div><hr>
+<h2 id="Main-Objectives:">Main Objectives:<a class="anchor-link" href="#Main-Objectives:"> </a></h2><p>The main purpose of this recipe is:</p>
+<blockquote><p>To provide guidance on the minimum set of metadata and semantics required to describe any transcriptomics experiments, from standard case-control to dosage-response designs, and from microarrays to single cell RNA sequencing.</p>
+</blockquote>
+<h3 id="Who-is-this-recipe-aimed-at?">Who is this recipe aimed at?<a class="anchor-link" href="#Who-is-this-recipe-aimed-at?"> </a></h3><p>This document is aimed at anyone interested in the metadata, and specifically the ontology annotations, required to capture variables and experimental factors related to a transcriptomics experiment. General knowledge of transcriptomics experiments would be beneficial. No specific technical knowledge is required.</p>
+<hr>
+<h2 id="Capability-&amp;-Maturity-Table">Capability &amp; Maturity Table<a class="anchor-link" href="#Capability-&amp;-Maturity-Table"> </a></h2><table>
+<thead><tr>
+<th style="text-align:left">Capability</th>
+<th style="text-align:left">Initial Maturity Level</th>
+<th style="text-align:left">Final Maturity Level</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Interoperability</td>
+<td style="text-align:left">minimal</td>
+<td style="text-align:left">repeatable</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="Transcriptomics-Data-model">Transcriptomics Data model<a class="anchor-link" href="#Transcriptomics-Data-model"> </a></h2><p>Large sections of any transcriptomics data model are not unique to transcriptomics experiments but are common to a wide range of experiments in the biomedical domain. This includes general project- and sample-level information, which will be briefly covered in this recipe but will also be covered in more depth elsewhere.</p>
+<p>Where possible, metadata should be mapped to ontologies to maximise the FAIRness of any dataset. This recipe will suggest possible ontologies for metadata fields where these are available. These lists may however not be exhaustive as new ontologies emerge regularly.</p>
+<h3 id="Existing-standards-and-checklists">Existing standards and checklists<a class="anchor-link" href="#Existing-standards-and-checklists"> </a></h3><p>A set of well-established standards and minimum metadata checklists exist for various aspects of transcriptomics. They include:</p>
+<p>Minimum Information About a Microarray Experiment (MIAME) - MIAME is intended to specify all the information necessary for an unambiguous interpretation of a microarray experiment, and potentially to reproduce it. MIAME defines the content but not the format for this information. The MIAME standard has been in existence for over 20 years and has been widely adopted across the scientific community. The data models of the major transcriptomics repositories such as ArrayExpress, the Expression Atlas and the Gene Expression Omnibus (GEO) are MIAME-compliant.</p>
+<p>Minimum Information about a high-throughput nucleotide SEQuencing Experiment (MINSEQE) - MINSEQE describes the minimum metadata that is needed to enable the unambiguous interpretation and facilitate reproduction of the results of the experiment. By analogy to the MIAME guidelines for microarray experiments, adherence to the MINSEQE guidelines will improve integration of multiple experiments across different modalities, thereby maximising the value of high-throughput research. MINSEQE has been integrated into a number of transcriptomics and sequencing archives.</p>
+<p>Functional Annotation of Animal Genomes (FAANG) - FAANG provides a set of orthogonal standards for the capture of well-structured metadata for experiments, samples and analyses in the animal genomics domain. The FAANG standards support the MIAME and MINSEQE guidelines, and aim to convert them to a concrete specification.</p>
+<p>Human Cell Atlas Metadata (HCA-Metadata) - the HCA metadata model provides a concrete specification for capturing the metadata for single cell sequencing experiments. It is based on the three standards above, while focusing on the specific requirements of the single cell space.</p>
+<h3 id="Minimum-metadata-vs-desirable-metadata">Minimum metadata vs desirable metadata<a class="anchor-link" href="#Minimum-metadata-vs-desirable-metadata"> </a></h3><p>A minimum metadata set constitutes metadata items that always need to be supplied with any experimental data. For validation purposes, these should not be omittable. Desirable or recommended metadata items on the other hand should be supplied if available but will not cause a validation failure if absent.</p>
+<h3 id="Common-metadata">Common metadata<a class="anchor-link" href="#Common-metadata"> </a></h3><p>Common metadata include any information that is not specific to transcriptomics experiments but applies to most experiments in the biomedical domain. They include:</p>
+<ul>
+<li>Project level metadata</li>
+<li>Common sample level metadata such as species, tissue, cell type etc.</li>
+</ul>
+<h4 id="Suggested-metadata-fields">Suggested metadata fields<a class="anchor-link" href="#Suggested-metadata-fields"> </a></h4><p>The following table contains a non-exhaustive list of suggested minimum metadata fields for biological samples. The collection is based on a range of existing metadata standards, including MIAME, MINSEQE, FAANG and HCA. Fields were included if they occurred in at least two of the standards.</p>
+<table>
+<thead><tr>
+<th>Metadata field</th>
+<th>Required</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unique ID</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td>sample type</td>
+<td>required</td>
+<td>ontology field - eg OBI or EFO</td>
+</tr>
+<tr>
+<td>species</td>
+<td>required</td>
+<td>ontolofy field - NCBITaxonomy</td>
+</tr>
+<tr>
+<td>tissue/organism part</td>
+<td>required</td>
+<td>ontology field - eg Uberon</td>
+</tr>
+<tr>
+<td>disease</td>
+<td>required</td>
+<td>ontology field - eg MONDO or DO</td>
+</tr>
+<tr>
+<td>sex</td>
+<td>required</td>
+<td>ontology field - eg PATO</td>
+</tr>
+<tr>
+<td>development stage</td>
+<td>required</td>
+<td>ontology field - eg Uberon or Hsadpdv; species dependent</td>
+</tr>
+<tr>
+<td>collection date</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td>external accessions</td>
+<td>recommended</td>
+<td>eg Biosamples, Biostudies</td>
+</tr>
+<tr>
+<td>strain</td>
+<td>recommended</td>
+<td>ontology field - eg NCBITaxonomy</td>
+</tr>
+<tr>
+<td>ancestry/ethnicity</td>
+<td>recommended</td>
+<td>ontology field - eg HANCESTRO</td>
+</tr>
+<tr>
+<td>age</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>age unit</td>
+<td>recommended</td>
+<td>ontology field - eg UO</td>
+</tr>
+<tr>
+<td>BMI</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>treatment category</td>
+<td>recommended</td>
+<td>ontology field - eg OBI, NCIt or OGMS</td>
+</tr>
+<tr>
+<td>cell type</td>
+<td>recommended</td>
+<td>ontology field - eg CL</td>
+</tr>
+<tr>
+<td>growth conditions</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>strain</td>
+<td>recommended</td>
+<td>ontology field - species dependent</td>
+</tr>
+<tr>
+<td>genetic variation</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>sample collection technique</td>
+<td>recommended</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>phenotype</td>
+<td>recommended</td>
+<td>ontology field - eg HP or MP; species dependent</td>
+</tr>
+<tr>
+<td>cell cycle</td>
+<td>recommended</td>
+<td>ontology field - eg GO</td>
+</tr>
+<tr>
+<td>cell location</td>
+<td>recommended</td>
+<td>ontology field - eg GO</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Assay-metadata">Assay metadata<a class="anchor-link" href="#Assay-metadata"> </a></h3><p>Assay-level metadata covers any metadata directly related to the preparation of the biomaterial undergoing the assay and the process of performing the assay. Most, though not all, of this metadata is specific to transcriptomics. Examples include:</p>
+<ul>
+<li>Library information, including what sample the library was originally derived from and whether any replicates are biological or technical</li>
+<li>Process (wet experiment) metadata</li>
+<li>Technology type (e.g. bulk RNA-Seq, scRNA-Seq, CITE-Seq)</li>
+<li>Instrument metadata</li>
+<li>Other assay-specific metadata</li>
+<li>QC information</li>
+<li>Workflow metadata</li>
+</ul>
+<h4 id="Suggested-metadata-fields">Suggested metadata fields<a class="anchor-link" href="#Suggested-metadata-fields"> </a></h4><p>The following table contains a non-exhaustive list of suggested minimum metadata fields for assays. The collection is based on a range of existing metadata standards, including MIAME, MINSEQE and HCA. This list can and should be further broken down based on specific technologies used, such as microarrays or whole genome sequencing.</p>
+<table>
+<thead><tr>
+<th>Metadata field</th>
+<th>Required</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>unique ID</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td>experiment type</td>
+<td>required</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>extracted nucleic acid/material type</td>
+<td>required</td>
+<td>ontology field - eg ChEBI or EFO</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>required</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>instrument model</td>
+<td>required</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>nucleic acid extraction method</td>
+<td>required</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>cDNA library amplication method</td>
+<td>required</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>array or sequencing method</td>
+<td>required</td>
+<td>ontology field - eg EFO or OBI</td>
+</tr>
+<tr>
+<td>biological or technical replicate</td>
+<td>required</td>
+<td>boolean or CV</td>
+</tr>
+<tr>
+<td>end bias</td>
+<td>required</td>
+<td>standardised field or ontology</td>
+</tr>
+<tr>
+<td>external accessions</td>
+<td>recommended</td>
+<td>eg protocols.io, AE</td>
+</tr>
+<tr>
+<td>assay start time</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>assay end time</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>assay duration</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>array quality</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>cell quality</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>chemical compound</td>
+<td>recommended</td>
+<td>ontology field - eg ChEBI</td>
+</tr>
+<tr>
+<td>labeling molecule used</td>
+<td>recommended</td>
+<td>ontology field - eg ChEBI</td>
+</tr>
+<tr>
+<td>spike-in kit used</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>cDNA primer</td>
+<td>recommended</td>
+<td>standardised field or ontology</td>
+</tr>
+<tr>
+<td>library strandedness</td>
+<td>recommended</td>
+<td>standardised field or ontology</td>
+</tr>
+<tr>
+<td>cell quality</td>
+<td>recommended</td>
+<td>standardised field or ontology</td>
+</tr>
+<tr>
+<td>cell barcode</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>UMI barcode</td>
+<td>recommended</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Analysis-metadata">Analysis metadata<a class="anchor-link" href="#Analysis-metadata"> </a></h3><p>Analysis-level metadata includes any metadata related to the files that come out of the experiment, from the sequencing or imaging files generated directly by the machine to files generated during the various stages of processing and analysis, as well as details of any analyses performed. It is very important to always capture versions of software and reference genomes used in order to allow accurate replication of results. Analysis metadata includes</p>
+<ul>
+<li>Type of analysis</li>
+<li>File formats, e.g. BAM, fastq or gene count</li>
+<li>File location e.g. URL</li>
+<li>Summarisation of data, e.g. enrichment analysis</li>
+</ul>
+<h4 id="Suggested-metadata-fields">Suggested metadata fields<a class="anchor-link" href="#Suggested-metadata-fields"> </a></h4><p>The following table contains a non-exhaustive list of suggested minimum metadata fields for analyses. The collection is based on a range of existing metadata standards, including MIAME, MINSEQE and HCA. This list can and should be further broken down based on the specific analysis type (primary, secondary or teriatry analysis, meta-analysis etc)</p>
+<table>
+<thead><tr>
+<th>Metadata field</th>
+<th>Required</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>analysis type</td>
+<td>required</td>
+<td>ontology field - eg EFO, OBI or EDAM</td>
+</tr>
+<tr>
+<td>computational method</td>
+<td>required</td>
+<td>ontology field - eg EFO or EDAM</td>
+</tr>
+<tr>
+<td>normalisation strategy</td>
+<td>required</td>
+<td>ontology field - eg EFO or EDAM</td>
+</tr>
+<tr>
+<td>file format</td>
+<td>required</td>
+<td>ontology field - eg EDAM</td>
+</tr>
+<tr>
+<td>file storage location</td>
+<td>required</td>
+<td></td>
+</tr>
+<tr>
+<td>software package</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>software version</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>analysis date</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>read index</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>read length</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>assembly type</td>
+<td>recommended</td>
+<td></td>
+</tr>
+<tr>
+<td>reference genome version</td>
+<td>recommended</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Ontologies-for-transcriptomics-data">Ontologies for transcriptomics data<a class="anchor-link" href="#Ontologies-for-transcriptomics-data"> </a></h2><p>While it is essential that any transcriptomics metadata be annotated with ontology terms wherever possible, there is no absolute set of ontologies that must be used above all others. There is however a consensus set of ontologies and other standardised resources that are commonly used in transcriptomics metadata, including in the main data archives. The most commonly used ontologies and fields they apply to are listed below. This table represents an absolute minimum of ontology annotations that should be included in a transcriptomics metadata set for it to be considered as FAIR. Not all fields suggested for ontology annotation in the previous section are repeated here for this reason.</p>
+<table>
+<thead><tr>
+<th>Data type</th>
+<th>Ontology/Entity sources</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Species</td>
+<td>NCBI taxonomy Scientific name + ID</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Tissue</td>
+<td>Uberon term and Id</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Cell type</td>
+<td>CL term and Id</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Disease</td>
+<td>MONDO, DO or MeSH</td>
+<td>Ontology</td>
+<td>no single solution - options vary depending on resource and individual requirements</td>
+</tr>
+<tr>
+<td>Phenotype/Trait</td>
+<td>HPO (human),  MP(other mammals), various others for model organisms (yeast, zebrafish, Xenopus, C. elegans)</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Experiment Type</td>
+<td>EFO, OBI</td>
+<td>Ontology</td>
+<td>e.g. RNASeq, CITESeq etc. -</td>
+</tr>
+<tr>
+<td>Cell location/cycle</td>
+<td>GO</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Developmental stage</td>
+<td>HSAPDV/Uberon</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Chemical compound</td>
+<td>ChEBI</td>
+<td>Ontology</td>
+<td></td>
+</tr>
+<tr>
+<td>Chemical compound</td>
+<td>UniChem, SMILE, InChi</td>
+<td>Entity</td>
+<td></td>
+</tr>
+<tr>
+<td>Gene/protein</td>
+<td>ENSEMBL, ENTREZ_GENE, UNIPROT, HGNC ID, INSDC</td>
+<td>Entity</td>
+<td></td>
+</tr>
+<tr>
+<td>Metabolites</td>
+<td>MetaboLights compound accession, ChEBI</td>
+<td>Entity</td>
+<td></td>
+</tr>
+<tr>
+<td>Nucleotide reference sequence</td>
+<td>ReqSeq</td>
+<td>Entity</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Summary">Summary<a class="anchor-link" href="#Summary"> </a></h2><p>Using common transcriptomics metadata standards, in particular the fields listed above as guidance, it is possible to easily define a comprehensive metadata template to capture all the experimental variables to describe any transcriptomics experiment in a FAIR-compliant way. A generic step-by-step guide for designing a metadata template is provided <a href="creating-minimal-metadata-profiles.md">here</a></p>
+<hr>
+<h2 id="Authors:">Authors:<a class="anchor-link" href="#Authors:"> </a></h2><table>
+<thead><tr>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Affiliation</th>
+<th style="text-align:left">Orcid</th>
+<th style="text-align:left">Credit role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Danielle Welter</td>
+<td style="text-align:left">LCSB, University of Luxembourg</td>
+<td style="text-align:left"><a href="https://orcid.org/orcid.org/0000-0003-1058-2668">0000-0003-1058-2668</a></td>
+<td style="text-align:left">Writing - Original Draft</td>
+</tr>
+<tr>
+<td style="text-align:left">Karsten Quast</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">Peter Woollard</td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="License:">License:<a class="anchor-link" href="#License:"> </a></h2><p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+ 
+
+
+    </main>
+    
