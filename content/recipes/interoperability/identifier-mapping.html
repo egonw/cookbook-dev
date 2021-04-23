@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>File format validation, an example with FASTQ files</title>
+    <title>How to interlink data from different sources?</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -91,22 +91,22 @@ commentsRunWhenDOMLoaded(addUtterances);
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/fastq-file-format-validators.html" />
+    <link rel="canonical" href="https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/identifier-mapping.html" />
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Reusability" href="../reusability.html" />
-    <link rel="prev" title="From proprietary to open standard data format" href="from-proprietary-to-open-standard-mzml-exemplar.html" />
+    <link rel="next" title="Which vocabulary to use?" href="selecting-ontologies.html" />
+    <link rel="prev" title="interoperability" href="../interoperability.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/fastq-file-format-validators.html" />
+<meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/identifier-mapping.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="File format validation, an example with FASTQ files" />
-<meta property="og:description" content="File format validation, an example with FASTQ files    &lt;br/&gt;     &lt;i class=&#34;fa fa-qrcode fa-2x&#34; style=&#34;color:#7e0038;&#34;&gt;&lt;/i&gt;  &lt;h4&gt;&lt;b&gt;Recipe metadata&lt;/b&gt;&lt;/h4&gt;  ide" />
+<meta property="og:title"       content="How to interlink data from different sources?" />
+<meta property="og:description" content="How to interlink data from different sources?    &lt;br/&gt;     &lt;i class=&#34;fa fa-qrcode fa-2x&#34; style=&#34;color:#7e0038;&#34;&gt;&lt;/i&gt;  &lt;h4&gt;&lt;b&gt;Recipe metadata&lt;/b&gt;&lt;/h4&gt;  identifie" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -401,8 +401,8 @@ commentsRunWhenDOMLoaded(addUtterances);
    Improving Interoperability
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="identifier-mapping.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      How to interlink data from different sources?
     </a>
    </li>
@@ -454,8 +454,8 @@ commentsRunWhenDOMLoaded(addUtterances);
      From proprietary to open standard data format
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="fastq-file-format-validators.html">
      File format validation, an example with FASTQ files
     </a>
    </li>
@@ -688,7 +688,7 @@ commentsRunWhenDOMLoaded(addUtterances);
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../../_sources/content/recipes/interoperability/fastq-file-format-validators.md"><button type="button"
+        <a class="dropdown-buttons" href="../../../_sources/content/recipes/interoperability/identifier-mapping.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -708,10 +708,10 @@ commentsRunWhenDOMLoaded(addUtterances);
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/FAIRplus/the-fair-cookbook/issues/new?title=Issue%20on%20page%20%2Fcontent/recipes/interoperability/fastq-file-format-validators.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/FAIRplus/the-fair-cookbook/issues/new?title=Issue%20on%20page%20%2Fcontent/recipes/interoperability/identifier-mapping.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/FAIRplus/the-fair-cookbook/edit/migrating/content/recipes/interoperability/fastq-file-format-validators.md"><button
+        <a class="edit-button" href="https://github.com/FAIRplus/the-fair-cookbook/edit/migrating/content/recipes/interoperability/identifier-mapping.md"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -748,58 +748,61 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#user-stories">
-   User Stories
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#capability-maturity-table">
    Capability &amp; Maturity Table
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#fairification-objectives-inputs-and-outputs">
-   FAIRification Objectives, Inputs and Outputs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-data-standards">
    Table of Data Standards
   </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mappings">
+   Mappings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identifier-mappings">
+   Identifier Mappings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identifier-equivalences">
+   Identifier Equivalences
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exchanging-identifier-mappings">
+   Exchanging Identifier Mappings
+  </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#requirements">
-     Requirements
+    <a class="reference internal nav-link" href="#using-text-file">
+     Using Text File
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-1-install-fastq-utils">
-     Step 1: Install fastq-utils
+    <a class="reference internal nav-link" href="#using-simple-standard-for-sharing-ontology-mappings-sssom-formatted-text-files">
+     Using Simple Standard for Sharing Ontology Mappings (SSSOM) formatted text files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-2-get-example-file-for-testing">
-     Step 2: Get example file for testing*
+    <a class="reference internal nav-link" href="#using-vocabulary-of-interlinked-datasets-linkset-files">
+     Using Vocabulary of Interlinked Datasets Linkset Files
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-3-perform-validation">
-     Step 3: Perform validation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#error-messages-for-invalid-files">
-       Error messages for invalid files
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#fasta-utils-feature-summary">
-     FASTA-utils feature summary
+    <a class="reference internal nav-link" href="#a-couple-of-observations">
+     A couple of observations
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#identifier-mapping-services">
+   Identifier Mapping services
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -807,8 +810,8 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#what-to-read-next">
-     What to read next
+    <a class="reference internal nav-link" href="#what-should-i-read-next">
+     What should I read next?
     </a>
    </li>
   </ul>
@@ -840,8 +843,8 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="file-format-validation-an-example-with-fastq-files">
-<span id="fcb-interop-fastqval"></span><h1>File format validation, an example with FASTQ files<a class="headerlink" href="#file-format-validation-an-example-with-fastq-files" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-to-interlink-data-from-different-sources">
+<span id="fcb-interop-idmapping"></span><h1>How to interlink data from different sources?<a class="headerlink" href="#how-to-interlink-data-from-different-sources" title="Permalink to this headline">¶</a></h1>
 <br/>
 <hr class="docutils" />
 <div class="sphinx-bs container-lg pb-3 docutils">
@@ -880,11 +883,11 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="card-body docutils">
 <h4><b>Reading Time</b></h4>
-<i class="fa fa-clock fa-lg" style="color:#7e0038;"></i> 15 minutes
+<i class="fa fa-clock fa-lg" style="color:#7e0038;"></i> 30 minutes
 <h4><b>Recipe Type</b></h4>
-<i class="fa fa-laptop fa-lg" style="color:#7e0038;"></i> Hands-on
+<i class="fa fa-globe fa-lg" style="color:#7e0038;"></i> Background Information
 <h4><b>Executable Code</b></h4>
-<i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> Yes
+<i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> No
 </div>
 </div>
 </div>
@@ -895,7 +898,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="card-body docutils">
 <h4><b>Intended Audience</b></h4>
-<p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigator </p>
+<p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigators </p>
 <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Manager </p>
 <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientist </p>
 </div>
@@ -906,52 +909,31 @@ commentsRunWhenDOMLoaded(addUtterances);
 <hr class="docutils" />
 <div class="section" id="main-objectives">
 <h2>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
-<p>The main purpose of this recipe is to:</p>
+<p>The <strong>FAIR principles</strong>, under <code class="docutils literal notranslate"><span class="pre">Interoperability</span></code> state that:</p>
+<blockquote>
+<div><p>I3. (Meta)data include qualified references to other (meta)data</p>
+</div></blockquote>
+<p>This is understood as providing metadata with machine readable cross-references when possible.</p>
+<p>The main goals of this recipe are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>provide a FASTQ file validation solution</p></li>
-<li><p>propose a general file validation workflow.</p></li>
+<li><p>To understand where the need arises for mapping between data identifiers.</p></li>
+<li><p>How to represent equivalences for use by others.</p></li>
+<li><p>Know what services are available to support data interoperability.</p></li>
 </ul>
 </div></blockquote>
+<p>This recipe assumes that you are already familiar with identifiers and the minting of identifiers.</p>
+<p><em>For more details on identifiers, see the <a class="reference internal" href="../findability/identifiers.html#fcb-find-identifiers"><span class="std std-ref">How to generate globally unique, resolvable and persistent identifiers</span></a> recipe.</em></p>
 </div>
 <div class="section" id="graphical-overview">
 <h2>Graphical Overview<a class="headerlink" href="#graphical-overview" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="validating-fastq-open-standard-file-format">
-<a class="reference internal image-reference" href="../../../_images/fastq-validation.png"><img alt="Validating FASTQ open standard file format" src="../../../_images/fastq-validation.png" style="width: 350px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 17 </span><span class="caption-text">Validating FASTQ open standard file format.</span><a class="headerlink" href="#validating-fastq-open-standard-file-format" title="Permalink to this image">¶</a></p>
+<p>This recipe will cover the topics highlighted in orange:</p>
+<div class="figure align-default" id="overview-of-key-aspects-in-identifier-mapping">
+<a class="reference internal image-reference" href="../../../_images/id-map-service-mermaid.png"><img alt="Overview of key aspects in  Identifier Mapping" src="../../../_images/id-map-service-mermaid.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Overview of key aspects in  Identifier Mapping</span><a class="headerlink" href="#overview-of-key-aspects-in-identifier-mapping" title="Permalink to this image">¶</a></p>
 </div>
-<!-- [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19) -->
 </div>
-<div class="section" id="user-stories">
-<h2>User Stories<a class="headerlink" href="#user-stories" title="Permalink to this headline">¶</a></h2>
-<p>The table below lists common file validation use cases. This recipe provides solutions with FASTQ files as an example.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>As a ..</p></th>
-<th class="head"><p>I want to ..</p></th>
-<th class="head"><p>So that I can ..</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Data owner</p></td>
-<td><p>Validate my sequencing files before depositing to public archives</p></td>
-<td><p>Reduce the risk of submitting invalid files or submission rejection</p></td>
-</tr>
-<tr class="row-odd"><td><p>Data consumer</p></td>
-<td><p>Validate files before running analysis</p></td>
-<td><p>Avoid wasting time and resource processing corrupted files</p></td>
-</tr>
-<tr class="row-even"><td><p>Data consumer</p></td>
-<td><p>Integrate file format validation into my data process pipeline</p></td>
-<td><p>Build a more reproducible and error-proof pipeline</p></td>
-</tr>
-<tr class="row-odd"><td><p>Data librarian</p></td>
-<td><p>Check files downloaded from unknown sources before deposition</p></td>
-<td><p>Ensure the file is usable in the future.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
+<hr class="docutils" />
 <div class="section" id="capability-maturity-table">
 <h2>Capability &amp; Maturity Table<a class="headerlink" href="#capability-maturity-table" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
@@ -966,26 +948,20 @@ commentsRunWhenDOMLoaded(addUtterances);
 <td class="text-align:left"><p>minimal</p></td>
 <td class="text-align:left"><p>repeatable</p></td>
 </tr>
+<tr class="row-odd"><td class="text-align:left"><p>Identifier mapping</p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p>repeatable</p></td>
+</tr>
 </tbody>
 </table>
-</div>
 <hr class="docutils" />
-<div class="section" id="fairification-objectives-inputs-and-outputs">
-<h2>FAIRification Objectives, Inputs and Outputs<a class="headerlink" href="#fairification-objectives-inputs-and-outputs" title="Permalink to this headline">¶</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Actions.Objectives.Tasks</p></th>
-<th class="text-align:left head"><p>Input</p></th>
-<th class="text-align:left head"><p>Output</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://edamontology.org/operation_0336">Format validation</a></p></td>
-<td class="text-align:left"><p><a class="reference external" href="http://edamontology.org/format_2182">FASTQ file</a></p></td>
-<td class="text-align:left"><p>Validation results</p></td>
-</tr>
-</tbody>
-</table>
+<!-- 
+## FAIRification Objectives, Inputs and Outputs
+
+| Actions.Objectives.Tasks  | Input | Output  |
+| :------------- | :------------- | :------------- |
+| [Identifier](http://edamontology.org/data_0842) |   |   |
+ -->
 </div>
 <div class="section" id="table-of-data-standards">
 <h2>Table of Data Standards<a class="headerlink" href="#table-of-data-standards" title="Permalink to this headline">¶</a></h2>
@@ -997,341 +973,269 @@ commentsRunWhenDOMLoaded(addUtterances);
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://edamontology.org/format_2182">FASTQ</a></p></td>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://tools.ietf.org/html/rfc3987">IRI</a></p></td>
 <td class="text-align:left"><p></p></td>
 <td class="text-align:left"><p></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://www.ebi.ac.uk/ols/ontologies/edam/terms?iri=http%3A%2F%2Fedamontology.org%2Fformat_4006">Compressed Format</a></p></td>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://www.w3.org/TR/2010/NOTE-curie-20101216/">CURIE</a></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://tools.ietf.org/html/rfc1738">URL</a></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview">HTTP</a></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://www.w3.org/RDF/">RDF</a></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://tools.ietf.org/html/rfc4180">CSV</a></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="https://www.iana.org/assignments/media-types/text/tab-separated-values">TSV</a></p></td>
+<td class="text-align:left"><p></p></td>
+<td class="text-align:left"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="https://www.w3.org/TR/void/">VoID Linkset</a></p></td>
 <td class="text-align:left"><p></p></td>
 <td class="text-align:left"><p></p></td>
 </tr>
 </tbody>
 </table>
+</div>
 <hr class="docutils" />
-<p><a class="reference external" href="http://edamontology.org/format_2182">FASTQ</a> is the <em>de facto</em> sequencing file format and one of the most common file formats in bioinformatics analysis. Researchers receive FASTQ files from various sources. These files are used intensively in automated bioinformatics analysis pipelines. Therefore, it is important to validate FASTQ files to improve the data reusability and build error-proof data analysis process.</p>
-<p>FASTQ validators detect truncated reads, base calls and quality score mismatches, invalid encoding, etc. For paired-end reads, they also check if the forward reads match with the reverse reads. Most validators can process different FASTQ variants automatically and handle compressed FASTQ files.</p>
-<p><a class="reference external" href="https://github.com/nunofonseca/fastq_utils">FASTQ-utils</a> is an open-source software to validate and process FASTQ files. It has been applied in the <a class="reference external" href="https://www.ebi.ac.uk/ena">European Nucleotide Archive(ENA)</a>, and several research initiatives.</p>
-<p>This recipe provides an example of validating FASTQ files with <em>FASTQ-utils</em> on MacOS and Linux machines.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>⚠️ Quality control is out of the scope of file format validation.</p>
-</div>
-<!-- ![](https://i.imgur.com/jOYK2ZM.jpg) -->
-<div class="figure align-default" id="fastqutils-library">
-<a class="reference internal image-reference" href="https://i.imgur.com/jOYK2ZM.jpg"><img alt="FASTQutils library" src="https://i.imgur.com/jOYK2ZM.jpg" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 18 </span><span class="caption-text">the FASTQutils library.</span><a class="headerlink" href="#fastqutils-library" title="Permalink to this image">¶</a></p>
-</div>
-<div class="section" id="requirements">
-<h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<p>The users are expected to be comfortable with Unix-based OS and basic Bash programming syntax and commands.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Software</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>Version</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/">conda</a></p></td>
-<td><p>Package manager for installing validators</p></td>
-<td><p>4.8.3</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/nunofonseca/fastq_utils">FASTQ-utils</a></p></td>
-<td><p>FASTQ validator</p></td>
-<td><p>0.23.0</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.gnu.org/software/wget/">wget</a></p></td>
-<td><p>File downloader</p></td>
-<td><p>1.19.4</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="step-1-install-fastq-utils">
-<h3>Step 1: Install fastq-utils<a class="headerlink" href="#step-1-install-fastq-utils" title="Permalink to this headline">¶</a></h3>
-<p>The command below installs <em>fastq-utils</em> via Conda. It is also possible to install <em>fastq-utils</em> from <a class="reference external" href="https://github.com/nunofonseca/fastq_utils">the source code</a>.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>conda install -c bioconda fastq_utils
-</pre></div>
-</div>
-</div>
-<div class="section" id="step-2-get-example-file-for-testing">
-<h3>Step 2: Get example file for testing*<a class="headerlink" href="#step-2-get-example-file-for-testing" title="Permalink to this headline">¶</a></h3>
-<div class="tip admonition">
-<p class="admonition-title">Note</p>
+<div class="section" id="mappings">
+<h2>Mappings<a class="headerlink" href="#mappings" title="Permalink to this headline">¶</a></h2>
+<p>Before diving into identifier mapping, it is important to understand the possible types of mappings that can be performed between entities.
+While initially we might think of mapping as simply linking identical entities in different databases/formats, sometimes related entities might also be of interest.
+When these mappings might only be interesting depending on the context in which data is being used, we run into a situation that has been described as “scientific lenses” (see <span id="id1">[<span>batchelor_scientic_nodate</span>]</span>).
+These lenses allow us to dynamically select which mappings to consider relevant and which to ignore.
+For example allowing or disallowing mappings between stereoisomers or between genes and proteins.</p>
+<p>Examples of types of mappings are:</p>
 <ul class="simple">
-<li><p>Users can skip this step and test with their own files._</p></li>
-</ul>
-</div>
-<p>In this step, we download example FASTQ files from ENA for testing. The first example file is a single read file, the other ones are paired-end read files.</p>
-<p><strong>Example 1: Get single read FASTQ file</strong></p>
-<p>The command below downloads an <em>Ion Torrent S5</em> fastq file from ENA. <a class="reference external" href="https://www.ebi.ac.uk/ena/browser/view/SRR12132977">This file</a> is the whole genome sequencing file of SARS-CoV-2. The complete file is 192Mb.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget -c ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR121/077/SRR12132977/SRR12132977.fastq.gz
-</pre></div>
-</div>
-<p>Uses can inspect the <em>fastq.gz</em> file using <code class="docutils literal notranslate"><span class="pre">gzip</span> <span class="pre">-cd</span> <span class="pre">SRR12132977.fastq.gz</span> <span class="pre">|</span> <span class="pre">head</span> <span class="pre">-8</span></code>. Below is the header of this FASTQ file.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>@SRR12132977.1 1/1
-AACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAACGAACAAACTAAAATGTCTGATAATGGACCCCAAAATCAGCGAAATGCACCCCGCATTACGTTTGGTGGACCCTCAG
-+
-C@CCD&gt;DBC?B692;;;09?&lt;BBBBC&gt;BBBBBBBBB@?ABB@BC&lt;BBB&gt;@A?:999992;=&gt;&gt;@??==:=C;&gt;=&lt;:&#39;555)8;;;;;AG:AAAAADD;CCBB&gt;?@;;;0:&lt;@A&gt;CEE?CFCC
-@SRR12132977.2 2/1
-AACAAACCAACCAACTTTCGATCTCTTGTAGATCTGTTCTCTAAACGAACTTTAAAATCTGTGTGGCTGTCACTCGGCTGCATGCTTAGTGCACTCACGCAGTATAATTAATAACTAATTACTGTCGTTGACAGGACACGAGTAACTCGTCTATCTTCTGCAGGCTGCTTACGGTTTCGTCCGTGTTGCAGCCGATCATCAGCAC
-+
-A&gt;A@@=@@F@D@C&lt;999,:&lt;@ABBBB@B=&gt;=BB@BBB?@@&gt;&lt;;;7&gt;??=BBB&gt;BDD;D&gt;????@@;@CDC@@@BBB&gt;BBB@AAC&gt;&gt;9BBBB;;;@@?;&gt;&lt;::;99&lt;9&lt;;A;&gt;&gt;&lt;@@A:=:&gt;@@@&gt;A@&gt;:&gt;===&gt;:=&lt;&lt;&gt;&gt;;;;&gt;=BCAA?&gt;=A&gt;&gt;&gt;:==&gt;;998&lt;=;===@@@&lt;&gt;&gt;9&gt;&gt;&gt;?;??==:=&gt;&gt;&gt;&gt;:&gt;&gt;;;;;;;;&lt;;;
-</pre></div>
-</div>
-<p><strong>Example 2: Get paired-read FASTQ files</strong></p>
-<p>The command below downloads Illumina iSeq 100 paired end sequencing files from ENA. <a class="reference external" href="https://www.ebi.ac.uk/ena/data/view/SRR11542244">These files</a> are raw sequence reads of a SARS-CoV-2 sample. Each file is 26 Mb.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>wget -c <span class="se">\</span>
-ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/044/SRR11542244/SRR11542244_1.fastq.gz <span class="se">\</span>
-ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/044/SRR11542244/SRR11542244_2.fastq.gz
-</pre></div>
-</div>
-<p>Below is the headers of the two files. The read pairs info is listed in the read IDs.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Header of the forward read, SRR11542244_1.fastq.gz</span>
-<span class="nd">@SRR11542244</span><span class="o">.</span><span class="mi">1</span> <span class="mi">1</span><span class="o">/</span><span class="mi">1</span>
-<span class="n">GTGTGTGTATACATATATATATATATCACATTTTCTTTATCCATTTATCTGTTGTTGGACACTTAGGTTGATTCCATATCTTGGCTATTGTGAATAGTG</span>
-<span class="o">+</span>
-<span class="p">,,</span><span class="n">FFFFFFFFFFFFFFFFFFFFFFFF</span><span class="p">:</span><span class="n">FFF</span><span class="p">:</span><span class="n">FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</span><span class="p">:</span><span class="n">FFFFFFFFFFFF</span><span class="p">:</span><span class="n">FFFFFFFFFFFFFFFFFFFFFF</span>
-<span class="nd">@SRR11542244</span><span class="o">.</span><span class="mi">2</span> <span class="mi">2</span><span class="o">/</span><span class="mi">1</span>
-<span class="n">GTGATTCCTCAAAGATTTAGAACCAGAAATACCATGTGACCCAGCAATTCCATTACCAGGTCTAAACCCAAAGGAATATAAATCATTCTGTAATGAAGATA</span>
-<span class="o">+</span>
-<span class="n">FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</span>
-
-
-<span class="c1"># Header of the reverse read, SRR11542244_2.fastq.gz</span>
-<span class="nd">@SRR11542244</span><span class="o">.</span><span class="mi">1</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">CTATTGGGTATTTAATCCAAAGAAAGGAAATCGGTATATCAAAGAGACATCTGCATGCCCATGTTTATTGTAGCACTATTCACAATAGCCAAGATATGGAA</span>
-<span class="o">+</span>
-<span class="n">FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</span><span class="p">:</span><span class="n">FFFFFFFFFFFFFFFFFFFF</span>
-<span class="nd">@SRR11542244</span><span class="o">.</span><span class="mi">2</span> <span class="mi">2</span><span class="o">/</span><span class="mi">2</span>
-<span class="n">GAACATATGTGTGCATGTATCTTCATTACAGAATGATTTATATTCCTTTGGGTTTAGACCTGGTAATGGAATTGCTGGGTCACATGGTATTTCTGGTTCTA</span>
-<span class="o">+</span>
-<span class="n">FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="step-3-perform-validation">
-<h3>Step 3: Perform validation<a class="headerlink" href="#step-3-perform-validation" title="Permalink to this headline">¶</a></h3>
-<p>The command below validates the single read file in <em>Example 1</em>.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fastq_info -r SRR12132977.fastq.gz
-</pre></div>
-</div>
-<p>Below are the validation results. <em>fastq-utils</em> returns the number of reads, read length details, and encoding info. Field <code class="docutils literal notranslate"><span class="pre">Quality</span> <span class="pre">encoding</span></code> indicates the fastq file variant. FASTQ-utils returns <code class="docutils literal notranslate"><span class="pre">OK</span></code> for a valid fastq file. Otherwise, it will return the validation details in the Error message.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Skipping</span> <span class="n">check</span> <span class="k">for</span> <span class="n">duplicated</span> <span class="n">read</span> <span class="n">names</span>
-<span class="mi">1900000</span>
-<span class="o">------------------------------------</span>
-<span class="n">Number</span> <span class="n">of</span> <span class="n">reads</span><span class="p">:</span> <span class="mi">1919741</span>
-<span class="n">Quality</span> <span class="n">encoding</span> <span class="nb">range</span><span class="p">:</span> <span class="mi">34</span> <span class="mi">77</span>
-<span class="n">Quality</span> <span class="n">encoding</span><span class="p">:</span> <span class="mi">33</span>
-<span class="n">Read</span> <span class="n">length</span><span class="p">:</span> <span class="mi">25</span> <span class="mi">352</span> <span class="mi">215</span>
-<span class="n">OK</span>
-</pre></div>
-</div>
-<p>The validation of paired end reads is similar to single read file validation.</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>fastq_info SRR11542244_1.fastq.gz SRR11542244_2.fastq.gz
-</pre></div>
-</div>
-<p>Here are the validation results.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">fastq_utils</span> <span class="mf">0.23</span><span class="o">.</span><span class="mi">0</span>
-<span class="n">DEFAULT_HASHSIZE</span><span class="o">=</span><span class="mi">39000001</span>
-<span class="n">Scanning</span> <span class="ow">and</span> <span class="n">indexing</span> <span class="nb">all</span> <span class="n">reads</span> <span class="kn">from</span> <span class="nn">SRR11542244_1.fastq.gz</span>
-<span class="mi">700000</span><span class="n">Scanning</span> <span class="n">complete</span><span class="o">.</span>
-
-<span class="n">Reads</span> <span class="n">processed</span><span class="p">:</span> <span class="mi">733611</span>
-<span class="n">Memory</span> <span class="n">used</span> <span class="ow">in</span> <span class="n">indexing</span><span class="p">:</span> <span class="o">~</span><span class="mi">47</span> <span class="n">MB</span>
-<span class="n">File</span> <span class="n">SRR11542244_1</span><span class="o">.</span><span class="n">fastq</span><span class="o">.</span><span class="n">gz</span> <span class="n">processed</span>
-<span class="n">Next</span> <span class="n">file</span> <span class="n">SRR11542244_2</span><span class="o">.</span><span class="n">fastq</span><span class="o">.</span><span class="n">gz</span>
-<span class="mi">700000</span>
-<span class="o">------------------------------------</span>
-<span class="n">Number</span> <span class="n">of</span> <span class="n">reads</span><span class="p">:</span> <span class="mi">733611</span>
-<span class="n">Quality</span> <span class="n">encoding</span> <span class="nb">range</span><span class="p">:</span> <span class="mi">35</span> <span class="mi">70</span>
-<span class="n">Quality</span> <span class="n">encoding</span><span class="p">:</span> <span class="mi">33</span>
-<span class="n">Read</span> <span class="n">length</span><span class="p">:</span> <span class="mi">35</span> <span class="mi">101</span> <span class="mi">96</span>
-<span class="n">OK</span>
-</pre></div>
-</div>
-<p><em>fastq_util</em> also provides additional arguments to tune the validation:</p>
-<p><code class="docutils literal notranslate"><span class="pre">-s</span></code>: to validate if reads in two files have the same ordering.</p>
-<p><code class="docutils literal notranslate"><span class="pre">-r</span></code>: to skip duplicated read names validation. It uses less memory and runs faster.</p>
-<p><code class="docutils literal notranslate"><span class="pre">-e</span></code>: to allow empty files pass the validation</p>
-<p><code class="docutils literal notranslate"><span class="pre">-q</span></code>: not to fail if the encoding can’t be decided.</p>
-<div class="section" id="error-messages-for-invalid-files">
-<h4>Error messages for invalid files<a class="headerlink" href="#error-messages-for-invalid-files" title="Permalink to this headline">¶</a></h4>
-<p>FASTQ-utils returns an error message with the location of invalid lines and type of errors if the files are invalid. Below are examples of error messages.</p>
+<li><p><strong>Content mapping</strong>: where we are mapping the actual entities by using techniques such as BLAST in biological sequences or comparing InChI identifiers for chemical compounds</p></li>
+<li><p><strong>Ontology mapping</strong>: this can either be</p>
 <ul>
-<li><p>Invalid file example 1, duplicated reads</p>
-<blockquote>
-<div><p>ERROR: Error in file SRR11542244_2.fastq: line 16: duplicated sequence SRR11542244.5 5/</p>
-</div></blockquote>
+<li><p>As a direct 1-to-1 mapping between equivalent terms in different ontologies</p></li>
+<li><p>As a complex m-to-m mapping between terms in different ontologies taking into account their hierarchical structure, see <span id="id2">[<span>wang_concept_2010</span>]</span>.</p></li>
+</ul>
 </li>
-<li><p>Invalid file example 2, wrong base call encoding</p>
-<blockquote>
-<div><p>ERROR: Error in file SRR11542244_2.fastq: line 5: invalid character ‘e’ (hex. code:’65’), expected ACGTacgt0123nN.</p>
-</div></blockquote>
+<li><p><strong>Identifier mapping</strong>: The focus of this recipe. This can either be:</p>
+<ul>
+<li><p>Mapping between differently formed identifiers that resolve to the same entity. (e.g. the same gene with different identifiers under HGNC and Ensembl)</p></li>
+<li><p>Mapping between identical local identifiers with different namespaces (e.g. PDB where there exist regional mirrors of the database so accesion/local identifier is the same but namespace is different)</p></li>
+<li><p>Mapping between entities that are related enough to be usefully connected (e.g. linking information on proteins, genes, RNA and reporter sequences for these)</p></li>
+<li><p>Mapping between databases containing different information about the same entity (e.g. links between the protein sequence database UniProt and the protein 3D structure database PDB)</p></li>
+</ul>
 </li>
 </ul>
 </div>
+<hr class="docutils" />
+<div class="section" id="identifier-mappings">
+<h2>Identifier Mappings<a class="headerlink" href="#identifier-mappings" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>“Identifiers are used to tag, identify, find and retrieve entities which are part of a collection or a resource maintained by some organization. “</strong></p>
 </div>
-<div class="section" id="fasta-utils-feature-summary">
-<h3>FASTA-utils feature summary<a class="headerlink" href="#fasta-utils-feature-summary" title="Permalink to this headline">¶</a></h3>
-<p>The table lists technical considerations when selecting the validator, including basic validation function, performance, interface, etc. It also provides a detailed summary of <em>fastq-utils</em> features.</p>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Aspects</p></th>
-<th class="head"><p>Validation content</p></th>
-<th class="head"><p>Description</p></th>
-<th class="head"><p>FASTQ-utils</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Basic validation</p></td>
-<td><p>4-line format</p></td>
-<td><p>Check if the FASTQ file is a 4-line file</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Character encoding</p></td>
-<td><p>Check if the base calls and quality score encoding are correct.</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>Read length</p></td>
-<td><p>Check if the length of the base calls are the same as that of the quality scores</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>File truncation</p></td>
-<td><p>Check if the file is truncated or not</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p>Paired-end reads validation</p></td>
-<td><p>Deinterleaved paired reads</p></td>
-<td><p>Validate when the forward and reverse reads are in two files.</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Interleaved <em>“8-line”</em> files</p></td>
-<td><p>Validate when the forward and reverse reads are listed together as an 8-line file</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p>Compressed file validation</p></td>
-<td><p>gzip</p></td>
-<td><p>Validate compressed fastq files, with extension <code class="docutils literal notranslate"><span class="pre">fastq.gz</span></code></p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p>FASTQ variants* validation</p></td>
-<td><p>fastq-illumina</p></td>
-<td><p>Validate the <em>fastq-illumina</em> format</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>fastq-sanger</p></td>
-<td><p>Validate the <em>fastq-sanger</em> format</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>fastq-solexa</p></td>
-<td><p>Validate the <em>fastq-solexa</em> format</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p>Performance</p></td>
-<td><p>Memory</p></td>
-<td><p></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Speed</p></td>
-<td><p></p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">N/A</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p>Archieve compatiablity</p></td>
-<td><p>ENA</p></td>
-<td><p>File validated can be submitted to the ENA archive.</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>ArrayExpress</p></td>
-<td><p>File validated can be submitted to Array Express.</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p></p></td>
-<td><p>SRA</p></td>
-<td><p>File validated can be submitted to the SRA archive.</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-odd"><td><p>Interface</p></td>
-<td><p>Command line interface</p></td>
-<td><p>Can be used in shell and intergerated in pipe commands</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p>License</p></td>
-<td><p>Licensed</p></td>
-<td><p></p></td>
-<td><p>☑️<a class="reference external" href="https://www.gnu.org/licenses/gpl-3.0.en.html">GPL-3</a></p></td>
-</tr>
-<tr class="row-odd"><td><p></p></td>
-<td><p>Commercial use</p></td>
-<td><p>Can be used for commercial purpose</p></td>
-<td><p>☑️</p></td>
-</tr>
-<tr class="row-even"><td><p>Code</p></td>
-<td><p>Open source</p></td>
-<td><p>Source code available on public platforms</p></td>
-<td><p>☑️</p></td>
-</tr>
-</tbody>
-</table>
-<p><em>*See details in the <a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">FASTQ specification recipe</span></a>.</em></p>
+<p>To satisfy the Findability criteria F1, organisations must create identifiers for the concepts within their database. This generates locally unique identifiers which can in turn be transformed into globally unique identifiers using namespaces for which the database organisation are the <code class="docutils literal notranslate"><span class="pre">authority</span></code>.</p>
+<p>Databases often contain data that exists in, or is closely related to, the content of other databases. For example, the genome database <a class="reference external" href="http://ensembl.org/">Ensembl</a> contains data about genes that are related to entries in databases such as HUGO Gene Nomenclature Committee (<a class="reference external" href="https://www.genenames.org/">https://www.genenames.org/</a>) or <a class="reference external" href="https://www.ncbi.nlm.nih.gov/gene/">NCBI Gene</a>; or a database about drugs, e.g. <a class="reference external" href="https://drugbank.com/">DrugBank</a>, often contains details of the chemical substance that forms the drug which are also contained in chemical databases such as <a class="reference external" href="https://www.ebi.ac.uk/chebi/">ChEBI</a> or <a class="reference external" href="https://pubchem.ncbi.nlm.nih.gov/">PubChem</a>. This results in a large number of unique identifiers notionally for the same concept. This large number of identifiers for the same concept prevents interoperability of the data, since additional knowledge is needed to know which identifiers represent the same concept from different databases. However, the databases often contain <code class="docutils literal notranslate"><span class="pre">cross-reference</span></code> links to other databases to represent these <code class="docutils literal notranslate"><span class="pre">equivalences</span></code>.</p>
+<p>The need for each database to mint their own identifier is a result of each taking a different perspective on the concept. For example, a chemical database will distinguish between different salt forms of the chemical whereas a drug database may not contain this differentiation. These differences in perspective are driven by the goal of the databse in terms of the data that they store. The interlinking of these data items can affect the reuse of the data in applications. As such, the declaration of cross-references should be done in a way that allows others to understand the nature of the equivalence declared, and therefore determine if it is appropriate for their use (see <span id="id3">[<span>batchelor_scientic_nodate</span>]</span> for more details).</p>
+<p>While the minting of identifiers is often done in isolation of other organisations,  there are instances of databases who reuse identifiers from a well known community database. For example, the <a class="reference external" href="https://www.proteinatlas.org/">Human Protein Atlas</a> database reuses <a class="reference external" href="https://www.ensembl.org/">Ensembl</a> identifiers for their data records. In these cases there is no need to map between the data instances in the two databases, the data is already connected through the common identifier. However, this means that the Human Protein Atlas must ensure that their definition of the concept is exactly aligned with the Ensembl identifier for <strong>all</strong> application uses.</p>
+</div>
+<div class="section" id="identifier-equivalences">
+<h2>Identifier Equivalences<a class="headerlink" href="#identifier-equivalences" title="Permalink to this headline">¶</a></h2>
+<p>Identifier equivalences can come about in several ways and capture different forms of relationship as presented in <a class="reference external" href="#Mappings">Mappings</a>.
+For example, a database may declare that their record is the same as an entry in another because they share the same name, or they may declare it based on a common representation (gene sequence or InChI).
+To support reuse of the data, the <code class="docutils literal notranslate"><span class="pre">provenance</span></code> of the cross-references needs to be made explicit.</p>
+<p>Depending on the nature of the data, there are different ways that equivalences can be computed.</p>
+<p>Some elements to take into consideration are:</p>
+<ol class="simple">
+<li><p>a <strong>mapping predicate</strong> taken from a well known ontology, e.g. <code class="docutils literal notranslate"><span class="pre">owl:sameAs</span></code> or <code class="docutils literal notranslate"><span class="pre">skos:narrower</span></code></p></li>
+<li><p>the <strong>evidence</strong> behind the equivalence claims, e.g. a similarity score or the property on which the equivalence is based such as InChI Key for chemicals</p></li>
+<li><p><strong>audit trail information</strong>, i.e. who, what, when, e.g. <code class="docutils literal notranslate"><span class="pre">agent</span> <span class="pre">X</span> <span class="pre">using</span> <span class="pre">mapping</span> <span class="pre">tool</span> <span class="pre">Y</span> <span class="pre">on</span> <span class="pre">YYYY-MM-DD</span></code>. PROV-O ontology could be used to support such statements.</p></li>
+</ol>
+</div>
+<div class="section" id="exchanging-identifier-mappings">
+<h2>Exchanging Identifier Mappings<a class="headerlink" href="#exchanging-identifier-mappings" title="Permalink to this headline">¶</a></h2>
+<p>There are several file format for exchanging identifier equivalences.
+We will discuss the most widely used formats and demonstrate them with a sample of data derived from <a class="reference external" href="https://www.ebi.ac.uk/chembl/">ChEMBL</a> which provides cross-reference equivalences for two records in the ChEMBL database to UniProt proteins.</p>
+<div class="section" id="using-text-file">
+<h3>Using Text File<a class="headerlink" href="#using-text-file" title="Permalink to this headline">¶</a></h3>
+<p>The simplest way to exchange equivalences is in a simple text file, which could be structured as a tab-separated-value (TSV) file. Such a file usually consists of two columns, one per dataset, and each row represents an equivalence declaration. The interpretation is that the two identifiers on the same row are equivalent in some way. These files tend to carry little to no metadata about the mappings, i.e. the mechanism by which the mapping was derived is not given, nor are details of the verison of the datasets that were linked.</p>
+<p>The following example shows the mapping equivalences between ChEMBL target components (proteins) and UniProt proteins.</p>
+<div class="highlight-tsv notranslate"><div class="highlight"><pre><span></span>ChEMBL_Target_Component	UniProt
+CHEMBL_TC_4803	A0ZX81
+CHEMBL_TC_2584	A1ZA98 
+</pre></div>
 </div>
 </div>
+<div class="section" id="using-simple-standard-for-sharing-ontology-mappings-sssom-formatted-text-files">
+<h3>Using Simple Standard for Sharing Ontology Mappings (SSSOM) formatted text files<a class="headerlink" href="#using-simple-standard-for-sharing-ontology-mappings-sssom-formatted-text-files" title="Permalink to this headline">¶</a></h3>
+<p>The OBOFoundry Simple Standard for Sharing Ontology Mappings (<a class="reference external" href="https://github.com/OBOFoundry/SSSOM">SSSOM</a>) is a newly emerging standard for exchanging mapping information with minimal metadata, although the minimal model is extensible. It consists of a tab-separated-value file (TSV) with each row representing a mapping. The columns in the file have been defined by the community (<a class="reference external" href="https://github.com/OBOFoundry/SSSOM/blob/master/SSSOM.md">latest version</a>) and provide the mapping together with its provenance. At present, four columns are required (<code class="docutils literal notranslate"><span class="pre">subject_id</span></code>, <code class="docutils literal notranslate"><span class="pre">predicate_id</span></code>, <code class="docutils literal notranslate"><span class="pre">object_id</span></code>, <code class="docutils literal notranslate"><span class="pre">match_type</span></code>) with optional columns to provide more provenance to support the mapping, e.g. licensing information, author information, creation method. The use of CURIEs within the TSV is strongly encouraged.</p>
+<p>The following TSV shows our example data as a mapping file using the minimal columns (correct as of November 2020). The information provided is less than the minimal VoID model above.</p>
+<div class="highlight-tsv notranslate"><div class="highlight"><pre><span></span>subject_id  predicate_id  object_id match_type
+chembl:CHEMBL_TC_4803 skos:exactMatch uniprot:A0ZX81  sio:database-cross-reference
+chembl:CHEMBL_TC_2584 skos:exactMatch uniprot:A1ZA98  sio:database-cross-reference
+</pre></div>
+</div>
+</div>
+<div class="section" id="using-vocabulary-of-interlinked-datasets-linkset-files">
+<h3>Using Vocabulary of Interlinked Datasets Linkset Files<a class="headerlink" href="#using-vocabulary-of-interlinked-datasets-linkset-files" title="Permalink to this headline">¶</a></h3>
+<p>The Vocabulary of Interlinked Datasets (<a class="reference external" href="http://www.w3.org/TR/void/">VoID</a>) provides an ontology of terms for describing RDF datasets. These descriptions include basic information about the dataset, e.g. its name, description, license, etc, but also introduces a mechanism for exchanging data instance mappings called <code class="docutils literal notranslate"><span class="pre">linksets</span></code>.</p>
+<p>A <code class="docutils literal notranslate"><span class="pre">linkset</span></code> contains the identifier mappings together with either the metadata at the top of the file or a link to a VoID file describing the data source. The Open PHACTS project defined a usage profile for use within the life sciences community <a class="reference external" href="http://www.openphacts.org/specs/datadesc/">Open PHACTS Dataset Descriptions</a> which was later refined by the W3C Health Care and Life Sciences Community Group (<a class="reference external" href="https://www.w3.org/TR/hcls-dataset/#linksets">W3C HCLS Linksets</a>).</p>
+<p>The following example shows a VoID Linkset in turtle notation with the minimum metadata given in the header. The metadata block links to the ChEMBL 17 RDF description and the UniProt March 2015 release. The <code class="docutils literal notranslate"><span class="pre">linkPredicate</span></code> tells us that the link is an exact match, i.e. the linked instances can be deemed equivalent for most applications, and the <code class="docutils literal notranslate"><span class="pre">linksetJustification</span></code> property states that the link is declared as a Database Cross Reference assertion, rather than being computed based on an equivalent protein sequence. These properties allow consuming applications to make more informed choices about their reuse of the data.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>@prefix bdb: &lt;http://vocabularies.bridgedb.org/ops#&gt; .
+@prefix chembl: &lt;http://rdf.ebi.ac.uk/resource/chembl/&gt; .
+@prefix chembl_target_cmpt: &lt;http://rdf.ebi.ac.uk/resource/chembl/targetcomponent/&gt; .
+@prefix sio: &lt;https://semanticscience.org/resource/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix uniprot: &lt;http://purl.uniprot.org/uniprot/&gt; .
+@prefix void: &lt;http://rdfs.org/ns/void#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+
+:chembl17-uniprot-exactMatch-linkset a void:Linkset <span class="p">;</span>
+    void:subjectsTarget :chembl17-rdf <span class="p">;</span>
+    void:objectsTarget &lt;http://purl.uniprot.org/void#UniProtDataset_2015_03&gt; <span class="p">;</span>
+    void:linkPredicate skos:exactMatch <span class="p">;</span>
+    bdb:linksetJustification sio:database-cross-reference
+    void:triples <span class="s2">&quot;6367&quot;</span>^^xsd:integer .
+
+chembl_target_cmpt:CHEMBL_TC_4803 skos:exactMatch uniprot:A0ZX81 .
+chembl_target_cmpt:CHEMBL_TC_2584 skos:exactMatch uniprot:A1ZA98 .
+...
+</pre></div>
+</div>
+</div>
+<div class="section" id="a-couple-of-observations">
+<h3>A couple of observations<a class="headerlink" href="#a-couple-of-observations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p>SSSOM is an emerging community standard that is still not finalised.
+While the basic metadata model has less information than the VoID file, there are additional properties for providing more detail.
+Properties that related to the set of mappings can can be included as a comment block at the start of the TSV.</p></li>
+<li><p>The VoID Linkset approach for exchanging mappings separates the metadata from the data mappings.
+This eliminates duplication of metadata. However, as currently defined, the VoID Linksets can only be used for RDF data.
+The above has shown that the two formats can represent the same information. Both VoID and SSSOM can be used to provide very rich metadata for exchanging data.</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="identifier-mapping-services">
+<h2>Identifier Mapping services<a class="headerlink" href="#identifier-mapping-services" title="Permalink to this headline">¶</a></h2>
+<p>Identifier mapping services are databases that contain lists of identifiers, often from different databases, that are known to be equivalent. These are consumed from original data sources and third parties in one of the formats provided above.</p>
+<p>The common functionality offered by these services is to return a set of equivalent identifiers for a given identifier. That is, you can ask these services for all identifiers that are equivalent to your identifier. The services will vary in the response depending on their coverage of data sources and whether they decide to compute the transitive closure of the identifiers. That is, if data source A declares that <code class="docutils literal notranslate"><span class="pre">A:id1</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">B:acc32</span></code>, and data source C declares that <code class="docutils literal notranslate"><span class="pre">C:67cb2865-781f-4450-a99c-e9b33bf4d5b5</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">B:acc32</span></code>, should a lookup for equivalent identifiers for <code class="docutils literal notranslate"><span class="pre">A:id1</span></code> return <code class="docutils literal notranslate"><span class="pre">C:67cb2865-781f-4450-a99c-e9b33bf4d5b5</span></code> since <code class="docutils literal notranslate"><span class="pre">A:id1</span> <span class="pre">&lt;=&gt;</span> <span class="pre">B:acc32</span></code> and <code class="docutils literal notranslate"><span class="pre">B:acc32</span> <span class="pre">&lt;=&gt;</span> <span class="pre">C:67cb2865-781f-4450-a99c-e9b33bf4d5b5</span></code>.</p>
+<p>The following is an incomplete list of identifier mapping services.</p>
+<ul>
+<li><p><a class="reference external" href="https://bridgedb.github.io/">bridgedb.org</a></p>
+<blockquote>
+<div><p><a class="reference external" href="https://bridgedb.github.io/">BridgeDb</a> <span id="id4">[<span>van_iersel_bridgedb_2010</span>]</span> is a framework for identifier mapping within the life sciences which covers genes, proteins, genetic variants, metabolites, and metabolic reactions. It is provided as a web service, a standalone application that can be installed locally, a Java library or an R Package.</p>
+<p>It permits users to lookup equivalent database identifiers for a given database identifier within a specified organism. The following <code class="docutils literal notranslate"><span class="pre">curl</span></code> command to the REST API retrieves the equivalent identifiers for the EntrezGene (now known as NCBI Gene) <code class="docutils literal notranslate"><span class="pre">L</span></code> identifier <code class="docutils literal notranslate"><span class="pre">1234</span></code> for the <code class="docutils literal notranslate"><span class="pre">Human</span></code> gene <a class="reference external" href="https://www.ncbi.nlm.nih.gov/gene/1234">CCR5</a> as a TSV file.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="s2">&quot;https://webservice.bridgedb.org/Human/xrefs/L/1234&quot;</span> -H <span class="s2">&quot;accept: */*&quot;</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><a class="reference external" href="https://bioconductor.org/packages/release/bioc/vignettes/BridgeDbR/inst/doc/tutorial.html">BridgeDbR Tutorial</a></p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://www.ebi.ac.uk/unichem/">UniChem</a></p>
+<blockquote>
+<div><p><a class="reference external" href="https://www.ebi.ac.uk/unichem/">UniChem</a> <span id="id5">[<span>chambers_unichem_2013</span>]</span> is a specialised identifier mapping service for chemical structures. For a chemical structure – specified as an identifier, InChI, or InChI Key – it will equivalent structures found in the <a class="reference external" href="https://www.ebi.ac.uk/">EMBL-EBI</a> chemistry resources.</p>
+<p>The following <code class="docutils literal notranslate"><span class="pre">curl</span></code> command retrieves the equivalent database identifiers for the ChEMBL identifier <code class="docutils literal notranslate"><span class="pre">CHEMBL12</span></code> <a class="reference external" href="https://www.ebi.ac.uk/chembl/compound_report_card/CHEMBL12/">DIAZEPAM</a> and returns the result as a JSON object.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -X GET <span class="s2">&quot;https://www.ebi.ac.uk/unichem/rest/src_compound_id/CHEMBL12/1&quot;</span> -H <span class="s2">&quot;accept: */*&quot;</span>
+</pre></div>
+</div>
+</div></blockquote>
+<blockquote>
+<div><p>For more information including the available methods, see the <a class="reference external" href="https://www.ebi.ac.uk/unichem/info/webservices">UniChem REST documentation</a>.</p>
+</div></blockquote>
+</li>
+<li><p><a class="reference external" href="https://sameas.org/">sameas.org</a></p>
+<blockquote>
+<div><p><a class="reference external" href="https://sameas.org/">sameas.org</a> is a general purpose service that will return a set of equivalent URLs for a given URL. The equivalences are based on an incomplete set of <code class="docutils literal notranslate"><span class="pre">owl:sameAs</span></code> statements contained in data available on the web.</p>
+<p>The following <code class="docutils literal notranslate"><span class="pre">curl</span></code> command retrieves the equivalent URLs for EBI RDF Platform representation of ChEMBL <a class="reference external" href="https://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL12">DIAZEPAM</a> as a JSON object.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -iLH <span class="s2">&quot;Accept: application/json&quot;</span> <span class="s2">&quot;http://sameas.org/?uri=http://rdf.ebi.ac.uk/resource/chembl/molecule/CHEMBL12&quot;</span>
+</pre></div>
+</div>
+<p>Note that the coverage of <a class="reference external" href="http://sameas.org">sameas.org</a> within the life sciences is very small.</p>
+</div></blockquote>
+</li>
+</ul>
+<!-- * [Identifiers.org](https://identifiers.org/)
+
+    > [Identifiers.org](https://identifiers.org) is a **Resolution Service** that provides access to alternative mirrors of the same database which are located at different URLs on the web. For example, the UniProt database is based as the Swiss Institute of Bioinformatics but is also mirrored on the NCBI in the States.
+    > 
+    > The following URL https://identifiers.org/uniprot:P38938 resolves to the UniProt page https://www.uniprot.org/uniprot/P38938 by default (meaning that these identifiers are equivalent) but if the SIB service is unavailable will resolve to https://www.ncbi.nlm.nih.gov/protein/P38938. -->
+</div>
+<hr class="docutils" />
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>In this recipe, we have shown how to validate fastq files, and proposed indicators to evaluate a FASTQ validator. We also identified common file validation related use cases and provided a general file validation workflow. This recipe can be expanded to other file formats and other use cases.</p>
-<div class="section" id="what-to-read-next">
-<h3>What to read next<a class="headerlink" href="#what-to-read-next" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>In this recipe, we have given an overview of the need to map between globally unique and persistent identifier from different data sources where they cover the same concept, i.e. FAIR principle I3. We have covered:</p>
 <ul class="simple">
-<li><p>🐙<a class="reference external" href="https://github.com/FAIRplus/the-fair-cookbook/blob/mzml-format/docs/content/recipes/interoperability/from-proprietary-to-open-standard-mzml-exemplar.md">From proprietary format to open standard format: an exemplar</a></p></li>
-<li><p>🐙<a class="reference external" href="https://www.TBD.org">FASTQ file specification recipe</a></p></li>
-<li><p>🐙<a class="reference external" href="https://www.TBD.org">FASTQ file validator in Biopython</a></p></li>
+<li><p>The idea of data identifier equivalence;</p></li>
+<li><p>How to publish and exchange data identifier equivalences;</p></li>
+<li><p>Data identifier mapping services which can be queried to find equivalences for a given identifier.</p></li>
+</ul>
+<p>Data identifier equivalences increase the interoperability between data sources since it allows data about an individual to be integrated together.
+As a minimum, you should aim to link your dataset’s persistant data identifiers to one major dataset within the community. The <a class="reference external" href="https://elixir-europe.org/platforms/data/core-data-resources">ELIXIR Core Data Resources</a> provide a useful list of major datasets within the life sciences.</p>
+</div></blockquote>
+<div class="section" id="what-should-i-read-next">
+<h3>What should I read next?<a class="headerlink" href="#what-should-i-read-next" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference internal" href="../findability/identifiers.html#fcb-find-identifiers"><span class="std std-ref">How to generate globally unique, resolvable and persistent identifiers</span></a></p></li>
+<li><p><a class="reference external" href="https://fairtoolkit.pistoiaalliance.org/use-cases/adoption-and-impact-of-an-identifier-policy-astrazeneca/">The Pistoia Alliance FAIRtoolkit use cases: Adoption and Impact of an identifier policy at Astra-Zeneca</a></p></li>
+<li><p><span class="xref myst">Identifier Resolution Services</span></p></li>
+<li><p><span class="xref std std-ref">fcb-interop-bridgedb</span></p></li>
+<li><p><a class="reference external" href="http://www.openphacts.org/specs/datadesc/">Dataset Descriptions for the Open Pharmacological Space</a></p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ul class="simple">
-<li><p>Cock, Peter J. A., Christopher J. Fields, Naohisa Goto, Michael L. Heuer, and Peter M. Rice. ‘The Sanger FASTQ File Format for Sequences with Quality Scores, and the Solexa/Illumina FASTQ Variants’. Nucleic Acids Research 38, no. 6 (1 April 2010): 1767–71. <a class="reference external" href="https://doi.org/10.1093/nar/gkp1137">https://doi.org/10.1093/nar/gkp1137</a>.</p></li>
-<li><p>ENA. ‘Accepted Read Data Formats — ENA Training Modules 1 Documentation’. Accessed 6 July 2020. <a class="reference external" href="https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html#fastq-format">https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html#fastq-format</a>.</p></li>
-<li><p>NCBI. ‘File Format Guide’. Accessed 14 July 2020. <a class="reference external" href="https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/#fastq-files">https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/#fastq-files</a>.</p></li>
-<li><p>Nuno Fonseca, and Jonathan Manning. Nunofonseca/Fastq_utils 0.24.0. Zenodo, 2020. <a class="reference external" href="https://doi.org/10.5281/zenodo.3936692">https://doi.org/10.5281/zenodo.3936692</a>.</p></li>
-</ul>
-</div>
+<span class="target" id="id6"></span></div>
 <hr class="docutils" />
 <div class="section" id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>Name</p></th>
-<th class="head"><p>Institute</p></th>
-<th class="head"><p>ORCID</p></th>
-<th class="head"><p>Contributions</p></th>
+<tr class="row-odd"><th class="text-align:left head"><p>Name</p></th>
+<th class="text-align:left head"><p>Affiliation</p></th>
+<th class="text-align:left head"><p>orcid</p></th>
+<th class="text-align:left head"><p>CrediT role</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>Fuqi Xu</p></td>
-<td><p><a class="reference external" href="https://www.ebi.ac.uk/">EMBL-EBI</a></p></td>
-<td><p><a class="reference external" href="https://orcid.org/0000-0002-5923-3859">0000-0002-5923-3859</a></p></td>
-<td><p>Writing - Original Draft</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Alasdair Gray</p></td>
+<td class="text-align:left"><p>Heriot-Watt University / ELIXIR-UK</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/0000-0002-5711-4872">0000-0002-5711-4872</a></p></td>
+<td class="text-align:left"><p>Writing - Original Draft</p></td>
 </tr>
-<tr class="row-odd"><td><p>Eva Martin</p></td>
-<td><p><a class="reference external" href="https://www.bsc.es/">Barcelona Supercomputing Center (BSC)</a></p></td>
-<td><p><a class="reference external" href="https://orcid.org/0000-0001-8324-2897">0000-0001-8324-2897</a></p></td>
-<td><p>Reviewing and editing</p></td>
+<tr class="row-odd"><td class="text-align:left"><p>Chris Evelo</p></td>
+<td class="text-align:left"><p>Maastricht University</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/0000-0002-5301-3142">0000-0002-5301-3142</a></p></td>
+<td class="text-align:left"><p>Writing - Original Draft</p></td>
 </tr>
-<tr class="row-even"><td><p>Peter Woollard</p></td>
-<td><p><a class="reference external" href="https://www.gsk.com/en-gb/">GSK</a></p></td>
-<td><p><a class="reference external" href="https://orcid.org/0000-0002-7654-6902">0000-0002-7654-6902</a></p></td>
-<td><p>Reviewing</p></td>
+<tr class="row-even"><td class="text-align:left"><p>Egon Willighagen</p></td>
+<td class="text-align:left"><p>Maastricht University</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/0000-0001-7542-0286">0000-0001-7542-0286</a></p></td>
+<td class="text-align:left"><p>Writing - Original Draft</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Lucas Giovanni Uberti-Bona Marin</p></td>
+<td class="text-align:left"><p>Maastricht University</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/0000-0001-6518-9535">0000-0001-6518-9535</a></p></td>
+<td class="text-align:left"><p>Writing – review &amp; editing</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Philippe Rocca-Serra</p></td>
+<td class="text-align:left"><p>University of Oxford, Data Readiness Group</p></td>
+<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/orcid.org/0000-0001-9853-5668">0000-0001-9853-5668</a></p></td>
+<td class="text-align:left"><p>Review - corrections &amp; editing</p></td>
 </tr>
 </tbody>
 </table>
@@ -1340,7 +1244,7 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/044/SRR11542244/SRR11542244_2.fastq.gz
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This page is released under the Creative Commons 4.0 BY license.</p>
-<p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png" height="20"/></a></p>
+<p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by-sa.png" height="20"/></a></p>
 </div>
 </div>
 
@@ -1369,8 +1273,8 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR115/044/SRR11542244/SRR11542244_2.fastq.gz
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="from-proprietary-to-open-standard-mzml-exemplar.html" title="previous page">From proprietary to open standard data format</a>
-    <a class='right-next' id="next-link" href="../reusability.html" title="next page">Reusability</a>
+    <a class='left-prev' id="prev-link" href="../interoperability.html" title="previous page">interoperability</a>
+    <a class='right-next' id="next-link" href="selecting-ontologies.html" title="next page">Which vocabulary to use?</a>
 
         </div>
         
