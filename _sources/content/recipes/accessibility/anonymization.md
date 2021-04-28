@@ -4,16 +4,16 @@
 <br/>
 
 ----
-
-````{panel_fairplus}
-:identifier_text: http://w3id.org/faircookbook/FCB002
-:identifier_link: http://w3id.org/faircookbook/FCB002
+<!-- 
+````{helloworld}
+:identifier_text: RX.X
+:identifier_link: http://invalid
 :difficulty_level: 2
 :recipe_type: background_information
 :reading_time_minutes: 15
 :intended_audience: funder, principal_investigator, data_manager, data_scientist  
 :has_executable_code: nope
-```` 
+```` -->
 
 
         
