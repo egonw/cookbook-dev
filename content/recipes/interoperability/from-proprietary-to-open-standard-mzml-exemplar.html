@@ -47,7 +47,6 @@
     <script src="../../../_static/mermaid.js"></script>
     <script src="../../../_static/mermaid.core.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
-    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -218,12 +217,12 @@
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="bridgedb-recipe.html">
-     2. Identifiers mapping with BridgeDB
+     2. Identifier mapping with BridgeDb
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="bridgedb/bridgedb-example.html">
-       Using BridgeDB web services
+       Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -723,12 +722,12 @@
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pull-the-docker-container-for-proteowizard">
-       4. pull the docker container for ProteoWizard:
+       4. pull the docker container for ProteoWizard
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#testing-and-processing-the-resulting-mzml-files">
-       5. Testing and processing the resulting mzML files:
+       5. Testing and processing the resulting mzML files
       </a>
      </li>
     </ul>
@@ -1011,7 +1010,7 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 <h4>3. sign-up and/or login to <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a><a class="headerlink" href="#sign-up-and-or-login-to-https-hub-docker-com" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="pull-the-docker-container-for-proteowizard">
-<h4>4. pull the docker container for ProteoWizard:<a class="headerlink" href="#pull-the-docker-container-for-proteowizard" title="Permalink to this headline">¶</a></h4>
+<h4>4. pull the docker container for ProteoWizard<a class="headerlink" href="#pull-the-docker-container-for-proteowizard" title="Permalink to this headline">¶</a></h4>
 <p>:warning: be sure to sign-up and login to <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;docker pull chambm/pwiz-i-agree-to-the-vendor-licenses
 </pre></div>
@@ -1034,7 +1033,7 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 <li><p>unsupported vendor format</p></li>
 </ul>
 <p>To address the former, it is good practice to compute a hash (md5, sha2) checksum fingerprinting each of the files. This allows to ensure that no file corruption has occurred during transfer and copy.</p>
-<p>To address the latter, one should consult to table of compatibility:</p>
+<p>To address the latter, one should consult the table of compatibility:</p>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Format</p></th>
@@ -1085,8 +1084,8 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 </table>
 </div>
 <div class="section" id="testing-and-processing-the-resulting-mzml-files">
-<h4>5. Testing and processing the resulting mzML files:<a class="headerlink" href="#testing-and-processing-the-resulting-mzml-files" title="Permalink to this headline">¶</a></h4>
-<p>for users unfamiliar with format, a search via popular search engine will yield options. Alternately, users may consult the Elixir Biotools registry for suggestions.</p>
+<h4>5. Testing and processing the resulting mzML files<a class="headerlink" href="#testing-and-processing-the-resulting-mzml-files" title="Permalink to this headline">¶</a></h4>
+<p>For users unfamiliar with format, a search via popular search engine will yield options. Alternately, users may consult the Elixir Biotools registry for suggestions.</p>
 <p>A number of libraries are available for parsing (reading and writing) <code class="docutils literal notranslate"><span class="pre">mzML</span></code> document. <code class="docutils literal notranslate"><span class="pre">mzML</span></code> is a king of <code class="docutils literal notranslate"><span class="pre">XML</span></code> format for which an XML schema has been defined and allows syntactic validation through standard library in languages such as java, c++ or python. The top hit corresponds the the <code class="docutils literal notranslate"><span class="pre">pymzml</span></code> library.</p>
 <!-- <div>
 <img src="https://i.imgur.com/BTs0GUS.png" width="750" border="1"/>

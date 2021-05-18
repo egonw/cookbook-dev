@@ -47,7 +47,6 @@
     <script src="../../../../_static/mermaid.js"></script>
     <script src="../../../../_static/mermaid.core.js"></script>
     <script src="../../../../_static/mermaid.min.js"></script>
-    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -72,7 +71,7 @@
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/bridgedb/bridgedb-example.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Using BridgeDb web services" />
-<meta property="og:description" content="Using BridgeDb web services  &lt;i class=&#39;fa fa-qrcode fa-2x&#39; style=&#39;color:#7e0038;&#39;&gt;&lt;/i&gt;&lt;br&gt;  &lt;h4&gt;&lt;b&gt;Recipe metadata&lt;/b&gt;&lt;/h4&gt;  identifier: &lt;a href=&#34;http://w3id.or" />
+<meta property="og:description" content="Using BridgeDb web services  &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bioschema.org/&#34;}, &#34;@type&#34;:" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -218,12 +217,12 @@
    </li>
    <li class="toctree-l2 current active collapsible-parent">
     <a class="reference internal" href="../bridgedb-recipe.html">
-     2. Identifiers mapping with BridgeDB
+     2. Identifier mapping with BridgeDb
     </a>
     <ul class="current collapse-ul">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Using BridgeDB web services
+       Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -695,63 +694,61 @@
                 
   <div class="section" id="using-bridgedb-web-services">
 <span id="fcb-bridgedbnotebook"></span><h1>Using BridgeDb web services<a class="headerlink" href="#using-bridgedb-web-services" title="Permalink to this headline">¶</a></h1>
-<div class="sphinx-bs container-lg pb-3&lt;br&gt; docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1&lt;br&gt; docutils">
-<div class="card w-100 rounded&lt;br&gt; docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class='fa fa-qrcode fa-2x' style='color:#7e0038;'></i><br></p>
+<br/>
+<hr class="docutils" />
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Using BridgeDb web services", "audience": ["Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCB018", "url": "http://w3id.org/faircookbook/FCB018"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H30M0S", "totalTime": "PT0H30M0S"} </script>
+<div class="card recipe d-flex">
+<div class="card-header purple-dark text--white">
+<div class="overview">
+<div class="overviewLabel">Recipe Overview</div>
+<div class="overviewContent">
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-clock fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Reading Time </div>
+30 minutes
 </div>
-<div class="card-body docutils">
-<h4><b>Recipe metadata</b></h4>
- identifier: <a href="http://w3id.org/faircookbook/FCB018">FCB018</a>
- version: <a href="">v1.0</a>
+</div></div>
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-play-circle fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Executable Code </div>
+Yes
 </div>
+</div></div>
+<div class="item" style="margin-bottom:10px"><div class="itemContainer">
+<i class="itemIcon fa fa-fire fa-2x text--white" style="margin-left:4px;margin-right: 5px;"></i>
+<div class="itemContent">
+<div class="label" style="position:relative; left:-6px">Difficulty</div>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire" style="color:grey"></i>
+<i class="fa fa-fire" style="color:grey"></i>
 </div>
+</div></div>
+</div></div>
 </div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1&lt;br&gt; docutils">
-<div class="card w-100 rounded&lt;br&gt; docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class='fa fa-fire fa-2x' style='color:#7e0038;'></i></p>
+<div class="card-body text--purple-dark">
+<div class="title">
+<div style="flex-grow:1; margin-right:5px">Using BridgeDb web services</div>
+<img src="/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
 </div>
-<div class="card-body docutils">
-<h4><b>Difficulty level</b></h4>
-<i class='fa fa-fire fa-lg' style='color:#7e0038;'></i>
-<i class='fa fa-fire fa-lg' style='color:#7e0038;'></i>
-<i class='fa fa-fire fa-lg' style='color:#7e0038;'></i>
-<i class='fa fa-fire fa-lg' style='color:lightgrey;'></i>
-<i class='fa fa-fire fa-lg' style='color:lightgrey'></i>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1&lt;br&gt; docutils">
-<div class="card w-100 rounded&lt;br&gt; docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class='fas fa-clock fa-2x' style='color:#7e0038;'></i></p>
-</div>
-<div class="card-body docutils">
-<h4><b>Reading Time</b></h4>
-<i class='fa fa-clock fa-lg' style='color:#7e0038;'></i> 30 minutes
-<h4><b>Recipe Type</b></h4>
-<i class='fa fa-globe fa-lg' style='color:#7e0038;'></i> Hands-on
-<h4><b>Executable Code</b></h4>
-<i class='fa fa-play-circle fa-lg' style='color:#7e0038;'></i> Yes
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1&lt;br&gt; docutils">
-<div class="card w-100 rounded&lt;br&gt; docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class='fa fa-users fa-2x' style='color:#7e0038;'></i></p>
-</div>
-<div class="card-body docutils">
-<h4><b>Intended Audience</b></h4>
-<!-- <p> <i class='fa fa-user-md fa-lg' style='color:#7e0038;'></i> Principal Investigator </p> -->
-<p> <i class='fa fa-database fa-lg' style='color:#7e0038;'></i> Data Manager </p>
-<p> <i class='fa fa-wrench fa-lg' style='color:#7e0038;'></i> Data Scientist </p>
+<div class="section">
+<i class="sectionIcon fa fa-laptop fa-2x"></i><div class="sectionContent">
+<div class="label">Recipe Type</div>
+<div class="sectionValue">Hands-on</div>
 </div>
 </div>
+<div class="section" style="flex-grow: 1;">
+<i class="sectionIcon fa fa-users fa-2x"></i><div class="sectionContent">
+<div class="label">Audience</div>
+<div class="sectionValue">Data Manager, Data Scientist</div>
 </div>
+</div>
+<div class="card-footer text--orange sphinx-bs.badge.badge-primary"> Cite me with 
+<a href="http://w3id.org/faircookbook/FCB018" class="text--purple-dark">FCB018
+</a></div>
 </div>
 </div>
 <hr class="docutils" />

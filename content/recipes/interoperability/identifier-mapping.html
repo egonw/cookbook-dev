@@ -47,7 +47,6 @@
     <script src="../../../_static/mermaid.js"></script>
     <script src="../../../_static/mermaid.core.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
-    <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -72,7 +71,7 @@
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/interoperability/identifier-mapping.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Interlinking data from different sources" />
-<meta property="og:description" content="Interlinking data from different sources    &lt;br/&gt;   &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bio" />
+<meta property="og:description" content="Interlinking data from different sources  &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bioschema.org" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -218,12 +217,12 @@
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="bridgedb-recipe.html">
-     2. Identifiers mapping with BridgeDB
+     2. Identifier mapping with BridgeDb
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="bridgedb/bridgedb-example.html">
-       Using BridgeDB web services
+       Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -746,11 +745,10 @@
               <div>
                 
   <div class="section" id="interlinking-data-from-different-sources">
-<span id="fcb-interop-idmapping"></span><h1><span class="section-number">1. </span>Interlinking data from different sources<a class="headerlink" href="#interlinking-data-from-different-sources" title="Permalink to this headline">¶</a></h1>
-<br/>
+<span id="fcb-identifier-mapping"></span><h1><span class="section-number">1. </span>Interlinking data from different sources<a class="headerlink" href="#interlinking-data-from-different-sources" title="Permalink to this headline">¶</a></h1>
 <br/>
 <hr class="docutils" />
-<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Interlink data from different sources", "audience": ["Principal Investigator", "Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Background information", "identifier": {"@type": "PropertyValue", "name": "FCB016", "url": "https://w3id.org/faircookbook/FCB016"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H30M0S", "totalTime": "PT0H30M0S"} </script>
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Interlinking data from different sources", "audience": ["Principal Investigator", "Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Background information", "identifier": {"@type": "PropertyValue", "name": "FCB016", "url": "https://w3id.org/faircookbook/FCB016"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H30M0S", "totalTime": "PT0H30M0S"} </script>
 <div class="card recipe d-flex">
 <div class="card-header purple-dark text--white">
 <div class="overview">
@@ -785,7 +783,7 @@ No
 </div>
 <div class="card-body text--purple-dark">
 <div class="title">
-<div style="flex-grow:1; margin-right:5px">Interlink data from different sources</div>
+<div style="flex-grow:1; margin-right:5px">Interlinking data from different sources</div>
 <img src="/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
 </div>
 <div class="section">
@@ -827,9 +825,9 @@ No
 <div class="section" id="graphical-overview">
 <h2>Graphical Overview<a class="headerlink" href="#graphical-overview" title="Permalink to this headline">¶</a></h2>
 <p>This recipe will cover the topics highlighted in orange:</p>
-<div class="figure align-default" id="overview-of-key-aspects-in-identifier-mapping">
-<a class="reference internal image-reference" href="../../../_images/id-map-service-mermaid.png"><img alt="Overview of key aspects in  Identifier Mapping" src="../../../_images/id-map-service-mermaid.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Overview of key aspects in  Identifier Mapping</span><a class="headerlink" href="#overview-of-key-aspects-in-identifier-mapping" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="identifier-mapping-figure1">
+<img alt="Overview of key aspects in Identifier Mapping" src="../../../_images/identifier-mapping.md-figure1.mmd.png" />
+<p class="caption"><span class="caption-number">Fig. 1.2 </span><span class="caption-text">Overview of key aspects in Identifier Mapping</span><a class="headerlink" href="#identifier-mapping-figure1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -1089,7 +1087,7 @@ As a minimum, you should aim to link your dataset’s persistant data identifier
 <ul class="simple">
 <li><p><a class="reference internal" href="../findability/identifiers.html#fcb-find-identifiers"><span class="std std-ref">Unique, persistent identifiers</span></a></p></li>
 <li><p><a class="reference external" href="https://fairtoolkit.pistoiaalliance.org/use-cases/adoption-and-impact-of-an-identifier-policy-astrazeneca/">The Pistoia Alliance FAIRtoolkit use cases: Adoption and Impact of an identifier policy at Astra-Zeneca</a></p></li>
-<li><p><a class="reference internal" href="bridgedb-recipe.html#fcb-bridgedb"><span class="std std-ref">Identifier mapping with BridgeDb</span></a></p></li>
+<li><p><a class="reference internal" href="bridgedb-recipe.html#fcb-bridgedb-recipe"><span class="std std-ref">Identifier mapping with BridgeDb</span></a></p></li>
 <li><p><a class="reference external" href="http://www.openphacts.org/specs/datadesc/">Dataset Descriptions for the Open Pharmacological Space</a></p></li>
 </ul>
 </div>
