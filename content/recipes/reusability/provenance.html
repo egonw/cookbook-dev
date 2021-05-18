@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5. Provenance Information</title>
+    <title>5. Provenance information</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,43 +45,9 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/mermaid.js"></script>
-    <script src="../../../_static/mermaid.min.js"></script>
     <script src="../../../_static/mermaid.core.js"></script>
+    <script src="../../../_static/mermaid.min.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "FAIRplus/the-fair-cookbook");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "💬 comment");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -95,8 +61,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="6. Compliance with community annotation standards" href="community-standards.html" />
-    <link rel="prev" title="4. Patterns and practice for expressing allowed data usage" href="expressing-data-use.html" />
+    <link rel="next" title="Infrastructure" href="../infrastructure.html" />
+    <link rel="prev" title="4. Declaring data’s permitted uses" href="expressing-data-use.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -105,8 +71,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/reusability/provenance.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Provenance Information" />
-<meta property="og:description" content="Provenance Information    &lt;br/&gt;     &lt;i class=&#34;fa fa-qrcode fa-2x&#34; style=&#34;color:#7e0038;&#34;&gt;&lt;/i&gt;  &lt;h4&gt;&lt;b&gt;Recipe metadata&lt;/b&gt;&lt;/h4&gt;  identifier: &lt;a href=&#34;&#34;&gt;RX.X&lt;/a&gt; " />
+<meta property="og:title"       content="Provenance information" />
+<meta property="og:description" content="Provenance information  &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bioschema.org/&#34;}, &#34;@type&#34;: [&#34;sd" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -140,228 +106,77 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  FOREWORD
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/FAIR-cookbook-audience.html">
+   Who should read it
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/FAIRplus-values.html">
+   Ethical values of FAIR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../glossary-fair-terms.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  RECIPES
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../introduction.html">
-   Introduction
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/ATI-turingway.html">
-     1. The Turing Way Book of Data Science
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/FAIR-cookbook-audience.html">
-     2. Who should read the FAIR Cookbook?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/brief-FAIR-principles.html">
-     3. What are the FAIR Principles?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/what-is-IMI.html">
-     4. What is IMI?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/FAIR-in-IMI-context.html">
-     5. FAIR in the context of IMI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/IMI-Data-Access-Request-Process.html">
-     6. Engaging with IMI Projects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/FAIRplus-values.html">
-     7. The Ethical Values behind FAIR and the FAIRPlus project
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../introduction/data-sharing-models.html">
-     8. High level data sharing models
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../assessing-fairness.html">
-   Assessing FAIR
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assessing-fairness/cmmi/Data-Management-Maturity-Model.html">
-     1. Data Management Maturity Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assessing-fairness/cmmi/Datasets-Maturity-Model.html">
-     2. FAIRplus Datasets Maturity Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../assessing-fairness/cmmi/Data-Usage-Areas.html">
-     3. Data Usage Areas
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../assessing-fairness/fair-indicators.html">
-     4. FAIR Indicators
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../assessing-fairness/cmmi/RDA-Indicators.html">
-       4.4.1. RDA Indicators
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../assessing-fairness/cmmi/FAIRPlus-Indicators.html">
-       4.4.2. IMI FAIRPlus Indicators
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../assessing-fairness/manual-fair-assessment.html">
-     5. FAIR assessment by hand
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../assessing-fairness/cmmi/evaluation-method.html">
-       5.4.1. Evaluation Method
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../assessing-fairness/cmmi/rda-evaluation.html">
-       5.4.2. RDA Evaluation Methods
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../assessing-fairness/automatic-fair-assessment.html">
-     6. FAIR assessment by software
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../assessing-fairness/fair-assessment-fairevaluator.html">
-       6.4.1. Assessing FAIRness with FAIREvaluator
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../assessing-fairness/fair-assessment-fairshake.html">
-       6.4.2. FAIR assessment with FAIRShake
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../infrastructure.html">
-   Infrastructure for FAIR
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../infrastructure/id-resolution.html">
-     1. Identifier resolution services
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../infrastructure/data-catalog.html">
-     2. Building a Dataset Catalogue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../infrastructure/data-catalog-deployment.html">
-     3. Deploying the IMI data catalogue
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../infrastructure/vocabularies.html">
-     4. Vocabularies and Terminology Infrastructure
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/vocabularies/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html">
-       4.1. Technical &amp; architectural selection criteria of ontology lookup services
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/vocabularies/Selecting_and_using_ontology_lookup_services.html">
-       4.2. Selection and exploitation of Ontology Lookup Services
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../infrastructure/vocabularies/UC3_R13_local_ontology_services.html">
-       4.3. How to deploy a terminology service - EBI Ontology Lookup Service
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../findability.html">
-   Improving Findability
+   Findability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../findability/identifiers.html">
-     1. How to generate globally unique, resolvable and persistent identifiers
+     1. Unique, persistent identifiers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../infrastructure/chemical-identities.html">
-     2. Chemical Identity - InChI and SMILES
+     2. InChI and SMILES identifiers for chemical structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../findability/identifiers-minids.html">
-     3. Identifier Minting Service with Minid Client
+     3. Minting identifiers with Minid
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../findability/zenodo-deposition.html">
-     4. Deposition to Zenodo Archive
+     4. Depositing in Zenodo generic repository
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../findability/seo.html">
-     5. Findability: Search Engine Optimization
+     5. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-data-page.html">
-       5.8.1. Findability: Data Page Markup with Bioschemas
+       5.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-dataset.html">
-       5.8.2. Findability: Dataset Markup
+       5.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-datacatalog.html">
-       5.8.3. Findability: Data Catalog Markup
+       5.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -374,22 +189,17 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../accessibility.html">
-   Improving Accessibility
+   Accessibility
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../accessibility/anonymization.html">
-     1. Anonymizing Patient Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../accessibility/how-to-use-sftp-for-transfer.html">
-     2. How to use SFTP to transfer data files between institutions.
+    <a class="reference internal" href="../accessibility/sftp.html">
+     1. Transferring data with SFTP
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../accessibility/aspera.html">
-     3. How to download files with Aspera
+     2. Downloading data with Aspera
     </a>
    </li>
   </ul>
@@ -398,22 +208,22 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../interoperability.html">
-   Improving Interoperability
+   Interoperability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/identifier-mapping.html">
-     How to interlink data from different sources?
+     1. Interlinking data from different sources
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../interoperability/bridgedb-recipe.html">
-     Identifier mapping with BridgeDB
+     2. Identifiers mapping with BridgeDB
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/bridgedb/bridgedb-example.html">
-       Identifier mapping using BridgeDb WS
+       Using BridgeDB web services
       </a>
      </li>
     </ul>
@@ -421,42 +231,57 @@ commentsRunWhenDOMLoaded(addUtterances);
     </i>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../interoperability/ontology-why-using-them.html">
+     3. Introduction to terminologies and ontologies
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/selecting-ontologies.html">
-     Which vocabulary to use?
+     4. Selecting terminologies and ontologies
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/ontology-new-term-request-recipe.html">
-     Requesting terms addition to terminology artefacts
+     5. Requesting new terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interoperability/ontology-operations-tools.html">
+     6. Ontology-related tools and services
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../interoperability/ontology-robot-recipe.html">
-     Building an application ontology with Robot
+     7. Building an application ontology with ROBOT
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/ontology-robot/MSIO-robot-build-process.html">
-       MSIO, an application ontology for Metabolomics
+       Application ontology for metabolomics
       </a>
      </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interoperability/creating_data_dictionary.html">
+     8. Creating a data/variable dictionary
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../interoperability/creating-minimal-metadata-profiles.html">
-     Creating a Metadata Profile
+     9. Creating a metadata profile
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/transcriptomics-metadata.html">
-       Establishing a Metadata Profile for Transcriptomics
+       Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata Profile Validation in RDF with Shape Expression:
+       Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -465,12 +290,17 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/from-proprietary-to-open-standard-mzml-exemplar.html">
-     From proprietary to open standard data format
+     10. Converting from proprietary to open format
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/fastq-file-format-validators.html">
-     File format validation, an example with FASTQ files
+     11. File format validation, FASTQ example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../interoperability/ETL-tools.html">
+     12. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -479,7 +309,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../reusability.html">
-   Improving Reusability
+   Reusability
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
@@ -489,27 +319,89 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ATI_licensing_software.html">
-     2. Software Licenses
+     2. Software licenses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ATI_licensing_data.html">
-     3. Data Licenses
+     3. Data licenses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="expressing-data-use.html">
-     4. Patterns and practice for expressing allowed data usage
+     4. Declaring data's permitted uses
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     5. Provenance Information
+     5. Provenance information
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../infrastructure.html">
+   Infrastructure
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../infrastructure/id-resolution.html">
+     1. Identifier resolution services
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="community-standards.html">
-     6. Compliance with community annotation standards
+    <a class="reference internal" href="../infrastructure/data-catalog.html">
+     2. Building a catalogue of datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../infrastructure/data-catalog-deployment.html">
+     3. Deploying the IMI data catalogue
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../infrastructure/vocabularies.html">
+     4. Vocabulary management
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../infrastructure/vocabularies/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html">
+       4.1. Portals and look-up services
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../infrastructure/vocabularies/Selecting_and_using_ontology_lookup_services.html">
+       4.2. Selecting a look-up service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../infrastructure/vocabularies/UC3_R13_local_ontology_services.html">
+       4.3. Deploying the EBI OLS
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../assessing-fairness.html">
+   Assessment
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessing-fairness/fair-assessment-fairevaluator.html">
+     1. with FAIREvaluator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../assessing-fairness/fair-assessment-fairshake.html">
+     2. with FAIRshake
     </a>
    </li>
   </ul>
@@ -518,32 +410,32 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../applied-examples.html">
-   Making IMI data FAIR
+   Applied examples
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../applied-examples/fair-data-matrix-recipe.html">
-     Making a Data Matrix FAIR
+     1. Making omics data matrices FAIR
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Bibliographic Reference:
+       Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Exploring and comparing Rose Scent profiles stored as tabular data packages with plotnine, a python port of R ggplot2
+       Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring a rose garden with SPARQL
+       Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Exploring and comparing Rose Scent profiles stored as tabular data packages with ggplot2 R library
+       Integrating data
       </a>
      </li>
     </ul>
@@ -551,62 +443,93 @@ commentsRunWhenDOMLoaded(addUtterances);
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../applied-examples/etox_raw/FAIRplus_Recipe_Ontology_mapping_the_eTox_dataset_scenario.html">
-     Data normalization and integration through entity linking
+    <a class="reference internal" href="../applied-examples/etox.html">
+     2. eTox - toxicity datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../applied-examples/nd4bb_raw/FAIRification_CookBook_Recipe1_V02.html">
-     ND4BB dataset FAIRification recipe
+    <a class="reference internal" href="../applied-examples/nd4bb.html">
+     3. nd4bb - chemical activities datasets
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../applied-examples/oncotrack_raw/rawRecipe-oncotrack.html">
-     Oncotrack FAIRification recipe
+     4. Oncotrack - clinical cohort datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../applied-examples/resolute_raw/rawRecipe_resolute.html">
-     RESOLUTE FAIRification Recipe
+    <a class="reference internal" href="../applied-examples/resolute_raw/resolute.html">
+     5. RESOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../glossary-fair-terms.html">
-   Glossary of FAIR things
-  </a>
- </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  ABOUT
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../help.html">
-   Help
+  <a class="reference internal" href="../community.html">
+   Community
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../help/tips-tricks.html">
-     1. Recipe Tips and Tricks
+    <a class="reference internal" href="../boilerplate/people.html">
+     1. Boards and contributors
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../help/recipe-template.html">
-     2. Recipe Template
+    <a class="reference internal" href="../boilerplate/code_of_conduct.html">
+     2. Code of conduct
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../help.html">
+   Contribute
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../boilerplate/contributing.html">
+     1. How to contribute
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../help/how-to-create-recipe-with-gdoc.html">
-     3. Using GoogleDocs to contribute a FAIR Cookbook Recipe
+     2. Add via GoogleDoc
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../help/how-to-create-recipe-with-hackmd.html">
-     4. How to use HackMD to write a FAIR Cookbook Recipe
+     3. Add via HackMD
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../help/how-to-create-recipe-with-git.html">
-     5. How to create a FAIRPlus Coobook Recipe ?
+     4. Add via Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../help/recipe-template.html">
+     5. Git recipe template
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../help/tips-tricks.html">
+     6. Tips and tricks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../help/myst.html">
+     7. Markdown cheatsheet
     </a>
    </li>
   </ul>
@@ -615,47 +538,12 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../boilerplate.html">
-   Miscellaneous
+   Platform
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/license.html">
-     1. License for this book
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/people.html">
-     2. FAIR Cookbook Steering Council and Institutional Partners
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/governance.html">
-     3. FAIR Cookbook Governance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/code_of_conduct.html">
-     4. FAIR Cookbook Code of Conduct
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/project_information.html">
-     5. FAIR CookBook BoilerPlate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/roadmap.html">
-     6. FAIR cookbook development roadmap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/contributing.html">
-     7. Contributing to the FAIR cookbook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../boilerplate/disclaimer.html">
-     8. Disclaimer
+    <a class="reference internal" href="../introduction/the-turing-way.html">
+     1. Leveraging the Turing Way Book
     </a>
    </li>
   </ul>
@@ -772,21 +660,21 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#workflow-information">
-   5.5. Workflow information:
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   5.6. Conclusion
+   5.5. Conclusion
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-to-read-next">
-     5.6.1. What to read next?
+     5.5.1. What to read next?
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   5.6. References
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
@@ -811,71 +699,109 @@ commentsRunWhenDOMLoaded(addUtterances);
               <div>
                 
   <div class="section" id="provenance-information">
-<span id="fcb-reusability-provenance"></span><h1><span class="section-number">5. </span>Provenance Information<a class="headerlink" href="#provenance-information" title="Permalink to this headline">¶</a></h1>
+<span id="fcb-reusability-provenance"></span><h1><span class="section-number">5. </span>Provenance information<a class="headerlink" href="#provenance-information" title="Permalink to this headline">¶</a></h1>
 <br/>
 <hr class="docutils" />
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fa fa-qrcode fa-2x" style="color:#7e0038;"></i></p>
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Provenance information", "audience": ["Principal Investigator", "Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCB036", "url": "https://w3id.org/faircookbook/FCB036"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H20M0S", "totalTime": "PT0H20M0S"} </script>
+<div class="card recipe d-flex">
+<div class="card-header purple-dark text--white">
+<div class="overview">
+<div class="overviewLabel">Recipe Overview</div>
+<div class="overviewContent">
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-clock fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Reading Time </div>
+20 minutes
 </div>
-<div class="card-body docutils">
+</div></div>
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-play-circle fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Executable Code </div>
+No
+</div>
+</div></div>
+<div class="item" style="margin-bottom:10px"><div class="itemContainer">
+<i class="itemIcon fa fa-fire fa-2x text--white" style="margin-left:4px;margin-right: 5px;"></i>
+<div class="itemContent">
+<div class="label" style="position:relative; left:-6px">Difficulty</div>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire" style="color:grey"></i>
+<i class="fa fa-fire" style="color:grey"></i>
+</div>
+</div></div>
+</div></div>
+</div>
+<div class="card-body text--purple-dark">
+<div class="title">
+<div style="flex-grow:1; margin-right:5px">Provenance information</div>
+<img src="/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
+</div>
+<div class="section">
+<i class="sectionIcon fa fa-laptop fa-2x"></i><div class="sectionContent">
+<div class="label">Recipe Type</div>
+<div class="sectionValue">Hands-on</div>
+</div>
+</div>
+<div class="section" style="flex-grow: 1;">
+<i class="sectionIcon fa fa-users fa-2x"></i><div class="sectionContent">
+<div class="label">Audience</div>
+<div class="sectionValue">Principal Investigator, Data Manager, Data Scientist</div>
+</div>
+</div>
+<div class="card-footer text--orange sphinx-bs.badge.badge-primary"> Cite me with 
+<a href="https://w3id.org/faircookbook/FCB036" class="text--purple-dark">FCB036
+</a></div>
+</div>
+</div>
+<hr class="docutils" />
+<!-- 
+````{panels}
+:container: container-lg pb-3
+:column: col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1
+:card: rounded
+
+<i class="fa fa-qrcode fa-2x" style="color:#7e0038;"></i>
+^^^
 <h4><b>Recipe metadata</b></h4>
  identifier: <a href="">RX.X</a> 
  version: <a href="">v1.0</a>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fa fa-fire fa-2x" style="color:#7e0038;"></i></p>
-</div>
-<div class="card-body docutils">
+
+---
+<i class="fa fa-fire fa-2x" style="color:#7e0038;"></i>
+^^^
 <h4><b>Difficulty level</b></h4>
 <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
 <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
 <i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
 <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
 <i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fas fa-clock fa-2x" style="color:#7e0038;"></i></p>
-</div>
-<div class="card-body docutils">
+
+---
+<i class="fas fa-clock fa-2x" style="color:#7e0038;"></i>
+^^^
 <h4><b>Reading Time</b></h4>
 <i class="fa fa-clock fa-lg" style="color:#7e0038;"></i> 30 minutes
 <h4><b>Recipe Type</b></h4>
 <i class="fa fa-laptop fa-lg" style="color:#7e0038;"></i> Hands-on
 <h4><b>Executable Code</b></h4>
 <i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> Yes
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fa fa-users fa-2x" style="color:#7e0038;"></i></p>
-</div>
-<div class="card-body docutils">
+
+---
+<i class="fa fa-users fa-2x" style="color:#7e0038;"></i>
+^^^
 <h4><b>Intended Audience</b></h4>
 <p> <i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigator </p>
 <p> <i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Manager </p>
 <p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientist </p>
-</div>
-</div>
-</div>
-</div>
-</div>
+````
+ -->
 <div class="section" id="main-objectives">
 <h2><span class="section-number">5.1. </span>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
-<p>In all tasks of data integration, especially in the area of Pharma, ensuring trust in data sources is essentially. The steps taken to ensure new datasets or sources of information meet a number of criteria ascertaining some level of quality are many. One of them is a check on the origin of the information, in other words, its Provenance. Provenance covers the elements detailing how the data was produced by identifying the agents (human, software, workflows) so a certain level of tracability and accountability can be established. The notions of <code class="docutils literal notranslate"><span class="pre">audit</span> <span class="pre">and</span> <span class="pre">trail</span></code> as well as <code class="docutils literal notranslate"><span class="pre">versioning</span></code> and <code class="docutils literal notranslate"><span class="pre">authorshipt</span></code> are essential to be able, should any distortion be identified in downstream analysis, to trace back to possible sources of error.</p>
+<p>In all tasks of data integration, especially in the area of Pharma, ensuring trust in data sources is essentially. The steps taken to ensure new datasets or sources of information meet a number of criteria ascertaining some level of quality are many. One of them is a check on the origin of the information, in other words, its <code class="docutils literal notranslate"><span class="pre">Provenance</span></code>. Provenance covers the elements detailing how the data was produced by identifying the agents (human, software, workflows) so a certain level of tracability and accountability can be established. The notions of <code class="docutils literal notranslate"><span class="pre">audit</span> <span class="pre">and</span> <span class="pre">trail</span></code> as well as <code class="docutils literal notranslate"><span class="pre">versioning</span></code> and <code class="docutils literal notranslate"><span class="pre">authorship</span></code> are essential to be able, should any distortion be identified in downstream analysis, to trace back to possible sources of error.</p>
 </div>
 <div class="section" id="introduction">
 <h2><span class="section-number">5.2. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
@@ -883,78 +809,96 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="section" id="prov-vocabulary">
 <h2><span class="section-number">5.3. </span>PROV vocabulary<a class="headerlink" href="#prov-vocabulary" title="Permalink to this headline">¶</a></h2>
-<p>The W3C vetted a specification for an RDF vocabulary to express provenance information. Implementation can be made in RDF or JSON, since JSON-LD is now an official serialization of RDF.
-The <a class="reference external" href="https://www.w3.org/TR/prov-overview/">W3C PROV </a></p>
-<p><a class="reference external" href="https://www.w3.org/TR/prov-overview/">!image</a></p>
+<p>The W3C vetted a specification for an RDF vocabulary to express provenance information, the <a class="reference external" href="https://www.w3.org/TR/prov-overview/">W3C PROV</a>. Implementation can be made in RDF or JSON, since JSON-LD is now an official serialization of RDF.</p>
 </div>
 <div class="section" id="camflow">
 <h2><span class="section-number">5.4. </span>CamFLow<a class="headerlink" href="#camflow" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://camflow.org/#output_format">CamFlow</a> is a Linux Security Module (LSM) designed to capture data provenance for the purpose of system audit <span id="id1">[<span>Pasquier2017Camflow</span>]</span>.</p>
+<p><a class="reference external" href="https://camflow.org/#output_format">CamFlow</a> is a Linux Security Module (LSM) designed to capture data provenance for the purpose of system audit <span id="id1">[<a class="reference internal" href="#id13"><span>PHG+17</span></a>]</span>.</p>
 <p>CamFlow support 2 output formats.</p>
-<p>-W3C PROV-JSON format</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;ABAAAAAAACAe9wIAAAAAAE7aeaI+200UAAAAAAAAAAA=&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;cf:id&quot;</span><span class="p">:</span> <span class="s2">&quot;194334&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;prov:type&quot;</span><span class="p">:</span> <span class="s2">&quot;fifo&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:boot_id&quot;</span><span class="p">:</span> <span class="mi">2725894734</span><span class="p">,</span>
-    <span class="nt">&quot;cf:machine_id&quot;</span><span class="p">:</span> <span class="mi">340646718</span><span class="p">,</span>
-    <span class="nt">&quot;cf:version&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
-    <span class="nt">&quot;cf:date&quot;</span><span class="p">:</span> <span class="s2">&quot;2017:01:03T16:43:30&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:jiffies&quot;</span><span class="p">:</span> <span class="s2">&quot;4297436711&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:uid&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-    <span class="nt">&quot;cf:gid&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
-    <span class="nt">&quot;cf:mode&quot;</span><span class="p">:</span> <span class="s2">&quot;0x1180&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:secctx&quot;</span><span class="p">:</span> <span class="s2">&quot;unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:ino&quot;</span><span class="p">:</span> <span class="mi">51964</span><span class="p">,</span>
-    <span class="nt">&quot;cf:uuid&quot;</span><span class="p">:</span> <span class="s2">&quot;32b7218a-01a0-c7c9-17b1-666f200b8912&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;prov:label&quot;</span><span class="p">:</span> <span class="s2">&quot;[fifo] 0&quot;</span>
-<span class="p">}</span>
+<ul class="simple">
+<li><p>W3C PROV-JSON format</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;ABAAAAAAACAe9wIAAAAAAE7aeaI+200UAAAAAAAAAAA=&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;cf:id&quot;</span>: <span class="s2">&quot;194334&quot;</span>,
+    <span class="s2">&quot;prov:type&quot;</span>: <span class="s2">&quot;fifo&quot;</span>,
+    <span class="s2">&quot;cf:boot_id&quot;</span>: <span class="m">2725894734</span>,
+    <span class="s2">&quot;cf:machine_id&quot;</span>: <span class="m">340646718</span>,
+    <span class="s2">&quot;cf:version&quot;</span>: <span class="m">0</span>,
+    <span class="s2">&quot;cf:date&quot;</span>: <span class="s2">&quot;2017:01:03T16:43:30&quot;</span>,
+    <span class="s2">&quot;cf:jiffies&quot;</span>: <span class="s2">&quot;4297436711&quot;</span>,
+    <span class="s2">&quot;cf:uid&quot;</span>: <span class="m">1000</span>,
+    <span class="s2">&quot;cf:gid&quot;</span>: <span class="m">1000</span>,
+    <span class="s2">&quot;cf:mode&quot;</span>: <span class="s2">&quot;0x1180&quot;</span>,
+    <span class="s2">&quot;cf:secctx&quot;</span>: <span class="s2">&quot;unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023&quot;</span>,
+    <span class="s2">&quot;cf:ino&quot;</span>: <span class="m">51964</span>,
+    <span class="s2">&quot;cf:uuid&quot;</span>: <span class="s2">&quot;32b7218a-01a0-c7c9-17b1-666f200b8912&quot;</span>,
+    <span class="s2">&quot;prov:label&quot;</span>: <span class="s2">&quot;[fifo] 0&quot;</span>
+<span class="o">}</span>
 </pre></div>
 </div>
 <p>Example of a write edge in W3C PROV format:</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;QAAAAAAAQIANAAAAAAAAAE7aeaI+200UAAAAAAAAAAA=&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="nt">&quot;cf:id&quot;</span><span class="p">:</span> <span class="s2">&quot;13&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;prov:type&quot;</span><span class="p">:</span> <span class="s2">&quot;write&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:boot_id&quot;</span><span class="p">:</span> <span class="mi">2725894734</span><span class="p">,</span>
-    <span class="nt">&quot;cf:machine_id&quot;</span><span class="p">:</span> <span class="mi">340646718</span><span class="p">,</span>
-    <span class="nt">&quot;cf:date&quot;</span><span class="p">:</span> <span class="s2">&quot;2017:01:03T16:43:30&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:jiffies&quot;</span><span class="p">:</span> <span class="s2">&quot;4297436711&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;prov:label&quot;</span><span class="p">:</span> <span class="s2">&quot;write&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:allowed&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;prov:activity&quot;</span><span class="p">:</span> <span class="s2">&quot;AQAAAAAAAEAf9wIAAAAAAE7aeaI+200UAQAAAAAAAAA=&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;prov:entity&quot;</span><span class="p">:</span> <span class="s2">&quot;ABAAAAAAACAe9wIAAAAAAE7aeaI+200UAQAAAAAAAAA=&quot;</span><span class="p">,</span>
-    <span class="nt">&quot;cf:offset&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span>
-<span class="p">}</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;QAAAAAAAQIANAAAAAAAAAE7aeaI+200UAAAAAAAAAAA=&quot;</span>: <span class="o">{</span>
+    <span class="s2">&quot;cf:id&quot;</span>: <span class="s2">&quot;13&quot;</span>,
+    <span class="s2">&quot;prov:type&quot;</span>: <span class="s2">&quot;write&quot;</span>,
+    <span class="s2">&quot;cf:boot_id&quot;</span>: <span class="m">2725894734</span>,
+    <span class="s2">&quot;cf:machine_id&quot;</span>: <span class="m">340646718</span>,
+    <span class="s2">&quot;cf:date&quot;</span>: <span class="s2">&quot;2017:01:03T16:43:30&quot;</span>,
+    <span class="s2">&quot;cf:jiffies&quot;</span>: <span class="s2">&quot;4297436711&quot;</span>,
+    <span class="s2">&quot;prov:label&quot;</span>: <span class="s2">&quot;write&quot;</span>,
+    <span class="s2">&quot;cf:allowed&quot;</span>: <span class="s2">&quot;true&quot;</span>,
+    <span class="s2">&quot;prov:activity&quot;</span>: <span class="s2">&quot;AQAAAAAAAEAf9wIAAAAAAE7aeaI+200UAQAAAAAAAAA=&quot;</span>,
+    <span class="s2">&quot;prov:entity&quot;</span>: <span class="s2">&quot;ABAAAAAAACAe9wIAAAAAAE7aeaI+200UAQAAAAAAAAA=&quot;</span>,
+    <span class="s2">&quot;cf:offset&quot;</span>: <span class="s2">&quot;0&quot;</span>
+<span class="o">}</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="workflow-information">
-<h2><span class="section-number">5.5. </span>Workflow information:<a class="headerlink" href="#workflow-information" title="Permalink to this headline">¶</a></h2>
+<!-- 
+## Workflow information: -->
 </div>
 <div class="section" id="conclusion">
-<h2><span class="section-number">5.6. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="what-to-read-next">
-<h3><span class="section-number">5.6.1. </span>What to read next?<a class="headerlink" href="#what-to-read-next" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.5.1. </span>What to read next?<a class="headerlink" href="#what-to-read-next" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; * [How to meet community standards for annotation](./community-standards)
 </pre></div>
 </div>
+<!--## References
+
+``{bibliography} ./../../_bibliography/bibliography-identifier-mapping.bib
+:filter: docname in docnames
+``` -->
+<!-- {download}`bibliography-identifier-mapping.bib <../interoperability/bibref/bibliography-identifier-mapping.bib>` -->
 </div>
+</div>
+<div class="section" id="references">
+<h2><span class="section-number">5.6. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id2"><dl class="citation">
+<dt class="label" id="id13"><span class="brackets"><a class="fn-backref" href="#id1">PHG+17</a></span></dt>
+<dd><p>Thomas F. J.-M. Pasquier, Xueyuan Han, Mark Goldstein, Thomas Moyer, David M. Eyers, Margo I. Seltzer, and Jean Bacon. Practical whole-system provenance capture. <em>CoRR</em>, 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1711.05296">http://arxiv.org/abs/1711.05296</a>, <a class="reference external" href="https://arxiv.org/abs/1711.05296">arXiv:1711.05296</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="authors">
 <h2><span class="section-number">5.7. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Name</p></th>
-<th class="text-align:left head"><p>Affiliation</p></th>
-<th class="text-align:left head"><p>orcid</p></th>
-<th class="text-align:left head"><p>CrediT role</p></th>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Orcid</p></th>
+<th class="head"><p>Affiliation</p></th>
+<th class="head"><p>Type</p></th>
+<th class="text-align:center head"><p>Elixir Node</p></th>
+<th class="text-align:center head"><p>Credit Role</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>Philippe Rocca-Serra</p></td>
-<td class="text-align:left"><p>University of Oxford, Data Readiness Group</p></td>
-<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/orcid.org/0000-0001-9853-5668">0000-0001-9853-5668</a></p></td>
-<td class="text-align:left"><p>Writing - Original Draft, Shex expression, ontology mapping</p></td>
+<tr class="row-even"><td><p><div class="firstCol"><a target="_blank" href='https://github.com/proccaserra'><img class='avatar-style' src='https://avatars.githubusercontent.com/proccaserra'></img><div class="d-block">Philippe Rocca-Serra</div></a>  </div></p></td>
+<td><p><a target="_blank" href='https://orcid.org/0000-0001-9853-5668'><i class='fab fa-orcid fa-2x text--orange'></i></a></p></td>
+<td><p>University of Oxford</p></td>
+<td><p><i class="fas fa-graduation-cap fa-1x text--orange" alt="Academic"></i></p></td>
+<td class="text-align:center"><p><img class='elixir-style' src='/the-fair-cookbook/_static/images/logo/Elixir/ELIXIR-UK.svg' ></img></p></td>
+<td class="text-align:center"><p>Writing - Original Draft</p></td>
 </tr>
 </tbody>
 </table>
@@ -992,8 +936,8 @@ The <a class="reference external" href="https://www.w3.org/TR/prov-overview/">W3
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="expressing-data-use.html" title="previous page"><span class="section-number">4. </span>Patterns and practice for expressing allowed data usage</a>
-    <a class='right-next' id="next-link" href="community-standards.html" title="next page"><span class="section-number">6. </span>Compliance with community annotation standards</a>
+    <a class='left-prev' id="prev-link" href="expressing-data-use.html" title="previous page"><span class="section-number">4. </span>Declaring data’s permitted uses</a>
+    <a class='right-next' id="next-link" href="../infrastructure.html" title="next page">Infrastructure</a>
 
         </div>
         
@@ -1003,13 +947,9 @@ The <a class="reference external" href="https://www.w3.org/TR/prov-overview/">W3
     <div class="container">
       <p>
         
-          By The FAIRplus project members<br/>
-        
-            &copy; Copyright 2020 (CC-BY 4.0).<br/>
+            &copy; Copyright 2020.<br/>
           <div class="extra_footer">
-            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.imi.europa.eu/">Innovative Medicines Initiative</a> 2 Joint Undertaking under grant agreement No 802750. This Joint Undertaking receives support from the European Union’s Horizon 2020 research and innovation programme and EFPIA Companies. This communication reflects the views of the authors and neither IMI nor the European Union, EFPIA or any Associated Partners are liable for any use that may be made of the information contained herein. </div>
-<div class="row_footer"> This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a> </div>
-<div class="row_footer"> <div class="column" style="center"><a href="https://europa.eu/"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/eu-flag-recolored-fairplus.png" height="20" alt="EU flag" style="float:center""></a></div> <div class="column"><a href="https://www.imi.europa.eu/"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/imi-logo-fairplus-v1.png" height="20" alt="IMI logo" style="float:center""></a></div> <div class="column"><a href="https://efpia.eu"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/efpia-logo-fairplus2.png" height="20" alt="EFPIA logo" style="float:center""></a></div> <br/> </div>
+            <script>mermaid.init();</script> <div class="container-lg mt-3"> <div class="row"> <div class="col-xl-3"> <div class="footerImages"> <a href="https://europa.eu/"><img src="/the-fair-cookbook/_static/images/logo/eu-flag.png" height="20" alt="EU flag" style="float:center""></a> <a href="https://www.imi.europa.eu/"><img src="/the-fair-cookbook/_static/images/logo/imi-logo.png" height="20" alt="IMI logo" style="float:center""></a> <a href="https://efpia.eu"><img src="/the-fair-cookbook/_static/images/logo/efpia-logo.png" height="20" alt="EFPIA logo" style="float:center""></a> </div> <div class="mb-3"> Grant agreement 802750 </div> </div> <div class="col-xl-6 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="mailto:fairplus-cookbook@elixir-europe.org"> Contact us </a></li> <li><a href="https://fairplus-project.eu" target="_blank"> FAIRplus </a> </li> </ul> </div> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li> <a href="/the-fair-cookbook/content/recipes/boilerplate/people.html"> Contributors </a> </li> </li> <li> <a href="/the-fair-cookbook/content/recipes/help.html"> How to contribute </a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://elixir-europe.org/" target="_blank"><img src="/the-fair-cookbook/_static/images/logo/Elixir/ELIXIR.png" height="50" alt="Elixir logo" style="float:center""></a> <a href="https://fairplus-project.eu/"><img src="https://fairplus-project.eu/images/fairplus-logo.png" alt="FAIRplus logo" style="background:white;padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> The FAIR Cookbook is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license. </div>
           </div>
       </p>
     </div>

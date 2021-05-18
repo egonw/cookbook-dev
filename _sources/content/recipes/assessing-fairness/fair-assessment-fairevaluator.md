@@ -1,10 +1,19 @@
 (fcb-assess-fair-automatic-evaluator)=
-# Assessing FAIRness with FAIREvaluator
+# Evaluating FAIRness with FAIREvaluator
 
-+++
-<br/>
 
-----
+````{panels_fairplus}
+:identifier_text: FBC049
+:identifier_link: 'https://w3id.org/faircookbook/FBC049'
+:difficulty_level: 3
+:recipe_type: hands_on
+:reading_time_minutes: 30
+:intended_audience: principal_investigator, data_manager, data_scientist  
+:has_executable_code: yeah
+:recipe_name: Evaluating FAIRness with FAIREvaluator
+```` 
+
+<!-- ----
 
 ````{panels}
 :container: container-lg pb-3
@@ -44,8 +53,8 @@
 <p><i class="fa fa-user-md fa-lg" style="color:#7e0038;"></i> Principal Investigator</p>
 <p><i class="fa fa-database fa-lg" style="color:#7e0038;"></i> Data Manager</p>
 <p><i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientist</p>
-<!-- <p><i class="fa fa-money fa-lg" style="color:#7e0038;"></i> Funder</p> -->
 ````
+ -->
 
 ___
 

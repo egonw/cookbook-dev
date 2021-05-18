@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>5.8.2. Findability: Dataset Markup</title>
+    <title>5.8.2. Dataset page markup with Schema.org</title>
     
   <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,43 +45,9 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/mermaid.js"></script>
-    <script src="../../../../_static/mermaid.min.js"></script>
     <script src="../../../../_static/mermaid.core.js"></script>
+    <script src="../../../../_static/mermaid.min.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "FAIRplus/the-fair-cookbook");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "💬 comment");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -95,8 +61,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="5.8.3. Findability: Data Catalog Markup" href="bioschemas-datacatalog.html" />
-    <link rel="prev" title="5.8.1. Findability: Data Page Markup with Bioschemas" href="bioschemas-data-page.html" />
+    <link rel="next" title="5.8.3. Data catalogue markup" href="bioschemas-datacatalog.html" />
+    <link rel="prev" title="5.8.1. Data page markup with Bioschemas" href="bioschemas-data-page.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -105,8 +71,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/findability/seo/bioschemas-dataset.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Findability: Dataset Markup" />
-<meta property="og:description" content="Findability: Dataset Markup    &lt;br/&gt;     &lt;i class=&#34;fa fa-qrcode fa-2x&#34; style=&#34;color:#7e0038;&#34;&gt;&lt;/i&gt;  &lt;h4&gt;&lt;b&gt;Recipe metadata&lt;/b&gt;&lt;/h4&gt;  identifier: &lt;a href=&#34;&#34;&gt;R X." />
+<meta property="og:title"       content="Dataset page markup with Schema.org" />
+<meta property="og:description" content="Dataset page markup with Schema.org    &lt;br/&gt;   &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bioschem" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -140,228 +106,77 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  FOREWORD
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/FAIR-cookbook-audience.html">
+   Who should read it
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/FAIRplus-values.html">
+   Ethical values of FAIR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary-fair-terms.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  RECIPES
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../introduction.html">
-   Introduction
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/ATI-turingway.html">
-     1. The Turing Way Book of Data Science
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/FAIR-cookbook-audience.html">
-     2. Who should read the FAIR Cookbook?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/brief-FAIR-principles.html">
-     3. What are the FAIR Principles?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/what-is-IMI.html">
-     4. What is IMI?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/FAIR-in-IMI-context.html">
-     5. FAIR in the context of IMI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/IMI-Data-Access-Request-Process.html">
-     6. Engaging with IMI Projects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/FAIRplus-values.html">
-     7. The Ethical Values behind FAIR and the FAIRPlus project
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/data-sharing-models.html">
-     8. High level data sharing models
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../assessing-fairness.html">
-   Assessing FAIR
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assessing-fairness/cmmi/Data-Management-Maturity-Model.html">
-     1. Data Management Maturity Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assessing-fairness/cmmi/Datasets-Maturity-Model.html">
-     2. FAIRplus Datasets Maturity Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assessing-fairness/cmmi/Data-Usage-Areas.html">
-     3. Data Usage Areas
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../assessing-fairness/fair-indicators.html">
-     4. FAIR Indicators
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/RDA-Indicators.html">
-       4.4.1. RDA Indicators
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/FAIRPlus-Indicators.html">
-       4.4.2. IMI FAIRPlus Indicators
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../assessing-fairness/manual-fair-assessment.html">
-     5. FAIR assessment by hand
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/evaluation-method.html">
-       5.4.1. Evaluation Method
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/rda-evaluation.html">
-       5.4.2. RDA Evaluation Methods
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../assessing-fairness/automatic-fair-assessment.html">
-     6. FAIR assessment by software
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairevaluator.html">
-       6.4.1. Assessing FAIRness with FAIREvaluator
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairshake.html">
-       6.4.2. FAIR assessment with FAIRShake
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../infrastructure.html">
-   Infrastructure for FAIR
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../infrastructure/id-resolution.html">
-     1. Identifier resolution services
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../infrastructure/data-catalog.html">
-     2. Building a Dataset Catalogue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../infrastructure/data-catalog-deployment.html">
-     3. Deploying the IMI data catalogue
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../infrastructure/vocabularies.html">
-     4. Vocabularies and Terminology Infrastructure
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../infrastructure/vocabularies/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html">
-       4.1. Technical &amp; architectural selection criteria of ontology lookup services
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../infrastructure/vocabularies/Selecting_and_using_ontology_lookup_services.html">
-       4.2. Selection and exploitation of Ontology Lookup Services
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../infrastructure/vocabularies/UC3_R13_local_ontology_services.html">
-       4.3. How to deploy a terminology service - EBI Ontology Lookup Service
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../../findability.html">
-   Improving Findability
+   Findability
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../identifiers.html">
-     1. How to generate globally unique, resolvable and persistent identifiers
+     1. Unique, persistent identifiers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../infrastructure/chemical-identities.html">
-     2. Chemical Identity - InChI and SMILES
+     2. InChI and SMILES identifiers for chemical structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../identifiers-minids.html">
-     3. Identifier Minting Service with Minid Client
+     3. Minting identifiers with Minid
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../zenodo-deposition.html">
-     4. Deposition to Zenodo Archive
+     4. Depositing in Zenodo generic repository
     </a>
    </li>
    <li class="toctree-l2 current active collapsible-parent">
     <a class="reference internal" href="../seo.html">
-     5. Findability: Search Engine Optimization
+     5. Search engine optimization
     </a>
     <ul class="current collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="bioschemas-data-page.html">
-       5.8.1. Findability: Data Page Markup with Bioschemas
+       5.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       5.8.2. Findability: Dataset Markup
+       5.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="bioschemas-datacatalog.html">
-       5.8.3. Findability: Data Catalog Markup
+       5.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -374,22 +189,17 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../accessibility.html">
-   Improving Accessibility
+   Accessibility
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../accessibility/anonymization.html">
-     1. Anonymizing Patient Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../accessibility/how-to-use-sftp-for-transfer.html">
-     2. How to use SFTP to transfer data files between institutions.
+    <a class="reference internal" href="../../accessibility/sftp.html">
+     1. Transferring data with SFTP
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../accessibility/aspera.html">
-     3. How to download files with Aspera
+     2. Downloading data with Aspera
     </a>
    </li>
   </ul>
@@ -398,22 +208,22 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../interoperability.html">
-   Improving Interoperability
+   Interoperability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/identifier-mapping.html">
-     How to interlink data from different sources?
+     1. Interlinking data from different sources
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../interoperability/bridgedb-recipe.html">
-     Identifier mapping with BridgeDB
+     2. Identifiers mapping with BridgeDB
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/bridgedb/bridgedb-example.html">
-       Identifier mapping using BridgeDb WS
+       Using BridgeDB web services
       </a>
      </li>
     </ul>
@@ -421,42 +231,57 @@ commentsRunWhenDOMLoaded(addUtterances);
     </i>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/ontology-why-using-them.html">
+     3. Introduction to terminologies and ontologies
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/selecting-ontologies.html">
-     Which vocabulary to use?
+     4. Selecting terminologies and ontologies
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/ontology-new-term-request-recipe.html">
-     Requesting terms addition to terminology artefacts
+     5. Requesting new terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/ontology-operations-tools.html">
+     6. Ontology-related tools and services
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../interoperability/ontology-robot-recipe.html">
-     Building an application ontology with Robot
+     7. Building an application ontology with ROBOT
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/ontology-robot/MSIO-robot-build-process.html">
-       MSIO, an application ontology for Metabolomics
+       Application ontology for metabolomics
       </a>
      </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/creating_data_dictionary.html">
+     8. Creating a data/variable dictionary
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../interoperability/creating-minimal-metadata-profiles.html">
-     Creating a Metadata Profile
+     9. Creating a metadata profile
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/transcriptomics-metadata.html">
-       Establishing a Metadata Profile for Transcriptomics
+       Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata Profile Validation in RDF with Shape Expression:
+       Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -465,12 +290,17 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/from-proprietary-to-open-standard-mzml-exemplar.html">
-     From proprietary to open standard data format
+     10. Converting from proprietary to open format
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/fastq-file-format-validators.html">
-     File format validation, an example with FASTQ files
+     11. File format validation, FASTQ example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/ETL-tools.html">
+     12. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -479,7 +309,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../reusability.html">
-   Improving Reusability
+   Reusability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -489,27 +319,89 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/ATI_licensing_software.html">
-     2. Software Licenses
+     2. Software licenses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/ATI_licensing_data.html">
-     3. Data Licenses
+     3. Data licenses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/expressing-data-use.html">
-     4. Patterns and practice for expressing allowed data usage
+     4. Declaring data's permitted uses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/provenance.html">
-     5. Provenance Information
+     5. Provenance information
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../infrastructure.html">
+   Infrastructure
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../infrastructure/id-resolution.html">
+     1. Identifier resolution services
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../reusability/community-standards.html">
-     6. Compliance with community annotation standards
+    <a class="reference internal" href="../../infrastructure/data-catalog.html">
+     2. Building a catalogue of datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../infrastructure/data-catalog-deployment.html">
+     3. Deploying the IMI data catalogue
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../infrastructure/vocabularies.html">
+     4. Vocabulary management
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../infrastructure/vocabularies/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html">
+       4.1. Portals and look-up services
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../infrastructure/vocabularies/Selecting_and_using_ontology_lookup_services.html">
+       4.2. Selecting a look-up service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../infrastructure/vocabularies/UC3_R13_local_ontology_services.html">
+       4.3. Deploying the EBI OLS
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../assessing-fairness.html">
+   Assessment
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairevaluator.html">
+     1. with FAIREvaluator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairshake.html">
+     2. with FAIRshake
     </a>
    </li>
   </ul>
@@ -518,32 +410,32 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../applied-examples.html">
-   Making IMI data FAIR
+   Applied examples
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../applied-examples/fair-data-matrix-recipe.html">
-     Making a Data Matrix FAIR
+     1. Making omics data matrices FAIR
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Bibliographic Reference:
+       Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Exploring and comparing Rose Scent profiles stored as tabular data packages with plotnine, a python port of R ggplot2
+       Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring a rose garden with SPARQL
+       Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Exploring and comparing Rose Scent profiles stored as tabular data packages with ggplot2 R library
+       Integrating data
       </a>
      </li>
     </ul>
@@ -551,62 +443,93 @@ commentsRunWhenDOMLoaded(addUtterances);
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applied-examples/etox_raw/FAIRplus_Recipe_Ontology_mapping_the_eTox_dataset_scenario.html">
-     Data normalization and integration through entity linking
+    <a class="reference internal" href="../../applied-examples/etox.html">
+     2. eTox - toxicity datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applied-examples/nd4bb_raw/FAIRification_CookBook_Recipe1_V02.html">
-     ND4BB dataset FAIRification recipe
+    <a class="reference internal" href="../../applied-examples/nd4bb.html">
+     3. nd4bb - chemical activities datasets
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applied-examples/oncotrack_raw/rawRecipe-oncotrack.html">
-     Oncotrack FAIRification recipe
+     4. Oncotrack - clinical cohort datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../applied-examples/resolute_raw/rawRecipe_resolute.html">
-     RESOLUTE FAIRification Recipe
+    <a class="reference internal" href="../../applied-examples/resolute_raw/resolute.html">
+     5. RESOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../glossary-fair-terms.html">
-   Glossary of FAIR things
-  </a>
- </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  ABOUT
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../help.html">
-   Help
+  <a class="reference internal" href="../../community.html">
+   Community
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../help/tips-tricks.html">
-     1. Recipe Tips and Tricks
+    <a class="reference internal" href="../../boilerplate/people.html">
+     1. Boards and contributors
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../help/recipe-template.html">
-     2. Recipe Template
+    <a class="reference internal" href="../../boilerplate/code_of_conduct.html">
+     2. Code of conduct
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../help.html">
+   Contribute
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../boilerplate/contributing.html">
+     1. How to contribute
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../help/how-to-create-recipe-with-gdoc.html">
-     3. Using GoogleDocs to contribute a FAIR Cookbook Recipe
+     2. Add via GoogleDoc
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../help/how-to-create-recipe-with-hackmd.html">
-     4. How to use HackMD to write a FAIR Cookbook Recipe
+     3. Add via HackMD
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../help/how-to-create-recipe-with-git.html">
-     5. How to create a FAIRPlus Coobook Recipe ?
+     4. Add via Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../help/recipe-template.html">
+     5. Git recipe template
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../help/tips-tricks.html">
+     6. Tips and tricks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../help/myst.html">
+     7. Markdown cheatsheet
     </a>
    </li>
   </ul>
@@ -615,47 +538,12 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../boilerplate.html">
-   Miscellaneous
+   Platform
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/license.html">
-     1. License for this book
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/people.html">
-     2. FAIR Cookbook Steering Council and Institutional Partners
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/governance.html">
-     3. FAIR Cookbook Governance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/code_of_conduct.html">
-     4. FAIR Cookbook Code of Conduct
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/project_information.html">
-     5. FAIR CookBook BoilerPlate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/roadmap.html">
-     6. FAIR cookbook development roadmap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/contributing.html">
-     7. Contributing to the FAIR cookbook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/disclaimer.html">
-     8. Disclaimer
+    <a class="reference internal" href="../../introduction/the-turing-way.html">
+     1. Leveraging the Turing Way Book
     </a>
    </li>
   </ul>
@@ -783,17 +671,17 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
-   5.8.2.7. Authors:
+   5.8.2.7. Authors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#footnotes">
-   5.8.2.8. Footnotes:
+   5.8.2.8. Footnotes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#license">
-   5.8.2.9. License:
+   5.8.2.9. License
   </a>
  </li>
 </ul>
@@ -808,66 +696,64 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="findability-dataset-markup">
-<span id="fcb-find-bs-dataset"></span><h1><span class="section-number">5.8.2. </span>Findability: Dataset Markup<a class="headerlink" href="#findability-dataset-markup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="dataset-page-markup-with-schema-org">
+<span id="fcb-find-bs-dataset"></span><h1><span class="section-number">5.8.2. </span>Dataset page markup with <a class="reference external" href="http://Schema.org">Schema.org</a><a class="headerlink" href="#dataset-page-markup-with-schema-org" title="Permalink to this headline">¶</a></h1>
+<br/>
 <br/>
 <hr class="docutils" />
-<div class="sphinx-bs container-lg pb-3 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fa fa-qrcode fa-2x" style="color:#7e0038;"></i></p>
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Dataset page markup with Schema.org", "audience": ["Software Developer", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Guidance", "identifier": {"@type": "PropertyValue", "name": "FCB012", "url": "https://w3id.org/faircookbook/FCB012"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H10M0S", "totalTime": "PT0H10M0S"} </script>
+<div class="card recipe d-flex">
+<div class="card-header purple-dark text--white">
+<div class="overview">
+<div class="overviewLabel">Recipe Overview</div>
+<div class="overviewContent">
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-clock fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Reading Time </div>
+10 minutes
 </div>
-<div class="card-body docutils">
-<h4><b>Recipe metadata</b></h4>
- identifier: <a href="">R X.X</a> 
- version: <a href="">v1.0</a>
+</div></div>
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-play-circle fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Executable Code </div>
+No
 </div>
+</div></div>
+<div class="item" style="margin-bottom:10px"><div class="itemContainer">
+<i class="itemIcon fa fa-fire fa-2x text--white" style="margin-left:4px;margin-right: 5px;"></i>
+<div class="itemContent">
+<div class="label" style="position:relative; left:-6px">Difficulty</div>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire" style="color:grey"></i>
+<i class="fa fa-fire" style="color:grey"></i>
+<i class="fa fa-fire" style="color:grey"></i>
 </div>
+</div></div>
+</div></div>
 </div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fa fa-fire fa-2x" style="color:#7e0038;"></i></p>
+<div class="card-body text--purple-dark">
+<div class="title">
+<div style="flex-grow:1; margin-right:5px">Dataset page markup with Schema.org</div>
+<img src="/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
 </div>
-<div class="card-body docutils">
-<h4><b>Difficulty level</b></h4>
-<i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
-<i class="fa fa-fire fa-lg" style="color:#7e0038;"></i>
-<i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-<i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-<i class="fa fa-fire fa-lg" style="color:lightgrey"></i>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fas fa-clock fa-2x" style="color:#7e0038;"></i></p>
-</div>
-<div class="card-body docutils">
-<h4><b>Reading Time</b></h4>
-<i class="fa fa-clock fa-lg" style="color:#7e0038;"></i> 10 minutes
-<h4><b>Recipe Type</b></h4>
-<i class="fa fa-globe fa-lg" style="color:#7e0038;"></i> Guidance
-<h4><b>Executable Code</b></h4>
-<i class="fa fa-play-circle fa-lg" style="color:#7e0038;"></i> No
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-3 col-md-4 col-sm-6 col-xs-12 p-1 docutils">
-<div class="card w-100 rounded docutils">
-<div class="card-header docutils">
-<p class="card-text"><i class="fa fa-users fa-2x" style="color:#7e0038;"></i></p>
-</div>
-<div class="card-body docutils">
-<h4><b>Intended Audience</b></h4>
-<p> <i class="fa fa-cogs fa-lg" style="color:#7e0038;"></i> Software Developer </p>
-<p> <i class="fa fa-wrench fa-lg" style="color:#7e0038;"></i> Data Scientist </p> 
+<div class="section">
+<i class="sectionIcon fa fa-laptop fa-2x"></i><div class="sectionContent">
+<div class="label">Recipe Type</div>
+<div class="sectionValue">Guidance</div>
 </div>
 </div>
+<div class="section" style="flex-grow: 1;">
+<i class="sectionIcon fa fa-users fa-2x"></i><div class="sectionContent">
+<div class="label">Audience</div>
+<div class="sectionValue">Software Developer, Data Scientist</div>
 </div>
+</div>
+<div class="card-footer text--orange sphinx-bs.badge.badge-primary"> Cite me with 
+<a href="https://w3id.org/faircookbook/FCB012" class="text--purple-dark">FCB012
+</a></div>
 </div>
 </div>
 <hr class="docutils" />
@@ -883,7 +769,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 <h2><span class="section-number">5.8.2.2. </span>Graphical Overview<a class="headerlink" href="#graphical-overview" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="id1">
 <a class="reference internal image-reference" href="../../../../_images/bs-dataset-mermaid.png"><img alt="The process of annotating a dataset webpage with bioschema markup for Search Engine discovery" src="../../../../_images/bs-dataset-mermaid.png" style="width: 500px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.8 </span><span class="caption-text">The process of annotating a dataset webpage with bioschema markup for Search Engine discovery.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.6 </span><span class="caption-text">The process of annotating a dataset webpage with bioschema markup for Search Engine discovery.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -923,10 +809,9 @@ commentsRunWhenDOMLoaded(addUtterances);
 </ol>
 </li>
 </ol>
-<!-- ![Bioschemas Generator start screen](BioschemasGenerator.png =450px) -->
-<div class="figure align-default" id="bioschemas-generator-start-screen">
-<a class="reference internal image-reference" href="../../../../_images/BioschemasGenerator.png"><img alt="Bioschemas Generator start screen" src="../../../../_images/BioschemasGenerator.png" style="height: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.9 </span><span class="caption-text">Bioschemas Generator start screen.</span><a class="headerlink" href="#bioschemas-generator-start-screen" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="bioschemas-generator-start-screen-3">
+<img alt="Bioschemas Generator start screen." src="../../../../_images/BioschemasGenerator.png" />
+<p class="caption"><span class="caption-number">Fig. 5.7 </span><span class="caption-text">Bioschemas Generator start screen.</span><a class="headerlink" href="#bioschemas-generator-start-screen-3" title="Permalink to this image">¶</a></p>
 </div>
 <ol class="simple">
 <li><p>Complete the profile form with the data relevant for your page. Once completed, click on the <code class="docutils literal notranslate"><span class="pre">Generate</span> <span class="pre">Markup</span></code>  button</p>
@@ -941,82 +826,82 @@ commentsRunWhenDOMLoaded(addUtterances);
 <!--    ![Bioschemas Generator Dataset profile form](BioschemasGeneratorDatasetForm.png) -->
 <div class="figure align-default" id="bioschemas-generator-dataset-profile-form">
 <a class="reference internal image-reference" href="../../../../_images/BioschemasGeneratorDatasetForm.png"><img alt="Bioschemas Generator Dataset profile form" src="../../../../_images/BioschemasGeneratorDatasetForm.png" style="height: 550px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 5.10 </span><span class="caption-text">Bioschemas Generator Dataset profile form.</span><a class="headerlink" href="#bioschemas-generator-dataset-profile-form" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.8 </span><span class="caption-text">Bioschemas Generator Dataset profile form.</span><a class="headerlink" href="#bioschemas-generator-dataset-profile-form" title="Permalink to this image">¶</a></p>
 </div>
 <ol>
 <li><p>You will now see the generated markup in <code class="docutils literal notranslate"><span class="pre">JSON-LD</span></code> format. You can click on the <code class="docutils literal notranslate"><span class="pre">Microdata</span></code> and <code class="docutils literal notranslate"><span class="pre">RDFa</span></code> tabs to see the same content rendered in the different formats. However, we recommend the use of <code class="docutils literal notranslate"><span class="pre">JSON-LD</span></code>. For our UniProtKB example, we get the following markup</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;script type=&quot;application/ld+json&quot; &gt;
-{
-  &quot;@context&quot;: &quot;http://schema.org&quot;,
-  &quot;@id&quot;: &quot;https://www.uniprot.org/uniprot/&quot;,
-  &quot;@type&quot;: &quot;Dataset&quot;,
-  &quot;citation&quot;: [
-    {
-      &quot;@id&quot;: &quot;https://doi.org/10.1093/nar/gky1049&quot;,
-      &quot;@type&quot;: &quot;CreativeWork&quot;
-    }
-  ],
-  &quot;creator&quot;: [
-    {
-      &quot;@context&quot;: &quot;http://schema.org&quot;,
-      &quot;@type&quot;: &quot;Organization&quot;,
-      &quot;dct:conformsTo&quot;: &quot;https://bioschemas.org/profiles/Organization/0.2-DRAFT-2019_07_19&quot;,
-      &quot;description&quot;: &quot;The mission of UniProt is to provide the scientific community with a comprehensive, high quality and freely accessible resource of protein sequence and functional information. &quot;,
-      &quot;name&quot;: &quot;UniProt Consortium&quot;
-    }
-  ],
-  &quot;dct:conformsTo&quot;: &quot;https://bioschemas.org/profiles/Dataset/0.3-RELEASE-2019_06_14&quot;,
-  &quot;description&quot;: &quot;The UniProt Knowledgebase (UniProtKB) is the central hub for the collection of functional information on proteins, with accurate, consistent and rich annotation. In addition to capturing the core data mandatory for each UniProtKB entry (mainly, the amino acid sequence, protein name or description, taxonomic data and citation information), as much annotation information as possible is added.&quot;,
-  &quot;distribution&quot;: {
-    &quot;@id&quot;: &quot;https://www.uniprot.org/downloads#uniprotkblink&quot;,
-    &quot;@type&quot;: &quot;DataDownload&quot;
-  },
-  &quot;identifier&quot;: [
-    &quot;https://www.uniprot.org/uniprot/&quot;
-  ],
-  &quot;includedInDataCatalog&quot;: [
-    {
-      &quot;@context&quot;: &quot;http://schema.org&quot;,
-      &quot;@type&quot;: &quot;DataCatalog&quot;,
-      &quot;dct:conformsTo&quot;: &quot;https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01&quot;,
-      &quot;description&quot;: &quot;&quot;,
-      &quot;keywords&quot;: [],
-      &quot;name&quot;: &quot;&quot;,
-      &quot;url&quot;: &quot;https://uniprot.org&quot;
-    }
-  ],
-  &quot;keywords&quot;: [
-    &quot;Protein&quot;,
-    &quot;Protein annotation&quot;
-  ],
-  &quot;license&quot;: &quot;http://creativecommons.org/licenses/by/4.0/&quot;,
-  &quot;name&quot;: &quot;UniProtKB&quot;,
-  &quot;url&quot;: &quot;https://www.uniprot.org/uniprot/&quot;
-}
-&lt;/script &gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;application/ld+json&quot;</span> <span class="o">&gt;</span>
+<span class="p">{</span>
+  <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.uniprot.org/uniprot/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Dataset&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;citation&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://doi.org/10.1093/nar/gky1049&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;CreativeWork&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;creator&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dct:conformsTo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://bioschemas.org/profiles/Organization/0.2-DRAFT-2019_07_19&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The mission of UniProt is to provide the scientific community with a comprehensive, high quality and freely accessible resource of protein sequence and functional information. &quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UniProt Consortium&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;dct:conformsTo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://bioschemas.org/profiles/Dataset/0.3-RELEASE-2019_06_14&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The UniProt Knowledgebase (UniProtKB) is the central hub for the collection of functional information on proteins, with accurate, consistent and rich annotation. In addition to capturing the core data mandatory for each UniProtKB entry (mainly, the amino acid sequence, protein name or description, taxonomic data and citation information), as much annotation information as possible is added.&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;distribution&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.uniprot.org/downloads#uniprotkblink&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataDownload&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;identifier&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;https://www.uniprot.org/uniprot/&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;includedInDataCatalog&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataCatalog&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dct:conformsTo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://uniprot.org&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;Protein&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Protein annotation&quot;</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;license&quot;</span><span class="p">:</span> <span class="s2">&quot;http://creativecommons.org/licenses/by/4.0/&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UniProtKB&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://www.uniprot.org/uniprot/&quot;</span>
+<span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">script</span> <span class="o">&gt;</span>
 </pre></div>
 </div>
 </li>
 <li><p>Download or copy and paste the generated markup</p></li>
 <li><p>Make adjustments for any bits that could not be properly entered through the form.</p>
 <p>For example, for our generated markup we would change the <code class="docutils literal notranslate"><span class="pre">includedInDataCatalog</span></code> so that it provides a direct link rather than repeating the properties. We would replace</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;includedInDataCatalog&quot;</span><span class="p">:</span> <span class="p">[</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;includedInDataCatalog&quot;</span><span class="p">:</span> <span class="p">[</span>
     <span class="p">{</span>
-      <span class="nt">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataCatalog&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;dct:conformsTo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[],</span>
-      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-      <span class="nt">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://uniprot.org&quot;</span>
+      <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataCatalog&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dct:conformsTo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://bioschemas.org/profiles/DataCatalog/0.3-RELEASE-2019_07_01&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;keywords&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;url&quot;</span><span class="p">:</span> <span class="s2">&quot;https://uniprot.org&quot;</span>
     <span class="p">}</span>
   <span class="p">],</span>
 </pre></div>
 </div>
 <p>with</p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="nt">&quot;includedInDataCatalog&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="nt">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataCatalog&quot;</span><span class="p">,</span>
-   <span class="nt">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://uniprot.org&quot;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;includedInDataCatalog&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;DataCatalog&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;https://uniprot.org&quot;</span>
  <span class="p">},</span>
 </pre></div>
 </div>
@@ -1024,28 +909,28 @@ commentsRunWhenDOMLoaded(addUtterances);
 </li>
 <li><p>Once you are happy with your markup, include the <code class="docutils literal notranslate"><span class="pre">JSON-LD</span></code>, script tags and all, at the bottom of your HTML page template. Make sure that this is before the closing <code class="docutils literal notranslate"><span class="pre">&lt;/html&gt;</span></code> tag</p></li>
 <li><p>If you have multiple datasets released through your site, then you should make a template for your datasets. In your template you should replace the values in your markup that will change from dataset to dataset with variables. Your web page templating system will replace the variables with values from your database. For example, the follow snippet uses variables of the form <code class="docutils literal notranslate"><span class="pre">%%%PAGEURL%%%</span></code></p>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&lt;script type=&quot;application/ld+json&quot;&gt;
-{
-  &quot;@context&quot;: &quot;http://schema.org&quot;,
-  &quot;@id&quot;: &quot;%%%PAGEURL%%%&quot;,
-  &quot;@type&quot;: &quot;Dataset&quot;,
-  &quot;citation&quot;: [
-    {
-      &quot;@id&quot;: &quot;%%%DOI%%%&quot;,
-      &quot;@type&quot;: &quot;CreativeWork&quot;
-    }
-  ],
-  &quot;creator&quot;: [
-    {
-      &quot;@context&quot;: &quot;http://schema.org&quot;,
-      &quot;@type&quot;: &quot;Organization&quot;,
-      &quot;dct:conformsTo&quot;: &quot;https://bioschemas.org/profiles/Organization/0.2-DRAFT-2019_07_19&quot;,
-      &quot;description&quot;: &quot;The mission of UniProt is to provide the scientific community with a comprehensive, high quality and freely accessible resource of protein sequence and functional information. &quot;,
-      &quot;name&quot;: &quot;UniProt Consortium&quot;
-    }
-    ...
-  ]
-}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">script</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;application/ld+json&quot;</span><span class="o">&gt;</span>
+<span class="p">{</span>
+  <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%%</span><span class="s2">%PAGEURL</span><span class="si">%%</span><span class="s2">%&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Dataset&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;citation&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@id&quot;</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">%%</span><span class="s2">%DOI</span><span class="si">%%</span><span class="s2">%&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;CreativeWork&quot;</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;creator&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;@context&quot;</span><span class="p">:</span> <span class="s2">&quot;http://schema.org&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;@type&quot;</span><span class="p">:</span> <span class="s2">&quot;Organization&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;dct:conformsTo&quot;</span><span class="p">:</span> <span class="s2">&quot;https://bioschemas.org/profiles/Organization/0.2-DRAFT-2019_07_19&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;The mission of UniProt is to provide the scientific community with a comprehensive, high quality and freely accessible resource of protein sequence and functional information. &quot;</span><span class="p">,</span>
+      <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;UniProt Consortium&quot;</span>
+    <span class="p">}</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </li>
@@ -1100,37 +985,50 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <hr class="docutils" />
 <div class="section" id="authors">
-<h2><span class="section-number">5.8.2.7. </span>Authors:<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.2.7. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="text-align:left head"><p>Name</p></th>
-<th class="text-align:left head"><p>Affiliation</p></th>
-<th class="text-align:left head"><p>orcid</p></th>
-<th class="text-align:left head"><p>CrediT role</p></th>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Orcid</p></th>
+<th class="head"><p>Affiliation</p></th>
+<th class="head"><p>Type</p></th>
+<th class="text-align:center head"><p>Elixir Node</p></th>
+<th class="text-align:center head"><p>Credit Role</p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p>Alasdair Gray</p></td>
-<td class="text-align:left"><p>Bioschemas Community Lead / Heriot-Watt Unviersity / ELIXIR-UK</p></td>
-<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/0000-0002-5711-4872">0000-0002-5711-4872</a></p></td>
-<td class="text-align:left"><p>Writing - Original Draft</p></td>
+<tr class="row-even"><td><p><div class="firstCol"><a target="_blank" href='https://github.com/AlasdairGray'><img class='avatar-style' src='https://avatars.githubusercontent.com/AlasdairGray'></img><div class="d-block">Alasdair J G Gray</div></a>  </div></p></td>
+<td><p><a target="_blank" href='https://orcid.org/0000-0002-5711-4872'><i class='fab fa-orcid fa-2x text--orange'></i></a></p></td>
+<td><p>Heriot Watt University</p></td>
+<td><p><i class="fas fa-graduation-cap fa-1x text--orange" alt="Academic"></i></p></td>
+<td class="text-align:center"><p><img class='elixir-style' src='/the-fair-cookbook/_static/images/logo/Elixir/ELIXIR-UK.svg' ></img></p></td>
+<td class="text-align:center"><p>Writing - Original Draft</p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p>Leyla Garcia</p></td>
-<td class="text-align:left"><p>Bioschemas Community / ZB MED Information Centre for life sciences, Knowledge Management Group</p></td>
-<td class="text-align:left"><p><a class="reference external" href="https://orcid.org/0000-0003-3986-0510">0000-0003-3986-0510</a></p></td>
-<td class="text-align:left"><p>External review</p></td>
+<tr class="row-odd"><td><p><div class="firstCol"><a target="_blank" href='https://github.com/ljgarcia'><img class='avatar-style' src='https://avatars.githubusercontent.com/ljgarcia'></img><div class="d-block"> Leyla Garcia</p></td>
+<td><p><a target="_blank" href='https://orcid.org/0000-0003-3986-0510'><i class='fab fa-orcid fa-2x text--orange'></i></a></p></td>
+<td><p>ZB MED Information Centre for life sciences</p></td>
+<td><p><i class="fas fa-graduation-cap fa-1x text--orange" alt="Academic"></i></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p>Writing – Review &amp; Editing</p></td>
+</tr>
+<tr class="row-even"><td><p><div class="firstCol"><a target="_blank" href='https://github.com/proccaserra'><img class='avatar-style' src='https://avatars.githubusercontent.com/proccaserra'></img><div class="d-block">Philippe Rocca-Serra</div></a>  </div></p></td>
+<td><p><a target="_blank" href='https://orcid.org/0000-0001-9853-5668'><i class='fab fa-orcid fa-2x text--orange'></i></a></p></td>
+<td><p>University of Oxford</p></td>
+<td><p><i class="fas fa-graduation-cap fa-1x text--orange" alt="Academic"></i></p></td>
+<td class="text-align:center"><p><img class='elixir-style' src='/the-fair-cookbook/_static/images/logo/Elixir/ELIXIR-UK.svg' ></img></p></td>
+<td class="text-align:center"><p>Writing – Review &amp; Editing</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <hr class="docutils" />
 <div class="section" id="footnotes">
-<h2><span class="section-number">5.8.2.8. </span>Footnotes:<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.2.8. </span>Footnotes<a class="headerlink" href="#footnotes" title="Permalink to this headline">¶</a></h2>
 <p><a name="bioschemas-validator">1</a>: The Bioschemas Validator is currently in an early alpha release and does not include all the profiles.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="license">
-<h2><span class="section-number">5.8.2.9. </span>License:<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.8.2.9. </span>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This page is released under the Creative Commons 4.0 BY license.</p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png" height="20"/></a></p>
 </div>
@@ -1161,8 +1059,8 @@ commentsRunWhenDOMLoaded(addUtterances);
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="bioschemas-data-page.html" title="previous page"><span class="section-number">5.8.1. </span>Findability: Data Page Markup with Bioschemas</a>
-    <a class='right-next' id="next-link" href="bioschemas-datacatalog.html" title="next page"><span class="section-number">5.8.3. </span>Findability: Data Catalog Markup</a>
+    <a class='left-prev' id="prev-link" href="bioschemas-data-page.html" title="previous page"><span class="section-number">5.8.1. </span>Data page markup with Bioschemas</a>
+    <a class='right-next' id="next-link" href="bioschemas-datacatalog.html" title="next page"><span class="section-number">5.8.3. </span>Data catalogue markup</a>
 
         </div>
         
@@ -1172,13 +1070,9 @@ commentsRunWhenDOMLoaded(addUtterances);
     <div class="container">
       <p>
         
-          By The FAIRplus project members<br/>
-        
-            &copy; Copyright 2020 (CC-BY 4.0).<br/>
+            &copy; Copyright 2020.<br/>
           <div class="extra_footer">
-            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.imi.europa.eu/">Innovative Medicines Initiative</a> 2 Joint Undertaking under grant agreement No 802750. This Joint Undertaking receives support from the European Union’s Horizon 2020 research and innovation programme and EFPIA Companies. This communication reflects the views of the authors and neither IMI nor the European Union, EFPIA or any Associated Partners are liable for any use that may be made of the information contained herein. </div>
-<div class="row_footer"> This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a> </div>
-<div class="row_footer"> <div class="column" style="center"><a href="https://europa.eu/"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/eu-flag-recolored-fairplus.png" height="20" alt="EU flag" style="float:center""></a></div> <div class="column"><a href="https://www.imi.europa.eu/"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/imi-logo-fairplus-v1.png" height="20" alt="IMI logo" style="float:center""></a></div> <div class="column"><a href="https://efpia.eu"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/efpia-logo-fairplus2.png" height="20" alt="EFPIA logo" style="float:center""></a></div> <br/> </div>
+            <script>mermaid.init();</script> <div class="container-lg mt-3"> <div class="row"> <div class="col-xl-3"> <div class="footerImages"> <a href="https://europa.eu/"><img src="/the-fair-cookbook/_static/images/logo/eu-flag.png" height="20" alt="EU flag" style="float:center""></a> <a href="https://www.imi.europa.eu/"><img src="/the-fair-cookbook/_static/images/logo/imi-logo.png" height="20" alt="IMI logo" style="float:center""></a> <a href="https://efpia.eu"><img src="/the-fair-cookbook/_static/images/logo/efpia-logo.png" height="20" alt="EFPIA logo" style="float:center""></a> </div> <div class="mb-3"> Grant agreement 802750 </div> </div> <div class="col-xl-6 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="mailto:fairplus-cookbook@elixir-europe.org"> Contact us </a></li> <li><a href="https://fairplus-project.eu" target="_blank"> FAIRplus </a> </li> </ul> </div> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li> <a href="/the-fair-cookbook/content/recipes/boilerplate/people.html"> Contributors </a> </li> </li> <li> <a href="/the-fair-cookbook/content/recipes/help.html"> How to contribute </a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://elixir-europe.org/" target="_blank"><img src="/the-fair-cookbook/_static/images/logo/Elixir/ELIXIR.png" height="50" alt="Elixir logo" style="float:center""></a> <a href="https://fairplus-project.eu/"><img src="https://fairplus-project.eu/images/fairplus-logo.png" alt="FAIRplus logo" style="background:white;padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> The FAIR Cookbook is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license. </div>
           </div>
       </p>
     </div>

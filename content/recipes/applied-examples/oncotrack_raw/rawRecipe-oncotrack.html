@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Oncotrack FAIRification recipe</title>
+    <title>4. Oncotrack - observational clinical cohort datasets</title>
     
   <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,43 +45,9 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/mermaid.js"></script>
-    <script src="../../../../_static/mermaid.min.js"></script>
     <script src="../../../../_static/mermaid.core.js"></script>
+    <script src="../../../../_static/mermaid.min.js"></script>
     <script async="async" kind="hypothesis" src="https://hypothes.is/embed.js"></script>
-    <script kind="utterances">
-
-    var commentsRunWhenDOMLoaded = cb => {
-    if (document.readyState != 'loading') {
-        cb()
-    } else if (document.addEventListener) {
-        document.addEventListener('DOMContentLoaded', cb)
-    } else {
-        document.attachEvent('onreadystatechange', function() {
-        if (document.readyState == 'complete') cb()
-        })
-    }
-}
-
-var addUtterances = () => {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://utteranc.es/client.js";
-    script.async = "async";
-
-    script.setAttribute("repo", "FAIRplus/the-fair-cookbook");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "github-light");
-    script.setAttribute("label", "💬 comment");
-    script.setAttribute("crossorigin", "anonymous");
-
-    sections = document.querySelectorAll("div.section");
-    if (sections !== null) {
-        section = sections[sections.length-1];
-        section.appendChild(script);
-    }
-}
-commentsRunWhenDOMLoaded(addUtterances);
-</script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -95,8 +61,8 @@ commentsRunWhenDOMLoaded(addUtterances);
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="RESOLUTE FAIRification Recipe" href="../resolute_raw/rawRecipe_resolute.html" />
-    <link rel="prev" title="ND4BB dataset FAIRification recipe" href="../nd4bb_raw/FAIRification_CookBook_Recipe1_V02.html" />
+    <link rel="next" title="5. ReSOLUTE - transcriptomics datasets" href="../resolute_raw/resolute.html" />
+    <link rel="prev" title="3. ND4BB - clinical trial datasets" href="../nd4bb.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -105,8 +71,8 @@ commentsRunWhenDOMLoaded(addUtterances);
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/applied-examples/oncotrack_raw/rawRecipe-oncotrack.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Oncotrack FAIRification recipe" />
-<meta property="og:description" content="Oncotrack FAIRification recipe  Ingredients  Metadata model  Oncotrack cohort metadata  Oncotrack drug sensitivity data  Oncotrack metadata template  Vocabulari" />
+<meta property="og:title"       content="Oncotrack - observational clinical cohort datasets" />
+<meta property="og:description" content="Oncotrack - observational clinical cohort datasets  &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bio" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -140,228 +106,77 @@ commentsRunWhenDOMLoaded(addUtterances);
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  FOREWORD
+ </span>
+</p>
+<ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/FAIR-cookbook-audience.html">
+   Who should read it
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../introduction/FAIRplus-values.html">
+   Ethical values of FAIR
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../glossary-fair-terms.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  RECIPES
+ </span>
+</p>
 <ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../introduction.html">
-   Introduction
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/ATI-turingway.html">
-     1. The Turing Way Book of Data Science
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/FAIR-cookbook-audience.html">
-     2. Who should read the FAIR Cookbook?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/brief-FAIR-principles.html">
-     3. What are the FAIR Principles?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/what-is-IMI.html">
-     4. What is IMI?
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/FAIR-in-IMI-context.html">
-     5. FAIR in the context of IMI
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/IMI-Data-Access-Request-Process.html">
-     6. Engaging with IMI Projects
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/FAIRplus-values.html">
-     7. The Ethical Values behind FAIR and the FAIRPlus project
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../introduction/data-sharing-models.html">
-     8. High level data sharing models
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../assessing-fairness.html">
-   Assessing FAIR
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assessing-fairness/cmmi/Data-Management-Maturity-Model.html">
-     1. Data Management Maturity Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assessing-fairness/cmmi/Datasets-Maturity-Model.html">
-     2. FAIRplus Datasets Maturity Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../assessing-fairness/cmmi/Data-Usage-Areas.html">
-     3. Data Usage Areas
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../assessing-fairness/fair-indicators.html">
-     4. FAIR Indicators
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/RDA-Indicators.html">
-       4.4.1. RDA Indicators
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/FAIRPlus-Indicators.html">
-       4.4.2. IMI FAIRPlus Indicators
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../assessing-fairness/manual-fair-assessment.html">
-     5. FAIR assessment by hand
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/evaluation-method.html">
-       5.4.1. Evaluation Method
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/cmmi/rda-evaluation.html">
-       5.4.2. RDA Evaluation Methods
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../assessing-fairness/automatic-fair-assessment.html">
-     6. FAIR assessment by software
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairevaluator.html">
-       6.4.1. Assessing FAIRness with FAIREvaluator
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairshake.html">
-       6.4.2. FAIR assessment with FAIRShake
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../infrastructure.html">
-   Infrastructure for FAIR
-  </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../infrastructure/id-resolution.html">
-     1. Identifier resolution services
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../infrastructure/data-catalog.html">
-     2. Building a Dataset Catalogue
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../infrastructure/data-catalog-deployment.html">
-     3. Deploying the IMI data catalogue
-    </a>
-   </li>
-   <li class="toctree-l2 collapsible-parent">
-    <a class="reference internal" href="../../infrastructure/vocabularies.html">
-     4. Vocabularies and Terminology Infrastructure
-    </a>
-    <ul class="collapse-ul">
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../infrastructure/vocabularies/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html">
-       4.1. Technical &amp; architectural selection criteria of ontology lookup services
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../infrastructure/vocabularies/Selecting_and_using_ontology_lookup_services.html">
-       4.2. Selection and exploitation of Ontology Lookup Services
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../../infrastructure/vocabularies/UC3_R13_local_ontology_services.html">
-       4.3. How to deploy a terminology service - EBI Ontology Lookup Service
-      </a>
-     </li>
-    </ul>
-    <i class="fas fa-chevron-down">
-    </i>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../findability.html">
-   Improving Findability
+   Findability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../../findability/identifiers.html">
-     1. How to generate globally unique, resolvable and persistent identifiers
+     1. Unique, persistent identifiers
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../infrastructure/chemical-identities.html">
-     2. Chemical Identity - InChI and SMILES
+     2. InChI and SMILES identifiers for chemical structures
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../findability/identifiers-minids.html">
-     3. Identifier Minting Service with Minid Client
+     3. Minting identifiers with Minid
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../findability/zenodo-deposition.html">
-     4. Deposition to Zenodo Archive
+     4. Depositing in Zenodo generic repository
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../findability/seo.html">
-     5. Findability: Search Engine Optimization
+     5. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../findability/seo/bioschemas-data-page.html">
-       5.8.1. Findability: Data Page Markup with Bioschemas
+       5.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../findability/seo/bioschemas-dataset.html">
-       5.8.2. Findability: Dataset Markup
+       5.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../findability/seo/bioschemas-datacatalog.html">
-       5.8.3. Findability: Data Catalog Markup
+       5.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -374,22 +189,17 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../accessibility.html">
-   Improving Accessibility
+   Accessibility
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../accessibility/anonymization.html">
-     1. Anonymizing Patient Data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../accessibility/how-to-use-sftp-for-transfer.html">
-     2. How to use SFTP to transfer data files between institutions.
+    <a class="reference internal" href="../../accessibility/sftp.html">
+     1. Transferring data with SFTP
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../accessibility/aspera.html">
-     3. How to download files with Aspera
+     2. Downloading data with Aspera
     </a>
    </li>
   </ul>
@@ -398,22 +208,22 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../interoperability.html">
-   Improving Interoperability
+   Interoperability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/identifier-mapping.html">
-     How to interlink data from different sources?
+     1. Interlinking data from different sources
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../interoperability/bridgedb-recipe.html">
-     Identifier mapping with BridgeDB
+     2. Identifiers mapping with BridgeDB
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/bridgedb/bridgedb-example.html">
-       Identifier mapping using BridgeDb WS
+       Using BridgeDB web services
       </a>
      </li>
     </ul>
@@ -421,42 +231,57 @@ commentsRunWhenDOMLoaded(addUtterances);
     </i>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/ontology-why-using-them.html">
+     3. Introduction to terminologies and ontologies
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/selecting-ontologies.html">
-     Which vocabulary to use?
+     4. Selecting terminologies and ontologies
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/ontology-new-term-request-recipe.html">
-     Requesting terms addition to terminology artefacts
+     5. Requesting new terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/ontology-operations-tools.html">
+     6. Ontology-related tools and services
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../interoperability/ontology-robot-recipe.html">
-     Building an application ontology with Robot
+     7. Building an application ontology with ROBOT
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/ontology-robot/MSIO-robot-build-process.html">
-       MSIO, an application ontology for Metabolomics
+       Application ontology for metabolomics
       </a>
      </li>
     </ul>
     <i class="fas fa-chevron-down">
     </i>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/creating_data_dictionary.html">
+     8. Creating a data/variable dictionary
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../interoperability/creating-minimal-metadata-profiles.html">
-     Creating a Metadata Profile
+     9. Creating a metadata profile
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/transcriptomics-metadata.html">
-       Establishing a Metadata Profile for Transcriptomics
+       Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../interoperability/covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata Profile Validation in RDF with Shape Expression:
+       Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -465,12 +290,17 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/from-proprietary-to-open-standard-mzml-exemplar.html">
-     From proprietary to open standard data format
+     10. Converting from proprietary to open format
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../interoperability/fastq-file-format-validators.html">
-     File format validation, an example with FASTQ files
+     11. File format validation, FASTQ example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../interoperability/ETL-tools.html">
+     12. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -479,7 +309,7 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../reusability.html">
-   Improving Reusability
+   Reusability
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -489,27 +319,89 @@ commentsRunWhenDOMLoaded(addUtterances);
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/ATI_licensing_software.html">
-     2. Software Licenses
+     2. Software licenses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/ATI_licensing_data.html">
-     3. Data Licenses
+     3. Data licenses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/expressing-data-use.html">
-     4. Patterns and practice for expressing allowed data usage
+     4. Declaring data's permitted uses
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../reusability/provenance.html">
-     5. Provenance Information
+     5. Provenance information
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../infrastructure.html">
+   Infrastructure
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../infrastructure/id-resolution.html">
+     1. Identifier resolution services
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../reusability/community-standards.html">
-     6. Compliance with community annotation standards
+    <a class="reference internal" href="../../infrastructure/data-catalog.html">
+     2. Building a catalogue of datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../infrastructure/data-catalog-deployment.html">
+     3. Deploying the IMI data catalogue
+    </a>
+   </li>
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../../infrastructure/vocabularies.html">
+     4. Vocabulary management
+    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../infrastructure/vocabularies/technical-and-architectural-selection-criteria-of-ontology-lookup-services.html">
+       4.1. Portals and look-up services
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../infrastructure/vocabularies/Selecting_and_using_ontology_lookup_services.html">
+       4.2. Selecting a look-up service
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../../infrastructure/vocabularies/UC3_R13_local_ontology_services.html">
+       4.3. Deploying the EBI OLS
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../assessing-fairness.html">
+   Assessment
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairevaluator.html">
+     1. with FAIREvaluator
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairshake.html">
+     2. with FAIRshake
     </a>
    </li>
   </ul>
@@ -518,32 +410,32 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../../applied-examples.html">
-   Making IMI data FAIR
+   Applied examples
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../fair-data-matrix-recipe.html">
-     Making a Data Matrix FAIR
+     1. Making omics data matrices FAIR
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Bibliographic Reference:
+       Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Exploring and comparing Rose Scent profiles stored as tabular data packages with plotnine, a python port of R ggplot2
+       Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring a rose garden with SPARQL
+       Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Exploring and comparing Rose Scent profiles stored as tabular data packages with ggplot2 R library
+       Integrating data
       </a>
      </li>
     </ul>
@@ -551,62 +443,93 @@ commentsRunWhenDOMLoaded(addUtterances);
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../etox_raw/FAIRplus_Recipe_Ontology_mapping_the_eTox_dataset_scenario.html">
-     Data normalization and integration through entity linking
+    <a class="reference internal" href="../etox.html">
+     2. eTox - toxicity datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../nd4bb_raw/FAIRification_CookBook_Recipe1_V02.html">
-     ND4BB dataset FAIRification recipe
+    <a class="reference internal" href="../nd4bb.html">
+     3. nd4bb - chemical activities datasets
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Oncotrack FAIRification recipe
+     4. Oncotrack - clinical cohort datasets
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../resolute_raw/rawRecipe_resolute.html">
-     RESOLUTE FAIRification Recipe
+    <a class="reference internal" href="../resolute_raw/resolute.html">
+     5. RESOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../glossary-fair-terms.html">
-   Glossary of FAIR things
-  </a>
- </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  ABOUT
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../../help.html">
-   Help
+  <a class="reference internal" href="../../community.html">
+   Community
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../help/tips-tricks.html">
-     1. Recipe Tips and Tricks
+    <a class="reference internal" href="../../boilerplate/people.html">
+     1. Boards and contributors
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../../help/recipe-template.html">
-     2. Recipe Template
+    <a class="reference internal" href="../../boilerplate/code_of_conduct.html">
+     2. Code of conduct
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../../help.html">
+   Contribute
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../boilerplate/contributing.html">
+     1. How to contribute
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../help/how-to-create-recipe-with-gdoc.html">
-     3. Using GoogleDocs to contribute a FAIR Cookbook Recipe
+     2. Add via GoogleDoc
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../help/how-to-create-recipe-with-hackmd.html">
-     4. How to use HackMD to write a FAIR Cookbook Recipe
+     3. Add via HackMD
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../help/how-to-create-recipe-with-git.html">
-     5. How to create a FAIRPlus Coobook Recipe ?
+     4. Add via Git
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../help/recipe-template.html">
+     5. Git recipe template
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../help/tips-tricks.html">
+     6. Tips and tricks
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../help/myst.html">
+     7. Markdown cheatsheet
     </a>
    </li>
   </ul>
@@ -615,47 +538,12 @@ commentsRunWhenDOMLoaded(addUtterances);
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../../boilerplate.html">
-   Miscellaneous
+   Platform
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/license.html">
-     1. License for this book
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/people.html">
-     2. FAIR Cookbook Steering Council and Institutional Partners
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/governance.html">
-     3. FAIR Cookbook Governance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/code_of_conduct.html">
-     4. FAIR Cookbook Code of Conduct
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/project_information.html">
-     5. FAIR CookBook BoilerPlate
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/roadmap.html">
-     6. FAIR cookbook development roadmap
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/contributing.html">
-     7. Contributing to the FAIR cookbook
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../boilerplate/disclaimer.html">
-     8. Disclaimer
+    <a class="reference internal" href="../../introduction/the-turing-way.html">
+     1. Leveraging the Turing Way Book
     </a>
    </li>
   </ul>
@@ -842,8 +730,66 @@ commentsRunWhenDOMLoaded(addUtterances);
         
               <div>
                 
-  <div class="section" id="oncotrack-fairification-recipe">
-<span id="fcb-fairify-examples-oncotrack"></span><h1>Oncotrack FAIRification recipe<a class="headerlink" href="#oncotrack-fairification-recipe" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="oncotrack-observational-clinical-cohort-datasets">
+<span id="fcb-fairify-examples-oncotrack"></span><h1><span class="section-number">4. </span>Oncotrack - observational clinical cohort datasets<a class="headerlink" href="#oncotrack-observational-clinical-cohort-datasets" title="Permalink to this headline">¶</a></h1>
+<br/>
+<hr class="docutils" />
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Oncotrack - clinical cohort datasets", "audience": ["Data Manager", "Data Curator", "Ontologist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Experience Report / Applied Example", "identifier": {"@type": "PropertyValue", "name": "FCB044", "url": "http://w3id.org/faircookbook/FCB044"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H10M0S", "totalTime": "PT0H10M0S"} </script>
+<div class="card recipe d-flex">
+<div class="card-header purple-dark text--white">
+<div class="overview">
+<div class="overviewLabel">Recipe Overview</div>
+<div class="overviewContent">
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-clock fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Reading Time </div>
+10 minutes
+</div>
+</div></div>
+<div class="item"><div class="itemContainer">
+<i class="itemIcon fa fa-play-circle fa-2x text--white"></i>
+<div class="itemContent">
+<div class="label"> Executable Code </div>
+No
+</div>
+</div></div>
+<div class="item" style="margin-bottom:10px"><div class="itemContainer">
+<i class="itemIcon fa fa-fire fa-2x text--white" style="margin-left:4px;margin-right: 5px;"></i>
+<div class="itemContent">
+<div class="label" style="position:relative; left:-6px">Difficulty</div>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire"></i>
+<i class="fa fa-fire" style="color:grey"></i>
+</div>
+</div></div>
+</div></div>
+</div>
+<div class="card-body text--purple-dark">
+<div class="title">
+<div style="flex-grow:1; margin-right:5px">Oncotrack - clinical cohort datasets</div>
+<img src="/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
+</div>
+<div class="section">
+<i class="sectionIcon fa fa-laptop fa-2x"></i><div class="sectionContent">
+<div class="label">Recipe Type</div>
+<div class="sectionValue">Experience Report / Applied Example</div>
+</div>
+</div>
+<div class="section" style="flex-grow: 1;">
+<i class="sectionIcon fa fa-users fa-2x"></i><div class="sectionContent">
+<div class="label">Audience</div>
+<div class="sectionValue">Data Manager, Data Curator, Ontologist</div>
+</div>
+</div>
+<div class="card-footer text--orange sphinx-bs.badge.badge-primary"> Cite me with 
+<a href="http://w3id.org/faircookbook/FCB044" class="text--purple-dark">FCB044
+</a></div>
+</div>
+</div>
+<hr class="docutils" />
 <div class="section" id="ingredients">
 <h2>Ingredients<a class="headerlink" href="#ingredients" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -856,7 +802,7 @@ commentsRunWhenDOMLoaded(addUtterances);
 </li>
 <li><p>Vocabularies and terminologies</p>
 <ul>
-<li><p>Pharmaceutical drug names follow the nomenclature of ChEBI and ChEMBL database. All drug ontologies are listed <a class="reference external" href="https://drive.google.com/open?id=1kYH76-3K3mkz6wfTydFoT_UPf8WP0fe_">here</a>.</p></li>
+<li><p>Pharmaceutical drug names follow the nomenclature of <a class="reference external" href="https://www.ebi.ac.uk/chebi/">ChEBI</a> and <a class="reference external" href="https://www.ebi.ac.uk/chembl/">ChEMBL</a> database. All drug ontologies are listed <a class="reference external" href="https://drive.google.com/open?id=1kYH76-3K3mkz6wfTydFoT_UPf8WP0fe_">here</a>.</p></li>
 <li><p>All abbreviations and acronyms used in OncoTrack cohort metadata are listed in the <a class="reference external" href="https://drive.google.com/open?id=1voD6FGHVyHUgZEHFRfzh_HlTQa7CvW5-MtheGhydDAg">OncoTrack public metadata acronym table</a>.</p></li>
 </ul>
 </li>
@@ -894,25 +840,25 @@ commentsRunWhenDOMLoaded(addUtterances);
 </div>
 <div class="section" id="step-by-step-process">
 <h2>Step-by-Step Process<a class="headerlink" href="#step-by-step-process" title="Permalink to this headline">¶</a></h2>
-<p>The FAIRification of Oncotrack metadata includes four steps, accessing the data, metadata extraction, transform and load(ETL) pipeline, data curation and data sharing. (Figure 1)</p>
+<p>The FAIRification of Oncotrack metadata includes four steps: 1) accessing the data, 2) metadata extraction, transform and load (ETL) pipeline, 3) data curation and 4) data sharing. (Figure 1)</p>
 <!-- ![alt_text](image_0.png "image_tooltip")
 _Figure 1: OncoTrack metadata FAIRification pipeline_ -->	
 <div class="figure align-default" id="oncotrack-metadata-fairification-pipeline">
-<a class="reference internal image-reference" href="../../../../_images/image_02.png"><img alt="OncoTrack metadata FAIRification pipeline." src="../../../../_images/image_02.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 32 </span><span class="caption-text">OncoTrack metadata FAIRification pipeline.</span><a class="headerlink" href="#oncotrack-metadata-fairification-pipeline" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../_images/image_0.png"><img alt="OncoTrack metadata FAIRification pipeline." src="../../../../_images/image_0.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.19 </span><span class="caption-text">OncoTrack metadata FAIRification pipeline.</span><a class="headerlink" href="#oncotrack-metadata-fairification-pipeline" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="data-description">
 <h3>Data Description<a class="headerlink" href="#data-description" title="Permalink to this headline">¶</a></h3>
 <p>The OncoTrack colorectal carcinoma (CRC) biobank includes patient tumour samples, patient derived xenograft models (PDX) and patient-derived 3D  cell models (PDO) from 106 patients. Multi-omics experiments and various drug sensitivity studies have been performed on the CRC biobank.</p>
-<p>The<a class="reference external" href="http://www.oncotrack.eu/home/index.html"> OncoTrack</a> sample metadata includes published sample metadata, drug sensitivity experiment results, and private cohort information. Here, we focus on the FAIRification of the public sample metadata. Drug sensitivity, as an important property of the patient-derived 3D cell culture models, is also included. The metadata is published on<a class="reference external" href="https://www.nature.com/articles/ncomms14262#Sec54"> Schütte, et al</a>. Annotations to the metadata are stored in<a class="reference external" href="https://owncloud.lcsb.uni.lu/apps/files/?dir=/ONCOTRACK&amp;fileid=10738223"> OwnCloud</a> with controlled access.</p>
-<p>The original cohort metadata is stored in an Excel spreadsheet. Figure 2 is an example of the cohort metadata. Each sample is listed as a separate row in the spreadsheet. Sample attributes are listed in columns. The sample names follow the<a class="reference external" href="https://drive.google.com/file/d/1qTQ4cYsmD3AN9XYRxpwayOerc78LUzq6/view?usp=sharing"> OncoTrack identifier system guidelines</a>, which consists of patient ID, tumour type, and patient-derived cell culture model ID. For example,_ Sample “150_MET1_XEN2”_ represents <em>“The second xenograft culture of the first metastatic tumour sample in Patient 150.”</em></p>
+<p>The<a class="reference external" href="http://www.oncotrack.eu/home/index.html"> OncoTrack</a> sample metadata includes published sample metadata, drug sensitivity experiment results, and private cohort information. Here, we focus on the FAIRification of the public sample metadata. Drug sensitivity, as an important property of the patient-derived 3D cell culture models, is also included. The metadata is published on<a class="reference external" href="https://www.nature.com/articles/ncomms14262#Sec54"> Schütte, et al</a>. Annotations to the metadata are stored in<a class="reference external" href="https://owncloud.lcsb.uni.lu/apps/files/?dir=/ONCOTRACK&amp;fileid=10738223">FAIRplus OwnCloud</a> with controlled access.</p>
+<p>The original cohort metadata is stored in an Excel spreadsheet. Figure 2 is an example of the cohort metadata. Each sample is listed as a separate row in the spreadsheet. Sample attributes are listed in columns. The sample names follow the<a class="reference external" href="https://drive.google.com/file/d/1qTQ4cYsmD3AN9XYRxpwayOerc78LUzq6/view?usp=sharing"> OncoTrack identifier system guidelines</a>, which consist of patient ID, tumour type, and patient-derived cell culture model ID. For example, Sample <em>“150_MET1_XEN2”</em> represents <em>“The second xenograft culture of the first metastatic tumour sample in Patient 150.”</em></p>
 <!-- ![alt_text](image_1.png "image_tooltip")
 _Figure 2: Example of OncoTrack public cohort metadata -->_
 <div class="figure align-default" id="example-of-oncotrack-public-cohort-metadata">
-<a class="reference internal image-reference" href="../../../../_images/image_11.png"><img alt="Example of OncoTrack public cohort metadata." src="../../../../_images/image_11.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 33 </span><span class="caption-text">Example of OncoTrack public cohort metadata.</span><a class="headerlink" href="#example-of-oncotrack-public-cohort-metadata" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../_images/image_1.png"><img alt="Example of OncoTrack public cohort metadata." src="../../../../_images/image_1.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.20 </span><span class="caption-text">Example of OncoTrack public cohort metadata.</span><a class="headerlink" href="#example-of-oncotrack-public-cohort-metadata" title="Permalink to this image">¶</a></p>
 </div>
-<p>The drug sensitivity data is also provided in Excel spreadsheets. Seventeen drugs are tested on patient-derived organoid(PDO) and patient-derived xenografts(PDX) models in five sets of experiments. Different sets have their unique measurement methods, drug response scales. For example, in <em>Sheet 1: PDO drug response</em> experiment, IC50 value is measured and defines the drug <em>response category</em> (Figure 3a). In <em>Sheet 2: PDX drug response test</em>, the <em>response evaluation criteria in solid tumours (<strong>RECIST</strong>)</em> scales defines the_ drug response category_ (Figure 3b). In both examples, the _drug response category _is marked by colour codes.</p>
+<p>The drug sensitivity data is also provided in Excel spreadsheets. Seventeen drugs are tested on patient-derived organoid(PDO) and patient-derived xenografts(PDX) models in five sets of experiments. Different sets have their unique measurement methods, drug response scales. For example, in <em>Sheet 1: PDO drug response</em> experiment, IC50 value is measured and defines the drug <em>response category</em> (Figure 3a). In <em>Sheet 2: PDX drug response test</em>, the <em>response evaluation criteria in solid tumours (<strong>RECIST</strong>)</em> scales defines the <em>drug response category</em> (Figure 3b). In both examples, the <em>drug response category</em> is marked by colour codes.</p>
 <!-- ![alt_text](image_2.png "image_tooltip") -->
 <div class="figure align-default" id="example-of-oncotrack">
 <a class="reference internal image-reference" href="../../../../_images/image_2.png"><img alt="." src="../../../../_images/image_2.png" style="width: 800px;" /></a>
@@ -920,34 +866,34 @@ _Figure 2: Example of OncoTrack public cohort metadata -->_
 <!-- ![alt_text](image_3.png "image_tooltip")
 _Figure 3: Example of Oncotrack drug response data_ -->
 <div class="figure align-default" id="example-of-oncotrack-drug-response-data">
-<a class="reference internal image-reference" href="../../../../_images/image_31.png"><img alt="Example of Oncotrack drug response data." src="../../../../_images/image_31.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 34 </span><span class="caption-text">Example of Oncotrack drug response data.</span><a class="headerlink" href="#example-of-oncotrack-drug-response-data" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../_images/image_3.png"><img alt="Example of Oncotrack drug response data." src="../../../../_images/image_3.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.21 </span><span class="caption-text">Example of Oncotrack drug response data.</span><a class="headerlink" href="#example-of-oncotrack-drug-response-data" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="metadata-etl-pipeline">
 <h3>Metadata ETL pipeline<a class="headerlink" href="#metadata-etl-pipeline" title="Permalink to this headline">¶</a></h3>
 <p>The frequent use of acronyms and abbreviations in Oncotrack metadata and the inconsistent metadata structures make it difficult to interpret and reuse. To extract and annotate the metadata, the data owner and data curators first agreed on the structure and content of the FAIRified metadata, as well as the principles in metadata extraction.</p>
-<p>Firstly, all missing values in the metadata shall be marked with _NAs _instead of being removed, to facilitate cross-sample comparisons. Secondly, all acronyms and abbreviations shall be expanded to their full forms to avoid ambiguity. Thirdly, the sample attribute values shall correspond to ontology terms if applicable. The final sample metadata template can be found<a class="reference external" href="https://docs.google.com/document/d/1OXSQsZbw2EEZOZrrXJIaJpsb60Y3-4N4W-wu9LX5oa8/edit"> here</a>.</p>
+<p>Firstly, all missing values in the metadata shall be marked with <em>NAs</em> instead of being removed, to facilitate cross-sample comparisons. Secondly, all acronyms and abbreviations shall be expanded to their full forms to avoid ambiguity. Thirdly, the sample attribute values shall correspond to ontology terms if applicable. The final sample metadata template can be found<a class="reference external" href="https://docs.google.com/document/d/1OXSQsZbw2EEZOZrrXJIaJpsb60Y3-4N4W-wu9LX5oa8/edit"> here</a>.</p>
 <p>The cohort metadata was converted to a<a class="reference external" href="https://docs.google.com/document/d/1pBjRe7rWO4xsUIVecIgxOm_SJaMWeWf8KBrsDTDVAmg/edit?usp=sharing"> tab-delimited table</a>, of which each row represents one sample, and each column represents one sample attribute. 144 samples from 106 patients were extracted, including 35 organoids and 59 xenografts. Tumour type and sample origin information was retrieved from the sample name. The disease name <em>“colon and rectal cancer”</em> was replaced with ontology term<a class="reference external" href="http://www.ebi.ac.uk/efo/EFO_0005842"> “Colorectal cancer”</a>. Figure 4 is an example of the extracted cohort metadata.</p>
 <!-- ![alt_text](image_4.png "image_tooltip")
 _Figure 4: Example of the extracted cohort metadata_ -->
 <div class="figure align-default" id="example-of-the-extracted-cohort-metadata">
 <a class="reference internal image-reference" href="../../../../_images/image_4.png"><img alt="Example of the extracted cohort metadata." src="../../../../_images/image_4.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 35 </span><span class="caption-text">Example of the extracted cohort metadata.</span><a class="headerlink" href="#example-of-the-extracted-cohort-metadata" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.22 </span><span class="caption-text">Example of the extracted cohort metadata.</span><a class="headerlink" href="#example-of-the-extracted-cohort-metadata" title="Permalink to this image">¶</a></p>
 </div>
-<p>Drug sensitivity data were also extracted from the original spreadsheets. Each drug test per sample was listed as one entry. To coordinate different measurement approaches and response category scales, all drug sensitivity data were converted to a unified representation. All the measurement results were stored in Attribute <em>“Value”</em>, the drug response categorizes criteria were stored in Attribute <em>“Unit”,</em> and the _drug response category _was recalculated and stored in Attribute <em>“Response”.</em> Figure 5 is an example of the extracted drug sensitivity data. 1829 drug tests were extracted in total. The drug response summary is <a class="reference external" href="https://drive.google.com/file/d/1BNkuLtKUsqoAPJqDKqdhj2xYAhuxhQkf/view?usp=sharing">here</a>.</p>
+<p>Drug sensitivity data were also extracted from the original spreadsheets. Each drug test per sample was listed as one entry. To coordinate different measurement approaches and response category scales, all drug sensitivity data were converted to a unified representation. All the measurement results were stored in Attribute <em>“Value”</em>, the drug response categorizes criteria were stored in Attribute <em>“Unit”,</em> and the <em>drug response category</em> was recalculated and stored in Attribute <em>“Response”.</em> Figure 5 is an example of the extracted drug sensitivity data. 1829 drug tests were extracted in total. The drug response summary is <a class="reference external" href="https://drive.google.com/file/d/1BNkuLtKUsqoAPJqDKqdhj2xYAhuxhQkf/view?usp=sharing">here</a>.</p>
 <!-- ![alt_text](image_5.png "image_tooltip")
 _Figure 5: Example of extracted drug sensitivity data_	 -->
 <div class="figure align-default" id="example-of-extracted-drug-sensitivity-data">
-<a class="reference internal image-reference" href="../../../../_images/image_51.png"><img alt="Example of extracted drug sensitivity data." src="../../../../_images/image_51.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 36 </span><span class="caption-text">Example of extracted drug sensitivity data.</span><a class="headerlink" href="#example-of-extracted-drug-sensitivity-data" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../../../_images/image_5.png"><img alt="Example of extracted drug sensitivity data." src="../../../../_images/image_5.png" style="width: 800px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4.23 </span><span class="caption-text">Example of extracted drug sensitivity data.</span><a class="headerlink" href="#example-of-extracted-drug-sensitivity-data" title="Permalink to this image">¶</a></p>
 </div>
-<p>To associate drug sensitivity data with related sample cohort metadata and convert them to machine-readable formats, we combined cohort metadata and drug sensitivity data to JSON files. The<a class="reference external" href="https://drive.google.com/file/d/1DoyOZ1uMFv0aPpAQUPkf7mS8vAoS6DCY/view"> BioSamples JSON schema</a><span style="text-decoration:underline;"> </span>was used as the sample metadata template, allowing direct submissions to<a class="reference external" href="https://www.ebi.ac.uk/biosamples/"> BioSamples database</a> and can be easily converted to other formats, like XML, spreadsheets, etc.</p>
-<p>The BioSamples JSON schema includes four blocks, submission metadata( e.g. submission domain, release date, update date), administrative metadata, (e.g. contacts, affiliations), general sample metadata (sample names, species, etc) and sample characteristics. All information is stored in key: value pairs. In sample characteristics, only data with flatten structure is accepted.</p>
+<p>To associate drug sensitivity data with related sample cohort metadata and convert them to machine-readable formats, we combined cohort metadata and drug sensitivity data to JSON files. The <a class="reference external" href="https://drive.google.com/file/d/1DoyOZ1uMFv0aPpAQUPkf7mS8vAoS6DCY/view">BioSamples JSON schema</a> was used as the sample metadata template, allowing direct submissions to<a class="reference external" href="https://www.ebi.ac.uk/biosamples/"> BioSamples database</a> and can be easily converted to other formats, like XML, spreadsheets, etc.</p>
+<p>The BioSamples JSON schema includes four blocks, submission metadata (e.g. submission domain, release date, update date), administrative metadata, (e.g. contacts, affiliations), general sample metadata (sample names, species, etc) and sample characteristics. All information is stored in key: value pairs. In sample characteristics, only data with flatten structure is accepted.</p>
 <p>All cohort metadata and drug sensitivity data of each sample were combined into separate JSON files, named after the original sample identifier.</p>
-<p>BioSamples JSON schema only supports strings as value types. Therefore, complex data, for example, drug sensitivity data, need additional parsing to fit into the schema. For each drug response experiments, four descriptive attributes were “<em>Drug Name</em>”, “<em>Value</em>”, “<em>Unit</em>” and “<em>Drug response level</em>” provided. To convert them to key: value pairs, the “<em>drug name</em>” was kept as part of the attribute key. “Value”, “Unit” and “Drug response level” information were joint into one string. For example, the drug response of _regorafenib in Sample 302_MET_CELL_XEN _(Figure 6) was converted to <em>“Drug response(regorafenib): Minor response, IC50(µM) = 29”.</em> For drugs that were tested more than once, a replicate ID was added to the attribute key.</p>
+<p>BioSamples JSON schema only supports strings as value types. Therefore, complex data, for example, drug sensitivity data, need additional parsing to fit into the schema. For each drug response experiments, four descriptive attributes were “<em>Drug Name</em>”, “<em>Value</em>”, “<em>Unit</em>” and “<em>Drug response level</em>” provided. To convert them to key: value pairs, the “<em>drug name</em>” was kept as part of the attribute key. “Value”, “Unit” and “Drug response level” information were joint into one string. For example, the drug response of <em>regorafenib in Sample 302_MET_CELL_XEN</em> (Figure 6) was converted to <em>“Drug response(regorafenib): Minor response, IC50(µM) = 29”.</em> For drugs that were tested more than once, a replicate ID was added to the attribute key.</p>
 <p>Administrative information was also added to each JSON object, including institute, project name, and project website. Contact details were not provided, which needs further confirmation from the data owners.</p>
-<p>All transformed metadata was validated against BioSamples schema with the<a class="reference external" href="https://github.com/elixir-europe/json-schema-validator"> Elixir JSON validator</a><span style="text-decoration:underline;">,</span> which is based on AJV with additional life science keyword validation.</p>
+<p>All transformed metadata was validated against BioSamples schema with the<a class="reference external" href="https://github.com/elixir-europe/json-schema-validator"> Elixir JSON validator</a>, which is based on <a class="reference external" href="https://github.com/ajv-validator/ajv">AJV</a> with additional life science keyword validation.</p>
 </div>
 <div class="section" id="data-curation">
 <h3>Data curation<a class="headerlink" href="#data-curation" title="Permalink to this headline">¶</a></h3>
@@ -955,15 +901,15 @@ _Figure 5: Example of extracted drug sensitivity data_	 -->
 <div class="section" id="drug-name-ontology">
 <h4>Drug name ontology<a class="headerlink" href="#drug-name-ontology" title="Permalink to this headline">¶</a></h4>
 <p>Different types of drug names were used in the original drug sensitivity data, including generic names, trade names and their chemical names. Some in-development drugs were labelled by their company code. All drug names were mapped to a standardized nomenclature, together with ontology annotations, to increase the findability of drug response results.</p>
-<p>The popular drug nomenclatures include International Nonproprietary Names (INNs), <a class="reference external" href="https://www.drugbank.ca/">DrugBank</a><span style="text-decoration:underline;"> </span>names, Chemical Entities of Biological Interest (<a class="reference external" href="https://www.ebi.ac.uk/chebi/">ChEBI</a>) database identifiers, and bioactivity database,<a class="reference external" href="https://www.ebi.ac.uk/chembl/"> ChEMBL</a><span style="text-decoration:underline;"> i</span>dentifiers. Among them, the ChEBI database cover most drugs in OncoTrack, is easy to access and has been curated as an ontology source in Open Biomedical Ontology (OBO). Hence, the drug names in ChEBI was selected as the primary drug names. For drugs or active compounds that were not included in ChEBI, their names in ChEMBL were selected.</p>
-<p>The OncoTrack drug names were mapped to corresponding ontology terms in ChEBI and ChEMBL using ZOOMA. ZOOMA is an ontology annotation tool, which maps free texts to ontology terms based on a curated repository of annotation knowledge. In OncoTrack drug name mapping, only ChEBI and ChEMBL were selected as ontology sources, and all curation sources except GWAS were selected to improve the coverage and increase the mapping confidence. Figure 6 is an example of the ZOOMA mapping output. Only entries with high mapping confidences were selected. The rest were mapped manually to terms in ChEBI databases. Among all 17 drugs, Drug “BI 860585” didn’t map to any pharmaceutical terms, so the original name was kept. The complete mapping results are listed<a class="reference external" href="https://drive.google.com/open?id=1kYH76-3K3mkz6wfTydFoT_UPf8WP0fe_"> here</a>.</p>
+<p>The popular drug nomenclatures include International Nonproprietary Names (INNs), <a class="reference external" href="https://www.drugbank.ca/">DrugBank</a> names, Chemical Entities of Biological Interest (<a class="reference external" href="https://www.ebi.ac.uk/chebi/">ChEBI</a>) database identifiers, and bioactivity database,<a class="reference external" href="https://www.ebi.ac.uk/chembl/">ChEMBL</a> identifiers. Among them, the ChEBI database covers most drugs in OncoTrack, is easy to access and has been curated as an ontology source in Open Biomedical Ontology (OBO). Hence, the drug names in ChEBI were selected as the primary drug names. For drugs or active compounds that were not included in ChEBI, their names in ChEMBL were selected.</p>
+<p>The OncoTrack drug names were mapped to corresponding ontology terms in ChEBI and ChEMBL using ZOOMA. ZOOMA is an ontology annotation tool, which maps free texts to ontology terms based on a curated repository of annotation knowledge. In OncoTrack drug name mapping, only ChEBI and ChEMBL were selected as ontology sources, and all curation sources except GWAS were selected to improve the coverage and increase the mapping confidence. Figure 6 is an example of the ZOOMA mapping output. Only entries with high mapping confidences were selected. The other entries were mapped manually to terms in ChEBI. Among all 17 drugs, Drug “BI 860585” didn’t map to any pharmaceutical terms, so the original name was kept. The complete mapping results are listed <a class="reference external" href="https://drive.google.com/open?id=1kYH76-3K3mkz6wfTydFoT_UPf8WP0fe_">here</a>.</p>
 <!-- 
 ![alt_text](image_6.jpg "image_tooltip")
 _Figure 6: Example of  ZOOMA ontology mapping results_
  -->
 <div class="figure align-default" id="example-of-zooma-ontology-mapping-results">
 <a class="reference internal image-reference" href="../../../../_images/image_6.jpg"><img alt="Example of ZOOMA ontology mapping results." src="../../../../_images/image_6.jpg" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 37 </span><span class="caption-text">Example of ZOOMA ontology mapping results.</span><a class="headerlink" href="#example-of-zooma-ontology-mapping-results" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 4.24 </span><span class="caption-text">Example of ZOOMA ontology mapping results.</span><a class="headerlink" href="#example-of-zooma-ontology-mapping-results" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="data-discrepancy">
@@ -972,7 +918,7 @@ _Figure 6: Example of  ZOOMA ontology mapping results_
 </div>
 <div class="section" id="data-encoding">
 <h4>Data encoding<a class="headerlink" href="#data-encoding" title="Permalink to this headline">¶</a></h4>
-<p>Special letters were converted to ASCII encoding to avoid mojibake. All the “µM”s in drug sensitivity data were converted to “microM”.</p>
+<p>Special letters were converted to ASCII encoding to avoid <a class="reference external" href="https://en.wikipedia.org/wiki/Mojibake">mojibake</a>. All the “µM”s in drug sensitivity data were converted to “microM”.</p>
 </div>
 </div>
 <div class="section" id="data-sharing">
@@ -1053,8 +999,8 @@ _Figure 6: Example of  ZOOMA ontology mapping results_
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../nd4bb_raw/FAIRification_CookBook_Recipe1_V02.html" title="previous page">ND4BB dataset FAIRification recipe</a>
-    <a class='right-next' id="next-link" href="../resolute_raw/rawRecipe_resolute.html" title="next page">RESOLUTE FAIRification Recipe</a>
+    <a class='left-prev' id="prev-link" href="../nd4bb.html" title="previous page"><span class="section-number">3. </span>ND4BB - clinical trial datasets</a>
+    <a class='right-next' id="next-link" href="../resolute_raw/resolute.html" title="next page"><span class="section-number">5. </span>ReSOLUTE - transcriptomics datasets</a>
 
         </div>
         
@@ -1064,13 +1010,9 @@ _Figure 6: Example of  ZOOMA ontology mapping results_
     <div class="container">
       <p>
         
-          By The FAIRplus project members<br/>
-        
-            &copy; Copyright 2020 (CC-BY 4.0).<br/>
+            &copy; Copyright 2020.<br/>
           <div class="extra_footer">
-            <script>mermaid.init();</script> <div class="row_footer"> This project has received funding from the <a href="https://www.imi.europa.eu/">Innovative Medicines Initiative</a> 2 Joint Undertaking under grant agreement No 802750. This Joint Undertaking receives support from the European Union’s Horizon 2020 research and innovation programme and EFPIA Companies. This communication reflects the views of the authors and neither IMI nor the European Union, EFPIA or any Associated Partners are liable for any use that may be made of the information contained herein. </div>
-<div class="row_footer"> This page was created by <a href="https://github.com/jupyter/jupyter-book/graphs/contributors">The Jupyter Book Community</a> </div>
-<div class="row_footer"> <div class="column" style="center"><a href="https://europa.eu/"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/eu-flag-recolored-fairplus.png" height="20" alt="EU flag" style="float:center""></a></div> <div class="column"><a href="https://www.imi.europa.eu/"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/imi-logo-fairplus-v1.png" height="20" alt="IMI logo" style="float:center""></a></div> <div class="column"><a href="https://efpia.eu"><img src="https://raw.githubusercontent.com/FAIRplus/the-fair-cookbook/migrating/_static/images/logo/efpia-logo-fairplus2.png" height="20" alt="EFPIA logo" style="float:center""></a></div> <br/> </div>
+            <script>mermaid.init();</script> <div class="container-lg mt-3"> <div class="row"> <div class="col-xl-3"> <div class="footerImages"> <a href="https://europa.eu/"><img src="/the-fair-cookbook/_static/images/logo/eu-flag.png" height="20" alt="EU flag" style="float:center""></a> <a href="https://www.imi.europa.eu/"><img src="/the-fair-cookbook/_static/images/logo/imi-logo.png" height="20" alt="IMI logo" style="float:center""></a> <a href="https://efpia.eu"><img src="/the-fair-cookbook/_static/images/logo/efpia-logo.png" height="20" alt="EFPIA logo" style="float:center""></a> </div> <div class="mb-3"> Grant agreement 802750 </div> </div> <div class="col-xl-6 d-flex"> <div class="container"> <div class="row"> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li><a href="mailto:fairplus-cookbook@elixir-europe.org"> Contact us </a></li> <li><a href="https://fairplus-project.eu" target="_blank"> FAIRplus </a> </li> </ul> </div> <div class="col-6 d-flex" style="justify-content:center"> <ul> <li> <a href="/the-fair-cookbook/content/recipes/boilerplate/people.html"> Contributors </a> </li> </li> <li> <a href="/the-fair-cookbook/content/recipes/help.html"> How to contribute </a> </li> </ul> </div> </div> </div> </div> <div class="col-xl-3"> <a href="https://elixir-europe.org/" target="_blank"><img src="/the-fair-cookbook/_static/images/logo/Elixir/ELIXIR.png" height="50" alt="Elixir logo" style="float:center""></a> <a href="https://fairplus-project.eu/"><img src="https://fairplus-project.eu/images/fairplus-logo.png" alt="FAIRplus logo" style="background:white;padding:5px;height:33px;"></a> </div> </div> </div> <div class="row_footer my-3"> The FAIR Cookbook is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International</a> (CC BY 4.0) license. </div>
           </div>
       </p>
     </div>
