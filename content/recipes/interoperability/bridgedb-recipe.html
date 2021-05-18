@@ -929,7 +929,7 @@ Hands on guidance is provided for 2 interfaces (R package and a Python Webservic
 <div class="section" id="id1">
 <h2>Identifier mapping with BridgeDb<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="identifier-mapping.html#fcb-interop-idmapping"><span class="std std-ref">Interlinking data from different sources</span></a> is an essential step for data reusability and interoperability. This step requires dedicated tools. With the present recipe, we show how to use <a class="reference external" href="https://bridgedb.github.io/">BridgeDb</a> to carry out this process.</p>
-<p><a class="reference external" href="https://bridgedb.github.io/">BridgeDb</a> is an open source tool dedicated to performing identifier mapping. BridgeDb offers three different interfaces:</p>
+<p><a class="reference external" href="https://bridgedb.github.io/">BridgeDb</a> is an open source tool dedicated to performing identifier mapping <a class="footnote-reference brackets" href="#van-iersel-bridgedb-2010" id="id2">2</a>. BridgeDb offers three different interfaces:</p>
 <ul class="simple">
 <li><p>Java API</p></li>
 <li><p>R package</p></li>
@@ -1351,7 +1351,7 @@ To see the equivalences with our local identifiers, we can simply join the dataf
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This many-to-many relationship stems from different <em>scientific lenses</em> in the data sources. You can read more about these in <a class="footnote-reference brackets" href="#batchelor-scientific-nodate" id="id2">1</a>. The core idea is that depending on the domain/application of the data we can consider different entities as unique. While certain proteins could be considered “equal” from a biological perspective they may require differentiation when using a chemical len. This is what then leads to many-to-many relationships.</p>
+<p>This many-to-many relationship stems from different <em>scientific lenses</em> in the data sources. You can read more about these in <a class="footnote-reference brackets" href="#batchelor-scientific-nodate" id="id3">1</a>. The core idea is that depending on the domain/application of the data we can consider different entities as unique. While certain proteins could be considered “equal” from a biological perspective they may require differentiation when using a chemical len. This is what then leads to many-to-many relationships.</p>
 </div>
 </div>
 <div class="section" id="r-package">
@@ -1514,8 +1514,11 @@ These are aspects of information provenance which we plan to provide in the futu
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-footbibliography-content/recipes/interoperability/bridgedb-recipe-0"><dl class="footnote brackets">
-<dt class="label" id="batchelor-scientific-nodate"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dt class="label" id="batchelor-scientific-nodate"><span class="brackets"><a class="fn-backref" href="#id3">1</a></span></dt>
 <dd><p>Colin Batchelor, Christian Y A Brenninkmeijer, Christine Chichester, Mark Davies, Daniela Digles, Ian Dunlop, Chris T Evelo, Anna Gaulton, Carole Goble, Alasdair J G Gray, Paul Groth, Lee Harland, Karen Karapetyan, Antonis Loizou, John P Overington, Steve Pettifer, Jon Steele, Robert Stevens, Valery Tkachenko, Andra Waagmeester, Antony Williams, and Egon L Willighagen. Scientiﬁc Lenses to Support Multiple Views over Linked Chemistry Data. In <em>The Semantic Web – ISWC 2014. Lecture Notes in Computer Science</em>, 16. 2014. <a class="reference external" href="https://doi.org/10.1007/978-3-319-11964-9_7">doi:10.1007/978-3-319-11964-9_7</a>.</p>
+</dd>
+<dt class="label" id="van-iersel-bridgedb-2010"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Martijn P. van Iersel, Alexander R. Pico, Thomas Kelder, Jianjiong Gao, Isaac Ho, Kristina Hanspers, Bruce R. Conklin, and Chris T. Evelo. The BridgeDb framework: standardized access to gene, protein and metabolite identifier mapping services. <em>BMC Bioinformatics</em>, 11(1):5, January 2010. URL: <a class="reference external" href="https://doi.org/10.1186/1471-2105-11-5">https://doi.org/10.1186/1471-2105-11-5</a> (visited on 2021-02-05), <a class="reference external" href="https://doi.org/10.1186/1471-2105-11-5">doi:10.1186/1471-2105-11-5</a>.</p>
 </dd>
 </dl>
 </p>
