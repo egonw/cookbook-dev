@@ -15,44 +15,38 @@
 :recipe_name: InChI and SMILES identifiers for chemical structures
 ```` 
 
-## Main Objectives
+## Standards
 
-The main purpose of this recipe is:
+* SDF file (FairSharing doi:[10.25504/fairsharing.ew26v7](https://doi.org/10.25504/fairsharing.ew26v7))
+* SMILES (FairSharing doi:[10.25504/fairsharing.qv4b3c](https://doi.org/10.25504/fairsharing.qv4b3c))
+* InChI (FairSharing doi:[10.25504/fairsharing.ddk9t9](https://doi.org/10.25504/fairsharing.ddk9t9))
 
-> To take an SDF file, validate the content for chemical inconsistencies, and generate
-> InChIs, InChIKeys, and SMILES for each entry in the SDF file.
+## Databases
 
-___
+* PubChem (FairSharing doi:[10.25504/fairsharing.qt3w7z](https://doi.org/10.25504/fairsharing.qt3w7z))
+* ChemSpider (FairSharing doi:[10.25504/fairsharing.96f3gm](https://doi.org/10.25504/fairsharing.96f3gm))
+* Wikidata (FairSharing doi:[10.25504/fairsharing.6s749p](https://doi.org/10.25504/fairsharing.6s749p))
 
+## Identifiers
 
-## Requirements
+* International Chemical Identifier (InChI)
 
-* Skill depedency:
-   * Bash experience
-* Technical requirements:
-   * Groovy
+## Tools
 
----
+* Programming Language: Groovy
+* Dependencies: CDK 2.3
+* FAIRPlus SDF tools
 
-
-## FAIRification Objectives, Inputs and Outputs
-
-| Actions.Objectives.Tasks  | Input | Output  |
-| :------------- | :------------- | :------------- |
-| [validation](http://edamontology.org/operation_2428)  | [Structure Data File (SDF)](https://fairsharing.org/FAIRsharing.ew26v7)  | [report](http://edamontology.org/data_2048)  |
-| [calculation](http://edamontology.org/operation_3438)  | [Structure Data File (SDF)](https://fairsharing.org/FAIRsharing.ew26v7) | [InChI](https://fairsharing.org/FAIRsharing.ddk9t9) |
-| [calculation](http://edamontology.org/operation_3438)  | [Structure Data File (SDF)](https://fairsharing.org/FAIRsharing.ew26v7)  | [SMILES](https://fairsharing.org/FAIRsharing.qv4b3c)  |
-
-___
-
-
-## Creating InChI and SMILES identifiers for chemical structures
+### Requirements
 
 To run the below scripts, you need a [Groovy](https://groovy.apache.org/download.html) installation.
-The Groovy scripts use version 2.5 of the [Chemistry Development Kit](https://cdk.github.io/)
-(see {footcite}`Willighagen2017`). This library and its use in Groovy is further explain in
+The Groovy scripts use version 2.3 of the [Chemistry Development Kit](https://cdk.github.io/)
+(see also doi:[10.1186/s13321-017-0220-4](https://doi.org/10.1186/s13321-017-0220-4)).
+This library and its use in Groovy is further explain in
 the book [Groovy Cheminformatics with the Chemistry Development Kit](https://egonw.github.io/cdkbook/).
-Check this git repository for more detailed use instructions and where to find the tools:
+
+
+Click here for more detailed use instructions and where to find the tools:
 [https://github.com/FAIRplus/fairplus-sdf](https://github.com/FAIRplus/fairplus-sdf)
 
 ### Record validation
@@ -64,13 +58,9 @@ the compound record in the SDF file: WARNING and ERROR. This first script report
 groovy badRecords.groovy -f foo.sdf
 ```
 
-The output may look like:
+* Input: SDF file
+* Output: Reports validation issues
 
-```
-Sulfinpyrazone  Omitted undefined stereo        WARNING
-Isosorbide mononitrate  Charges were rearranged WARNING
-Compound52      Proton(s) added/removed WARNING
-```
 
 ### Calculate InChls
 
@@ -79,6 +69,9 @@ Similarly, InChIKeys can be generated:
 ```bash
 groovy inchikeys.groovy -f foo.sdf
 ```
+
+* Input: SDF file
+* Output: list of InChIs
 
 When the success state is ERROR, nothing is outputted.
 
@@ -90,14 +83,10 @@ The last script calculates a SMILES for each entry in the SDF file:
 groovy smiles.groovy -f foo.sdf
 ```
 
+* Input: SD file
+* Output: list of SMILES strings
+
 ---
-
-## References
-
-```{footbibliography}
-```
-___
-
 
 ## Authors
 

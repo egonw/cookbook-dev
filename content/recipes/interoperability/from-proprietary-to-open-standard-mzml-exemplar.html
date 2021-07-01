@@ -45,8 +45,8 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/mermaid.js"></script>
-    <script src="../../../_static/mermaid.core.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
+    <script src="../../../_static/mermaid.core.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -60,8 +60,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="11. File format validation, FASTQ example" href="fastq-file-format-validators.html" />
-    <link rel="prev" title="Metadata profile validation in RDF" href="covid19-sample-metadata-profile-shex-use-case.html" />
+    <link rel="next" title="11. An inventory of tools for converting your data to RDF" href="rdf-conversion.html" />
+    <link rel="prev" title="9.4.2. Metadata profile validation in RDF" href="covid19-sample-metadata-profile-shex-use-case.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -113,7 +113,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/FAIR-cookbook-audience.html">
-   Who should read it
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -158,24 +158,34 @@
      4. Depositing in Zenodo generic repository
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../findability/checksum-create.html">
+     5. Describe data by checksums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../findability/checksum-validate.html">
+     6. Validating data by checksums
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../findability/seo.html">
-     5. Search engine optimization
+     7. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-data-page.html">
-       5.8.1. Data page markup with Bioschemas
+       7.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-dataset.html">
-       5.8.2. Dataset page markup with Schema.org
+       7.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-datacatalog.html">
-       5.8.3. Data catalogue markup
+       7.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -222,7 +232,7 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="bridgedb/bridgedb-example.html">
-       Using BridgeDb web services
+       2.12.1. Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -230,7 +240,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="ontology-why-using-them.html">
+    <a class="reference internal" href="introduction-terminologies-ontologies.html">
      3. Introduction to terminologies and ontologies
     </a>
    </li>
@@ -255,8 +265,13 @@
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="ontology-robot/MSIO-robot-build-process.html">
-       Application ontology for metabolomics
+      <a class="reference internal" href="ontology-robot-recipe/competency-questions.html">
+       7.12.1. Competency questions for the Ontology ROBOT use case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="ontology-robot-recipe/MSIO-robot-build-process.html">
+       7.12.2. Application ontology for metabolomics
       </a>
      </li>
     </ul>
@@ -264,7 +279,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="creating_data_dictionary.html">
+    <a class="reference internal" href="creating-data-dictionary.html">
      8. Creating a data/variable dictionary
     </a>
    </li>
@@ -275,12 +290,12 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="transcriptomics-metadata.html">
-       Metadata profile for transcriptomics
+       9.4.1. Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata profile validation in RDF
+       9.4.2. Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -293,13 +308,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="rdf-conversion.html">
+     11. An inventory of tools for converting your data to RDF
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="fastq-file-format-validators.html">
-     11. File format validation, FASTQ example
+     12. File format validation, FASTQ example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="ETL-tools.html">
-     12. Extraction, transformation, and loading process
+     13. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -395,12 +415,12 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../assessing-fairness/fair-assessment-fairevaluator.html">
-     1. with FAIREvaluator
+     1. FAIR Evaluator tool
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../assessing-fairness/fair-assessment-fairshake.html">
-     2. with FAIRshake
+     2. FAIRshake tool
     </a>
    </li>
   </ul>
@@ -419,22 +439,22 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Starting material
+       1.11.1. Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Structuring data
+       1.11.2. Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring data with SPARQL
+       1.11.3. Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Integrating data
+       1.11.4. Integrating data
       </a>
      </li>
     </ul>
@@ -458,7 +478,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../applied-examples/resolute_raw/resolute.html">
-     5. RESOLUTE - transcriptomics datasets
+     5. ReSOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
@@ -640,94 +660,94 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#main-objectives">
-   Main Objectives
+   10.1. Main Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#graphical-overview">
-   Graphical Overview
+   10.2. Graphical Overview
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#capability-maturity-table">
-   Capability &amp; Maturity Table
+   10.3. Capability &amp; Maturity Table
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#fairification-objectives-inputs-and-outputs">
-   FAIRification Objectives, Inputs and Outputs
+   10.4. FAIRification Objectives, Inputs and Outputs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#table-of-data-standards">
-   Table of Data Standards
+   10.5. Table of Data Standards
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#ingredients">
-   Ingredients
+   10.6. Ingredients
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#converting-mass-spectrometry-data-to-mzml-format-a-step-by-step-process">
-   Converting Mass Spectrometry data to mzML format: a Step by Step Process.
+   10.7. Converting Mass Spectrometry data to mzML format: a Step by Step Process.
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#step-1-obtain-the-dataset">
-     Step 1: obtain the dataset
+     10.7.1. Step 1: obtain the dataset
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#step-2-inspect-the-content-of-the-archive">
-     Step 2: inspect the content of the archive
+     10.7.2. Step 2: inspect the content of the archive
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#i-copying-the-archive-to-a-working-directory">
-       i. copying the archive to a working directory
+       10.7.2.1. i. copying the archive to a working directory
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ii-expand-the-archive">
-       ii. expand the archive
+       10.7.2.2. ii. expand the archive
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#iii-inspect-the-folder">
-       iii. inspect the folder
+       10.7.2.3. iii. inspect the folder
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#step-3-convert-vendor-specific-format-to-an-open-format">
-     Step 3: Convert vendor specific format to an open format
+     10.7.3. Step 3: Convert vendor specific format to an open format
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#install-docker">
-       1. install docker:
+       10.7.3.1. 1. install docker:
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#start-and-sign-in-to-docker">
-       2. start and sign in to docker
+       10.7.3.2. 2. start and sign in to docker
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#sign-up-and-or-login-to-https-hub-docker-com">
-       3. sign-up and/or login to https://hub.docker.com/
+       10.7.3.3. 3. sign-up and/or login to https://hub.docker.com/
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#pull-the-docker-container-for-proteowizard">
-       4. pull the docker container for ProteoWizard
+       10.7.3.4. 4. pull the docker container for ProteoWizard
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#testing-and-processing-the-resulting-mzml-files">
-       5. Testing and processing the resulting mzML files
+       10.7.3.5. 5. Testing and processing the resulting mzML files
       </a>
      </li>
     </ul>
@@ -736,29 +756,29 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
-   Conclusion
+   10.8. Conclusion
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#what-to-read-next">
-     What to read next
+     10.8.1. What to read next
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   References
+   10.9. References
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
-   Authors
+   10.10. Authors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#license">
-   License
+   10.11. License
   </a>
  </li>
 </ul>
@@ -835,7 +855,7 @@ Yes
 </div>
 <hr class="docutils" />
 <div class="section" id="main-objectives">
-<h2>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.1. </span>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>Document how to convert raw data from a propriatory, vendor specific format to an open standard format.</p></li>
 <li><p>Apply the approach to a targeted metabolic profiling using Biocrates kit produced by IMI Resolute project.</p></li>
@@ -843,7 +863,7 @@ Yes
 </div>
 <hr class="docutils" />
 <div class="section" id="graphical-overview">
-<h2>Graphical Overview<a class="headerlink" href="#graphical-overview" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.2. </span>Graphical Overview<a class="headerlink" href="#graphical-overview" title="Permalink to this headline">¶</a></h2>
 <div class="figure align-default" id="converting-to-an-open-standard-file-format">
 <a class="reference internal image-reference" href="../../../_images/from-proprietary.png"><img alt="Converting to an open standard file format" src="../../../_images/from-proprietary.png" style="width: 450px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 10.1 </span><span class="caption-text">Converting to an open standard file format.</span><a class="headerlink" href="#converting-to-an-open-standard-file-format" title="Permalink to this image">¶</a></p>
@@ -851,7 +871,7 @@ Yes
 </div>
 <hr class="docutils" />
 <div class="section" id="capability-maturity-table">
-<h2>Capability &amp; Maturity Table<a class="headerlink" href="#capability-maturity-table" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.3. </span>Capability &amp; Maturity Table<a class="headerlink" href="#capability-maturity-table" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Capability</p></th>
@@ -869,7 +889,7 @@ Yes
 </div>
 <hr class="docutils" />
 <div class="section" id="fairification-objectives-inputs-and-outputs">
-<h2>FAIRification Objectives, Inputs and Outputs<a class="headerlink" href="#fairification-objectives-inputs-and-outputs" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.4. </span>FAIRification Objectives, Inputs and Outputs<a class="headerlink" href="#fairification-objectives-inputs-and-outputs" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Actions.Objectives.Tasks</p></th>
@@ -879,7 +899,7 @@ Yes
 </thead>
 <tbody>
 <tr class="row-even"><td class="text-align:left"><p><a class="reference external" href="http://edamontology.org/operation_3438">formatting</a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">Waters MS format</span></a></p></td>
+<td class="text-align:left"><p>Waters MS format<!-- TODO add a link to corresponding document --></p></td>
 <td class="text-align:left"><p><a class="reference external" href="https://fairsharing.org/FAIRsharing.26dmba">mzML</a></p></td>
 </tr>
 <tr class="row-odd"><td class="text-align:left"><p><a class="reference external" href="http://edamontology.org/operation_3778">text annotation</a></p></td>
@@ -890,7 +910,7 @@ Yes
 </table>
 </div>
 <div class="section" id="table-of-data-standards">
-<h2>Table of Data Standards<a class="headerlink" href="#table-of-data-standards" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.5. </span>Table of Data Standards<a class="headerlink" href="#table-of-data-standards" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="text-align:left head"><p>Data Formats</p></th>
@@ -908,7 +928,7 @@ Yes
 </div>
 <hr class="docutils" />
 <div class="section" id="ingredients">
-<h2>Ingredients<a class="headerlink" href="#ingredients" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.6. </span>Ingredients<a class="headerlink" href="#ingredients" title="Permalink to this headline">¶</a></h2>
 <p>Tools and  Software:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://github.com/">github</a></p></li>
@@ -922,10 +942,10 @@ Yes
 - [sparql](https://www.w3.org/TR/sparql11-query/) -->
 </div>
 <div class="section" id="converting-mass-spectrometry-data-to-mzml-format-a-step-by-step-process">
-<h2>Converting Mass Spectrometry data to mzML format: a Step by Step Process.<a class="headerlink" href="#converting-mass-spectrometry-data-to-mzml-format-a-step-by-step-process" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.7. </span>Converting Mass Spectrometry data to mzML format: a Step by Step Process.<a class="headerlink" href="#converting-mass-spectrometry-data-to-mzml-format-a-step-by-step-process" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="step-1-obtain-the-dataset">
-<h3>Step 1: obtain the dataset<a class="headerlink" href="#step-1-obtain-the-dataset" title="Permalink to this headline">¶</a></h3>
-<p>In the case of the <a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">IMI RESOLUTE</span></a> project, the data is released via the <a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">University of Luxembourg</span></a> server (assuming you have access resolved):</p>
+<h3><span class="section-number">10.7.1. </span>Step 1: obtain the dataset<a class="headerlink" href="#step-1-obtain-the-dataset" title="Permalink to this headline">¶</a></h3>
+<p>In the case of the IMI RESOLUTE<!-- TODO add a link to corresponding document --> project, the data is released via the University of Luxembourg<!-- TODO add a link to corresponding document --> server (assuming you have access resolved):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$&gt; sftp fairplus@NNN.000.000.NNN
 &gt;get RESOLUTE_Targted_Metabolomics_of_parental_cell_lines.tar.gz
 &gt;exit
@@ -935,16 +955,16 @@ $&gt;
 <p>:warning: <code class="docutils literal notranslate"><span class="pre">NNN.000.000.NNN</span></code> should be replaced with the proper IP address to the University of Luxembourg server once users have obtained data access clearance.</p>
 </div>
 <div class="section" id="step-2-inspect-the-content-of-the-archive">
-<h3>Step 2: inspect the content of the archive<a class="headerlink" href="#step-2-inspect-the-content-of-the-archive" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.7.2. </span>Step 2: inspect the content of the archive<a class="headerlink" href="#step-2-inspect-the-content-of-the-archive" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="i-copying-the-archive-to-a-working-directory">
-<h4>i. copying the archive to a working directory<a class="headerlink" href="#i-copying-the-archive-to-a-working-directory" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.2.1. </span>i. copying the archive to a working directory<a class="headerlink" href="#i-copying-the-archive-to-a-working-directory" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$&gt;mv RESOLUTE_Targted_Metabolomics_of_parental_cell_lines.tar.gz /IMI-FAIR+/RESOLUTE
 $&gt;cd /IMI-FAIR+/RESOLUTE/
 </pre></div>
 </div>
 </div>
 <div class="section" id="ii-expand-the-archive">
-<h4>ii. expand the archive<a class="headerlink" href="#ii-expand-the-archive" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.2.2. </span>ii. expand the archive<a class="headerlink" href="#ii-expand-the-archive" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$&gt;gunzip RESOLUTE_Targted_Metabolomics_of_parental_cell_lines.tar.gz
 $&gt;tar -xvf RESOLUTE_Targted_Metabolomics_of_parental_cell_lines.tar
 $&gt;cd RESOLUTE_Targted_Metabolomics_of_parental_cell_lines
@@ -952,7 +972,7 @@ $&gt;cd RESOLUTE_Targted_Metabolomics_of_parental_cell_lines
 </div>
 </div>
 <div class="section" id="iii-inspect-the-folder">
-<h4>iii. inspect the folder<a class="headerlink" href="#iii-inspect-the-folder" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.2.3. </span>iii. inspect the folder<a class="headerlink" href="#iii-inspect-the-folder" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;<span class="nv">$anaconda3</span>-2019.10<span class="o">)</span> bob-MacBook-3:RESOLUTE_Targted_Metabolomics_of_parental_cell_lines philippe$ ls -la
 total <span class="m">1400</span>
 drwxr-xr-x   <span class="m">10</span> bob  staff     <span class="m">320</span> <span class="m">14</span> Jan <span class="m">16</span>:05 .
@@ -970,15 +990,15 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 <div><p>:octopus: The archive would have benefitted from having a manifest file listing all the files and their associated checksums. In so doing, it would have allowed validation and verification that no corruption happened during file transfer.</p>
 </div></blockquote>
 <blockquote>
-<div><p>:octopus: Refer to the recipe: “<a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">How to calculate file checksums</span></a>”</p>
+<div><p>:octopus: Refer to the recipe: “How to calculate file checksums<!-- TODO add a link to corresponding document -->”</p>
 </div></blockquote>
 <blockquote>
-<div><p>:octopus: Refer to the recipe: “<a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">How to package data for shipping with BDbags</span></a>”</p>
+<div><p>:octopus: Refer to the recipe: “How to package data for shipping with BDbags<!-- TODO add a link to corresponding document -->”</p>
 </div></blockquote>
 </div>
 </div>
 <div class="section" id="step-3-convert-vendor-specific-format-to-an-open-format">
-<h3>Step 3: Convert vendor specific format to an open format<a class="headerlink" href="#step-3-convert-vendor-specific-format-to-an-open-format" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.7.3. </span>Step 3: Convert vendor specific format to an open format<a class="headerlink" href="#step-3-convert-vendor-specific-format-to-an-open-format" title="Permalink to this headline">¶</a></h3>
 <p>One can consult the Elixir-UK <a class="reference external" href="https://fairsharing.org/">FAIRsharing catalog</a> of standards and resources to discover if an open specification exists in the domain of mass spectrometry. In this case, there is as shown below. Note that every records in the catalog has a digital object identifier (DOI), <a class="reference external" href="https://fairsharing.org/FAIRsharing.26dmba">https://fairsharing.org/FAIRsharing.26dmba</a> for HUPO-PSI mzML specifications.</p>
 <!-- <div>
   <img src="https://i.imgur.com/AWOWTbr.png" width="750" link="https://fairsharing.org/FAIRsharing.26dmba">
@@ -987,12 +1007,12 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 <a class="reference internal image-reference" href="https://i.imgur.com/AWOWTbr.png"><img alt="A Standard Record in the FAIRsharing catalog of resources" src="https://i.imgur.com/AWOWTbr.png" style="width: 750px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 10.2 </span><span class="caption-text">The <a class="reference external" href="https://fairsharing.org/FAIRsharing.26dmba">HUPI-PSI mzML Standard Record</a> in the <a class="reference external" href="https://fairsharing.org/">Elixir FAIRsharing catalog</a> of resources.</span><a class="headerlink" href="#a-standard-record-in-the-fairsharing-catalog-of-resources" title="Permalink to this image">¶</a></p>
 </div>
-<p>The objective here is to conversion raw data in manufacturer format to an open format, which would allow data to be used without restrictions. To achieve this, we rely on a <code class="docutils literal notranslate"><span class="pre">containerized</span></code> version of the <a class="reference external" href="https://github.com/ProteoWizard/pwiz">Proteowizard</a>.</p>
+<p>The objective here is to conversion raw data in manufacturer format to an open format, which would allow data to be used without restrictions. To achieve this, we rely on a <code class="docutils literal notranslate"><span class="pre">containerized</span></code> version of the <a class="reference external" href="https://github.com/ProteoWizard/pwiz">Proteowizard</a> <a class="footnote-reference brackets" href="#chambers2012" id="id1">2</a>.</p>
 <blockquote>
 <div><p><strong>requirements</strong>:</p>
 </div></blockquote>
 <div class="section" id="install-docker">
-<h4>1. install docker:<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.3.1. </span>1. install docker:<a class="headerlink" href="#install-docker" title="Permalink to this headline">¶</a></h4>
 <p>on a MacOS system, invoke the following:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;brew update
 &gt;brew install docker
@@ -1000,17 +1020,17 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 </div>
 </div>
 <div class="section" id="start-and-sign-in-to-docker">
-<h4>2. start and sign in to docker<a class="headerlink" href="#start-and-sign-in-to-docker" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.3.2. </span>2. start and sign in to docker<a class="headerlink" href="#start-and-sign-in-to-docker" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;docker start
 &gt;docker login
 </pre></div>
 </div>
 </div>
 <div class="section" id="sign-up-and-or-login-to-https-hub-docker-com">
-<h4>3. sign-up and/or login to <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a><a class="headerlink" href="#sign-up-and-or-login-to-https-hub-docker-com" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.3.3. </span>3. sign-up and/or login to <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a><a class="headerlink" href="#sign-up-and-or-login-to-https-hub-docker-com" title="Permalink to this headline">¶</a></h4>
 </div>
 <div class="section" id="pull-the-docker-container-for-proteowizard">
-<h4>4. pull the docker container for ProteoWizard<a class="headerlink" href="#pull-the-docker-container-for-proteowizard" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.3.4. </span>4. pull the docker container for ProteoWizard<a class="headerlink" href="#pull-the-docker-container-for-proteowizard" title="Permalink to this headline">¶</a></h4>
 <p>:warning: be sure to sign-up and login to <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a></p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;docker pull chambm/pwiz-i-agree-to-the-vendor-licenses
 </pre></div>
@@ -1084,15 +1104,15 @@ drwxr-xr-x  <span class="m">118</span> bob  staff    <span class="m">3776</span>
 </table>
 </div>
 <div class="section" id="testing-and-processing-the-resulting-mzml-files">
-<h4>5. Testing and processing the resulting mzML files<a class="headerlink" href="#testing-and-processing-the-resulting-mzml-files" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">10.7.3.5. </span>5. Testing and processing the resulting mzML files<a class="headerlink" href="#testing-and-processing-the-resulting-mzml-files" title="Permalink to this headline">¶</a></h4>
 <p>For users unfamiliar with format, a search via popular search engine will yield options. Alternately, users may consult the Elixir Biotools registry for suggestions.</p>
-<p>A number of libraries are available for parsing (reading and writing) <code class="docutils literal notranslate"><span class="pre">mzML</span></code> document. <code class="docutils literal notranslate"><span class="pre">mzML</span></code> is a king of <code class="docutils literal notranslate"><span class="pre">XML</span></code> format for which an XML schema has been defined and allows syntactic validation through standard library in languages such as java, c++ or python. The top hit corresponds the the <code class="docutils literal notranslate"><span class="pre">pymzml</span></code> library.</p>
+<p>A number of libraries are available for parsing (reading and writing) <code class="docutils literal notranslate"><span class="pre">mzML</span></code> document. <code class="docutils literal notranslate"><span class="pre">mzML</span></code> is a king of <code class="docutils literal notranslate"><span class="pre">XML</span></code> format for which an XML schema has been defined and allows syntactic validation through standard library in languages such as java, c++ or python. The top hit corresponds the the <code class="docutils literal notranslate"><span class="pre">pymzml</span></code> library <a class="footnote-reference brackets" href="#bald2012" id="id2">1</a>.</p>
 <!-- <div>
 <img src="https://i.imgur.com/BTs0GUS.png" width="750" border="1"/>
 </div> -->
 <div class="figure align-default" id="pymzml-in-biotools-registry">
 <a class="reference internal image-reference" href="https://i.imgur.com/BTs0GUS.png"><img alt="pymzml in Biotools registry" src="https://i.imgur.com/BTs0GUS.png" style="width: 750px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 10.3 </span><span class="caption-text">The Python <code class="docutils literal notranslate"><span class="pre">pymzml</span></code> library entry in the <a class="reference external" href="https://biotools.org/">Elixir Biotools catalog</a> of resources.</span><a class="headerlink" href="#pymzml-in-biotools-registry" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 10.3 </span><span class="caption-text">The Python <code class="docutils literal notranslate"><span class="pre">pymzml</span></code> library entry in the <a class="reference external" href="https://bio.tools/">Elixir Biotools catalog</a> of resources.</span><a class="headerlink" href="#pymzml-in-biotools-registry" title="Permalink to this image">¶</a></p>
 </div>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>import os
 import sys
@@ -1124,29 +1144,36 @@ pf.save<span class="o">(</span>
 </div>
 </div>
 <div class="section" id="conclusion">
-<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
-<p>In this recipe, we have shown how to convert a proprietary file format to an open standard format, using the exemplar situation of mass spectrometry data. Of course, there are many domain specific data formats and unfortunately not all benefit from the support of open source / open format communities. However by consulting the <a class="reference external" href="https://Elixirhug.org">Elixir UK</a> <a class="reference external" href="https://fairsharing.org">FAIRsharing registry</a>, it is possible to identify if such open format specifications are available.
+<h2><span class="section-number">10.8. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>In this recipe, we have shown how to convert a proprietary file format to an open standard format, using the exemplar situation of mass spectrometry data. Of course, there are many domain specific data formats and unfortunately not all benefit from the support of open source / open format communities. However by consulting the <a class="reference external" href="https://elixir-europe.org/about-us/who-we-are/nodes/uk">Elixir UK</a> <a class="reference external" href="https://fairsharing.org">FAIRsharing registry</a>, it is possible to identify if such open format specifications are available.
 Then, interrogating the <a class="reference external" href="https://bio.tools/">Biotools catalog</a>, it may well be also possible to retrieve libraries and software components allowing manipulations of such format.</p>
 <div class="section" id="what-to-read-next">
-<h3>What to read next<a class="headerlink" href="#what-to-read-next" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">10.8.1. </span>What to read next<a class="headerlink" href="#what-to-read-next" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li><p><a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">How to calculate file checksums</span></a></p></li>
-<li><p><a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">How to package data for shipping with BDbags</span></a></p></li>
-<li><p><a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">How to produce an ISA metadata file from a set of mzML fles</span></a></p></li>
-<li><p><a class="reference internal" href="../interoperability.html"><span class="doc std std-doc">How to deposit data to Zenodo</span></a></p></li>
+<li><p><a class="reference internal" href="../findability/checksum-create.html#fcb-checksum-create"><span class="std std-ref">How to calculate file checksums</span></a><!-- TODO add a link to corresponding document --></p></li>
+<li><p>How to package data for shipping with BDbags<!-- TODO add a link to corresponding document --></p></li>
+<li><p>How to produce an ISA metadata file from a set of mzML fles<!-- TODO add a link to corresponding document --></p></li>
+<li><p><a class="reference internal" href="../findability/zenodo-deposition.html#fcb-find-zenodo"><span class="std std-ref">How to deposit data to Zenodo</span></a><!-- TODO add a link to corresponding document --></p></li>
 </ul>
 </div>
 </div>
 <hr class="docutils" />
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ol class="simple">
-<li><p>Chambers, M., Maclean, B., Burke, R. et al. A cross-platform toolkit for mass spectrometry and proteomics. Nat Biotechnol 30, 918–920 (2012). <a class="reference external" href="https://doi.org/10.1038/nbt.237">https://doi.org/10.1038/nbt.237</a></p></li>
-<li><p>Bald T, Barth J, Niehues A, et al. pymzML–Python module for high-throughput bioinformatics on mass spectrometry data. Bioinformatics (Oxford, England). 2012 Apr;28(7):1052-1053. DOI: 10.1093/bioinformatics/bts066.</p></li>
-</ol>
+<h2><span class="section-number">10.9. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-footbibliography-content/recipes/interoperability/from-proprietary-to-open-standard-mzml-exemplar-0"><dl class="footnote brackets">
+<dt class="label" id="bald2012"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>T. Bald, J. Barth, A. Niehues, M. Specht, M. Hippler, and C. Fufezan. pymzML–Python module for high-throughput bioinformatics on mass spectrometry data. <em>Bioinformatics</em>, 28(7):1052–1053, Apr 2012.</p>
+</dd>
+<dt class="label" id="chambers2012"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
+<dd><p>M. C. Chambers, B. Maclean, R. Burke, D. Amodei, D. L. Ruderman, S. Neumann, L. Gatto, B. Fischer, B. Pratt, J. Egertson, K. Hoff, D. Kessner, N. Tasman, N. Shulman, B. Frewen, T. A. Baker, M. Y. Brusniak, C. Paulse, D. Creasy, L. Flashner, K. Kani, C. Moulding, S. L. Seymour, L. M. Nuwaysir, B. Lefebvre, F. Kuhlmann, J. Roark, P. Rainer, S. Detlev, T. Hemenway, A. Huhmer, J. Langridge, B. Connolly, T. Chadick, K. Holly, J. Eckels, E. W. Deutsch, R. L. Moritz, J. E. Katz, D. B. Agus, M. MacCoss, D. L. Tabb, and P. Mallick. A cross-platform toolkit for mass spectrometry and proteomics. <em>Nat Biotechnol</em>, 30(10):918–920, Oct 2012.</p>
+</dd>
+</dl>
+</p>
+<!-- 1. Chambers, M., Maclean, B., Burke, R. et al. A cross-platform toolkit for mass spectrometry and proteomics. Nat Biotechnol 30, 918–920 (2012). https://doi.org/10.1038/nbt.237
+2. Bald T, Barth J, Niehues A, et al. pymzML--Python module for high-throughput bioinformatics on mass spectrometry data. Bioinformatics (Oxford, England). 2012 Apr;28(7):1052-1053. DOI: 10.1093/bioinformatics/bts066. -->
 </div>
 <div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.10. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -1184,9 +1211,10 @@ Then, interrogating the <a class="reference external" href="https://bio.tools/">
 </div>
 <hr class="docutils" />
 <div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">10.11. </span>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This page is released under the Creative Commons 4.0 BY license.</p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png" height="20"/></a></p>
+<hr class="footnotes docutils" />
 </div>
 </div>
 
@@ -1215,8 +1243,8 @@ Then, interrogating the <a class="reference external" href="https://bio.tools/">
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="covid19-sample-metadata-profile-shex-use-case.html" title="previous page">Metadata profile validation in RDF</a>
-    <a class='right-next' id="next-link" href="fastq-file-format-validators.html" title="next page"><span class="section-number">11. </span>File format validation, FASTQ example</a>
+    <a class='left-prev' id="prev-link" href="covid19-sample-metadata-profile-shex-use-case.html" title="previous page"><span class="section-number">9.4.2. </span>Metadata profile validation in RDF</a>
+    <a class='right-next' id="next-link" href="rdf-conversion.html" title="next page"><span class="section-number">11. </span>An inventory of tools for converting your data to RDF</a>
 
         </div>
         

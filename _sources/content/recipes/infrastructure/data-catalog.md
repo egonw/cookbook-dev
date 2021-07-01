@@ -1,9 +1,6 @@
 (fcb-infra-build-catalog)=
 # Building a catalogue of datasets
 
-+++
-<br/>
-
 ````{panels_fairplus}
 :identifier_text: FCB047
 :identifier_link: 'https://w3id.org/faircookbook/FCB047'
@@ -37,13 +34,12 @@ ___
 ## Graphical Overview
 
 
-```{figure} data-catalogue-mermaid.png
+```{figure} data-catalog.md-figure1.mmd.png
 ---
-width: 800px
-name: Building an data catalogue
-alt: Building an data catalogue
+name: data-catalog-figure1
+alt: Building and populating a data catalogue
 ---
-Building and populating data catalogue
+Building and populating a data catalogue
 ```
 
 ---
@@ -77,12 +73,12 @@ A `Data Catalogue` is a resource meant to allow fast identification of `Data set
 
 `Data Catalogues` have been identified as critical infrastructure and therefore a number of model exist to support their implementation.
 1. DATS:
-The [Data Article Tag Suite model]() has been developed during the NIH-BD2K projects and underpins the [datamed catalogue](https://datamed.org/), the aim of which was to produce a prototype of a [`Pubmed for Datasets`](https://pubmed.ncbi.nlm.nih.gov/29346583/).
+The Data Article Tag Suite model<!-- TODO add a link to corresponding document --> has been developed during the NIH-BD2K projects and underpins the [datamed catalogue](https://datamed.org/), the aim of which was to produce a prototype of a [`Pubmed for Datasets`](https://pubmed.ncbi.nlm.nih.gov/29346583/).
 
 3. DCAT:
-In the world of semantic web technologies, The [W3C DCAT specifications]() (v1 and the newly released version 2) provide a vocabulary to express `data catalogue metadata` in **RDF**.
+In the world of semantic web technologies, The W3C DCAT specifications<!-- TODO add a link to corresponding document --> (v1 and the newly released version 2) provide a vocabulary to express `data catalogue metadata` in **RDF**.
 3. Schema.org:
-The vocabulary developed by the consortium of search engines has defined a metadata profile for [`Dataset`](https://schema.org/DataSet), [`Data Catalogue`](https://schema.org/DataCatalog)
+The vocabulary developed by the consortium of search engines has defined a metadata profile for [`Dataset`](https://schema.org/Dataset), [`Data Catalogue`](https://schema.org/DataCatalog)
 
 
 ### How are Data Catalogue populated?
@@ -93,13 +89,13 @@ A number data Indexes/Data Catalogue are populated by harvest Dataset metadata f
 
 * Commercial solutions:
 
-    *  [Collibra](https://www.collibra.com/download/data-catalog-study-dresner-advisory-services-ppc?_bk=catalogue%20data&_bt=389929247489&_bm=e&_bn=g)
+    *  [Collibra](https://www.collibra.com/data-catalog)
 
 * Open source solutions:
 
     * [NIH DataMed](https://datamed.org/)
     * [EMBL-EBI OMICS-DI](https://www.omicsdi.org/)
-    * [Bayer AG Colid](https://bayer-group.github.io/COLID-Documentation/#/)
+    * [Bayer AG Colid](https://bayer-group.github.io/COLID-Documentation/)
 
 
 ----
@@ -109,10 +105,10 @@ A number data Indexes/Data Catalogue are populated by harvest Dataset metadata f
 
 | Data Formats  | Terminologies | Models  |
 | :------------- | :------------- | :------------- |
-| [JSON]()  | []()  | []()  |
-| [RDF]()  | [DCAT v1]()  | [DATS]()  |
-| [RDF]()  | [DCAT v2]()  | [DATS]()  |
-| [JSON-LD]()  | [Schema.org]()  | []()  |
+| JSON<!-- TODO add a link to corresponding document -->  | <!-- TODO add a link to corresponding document -->  | <!-- TODO add a link to corresponding document -->  |
+| RDF<!-- TODO add a link to corresponding document -->  | DCAT v1<!-- TODO add a link to corresponding document -->  | DATS<!-- TODO add a link to corresponding document -->  |
+| RDF<!-- TODO add a link to corresponding document -->  | DCAT v2<!-- TODO add a link to corresponding document -->  | DATS<!-- TODO add a link to corresponding document -->  |
+| JSON-LD<!-- TODO add a link to corresponding document -->  | Schema.org<!-- TODO add a link to corresponding document -->  | <!-- TODO add a link to corresponding document -->  |
 
 
 ___
@@ -135,10 +131,6 @@ For the readership interesting in finding out about additional capabilities need
 * {ref}`fcb-find-seo`
 * {ref}`fcb-interop-metadataprofile`
 
-
-## References
-
----
 
 ## Authors
 

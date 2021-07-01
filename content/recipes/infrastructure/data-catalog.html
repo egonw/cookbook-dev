@@ -45,8 +45,8 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/mermaid.js"></script>
-    <script src="../../../_static/mermaid.core.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
+    <script src="../../../_static/mermaid.core.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -71,7 +71,7 @@
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/infrastructure/data-catalog.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Building a catalogue of datasets" />
-<meta property="og:description" content="Building a catalogue of datasets    &lt;br/&gt;   &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bioschema.o" />
+<meta property="og:description" content="Building a catalogue of datasets  &lt;br/&gt;     &lt;script type=&#34;application/ld+json&#34;&gt; {&#34;@context&#34;: {&#34;sdo&#34;: &#34;https://schema.org/&#34;, &#34;bs&#34;: &#34;https://bioschema.org/&#34;}, &#34;@t" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -113,7 +113,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/FAIR-cookbook-audience.html">
-   Who should read it
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -158,24 +158,34 @@
      4. Depositing in Zenodo generic repository
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../findability/checksum-create.html">
+     5. Describe data by checksums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../findability/checksum-validate.html">
+     6. Validating data by checksums
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../findability/seo.html">
-     5. Search engine optimization
+     7. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-data-page.html">
-       5.8.1. Data page markup with Bioschemas
+       7.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-dataset.html">
-       5.8.2. Dataset page markup with Schema.org
+       7.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-datacatalog.html">
-       5.8.3. Data catalogue markup
+       7.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -222,7 +232,7 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/bridgedb/bridgedb-example.html">
-       Using BridgeDb web services
+       2.12.1. Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -230,7 +240,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../interoperability/ontology-why-using-them.html">
+    <a class="reference internal" href="../interoperability/introduction-terminologies-ontologies.html">
      3. Introduction to terminologies and ontologies
     </a>
    </li>
@@ -255,8 +265,13 @@
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../interoperability/ontology-robot/MSIO-robot-build-process.html">
-       Application ontology for metabolomics
+      <a class="reference internal" href="../interoperability/ontology-robot-recipe/competency-questions.html">
+       7.12.1. Competency questions for the Ontology ROBOT use case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../interoperability/ontology-robot-recipe/MSIO-robot-build-process.html">
+       7.12.2. Application ontology for metabolomics
       </a>
      </li>
     </ul>
@@ -264,7 +279,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../interoperability/creating_data_dictionary.html">
+    <a class="reference internal" href="../interoperability/creating-data-dictionary.html">
      8. Creating a data/variable dictionary
     </a>
    </li>
@@ -275,12 +290,12 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/transcriptomics-metadata.html">
-       Metadata profile for transcriptomics
+       9.4.1. Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata profile validation in RDF
+       9.4.2. Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -293,13 +308,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../interoperability/rdf-conversion.html">
+     11. An inventory of tools for converting your data to RDF
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/fastq-file-format-validators.html">
-     11. File format validation, FASTQ example
+     12. File format validation, FASTQ example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/ETL-tools.html">
-     12. Extraction, transformation, and loading process
+     13. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -395,12 +415,12 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../assessing-fairness/fair-assessment-fairevaluator.html">
-     1. with FAIREvaluator
+     1. FAIR Evaluator tool
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../assessing-fairness/fair-assessment-fairshake.html">
-     2. with FAIRshake
+     2. FAIRshake tool
     </a>
    </li>
   </ul>
@@ -419,22 +439,22 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Starting material
+       1.11.1. Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Structuring data
+       1.11.2. Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring data with SPARQL
+       1.11.3. Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Integrating data
+       1.11.4. Integrating data
       </a>
      </li>
     </ul>
@@ -458,7 +478,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../applied-examples/resolute_raw/resolute.html">
-     5. RESOLUTE - transcriptomics datasets
+     5. ReSOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
@@ -703,18 +723,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   2.8. References
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
-   2.9. Authors
+   2.8. Authors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#license">
-   2.10. License
+   2.9. License
   </a>
  </li>
 </ul>
@@ -731,7 +746,6 @@
                 
   <div class="section" id="building-a-catalogue-of-datasets">
 <span id="fcb-infra-build-catalog"></span><h1><span class="section-number">2. </span>Building a catalogue of datasets<a class="headerlink" href="#building-a-catalogue-of-datasets" title="Permalink to this headline">¶</a></h1>
-<br/>
 <br/>
 <hr class="docutils" />
 <script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Building a catalogue of datasets", "audience": ["Data Manager", "Data Scientist", "Software Developer", "System Administrator"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCB047", "url": "https://w3id.org/faircookbook/FCB047"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H60M0S", "totalTime": "PT0H60M0S"} </script>
@@ -810,9 +824,9 @@ Yes
 <hr class="docutils" />
 <div class="section" id="graphical-overview">
 <h2><span class="section-number">2.2. </span>Graphical Overview<a class="headerlink" href="#graphical-overview" title="Permalink to this headline">¶</a></h2>
-<div class="figure align-default" id="building-an-data-catalogue">
-<a class="reference internal image-reference" href="../../../_images/data-catalogue-mermaid.png"><img alt="Building an data catalogue" src="../../../_images/data-catalogue-mermaid.png" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Building and populating data catalogue</span><a class="headerlink" href="#building-an-data-catalogue" title="Permalink to this image">¶</a></p>
+<div class="figure align-default" id="data-catalog-figure1">
+<img alt="Building and populating a data catalogue" src="../../../_images/data-catalog.md-figure1.mmd.png" />
+<p class="caption"><span class="caption-number">Fig. 2.5 </span><span class="caption-text">Building and populating a data catalogue</span><a class="headerlink" href="#data-catalog-figure1" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <hr class="docutils" />
@@ -856,11 +870,11 @@ Yes
 <p><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Catalogues</span></code> have been identified as critical infrastructure and therefore a number of model exist to support their implementation.</p>
 <ol class="simple">
 <li><p>DATS:
-The <a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">Data Article Tag Suite model</span></a> has been developed during the NIH-BD2K projects and underpins the <a class="reference external" href="https://datamed.org/">datamed catalogue</a>, the aim of which was to produce a prototype of a <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/29346583/"><code class="docutils literal notranslate"><span class="pre">Pubmed</span> <span class="pre">for</span> <span class="pre">Datasets</span></code></a>.</p></li>
+The Data Article Tag Suite model<!-- TODO add a link to corresponding document --> has been developed during the NIH-BD2K projects and underpins the <a class="reference external" href="https://datamed.org/">datamed catalogue</a>, the aim of which was to produce a prototype of a <a class="reference external" href="https://pubmed.ncbi.nlm.nih.gov/29346583/"><code class="docutils literal notranslate"><span class="pre">Pubmed</span> <span class="pre">for</span> <span class="pre">Datasets</span></code></a>.</p></li>
 <li><p>DCAT:
-In the world of semantic web technologies, The <a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">W3C DCAT specifications</span></a> (v1 and the newly released version 2) provide a vocabulary to express <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">catalogue</span> <span class="pre">metadata</span></code> in <strong>RDF</strong>.</p></li>
+In the world of semantic web technologies, The W3C DCAT specifications<!-- TODO add a link to corresponding document --> (v1 and the newly released version 2) provide a vocabulary to express <code class="docutils literal notranslate"><span class="pre">data</span> <span class="pre">catalogue</span> <span class="pre">metadata</span></code> in <strong>RDF</strong>.</p></li>
 <li><p><a class="reference external" href="http://Schema.org">Schema.org</a>:
-The vocabulary developed by the consortium of search engines has defined a metadata profile for <a class="reference external" href="https://schema.org/DataSet"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a>, <a class="reference external" href="https://schema.org/DataCatalog"><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Catalogue</span></code></a></p></li>
+The vocabulary developed by the consortium of search engines has defined a metadata profile for <a class="reference external" href="https://schema.org/Dataset"><code class="docutils literal notranslate"><span class="pre">Dataset</span></code></a>, <a class="reference external" href="https://schema.org/DataCatalog"><code class="docutils literal notranslate"><span class="pre">Data</span> <span class="pre">Catalogue</span></code></a></p></li>
 </ol>
 </div>
 <div class="section" id="how-are-data-catalogue-populated">
@@ -872,14 +886,14 @@ The vocabulary developed by the consortium of search engines has defined a metad
 <ul class="simple">
 <li><p>Commercial solutions:</p>
 <ul>
-<li><p><a class="reference external" href="https://www.collibra.com/download/data-catalog-study-dresner-advisory-services-ppc?_bk=catalogue%20data&amp;_bt=389929247489&amp;_bm=e&amp;_bn=g">Collibra</a></p></li>
+<li><p><a class="reference external" href="https://www.collibra.com/data-catalog">Collibra</a></p></li>
 </ul>
 </li>
 <li><p>Open source solutions:</p>
 <ul>
 <li><p><a class="reference external" href="https://datamed.org/">NIH DataMed</a></p></li>
 <li><p><a class="reference external" href="https://www.omicsdi.org/">EMBL-EBI OMICS-DI</a></p></li>
-<li><p><a class="reference external" href="https://bayer-group.github.io/COLID-Documentation/#/">Bayer AG Colid</a></p></li>
+<li><p><a class="reference external" href="https://bayer-group.github.io/COLID-Documentation/">Bayer AG Colid</a></p></li>
 </ul>
 </li>
 </ul>
@@ -896,21 +910,21 @@ The vocabulary developed by the consortium of search engines has defined a metad
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">JSON</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">Infrastructure</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">Infrastructure</span></a></p></td>
+<tr class="row-even"><td class="text-align:left"><p>JSON<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p><!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p><!-- TODO add a link to corresponding document --></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">RDF</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">DCAT v1</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">DATS</span></a></p></td>
+<tr class="row-odd"><td class="text-align:left"><p>RDF<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p>DCAT v1<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p>DATS<!-- TODO add a link to corresponding document --></p></td>
 </tr>
-<tr class="row-even"><td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">RDF</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">DCAT v2</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">DATS</span></a></p></td>
+<tr class="row-even"><td class="text-align:left"><p>RDF<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p>DCAT v2<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p>DATS<!-- TODO add a link to corresponding document --></p></td>
 </tr>
-<tr class="row-odd"><td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">JSON-LD</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">Schema.org</span></a></p></td>
-<td class="text-align:left"><p><a class="reference internal" href="../infrastructure.html"><span class="doc std std-doc">Infrastructure</span></a></p></td>
+<tr class="row-odd"><td class="text-align:left"><p>JSON-LD<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p>Schema.org<!-- TODO add a link to corresponding document --></p></td>
+<td class="text-align:left"><p><!-- TODO add a link to corresponding document --></p></td>
 </tr>
 </tbody>
 </table>
@@ -934,12 +948,8 @@ The vocabulary developed by the consortium of search engines has defined a metad
 </ul>
 </div>
 </div>
-<div class="section" id="references">
-<h2><span class="section-number">2.8. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-</div>
-<hr class="docutils" />
 <div class="section" id="authors">
-<h2><span class="section-number">2.9. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.8. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -970,7 +980,7 @@ The vocabulary developed by the consortium of search engines has defined a metad
 </div>
 <hr class="docutils" />
 <div class="section" id="license">
-<h2><span class="section-number">2.10. </span>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.9. </span>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This page is released under the Creative Commons 4.0 BY license.</p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png" height="20"/></a></p>
 </div>

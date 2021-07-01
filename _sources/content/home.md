@@ -216,7 +216,7 @@ Below there are links to some key recipes, click on them to explore their conten
 </div>
 <div class="recipeItem"> <i class="fa fa-cloud mr-2 text--primary"></i>
 
-{ref}`fcb-aspera`
+{ref}`fcb-access-aspera`
 </div>
 
 <hr>
@@ -236,7 +236,7 @@ Below there are links to some key recipes, click on them to explore their conten
 <div class="recipeLabel"> Exemplar recipes: </div>
 <div class="recipeItem"> <i class="fa fa-puzzle-piece mr-2 text--primary"></i>
 
-{ref}`fcb-interop-selectonto`
+{ref}`fcb-selecting-ontologies`
 </div>
 
 <div class="recipeItem"> <i class="fa fa-puzzle-piece mr-2 text--primary"></i>
@@ -505,7 +505,7 @@ ___
 
 ## Contributors
 
-The FAIR Cookbook is developed by a thriving [community](fcb-community). of life sciences professionals, in the academia and the industry sectors, including members of the ELIXIR community. Funded by the IMI FAIRplus project, a private-public partnership, the FAIR Cookbook is a community-driven resource that is being populated and improved, iteratively, in an open manner. If you want to participate, join us and [contribute](fcb-help), or contact us at [fairplus-cookbook@elixir-europe.org](mailto:fairplus-cookbook@elixir-europe.org)
+The FAIR Cookbook is developed by a thriving [community of Life Science professionals](fcb-community), in the academia and the industry sectors, including members of the ELIXIR community. Funded by the [IMI FAIRplus project](https://fairplus-project.eu/), a private-public partnership, the FAIR Cookbook is a community-driven resource that is being populated and improved, iteratively, in an open manner. If you want to participate, join us and [contribute](fcb-help), or contact us at [fairplus-cookbook@elixir-europe.org](mailto:fairplus-cookbook@elixir-europe.org)
 
 
 

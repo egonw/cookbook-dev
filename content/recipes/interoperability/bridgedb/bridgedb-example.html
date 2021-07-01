@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Using BridgeDb web services</title>
+    <title>2.12.1. Using BridgeDb web services</title>
     
   <link rel="stylesheet" href="../../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,8 +45,8 @@
     <script src="../../../../_static/clipboard.min.js"></script>
     <script src="../../../../_static/copybutton.js"></script>
     <script src="../../../../_static/mermaid.js"></script>
-    <script src="../../../../_static/mermaid.core.js"></script>
     <script src="../../../../_static/mermaid.min.js"></script>
+    <script src="../../../../_static/mermaid.core.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -60,7 +60,7 @@
     <link rel="shortcut icon" href="../../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
-    <link rel="next" title="3. Introduction to terminologies and ontologies" href="../ontology-why-using-them.html" />
+    <link rel="next" title="3. Introduction to terminologies and ontologies" href="../introduction-terminologies-ontologies.html" />
     <link rel="prev" title="2. Identifier mapping with BridgeDb" href="../bridgedb-recipe.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -113,7 +113,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../../introduction/FAIR-cookbook-audience.html">
-   Who should read it
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -158,24 +158,34 @@
      4. Depositing in Zenodo generic repository
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../findability/checksum-create.html">
+     5. Describe data by checksums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../../findability/checksum-validate.html">
+     6. Validating data by checksums
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../../findability/seo.html">
-     5. Search engine optimization
+     7. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../findability/seo/bioschemas-data-page.html">
-       5.8.1. Data page markup with Bioschemas
+       7.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../findability/seo/bioschemas-dataset.html">
-       5.8.2. Dataset page markup with Schema.org
+       7.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../findability/seo/bioschemas-datacatalog.html">
-       5.8.3. Data catalogue markup
+       7.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -222,7 +232,7 @@
     <ul class="current collapse-ul">
      <li class="toctree-l3 current active">
       <a class="current reference internal" href="#">
-       Using BridgeDb web services
+       2.12.1. Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -230,7 +240,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../ontology-why-using-them.html">
+    <a class="reference internal" href="../introduction-terminologies-ontologies.html">
      3. Introduction to terminologies and ontologies
     </a>
    </li>
@@ -255,8 +265,13 @@
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../ontology-robot/MSIO-robot-build-process.html">
-       Application ontology for metabolomics
+      <a class="reference internal" href="../ontology-robot-recipe/competency-questions.html">
+       7.12.1. Competency questions for the Ontology ROBOT use case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../ontology-robot-recipe/MSIO-robot-build-process.html">
+       7.12.2. Application ontology for metabolomics
       </a>
      </li>
     </ul>
@@ -264,7 +279,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../creating_data_dictionary.html">
+    <a class="reference internal" href="../creating-data-dictionary.html">
      8. Creating a data/variable dictionary
     </a>
    </li>
@@ -275,12 +290,12 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../transcriptomics-metadata.html">
-       Metadata profile for transcriptomics
+       9.4.1. Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata profile validation in RDF
+       9.4.2. Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -293,13 +308,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../rdf-conversion.html">
+     11. An inventory of tools for converting your data to RDF
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../fastq-file-format-validators.html">
-     11. File format validation, FASTQ example
+     12. File format validation, FASTQ example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../ETL-tools.html">
-     12. Extraction, transformation, and loading process
+     13. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -395,12 +415,12 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairevaluator.html">
-     1. with FAIREvaluator
+     1. FAIR Evaluator tool
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../assessing-fairness/fair-assessment-fairshake.html">
-     2. with FAIRshake
+     2. FAIRshake tool
     </a>
    </li>
   </ul>
@@ -419,22 +439,22 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Starting material
+       1.11.1. Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Structuring data
+       1.11.2. Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring data with SPARQL
+       1.11.3. Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../../applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Integrating data
+       1.11.4. Integrating data
       </a>
      </li>
     </ul>
@@ -458,7 +478,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../../applied-examples/resolute_raw/resolute.html">
-     5. RESOLUTE - transcriptomics datasets
+     5. ReSOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
@@ -662,22 +682,22 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#querying-the-ws">
-   Querying the WS
+   2.12.1.1. Querying the WS
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#case-1">
-   Case 1
+   2.12.1.2. Case 1
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#case-2">
-   Case 2
+   2.12.1.3. Case 2
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#using-script">
-   Using Script
+   2.12.1.4. Using Script
   </a>
  </li>
 </ul>
@@ -693,7 +713,7 @@
               <div>
                 
   <div class="section" id="using-bridgedb-web-services">
-<span id="fcb-bridgedbnotebook"></span><h1>Using BridgeDb web services<a class="headerlink" href="#using-bridgedb-web-services" title="Permalink to this headline">¶</a></h1>
+<span id="fcb-bridgedbnotebook"></span><h1><span class="section-number">2.12.1. </span>Using BridgeDb web services<a class="headerlink" href="#using-bridgedb-web-services" title="Permalink to this headline">¶</a></h1>
 <br/>
 <hr class="docutils" />
 <script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Using BridgeDb web services", "audience": ["Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCB018", "url": "http://w3id.org/faircookbook/FCB018"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H30M0S", "totalTime": "PT0H30M0S"} </script>
@@ -759,7 +779,7 @@ Yes
 </ul>
 <p><a class="reference external" href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiICAgIGdyYXBoIFRCIFxuICAgICAgc3ViZ3JhcGggU2NyaXB0XG5cbiAgICAgICAgICBzdWJncmFwaCBCcmlkZ2VEYlxuICAgICAgICAgICAgICBCW0FmZnldLS0-RVtHZW5lIE9udG9sb2d5XVxuICAgICAgICAgICAgICBCW0FmZnldLS0-RltFbnNlbWJsXVxuICAgICAgICAgICAgICBCW0FmZnldIC0tPiBIW1VuaVByb3RdXG4gICAgICAgICAgc3ViZ3JhcGggUHJlLW1hZGUgbWFwcGluZ1xuICAgICAgICAgICAgQVtMb2NhbCBpZGVudGlmaWVyIHNvdXJjZV0tLT5CW0hHTkNdXG4gICAgICAgICAgZW5kXG4gICAgICAgICAgZW5kXG4gICAgICAgIGVuZCIsIm1lcm1haWQiOnt9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ"><img alt="" src="https://mermaid.ink/img/eyJjb2RlIjoiICAgIGdyYXBoIFRCIFxuICAgICAgc3ViZ3JhcGggU2NyaXB0XG5cbiAgICAgICAgICBzdWJncmFwaCBCcmlkZ2VEYlxuICAgICAgICAgICAgICBCW0FmZnldLS0-RVtHZW5lIE9udG9sb2d5XVxuICAgICAgICAgICAgICBCW0FmZnldLS0-RltFbnNlbWJsXVxuICAgICAgICAgICAgICBCW0FmZnldIC0tPiBIW1VuaVByb3RdXG4gICAgICAgICAgc3ViZ3JhcGggUHJlLW1hZGUgbWFwcGluZ1xuICAgICAgICAgICAgQVtMb2NhbCBpZGVudGlmaWVyIHNvdXJjZV0tLT5CW0hHTkNdXG4gICAgICAgICAgZW5kXG4gICAgICAgICAgZW5kXG4gICAgICAgIGVuZCIsIm1lcm1haWQiOnt9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ" /></a></p>
 <div class="section" id="querying-the-ws">
-<h2>Querying the WS<a class="headerlink" href="#querying-the-ws" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.1.1. </span>Querying the WS<a class="headerlink" href="#querying-the-ws" title="Permalink to this headline">¶</a></h2>
 <p>To query the Webservice we define below the url and the patterns for a single request and a batch request. You can find the docs <a class="reference external" href="https://bridgedb.github.io/swagger/">here</a>. We will use Python’s requests library.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -828,7 +848,7 @@ Yes
 </div>
 </div>
 <div class="section" id="case-1">
-<h2>Case 1<a class="headerlink" href="#case-1" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.1.2. </span>Case 1<a class="headerlink" href="#case-1" title="Permalink to this headline">¶</a></h2>
 <p>Here we first load the case 1 example data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1002,7 +1022,7 @@ Yes
 </div>
 </div>
 <div class="section" id="case-2">
-<h2>Case 2<a class="headerlink" href="#case-2" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.1.3. </span>Case 2<a class="headerlink" href="#case-2" title="Permalink to this headline">¶</a></h2>
 <p>Here we first load the case 2 example data and perform the same steps as before</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1194,7 +1214,7 @@ Yes
 </div>
 </div>
 <div class="section" id="using-script">
-<h2>Using Script<a class="headerlink" href="#using-script" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">2.12.1.4. </span>Using Script<a class="headerlink" href="#using-script" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">bridgedb_script</span> <span class="kn">import</span> <span class="n">get_mappings</span>
@@ -1406,7 +1426,7 @@ Yes
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="../bridgedb-recipe.html" title="previous page"><span class="section-number">2. </span>Identifier mapping with BridgeDb</a>
-    <a class='right-next' id="next-link" href="../ontology-why-using-them.html" title="next page"><span class="section-number">3. </span>Introduction to terminologies and ontologies</a>
+    <a class='right-next' id="next-link" href="../introduction-terminologies-ontologies.html" title="next page"><span class="section-number">3. </span>Introduction to terminologies and ontologies</a>
 
         </div>
         

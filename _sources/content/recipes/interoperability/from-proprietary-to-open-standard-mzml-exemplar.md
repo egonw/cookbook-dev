@@ -52,7 +52,7 @@ ___
 
 | Actions.Objectives.Tasks  | Input | Output  |
 | :------------- | :------------- | :------------- |
-| [formatting](http://edamontology.org/operation_3438)  | [Waters MS format]()  | [mzML](https://fairsharing.org/FAIRsharing.26dmba)  |
+| [formatting](http://edamontology.org/operation_3438)  | Waters MS format<!-- TODO add a link to corresponding document -->  | [mzML](https://fairsharing.org/FAIRsharing.26dmba)  |
 | [text annotation](http://edamontology.org/operation_3778)  | [PSI-MS](https://fairsharing.org/FAIRsharing.284e1z)  | [annotated text](http://edamontology.org/data_3779)  |
 
 
@@ -88,7 +88,7 @@ ___
 
 ### Step 1: obtain the dataset
 
-In the case of the [IMI RESOLUTE]() project, the data is released via the [University of Luxembourg]() server (assuming you have access resolved):
+In the case of the IMI RESOLUTE<!-- TODO add a link to corresponding document --> project, the data is released via the University of Luxembourg<!-- TODO add a link to corresponding document --> server (assuming you have access resolved):
 
 ```bash
 $> sftp fairplus@NNN.000.000.NNN
@@ -130,9 +130,9 @@ drwxr-xr-x  118 bob  staff    3776 14 Jan 15:53 data
 
 > :octopus: The archive would have benefitted from having a manifest file listing all the files and their associated checksums. In so doing, it would have allowed validation and verification that no corruption happened during file transfer.
 
-> :octopus: Refer to the recipe: "[How to calculate file checksums]()"
+> :octopus: Refer to the recipe: "How to calculate file checksums<!-- TODO add a link to corresponding document -->"
 
-> :octopus: Refer to the recipe: "[How to package data for shipping with BDbags]()"
+> :octopus: Refer to the recipe: "How to package data for shipping with BDbags<!-- TODO add a link to corresponding document -->"
 
 
 
@@ -155,7 +155,7 @@ The [HUPI-PSI mzML Standard Record](https://fairsharing.org/FAIRsharing.26dmba) 
 
 
 
-The objective here is to conversion raw data in manufacturer format to an open format, which would allow data to be used without restrictions. To achieve this, we rely on a `containerized` version of the [Proteowizard](https://github.com/ProteoWizard/pwiz).
+The objective here is to conversion raw data in manufacturer format to an open format, which would allow data to be used without restrictions. To achieve this, we rely on a `containerized` version of the [Proteowizard](https://github.com/ProteoWizard/pwiz) {footcite}`Chambers2012`.
 
 > **requirements**:
 
@@ -232,7 +232,7 @@ To address the latter, one should consult the table of compatibility:
 
 For users unfamiliar with format, a search via popular search engine will yield options. Alternately, users may consult the Elixir Biotools registry for suggestions.
 
-A number of libraries are available for parsing (reading and writing) `mzML` document. `mzML` is a king of `XML` format for which an XML schema has been defined and allows syntactic validation through standard library in languages such as java, c++ or python. The top hit corresponds the the `pymzml` library.
+A number of libraries are available for parsing (reading and writing) `mzML` document. `mzML` is a king of `XML` format for which an XML schema has been defined and allows syntactic validation through standard library in languages such as java, c++ or python. The top hit corresponds the the `pymzml` library {footcite}`Bald2012`.
 
 <!-- <div>
 <img src="https://i.imgur.com/BTs0GUS.png" width="750" border="1"/>
@@ -244,7 +244,7 @@ width: 750px
 name: pymzml in Biotools registry
 alt: pymzml in Biotools registry
 ---
-The Python `pymzml` library entry in the [Elixir Biotools catalog](https://biotools.org/) of resources.
+The Python `pymzml` library entry in the [Elixir Biotools catalog](https://bio.tools/) of resources.
 ```
 
 
@@ -288,23 +288,27 @@ In the follow-up recipe, we will show how to boostrap the creation of an ISA met
 
 ## Conclusion
 
-In this recipe, we have shown how to convert a proprietary file format to an open standard format, using the exemplar situation of mass spectrometry data. Of course, there are many domain specific data formats and unfortunately not all benefit from the support of open source / open format communities. However by consulting the [Elixir UK](https://Elixirhug.org) [FAIRsharing registry](https://fairsharing.org), it is possible to identify if such open format specifications are available.
+In this recipe, we have shown how to convert a proprietary file format to an open standard format, using the exemplar situation of mass spectrometry data. Of course, there are many domain specific data formats and unfortunately not all benefit from the support of open source / open format communities. However by consulting the [Elixir UK](https://elixir-europe.org/about-us/who-we-are/nodes/uk) [FAIRsharing registry](https://fairsharing.org), it is possible to identify if such open format specifications are available.
 Then, interrogating the [Biotools catalog](https://bio.tools/), it may well be also possible to retrieve libraries and software components allowing manipulations of such format.
 
 
 
 > ### What to read next
-  >  - [How to calculate file checksums]()
-  >  - [How to package data for shipping with BDbags]()
-  >  - [How to produce an ISA metadata file from a set of mzML fles]()
-  >  - [How to deposit data to Zenodo]()
+  >  - [How to calculate file checksums](fcb-checksum-create)<!-- TODO add a link to corresponding document -->
+  >  - How to package data for shipping with BDbags<!-- TODO add a link to corresponding document -->
+  >  - How to produce an ISA metadata file from a set of mzML fles<!-- TODO add a link to corresponding document -->
+  >  - [How to deposit data to Zenodo](fcb-find-zenodo)<!-- TODO add a link to corresponding document -->
 
 ___
 
 
 ## References
-1. Chambers, M., Maclean, B., Burke, R. et al. A cross-platform toolkit for mass spectrometry and proteomics. Nat Biotechnol 30, 918–920 (2012). https://doi.org/10.1038/nbt.237
-2. Bald T, Barth J, Niehues A, et al. pymzML--Python module for high-throughput bioinformatics on mass spectrometry data. Bioinformatics (Oxford, England). 2012 Apr;28(7):1052-1053. DOI: 10.1093/bioinformatics/bts066.
+
+```{footbibliography}
+```
+
+<!-- 1. Chambers, M., Maclean, B., Burke, R. et al. A cross-platform toolkit for mass spectrometry and proteomics. Nat Biotechnol 30, 918–920 (2012). https://doi.org/10.1038/nbt.237
+2. Bald T, Barth J, Niehues A, et al. pymzML--Python module for high-throughput bioinformatics on mass spectrometry data. Bioinformatics (Oxford, England). 2012 Apr;28(7):1052-1053. DOI: 10.1093/bioinformatics/bts066. -->
 
 
 ## Authors

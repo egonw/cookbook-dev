@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2. Evaluating FAIRness with FAIRshake</title>
+    <title>2. FAIRshake tool</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,8 +45,8 @@
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
     <script src="../../../_static/mermaid.js"></script>
-    <script src="../../../_static/mermaid.core.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
+    <script src="../../../_static/mermaid.core.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
@@ -61,7 +61,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Applied examples" href="../applied-examples.html" />
-    <link rel="prev" title="1. Evaluating FAIRness with FAIREvaluator" href="fair-assessment-fairevaluator.html" />
+    <link rel="prev" title="1. FAIR Evaluator tool" href="fair-assessment-fairevaluator.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -70,8 +70,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://fairplus.github.io/the-fair-cookbook/content/recipes/assessing-fairness/fair-assessment-fairshake.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Evaluating FAIRness with FAIRshake" />
-<meta property="og:description" content="Evaluating FAIRness with FAIRshake  A tutorial that demonstrates how to use FAIRshake to perform FAIR evaluations of DATS serialized metadata in the context of " />
+<meta property="og:title"       content="FAIRshake tool" />
+<meta property="og:description" content="FAIRshake tool  A tutorial that demonstrates how to use FAIRshake to perform FAIR evaluations of DATS serialized metadata in the context of the CFDE.  Note    T" />
 <meta property="og:image"       content="https://fairplus.github.io/the-fair-cookbook/_static/cookbook-logo-small.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -113,7 +113,7 @@
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/FAIR-cookbook-audience.html">
-   Who should read it
+   Introduction
   </a>
  </li>
  <li class="toctree-l1">
@@ -158,24 +158,34 @@
      4. Depositing in Zenodo generic repository
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../findability/checksum-create.html">
+     5. Describe data by checksums
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../findability/checksum-validate.html">
+     6. Validating data by checksums
+    </a>
+   </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../findability/seo.html">
-     5. Search engine optimization
+     7. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-data-page.html">
-       5.8.1. Data page markup with Bioschemas
+       7.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-dataset.html">
-       5.8.2. Dataset page markup with Schema.org
+       7.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-datacatalog.html">
-       5.8.3. Data catalogue markup
+       7.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -222,7 +232,7 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/bridgedb/bridgedb-example.html">
-       Using BridgeDb web services
+       2.12.1. Using BridgeDb web services
       </a>
      </li>
     </ul>
@@ -230,7 +240,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../interoperability/ontology-why-using-them.html">
+    <a class="reference internal" href="../interoperability/introduction-terminologies-ontologies.html">
      3. Introduction to terminologies and ontologies
     </a>
    </li>
@@ -255,8 +265,13 @@
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
-      <a class="reference internal" href="../interoperability/ontology-robot/MSIO-robot-build-process.html">
-       Application ontology for metabolomics
+      <a class="reference internal" href="../interoperability/ontology-robot-recipe/competency-questions.html">
+       7.12.1. Competency questions for the Ontology ROBOT use case
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="../interoperability/ontology-robot-recipe/MSIO-robot-build-process.html">
+       7.12.2. Application ontology for metabolomics
       </a>
      </li>
     </ul>
@@ -264,7 +279,7 @@
     </i>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../interoperability/creating_data_dictionary.html">
+    <a class="reference internal" href="../interoperability/creating-data-dictionary.html">
      8. Creating a data/variable dictionary
     </a>
    </li>
@@ -275,12 +290,12 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/transcriptomics-metadata.html">
-       Metadata profile for transcriptomics
+       9.4.1. Metadata profile for transcriptomics
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../interoperability/covid19-sample-metadata-profile-shex-use-case.html">
-       Metadata profile validation in RDF
+       9.4.2. Metadata profile validation in RDF
       </a>
      </li>
     </ul>
@@ -293,13 +308,18 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="../interoperability/rdf-conversion.html">
+     11. An inventory of tools for converting your data to RDF
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/fastq-file-format-validators.html">
-     11. File format validation, FASTQ example
+     12. File format validation, FASTQ example
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../interoperability/ETL-tools.html">
-     12. Extraction, transformation, and loading process
+     13. Extraction, transformation, and loading process
     </a>
    </li>
   </ul>
@@ -395,12 +415,12 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="fair-assessment-fairevaluator.html">
-     1. with FAIREvaluator
+     1. FAIR Evaluator tool
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2. with FAIRshake
+     2. FAIRshake tool
     </a>
    </li>
   </ul>
@@ -419,22 +439,22 @@
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/0-rose-metabolites-Python-data-handling.html">
-       Starting material
+       1.11.1. Starting material
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/1-rose-metabolites-Python-analysis.html">
-       Structuring data
+       1.11.2. Structuring data
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/2-rose-metabolites-Python-RDF-querying-analysis.html">
-       Exploring data with SPARQL
+       1.11.3. Exploring data with SPARQL
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../applied-examples/fair-data-matrix/3-rose-metabolites-R-analysis.html">
-       Integrating data
+       1.11.4. Integrating data
       </a>
      </li>
     </ul>
@@ -458,7 +478,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../applied-examples/resolute_raw/resolute.html">
-     5. RESOLUTE - transcriptomics datasets
+     5. ReSOLUTE - transcriptomics datasets
     </a>
    </li>
   </ul>
@@ -674,7 +694,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id1">
+      <a class="reference internal nav-link" href="#id3">
        2.5.2.1. Scenario
       </a>
      </li>
@@ -686,7 +706,7 @@
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#id2">
+      <a class="reference internal nav-link" href="#id4">
        2.5.3.1. Scenario
       </a>
      </li>
@@ -740,8 +760,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#reference">
-   2.7. Reference
+  <a class="reference internal nav-link" href="#references">
+   2.7. References
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -780,8 +800,8 @@
         
               <div>
                 
-  <div class="section" id="evaluating-fairness-with-fairshake">
-<span id="fcb-assess-fair-fairshake"></span><h1><span class="section-number">2. </span>Evaluating FAIRness with FAIRshake<a class="headerlink" href="#evaluating-fairness-with-fairshake" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fairshake-tool">
+<span id="fcb-assess-fair-fairshake"></span><h1><span class="section-number">2. </span>FAIRshake tool<a class="headerlink" href="#fairshake-tool" title="Permalink to this headline">¶</a></h1>
 <p>A tutorial that demonstrates how to use FAIRshake to perform FAIR evaluations of DATS serialized metadata in the context of the CFDE.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -790,7 +810,7 @@
 </div>
 <br/>
 <hr class="docutils" />
-<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "Evaluating FAIRness with FAIRshake", "audience": ["Principal Investigator", "Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCB050", "url": "https://w3id.org/faircookbook/FBC050"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H30M0S", "totalTime": "PT0H30M0S"} </script>
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "FAIRshake tool", "audience": ["Principal Investigator", "Data Manager", "Data Scientist"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCB050", "url": "https://w3id.org/faircookbook/FCB050"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H30M0S", "totalTime": "PT0H30M0S"} </script>
 <div class="card recipe d-flex">
 <div class="card-header purple-dark text--white">
 <div class="overview">
@@ -825,7 +845,7 @@ Yes
 </div>
 <div class="card-body text--purple-dark">
 <div class="title">
-<div style="flex-grow:1; margin-right:5px">Evaluating FAIRness with FAIRshake</div>
+<div style="flex-grow:1; margin-right:5px">FAIRshake tool</div>
 <img src="/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
 </div>
 <div class="section">
@@ -841,7 +861,7 @@ Yes
 </div>
 </div>
 <div class="card-footer text--orange sphinx-bs.badge.badge-primary"> Cite me with 
-<a href="https://w3id.org/faircookbook/FBC050" class="text--purple-dark">FCB050
+<a href="https://w3id.org/faircookbook/FCB050" class="text--purple-dark">FCB050
 </a></div>
 </div>
 </div>
@@ -888,10 +908,10 @@ Yes
  -->
 <div class="section" id="background">
 <h2><span class="section-number">2.1. </span>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
-<p>Adhering to <a class="reference external" href="https://cfde-published-documentation.readthedocs-hosted.com/en/latest/CFDE-glossary/#fair">FAIRness</a> is somewhat abstract. While all of the components of becoming FAIR can be addressed at some level, it remains difficult to provide a concrete answer about whether something is indeed FAIR or not. In general, improvement is only real if it can be measured. To address this limitation of the FAIR guidelines, <a class="reference external" href="https://cfde-published-documentation.readthedocs-hosted.com/en/latest/CFDE-glossary/#fairshake">FAIRshake</a> was created with the basic goal of making FAIR more concrete and measurable. While FAIRshake provides a catalog of community-contributed ways to characterize FAIRness, it is still up to a given project to decide which of these criteria they will adopt and/or create.</p>
+<p>Adhering to <a class="reference external" href="https://cfde-published-documentation.readthedocs-hosted.com/en/latest/CFDE-glossary/#fair">FAIRness</a> is somewhat abstract. While all of the components of becoming FAIR can be addressed at some level, it remains difficult to provide a concrete answer about whether something is indeed FAIR or not. In general, improvement is only real if it can be measured. To address this limitation of the FAIR guidelines, <a class="reference external" href="https://cfde-published-documentation.readthedocs-hosted.com/en/latest/CFDE-glossary/#fairshake">FAIRshake</a> was created with the basic goal of making FAIR more concrete and measurable. While FAIRshake provides a catalog of community-contributed ways to characterize FAIRness, it is still up to a given project to decide which of these criteria they will adopt and/or create <a class="footnote-reference brackets" href="#clarke2019" id="id1">1</a>.</p>
 <p>FAIRshake provides:</p>
 <ul class="simple">
-<li><p>A catalog of digital objects: these can be, for example,  datasets, APIs, workflows, each having their own unique identity and is the target of a FAIR assessment. That-is whatever the digital object is, you want to assess how much it is Findable, Accessible, Interoperable and Reusable.</p></li>
+<li><p>A catalog of digital objects: these can be, for example,  datasets, APIs, workflows, each having their own unique identity and is the target of a FAIR assessment. That-is whatever the digital object is, you want to assess how much it is Findable, Accessible, Interoperable and Reusable <a class="footnote-reference brackets" href="#pmid26978244" id="id2">2</a>.</p></li>
 <li><p>A catalog of projects: where a project contains any set of digital objects grouped for the purpose of analytic and findability, e.g., all digital objects that belong to a specific NIH Common Fund program could be bundled into one project. If you plan on automating FAIR assessments, it makes sense to do it as part of a project so that assessments can be compared only against other assessments within your project.</p></li>
 <li><p>A catalog of metrics: these are any singular FAIR criterion, or a FAIR compliance question, that can often be answered with yes/no/percentage of compliance. It is often the case that manual assessments are qualitative yes (1) / no (0) while automated assessments can often be more granular.</p></li>
 <li><p>A catalog of rubrics: these are sets/bundles of FAIR metrics meant to be answered together, e.g., a “FAIR” API should satisfy several independent metrics already registered in FAIRshake, these can be a part of one or more rubrics.</p></li>
@@ -957,8 +977,8 @@ Yes
 <a class="reference internal image-reference" href="../../../_images/ss9.png"><img alt="FAIRshake performing a search" src="../../../_images/ss9.png" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 2.8 </span><span class="caption-text">FAIRshake performing a search</span><a class="headerlink" href="#fairshake-performing-a-search" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="id1">
-<h4><span class="section-number">2.5.2.1. </span>Scenario<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4><span class="section-number">2.5.2.1. </span>Scenario<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Janice is interested in a resource she contributed to: <a class="reference external" href="http://lincsportal.ccs.miami.edu/datasets/view/LDS-1293">L1000 dataset of CRISPR perturbagens</a>. She had a hard time finding it in the search so she decided to try the <a class="reference external" href="https://fairshake.cloud/chrome_extension/">FAIRshake Chrome extension</a>.</p>
 <!-- ![FAIRshake Chrome Extension install](./images/ss10.png) -->
 <div class="figure align-default" id="fairshake-chrome-extension-install">
@@ -990,8 +1010,8 @@ Yes
 <p class="caption"><span class="caption-number">Fig. 2.12 </span><span class="caption-text">FAIR metrics Rubric on FAIRshake</span><a class="headerlink" href="#fair-metrics-rubric-on-fairshake" title="Permalink to this image">¶</a></p>
 </div>
 <p>If you’re following along, feel free to pick a digital object of your own that you know well and see if you can complete and publish a manual assessment with it! You can always find and delete it from your account if you choose not to keep it, just be sure not to publish it unless you’re happy with it.</p>
-<div class="section" id="id2">
-<h4><span class="section-number">2.5.3.1. </span>Scenario<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id4">
+<h4><span class="section-number">2.5.3.1. </span>Scenario<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Janice decides to perform a manual assessment of her resource using the FAIRmetrics rubric before digging into the specifics of the CFDE assessment.</p>
 <!-- ![View on FAIRshake with extension](./images/ss11.png) -->
 <div class="figure align-default" id="view-on-fairshake-with-extension">
@@ -1325,8 +1345,17 @@ python3 assess.py --offline-package<span class="o">=</span>/your/datapackage.jso
 <h2><span class="section-number">2.6. </span>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
 <p>In this recipe, we have detailed and described the manual and automatic process of FAIRification with FAIRshake for a CFDE case study. While the assessment described here was for the CFDE DATS serialized assets, the same process is applicable to any standard and any type of digital object. Examples exist for assessing APIs, GitHub repositories, and tools, among other case studies using standards applicable to each. As more standards become codified and accessible through FAIRshake, they will become simpler to evaluate, ultimately increasing the FAIRness of the standard itself and anything using that standard. It should be noted that the process of using FAIRshake for performing assessments is mainly designed to increase awareness about standards that digital object producers can apply to improve the FAIRness of the digital assets they produce and publish.</p>
 </div>
-<div class="section" id="reference">
-<h2><span class="section-number">2.7. </span>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="references">
+<h2><span class="section-number">2.7. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-footbibliography-content/recipes/assessing-fairness/fair-assessment-fairshake-0"><dl class="footnote brackets">
+<dt class="label" id="clarke2019"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>D. J. B. Clarke, L. Wang, A. Jones, M. L. Wojciechowicz, D. Torre, K. M. Jagodnik, S. L. Jenkins, P. McQuilton, Z. Flamholz, M. C. Silverstein, B. M. Schilder, K. Robasky, C. Castillo, R. Idaszak, S. C. Ahalt, J. Williams, S. Schurer, D. J. Cooper, R. de Miranda Azevedo, J. A. Klenk, M. A. Haendel, J. Nedzel, P. Avillach, M. E. Shimoyama, R. M. Harris, M. Gamble, R. Poten, A. L. Charbonneau, J. Larkin, C. T. Brown, V. R. Bonazzi, M. J. Dumontier, S. A. Sansone, and A. Ma’ayan. FAIRshake: Toolkit to Evaluate the FAIRness of Research Digital Resources. <em>Cell Syst</em>, 9(5):417–421, 11 2019.</p>
+</dd>
+<dt class="label" id="pmid26978244"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>M. D. Wilkinson, M. Dumontier, I. J. Aalbersberg, G. Appleton, M. Axton, A. Baak, N. Blomberg, J. W. Boiten, L. B. da Silva Santos, P. E. Bourne, J. Bouwman, A. J. Brookes, T. Clark, M. Crosas, I. Dillo, O. Dumon, S. Edmunds, C. T. Evelo, R. Finkers, A. Gonzalez-Beltran, A. J. Gray, P. Groth, C. Goble, J. S. Grethe, J. Heringa, P. A. ‘t Hoen, R. Hooft, T. Kuhn, R. Kok, J. Kok, S. J. Lusher, M. E. Martone, A. Mons, A. L. Packer, B. Persson, P. Rocca-Serra, M. Roos, R. van Schaik, S. A. Sansone, E. Schultes, T. Sengstag, T. Slater, G. Strawn, M. A. Swertz, M. Thompson, J. van der Lei, E. van Mulligen, J. Velterop, A. Waagmeester, P. Wittenburg, K. Wolstencroft, J. Zhao, and B. Mons. The FAIR Guiding Principles for scientific data management and stewardship. <em>Sci Data</em>, 3:160018, Mar 2016.</p>
+</dd>
+</dl>
+</p>
 <div class="section" id="a-name-fair-repo-a-a-name-fair-repo-report-a-a-name-fair-repo-assessments-a-fair-repo">
 <h3><span class="section-number">2.7.1. </span><a name="fair-repo"></a><a name="fair-repo-report"></a><a name="fair-repo-assessments"></a>FAIR Repo<a class="headerlink" href="#a-name-fair-repo-a-a-name-fair-repo-report-a-a-name-fair-repo-assessments-a-fair-repo" title="Permalink to this headline">¶</a></h3>
 <p>The CFDE FAIR repository is currently private given that it contains details about DCCs that have not yet been verified.
@@ -1368,6 +1397,7 @@ Please submit a request to <a class="reference external" href="https://www.nih-c
 <h2><span class="section-number">2.9. </span>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This page is released under CC0 1.0 Universal (CC0 1.0) Public Domain Dedication.</p>
 <p><a href="https://creativecommons.org/publicdomain/zero/1.0/deed.en"><img src="[CC0 1.0 Universal (CC0 1.0) Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/deed.en)" height="20"/></a></p>
+<hr class="footnotes docutils" />
 </div>
 </div>
 
@@ -1396,7 +1426,7 @@ Please submit a request to <a class="reference external" href="https://www.nih-c
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="fair-assessment-fairevaluator.html" title="previous page"><span class="section-number">1. </span>Evaluating FAIRness with FAIREvaluator</a>
+    <a class='left-prev' id="prev-link" href="fair-assessment-fairevaluator.html" title="previous page"><span class="section-number">1. </span>FAIR Evaluator tool</a>
     <a class='right-next' id="next-link" href="../applied-examples.html" title="next page">Applied examples</a>
 
         </div>
