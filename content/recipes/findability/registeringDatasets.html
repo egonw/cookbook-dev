@@ -677,13 +677,28 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#data-set-registration">
-     Data Set Registration
+    <a class="reference internal nav-link" href="#dataset-registration-in-wikidata">
+     Dataset Registration in Wikidata
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding">
-     Adding
+    <a class="reference internal nav-link" href="#adding-a-dataset-with-quickstatements">
+     Adding a dataset with Quickstatements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-1-wikidata-login">
+     Step 1: Wikidata login
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-2-authorize-quickstatements">
+     Step 2: Authorize Quickstatements
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-3-open-the-scholia-page">
+     Step 3: Open the Scholia page
     </a>
    </li>
   </ul>
@@ -798,7 +813,7 @@ No
 <h2>Main Content<a class="headerlink" href="#main-content" title="Permalink to this headline">¶</a></h2>
 <p>This recipes takes an interest in datasets with information about small chemical compounds, particularly datasets with an SDF file or spreadsheet with SMILES.
 But the registration itself in Wikidata to make it more findable works for any dataset. The registration in Wikidata makes the metadata more findable by
-itself <a class="footnote-reference brackets" href="#waagmeester2020" id="id1">1</a>. This <a class="reference external" href="https://www.wikidata.org/wiki/Wikidata:Introduction">Wikidata:Introduction</a> describes the principle ideas and data model that will make this
+itself <a class="footnote-reference brackets" href="#waagmeester2020" id="id1">2</a>. This <a class="reference external" href="https://www.wikidata.org/wiki/Wikidata:Introduction">Wikidata:Introduction</a> describes the principle ideas and data model that will make this
 recipe easier to follow.</p>
 <p>Importantly, Wikidata allows the dataset to be used as reference in Wikidata to support statements. For example, if the dataset contains a logP value,
 then this logP value can be associated to the compound in Wikidata with a statement, with the dataset itself as reference.</p>
@@ -817,26 +832,55 @@ then this logP value can be associated to the compound in Wikidata with a statem
 <li><p><a class="reference external" href="https://datasetsearch.research.google.com/">Google Dataset Search</a></p></li>
 <li><p><a class="reference external" href="https://commons.datacite.org/">DataCite Commons</a></p></li>
 </ul>
+<p>If you have a new dataset and like to deposit it because it is not listed in any of the above resources,
+please check out the <a class="reference external" href="https://w3id.org/faircookbook/FCB009">Depositing in Zenodo generic repository</a> recipe.</p>
 <!--
 TODO: add below statement when that recipe is included too:
 
 For details related to finding datasets and determining the correct licenses, please refer to Finding Compounds. 
 -->
 </div>
-<div class="section" id="data-set-registration">
-<h3>Data Set Registration<a class="headerlink" href="#data-set-registration" title="Permalink to this headline">¶</a></h3>
-<p>After locating a dataset, record the details of the dataset. Essential attributes include the DOI, the title of the dataset, the author(s) of the dataset, publication date of the dataset, and links to the dataset source.</p>
-<p>Dataset details can be transformed into a Quickstatement using <a class="reference external" href="https://scholia.toolforge.org/doi/%24DOI">https://scholia.toolforge.org/doi/$DOI</a>. ‘$DOI’ in the link must be replaced with the DOI of the dataset you are registering.</p>
+<div class="section" id="dataset-registration-in-wikidata">
+<h3>Dataset Registration in Wikidata<a class="headerlink" href="#dataset-registration-in-wikidata" title="Permalink to this headline">¶</a></h3>
+<p>After locating a dataset, check the availability of the details of the dataset. Essential attributes include the
+DOI, the title of the dataset, the author(s) of the dataset, publication date of the dataset, and links to the
+dataset source. You may need this later.</p>
+<p>With the DOI, there is a good chance that Scholia <a class="footnote-reference brackets" href="#nielsen2017" id="id2">1</a> can help you register the dataset in Wikidata.
+You can use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/\$DOI</span></code> pattern (‘$DOI’ in the link must be replaced with the
+DOI of the dataset you are registering) to check if your dataset is already listed in
+Wikidata. If not this page will use the DOI to convert the metadata transformed into a Quickstatements.</p>
 </div>
-<div class="section" id="adding">
-<h3>Adding<a class="headerlink" href="#adding" title="Permalink to this headline">¶</a></h3>
-<p>With the Quickstatement of the dataset, the dataset can be added to Wikidata using <a class="reference external" href="https://quickstatements.toolforge.org/">https://quickstatements.toolforge.org/</a>. This step requires a Wikidata account.</p>
+<div class="section" id="adding-a-dataset-with-quickstatements">
+<h3>Adding a dataset with Quickstatements<a class="headerlink" href="#adding-a-dataset-with-quickstatements" title="Permalink to this headline">¶</a></h3>
+<p>With the Quickstatements of the dataset, the dataset can be added to Wikidata using
+the <a class="reference external" href="https://quickstatements.toolforge.org/">https://quickstatements.toolforge.org/</a> website. This is the step which requires a Wikidata account.</p>
+</div>
+<div class="section" id="step-1-wikidata-login">
+<h3>Step 1: Wikidata login<a class="headerlink" href="#step-1-wikidata-login" title="Permalink to this headline">¶</a></h3>
+<p>First, log in with Wikidata or check if you already are.</p>
+</div>
+<div class="section" id="step-2-authorize-quickstatements">
+<h3>Step 2: Authorize Quickstatements<a class="headerlink" href="#step-2-authorize-quickstatements" title="Permalink to this headline">¶</a></h3>
+<p>After step 1, authorize Quickstatements with your Wikidata account using the “Log in” button
+in the top right corner of the Quickstatements website.</p>
+</div>
+<div class="section" id="step-3-open-the-scholia-page">
+<h3>Step 3: Open the Scholia page<a class="headerlink" href="#step-3-open-the-scholia-page" title="Permalink to this headline">¶</a></h3>
+<p>If your dataset is not already Wikidata, use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/\$DOI</span></code> Scholia
+page to create Quickstatements. The result should look something like this:</p>
+<div class="figure align-default" id="scholia">
+<img alt="Scholia page showing Quickstatements for a dataset not yet in Wikidata" src="content/recipes/findability/scholia.png" />
+<p class="caption"><span class="caption-text">Scholia page showing Quickstatements for a dataset not yet in Wikidata.</span><a class="headerlink" href="#scholia" title="Permalink to this image">¶</a></p>
+</div>
 </div>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-footbibliography-content/recipes/findability/registeringDatasets-0"><dl class="footnote brackets">
-<dt class="label" id="waagmeester2020"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dt class="label" id="nielsen2017"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>Finn Årup Nielsen, Daniel Mietchen, and Egon Willighagen. <em>Scholia, Scientometrics and Wikidata</em>, pages 237–259. Volume 10577 of Lecture Notes in Computer Science. Springer International Publishing, 2017. URL: <a class="reference external" href="http://link.springer.com/10.1007/978-3-319-70407-4_36">http://link.springer.com/10.1007/978-3-319-70407-4_36</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-319-70407-4_36">doi:10.1007/978-3-319-70407-4_36</a>.</p>
+</dd>
+<dt class="label" id="waagmeester2020"><span class="brackets"><a class="fn-backref" href="#id1">2</a></span></dt>
 <dd><p>Andra Waagmeester, Gregory Stupp, Sebastian Burgstaller-Muehlbacher, Benjamin M Good, Malachi Griffith, Obi L Griffith, Kristina Hanspers, Henning Hermjakob, Toby S Hudson, Kevin Hybiske, and et al. Wikidata as a knowledge graph for the life sciences. <em>eLife</em>, 9:e52614, Mar 2020. <a class="reference external" href="https://doi.org/10.7554/eLife.52614">doi:10.7554/eLife.52614</a>.</p>
 </dd>
 </dl>
