@@ -714,7 +714,7 @@
 <h1>Registering Datasets<a class="headerlink" href="#registering-datasets" title="Permalink to this headline">¶</a></h1>
 <br/>
 <hr class="docutils" />
-<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "How to Register a Dataset with WikiData", "audience": ["Bioinformatician", "Data Scientist", "Data Engineer"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCBxxx", "url": "https://w3id.org/faircookbook/FCBxxx"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H15M0S", "totalTime": "PT0H15M0S"} </script>
+<script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "How to Register a Dataset with Wikidata", "audience": ["Bioinformatician", "Data Scientist", "Data Engineer"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCBxxx", "url": "https://w3id.org/faircookbook/FCBxxx"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H15M0S", "totalTime": "PT0H15M0S"} </script>
 <div class="card recipe d-flex">
 <div class="card-header purple-dark text--white">
 <div class="overview">
@@ -749,7 +749,7 @@ No
 </div>
 <div class="card-body text--purple-dark">
 <div class="title">
-<div style="flex-grow:1; margin-right:5px">How to Register a Dataset with WikiData</div>
+<div style="flex-grow:1; margin-right:5px">How to Register a Dataset with Wikidata</div>
 <img src="https://fairplus.github.io/the-fair-cookbook/_static/images/fairplus-mini.png" alt="FAIRPlus logo"> </img>
 </div>
 <div class="section">
@@ -773,23 +773,50 @@ No
 <p>“UCnn.x Registering a dataset in Wikidata.”</p>
 <div class="section" id="main-objectives">
 <h2>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
-<p>Learn how to register a dataset on WikiData with the appropriate citation.</p>
+<p>Useful datasets become more useful when they are easily found. The <strong>FAIR principles</strong> state that:</p>
+<blockquote>
+<div><p>F1. (Meta)data are assigned a globally unique and persistent identifier
+A1. (Meta)data are retrievable by their identifier using a standardised communications protocol</p>
+</div></blockquote>
+<p>This recipe is about making the dataset metadata more FAIR:</p>
+<blockquote>
+<div><p>Learn how to register a published dataset on Wikidata with the appropriate citation to increase its findability.</p>
+</div></blockquote>
 </div>
 <hr class="docutils" />
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
-<p>To run the below scripts, you need a Groovy installation. The Groovy script use version X.X of the Chemistry Development Kit (add the link here) (see also doi:10.1186/s13321-017-0220-4). (Add link here) This library and its use in Groovy is further explained in the book Groovy Cheminformatics with the Chemistry Development Kit. (add the link here)</p>
-<p>Click here for more detailed use instructions and where to find the tools:
-<a class="reference external" href="https://github.com/FAIRplus/fairplus-sdf">https://github.com/FAIRplus/fairplus-sdf</a>(add the link here)</p>
-<p>To register datasets to WikiData requires a WikiData account.</p>
+<p>To register datasets to <a class="reference external" href="https://www.wikidata.org/">Wikidata</a> requires a Wikidata account (<a class="reference external" href="https://www.wikidata.org/wiki/Special:CreateAccount">create one</a>).</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="main-content">
 <h2>Main Content<a class="headerlink" href="#main-content" title="Permalink to this headline">¶</a></h2>
+<p>This recipes takes an interest in datasets with information about small chemical compounds, particularly datasets with an SDF file or spreadsheet with SMILES.
+But the registration itself in Wikidata to make it more findable works for any dataset. The registration in Wikidata makes the metadata more findable by
+itself. This <a class="reference external" href="https://www.wikidata.org/wiki/Wikidata:Introduction">Wikidata:Introduction</a> describes the principle ideas and data model that will make this
+recipe easier to follow.</p>
+<p>Importantly, Wikidata allows the dataset to be used as reference in Wikidata to support statements. For example, if the dataset contains a logP value,
+then this logP value can be associated to the compound in Wikidata with a statement, with the dataset itself as reference.</p>
+<!-- TODO: add screenshot of example -->
 <div class="section" id="finding-datasets">
 <h3>Finding Datasets<a class="headerlink" href="#finding-datasets" title="Permalink to this headline">¶</a></h3>
-<p>There are several ways to locate datasets to be registered into Wikidata. A consideration is that the dataset has the recommended license. For details related to finding datasets and determining the correct licenses, please refer to Finding Compounds(add the link here)</p>
-<p>[Link identifiers]</p>
+<p>There are several ways to locate datasets to be registered into Wikidata. One consideration is that the dataset has the recommended license and an identifier.</p>
+<p>Example of where open datasets with information about chemical compounds can be found include:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://figshare.com/">Figshare</a></p></li>
+<li><p><a class="reference external" href="https://zenodo.org/">Zenodo</a></p></li>
+<li><p><a class="reference external" href="https://data.jrc.ec.europa.eu/dataset">Joint Research Centre Data Catalogue</a></p></li>
+</ul>
+<p>Of course, there are also general data search engines now that may help find the data you are looking for:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://datasetsearch.research.google.com/">Google Dataset Search</a></p></li>
+<li><p><a class="reference external" href="https://commons.datacite.org/">DataCite Commons</a></p></li>
+</ul>
+<!--
+TODO: add below statement when that recipe is included too:
+
+For details related to finding datasets and determining the correct licenses, please refer to Finding Compounds. 
+-->
 </div>
 <div class="section" id="data-set-registration">
 <h3>Data Set Registration<a class="headerlink" href="#data-set-registration" title="Permalink to this headline">¶</a></h3>
@@ -798,7 +825,7 @@ No
 </div>
 <div class="section" id="adding">
 <h3>Adding<a class="headerlink" href="#adding" title="Permalink to this headline">¶</a></h3>
-<p>With the Quickstatement of the dataset, the dataset can be added to WikiData using <a class="reference external" href="https://quickstatements.toolforge.org/">https://quickstatements.toolforge.org/</a>. This step requires a WikiData account.</p>
+<p>With the Quickstatement of the dataset, the dataset can be added to Wikidata using <a class="reference external" href="https://quickstatements.toolforge.org/">https://quickstatements.toolforge.org/</a>. This step requires a Wikidata account.</p>
 </div>
 </div>
 <div class="section" id="authors">
