@@ -685,20 +685,32 @@
     <a class="reference internal nav-link" href="#adding-a-dataset-with-quickstatements">
      Adding a dataset with Quickstatements
     </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-1-wikidata-login">
+       Step 1: Wikidata login
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-2-authorize-quickstatements">
+       Step 2: Authorize Quickstatements
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-3-open-the-scholia-page">
+       Step 3: Open the Scholia page
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#step-4-execute-the-quickstatements">
+       Step 4: Execute the Quickstatements
+      </a>
+     </li>
+    </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-1-wikidata-login">
-     Step 1: Wikidata login
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-2-authorize-quickstatements">
-     Step 2: Authorize Quickstatements
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#step-3-open-the-scholia-page">
-     Step 3: Open the Scholia page
+    <a class="reference internal nav-link" href="#optional-adding-additional-information">
+     Optional: adding additional information
     </a>
    </li>
   </ul>
@@ -846,7 +858,7 @@ For details related to finding datasets and determining the correct licenses, pl
 DOI, the title of the dataset, the author(s) of the dataset, publication date of the dataset, and links to the
 dataset source. You may need this later.</p>
 <p>With the DOI, there is a good chance that Scholia <a class="footnote-reference brackets" href="#nielsen2017" id="id2">1</a> can help you register the dataset in Wikidata.
-You can use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/\$DOI</span></code> pattern (‘$DOI’ in the link must be replaced with the
+You can use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/$DOI</span></code> pattern (‘$DOI’ in the link must be replaced with the
 DOI of the dataset you are registering) to check if your dataset is already listed in
 Wikidata. If not this page will use the DOI to convert the metadata transformed into a Quickstatements.</p>
 </div>
@@ -854,24 +866,53 @@ Wikidata. If not this page will use the DOI to convert the metadata transformed 
 <h3>Adding a dataset with Quickstatements<a class="headerlink" href="#adding-a-dataset-with-quickstatements" title="Permalink to this headline">¶</a></h3>
 <p>With the Quickstatements of the dataset, the dataset can be added to Wikidata using
 the <a class="reference external" href="https://quickstatements.toolforge.org/">https://quickstatements.toolforge.org/</a> website. This is the step which requires a Wikidata account.</p>
-</div>
 <div class="section" id="step-1-wikidata-login">
-<h3>Step 1: Wikidata login<a class="headerlink" href="#step-1-wikidata-login" title="Permalink to this headline">¶</a></h3>
+<h4>Step 1: Wikidata login<a class="headerlink" href="#step-1-wikidata-login" title="Permalink to this headline">¶</a></h4>
 <p>First, log in with Wikidata or check if you already are.</p>
 </div>
 <div class="section" id="step-2-authorize-quickstatements">
-<h3>Step 2: Authorize Quickstatements<a class="headerlink" href="#step-2-authorize-quickstatements" title="Permalink to this headline">¶</a></h3>
+<h4>Step 2: Authorize Quickstatements<a class="headerlink" href="#step-2-authorize-quickstatements" title="Permalink to this headline">¶</a></h4>
 <p>After step 1, authorize Quickstatements with your Wikidata account using the “Log in” button
 in the top right corner of the Quickstatements website.</p>
 </div>
 <div class="section" id="step-3-open-the-scholia-page">
-<h3>Step 3: Open the Scholia page<a class="headerlink" href="#step-3-open-the-scholia-page" title="Permalink to this headline">¶</a></h3>
-<p>If your dataset is not already Wikidata, use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/\$DOI</span></code> Scholia
+<h4>Step 3: Open the Scholia page<a class="headerlink" href="#step-3-open-the-scholia-page" title="Permalink to this headline">¶</a></h4>
+<p>If your dataset is not already Wikidata, use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/$DOI</span></code> Scholia
 page to create Quickstatements. The result should look something like this:</p>
 <div class="figure align-default" id="scholia">
 <img alt="Scholia page showing Quickstatements for a dataset not yet in Wikidata" src="../../../_images/scholia.png" />
 <p class="caption"><span class="caption-text">Scholia page showing Quickstatements for a dataset not yet in Wikidata.</span><a class="headerlink" href="#scholia" title="Permalink to this image">¶</a></p>
 </div>
+</div>
+<div class="section" id="step-4-execute-the-quickstatements">
+<h4>Step 4: Execute the Quickstatements<a class="headerlink" href="#step-4-execute-the-quickstatements" title="Permalink to this headline">¶</a></h4>
+<p>On the page from Step 3, click the blue “Submit to Quickstatements” button which will take you to the
+Quickstatements website, which will look something like this:</p>
+<div class="figure align-default" id="quickstatements">
+<img alt="Quickstatements showing the same Quickstatements but now parsed and ready for applying to Wikidata" src="../../../_images/quickstatements.png" />
+<p class="caption"><span class="caption-text">Quickstatements showing the same Quickstatements but now parsed and ready for applying to Wikidata.</span><a class="headerlink" href="#quickstatements" title="Permalink to this image">¶</a></p>
+</div>
+<p>After you click “Run”, Quickstatements starts making edits in Wikidata, and when done, it should look
+like this:</p>
+<div class="figure align-default" id="quickstatements2">
+<img alt="Quickstatements showing the same Quickstatements after applying to Wikidata" src="../../../_images/quickstatements2.png" />
+<p class="caption"><span class="caption-text">Quickstatements showing the same Quickstatements after applying to Wikidata.</span><a class="headerlink" href="#quickstatements2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="optional-adding-additional-information">
+<h3>Optional: adding additional information<a class="headerlink" href="#optional-adding-additional-information" title="Permalink to this headline">¶</a></h3>
+<p>The result page from Step 4 will include a link to the newly created Wikidata item. It will have
+a Wikidata identifer starting with an “Q”, for example <a class="reference external" href="https://www.wikidata.org/wiki/Q108653787">Q108653787</a>.</p>
+<p>Additional information that can be provided include:</p>
+<ul class="simple">
+<li><p>links to Wikidata items for authors using the P50 property for “author”</p></li>
+<li><p>keywords</p></li>
+<li><p>other metadata</p></li>
+</ul>
+<p>This <a class="reference external" href="https://laurendupuis.github.io/Scholia_tutorial/">Use Scholia and Wikidata to find scientific literature</a>
+tutorial provides more information on how Wikidata uses keywords to further expose literature,
+but works identical to other research output, such as datasets.</p>
 </div>
 </div>
 <div class="section" id="references">
