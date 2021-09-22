@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registering Datasets</title>
+    <title>5. Registering Datasets</title>
     
   <link rel="stylesheet" href="../../../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -60,6 +60,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="6. How to create checksum files" href="checksum-create.html" />
+    <link rel="prev" title="4. Depositing in Zenodo generic repository" href="zenodo-deposition.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -130,12 +132,12 @@
   RECIPES
  </span>
 </p>
-<ul class="nav sidenav_l1">
- <li class="toctree-l1 collapsible-parent">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../findability.html">
    Findability
   </a>
-  <ul class="collapse-ul">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="identifiers.html">
      1. Unique, persistent identifiers
@@ -156,34 +158,39 @@
      4. Depositing in Zenodo generic repository
     </a>
    </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     5. How to Register a Dataset with Wikidata
+    </a>
+   </li>
    <li class="toctree-l2">
     <a class="reference internal" href="checksum-create.html">
-     5. Describe data by checksums
+     6. Describe data by checksums
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="checksum-validate.html">
-     6. Validating data by checksums
+     7. Validating data by checksums
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="seo.html">
-     7. Search engine optimization
+     8. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="seo/bioschemas-data-page.html">
-       7.8.1. Data page markup with Bioschemas
+       8.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="seo/bioschemas-dataset.html">
-       7.8.2. Dataset page markup with Schema.org
+       8.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="seo/bioschemas-datacatalog.html">
-       7.8.3. Data catalogue markup
+       8.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -658,76 +665,76 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#main-objectives">
-   Main Objectives
+   5.1. Main Objectives
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#requirements">
-   Requirements
+   5.2. Requirements
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#main-content">
-   Main Content
+   5.3. Main Content
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#finding-datasets">
-     Finding Datasets
+     5.3.1. Finding Datasets
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#dataset-registration-in-wikidata">
-     Dataset Registration in Wikidata
+     5.3.2. Dataset Registration in Wikidata
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-a-dataset-with-quickstatements">
-     Adding a dataset with Quickstatements
+     5.3.3. Adding a dataset with Quickstatements
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#step-1-wikidata-login">
-       Step 1: Wikidata login
+       5.3.3.1. Step 1: Wikidata login
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#step-2-authorize-quickstatements">
-       Step 2: Authorize Quickstatements
+       5.3.3.2. Step 2: Authorize Quickstatements
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#step-3-open-the-scholia-page">
-       Step 3: Open the Scholia page
+       5.3.3.3. Step 3: Open the Scholia page
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#step-4-execute-the-quickstatements">
-       Step 4: Execute the Quickstatements
+       5.3.3.4. Step 4: Execute the Quickstatements
       </a>
      </li>
     </ul>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#optional-adding-additional-information">
-     Optional: adding additional information
+     5.3.4. Optional: adding additional information
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
-   References
+   5.4. References
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#authors">
-   Authors
+   5.5. Authors
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#license">
-   License
+   5.6. License
   </a>
  </li>
 </ul>
@@ -743,7 +750,7 @@
               <div>
                 
   <div class="section" id="registering-datasets">
-<h1>Registering Datasets<a class="headerlink" href="#registering-datasets" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">5. </span>Registering Datasets<a class="headerlink" href="#registering-datasets" title="Permalink to this headline">¶</a></h1>
 <br/>
 <hr class="docutils" />
 <script type="application/ld+json"> {"@context": {"sdo": "https://schema.org/", "bs": "https://bioschema.org/"}, "@type": ["sdo:HowTo", "bs:TrainingMaterial"], "name": "How to Register a Dataset with Wikidata", "audience": ["Bioinformatician", "Data Scientist", "Data Engineer"], "isPartOf": [{"@type": "CreativeWork", "url": "https://fairplus.github.io/the-fair-cookbook/", "name": "The FAIR Cookbook"}], "learningResourceType": "Hands-on", "identifier": {"@type": "PropertyValue", "name": "FCBxxx", "url": "https://w3id.org/faircookbook/FCBxxx"}, "license": {"@type": "CreativeWork", "url": "https://creativecommons.org/licenses/by/4.0/", "name": "CC-BY-4.0"}, "timeRequired": "PT0H15M0S", "totalTime": "PT0H15M0S"} </script>
@@ -804,7 +811,7 @@ No
 <hr class="docutils" />
 <p>“UCnn.x Registering a dataset in Wikidata.”</p>
 <div class="section" id="main-objectives">
-<h2>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.1. </span>Main Objectives<a class="headerlink" href="#main-objectives" title="Permalink to this headline">¶</a></h2>
 <p>Useful datasets become more useful when they are easily found. The <strong>FAIR principles</strong> state that:</p>
 <blockquote>
 <div><p>F1. (Meta)data are assigned a globally unique and persistent identifier</p>
@@ -817,12 +824,12 @@ No
 </div>
 <hr class="docutils" />
 <div class="section" id="requirements">
-<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.2. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <p>To register datasets to <a class="reference external" href="https://www.wikidata.org/">Wikidata</a> requires a Wikidata account (<a class="reference external" href="https://www.wikidata.org/wiki/Special:CreateAccount">create one</a>).</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="main-content">
-<h2>Main Content<a class="headerlink" href="#main-content" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.3. </span>Main Content<a class="headerlink" href="#main-content" title="Permalink to this headline">¶</a></h2>
 <p>This recipes takes an interest in datasets with information about small chemical compounds, particularly datasets with an SDF file or spreadsheet with SMILES.
 But the registration itself in Wikidata to make it more findable works for any dataset. The registration in Wikidata makes the metadata more findable by
 itself <a class="footnote-reference brackets" href="#waagmeester2020" id="id1">2</a>. This <a class="reference external" href="https://www.wikidata.org/wiki/Wikidata:Introduction">Wikidata:Introduction</a> describes the principle ideas and data model that will make this
@@ -831,7 +838,7 @@ recipe easier to follow.</p>
 then this logP value can be associated to the compound in Wikidata with a statement, with the dataset itself as reference.</p>
 <!-- TODO: add screenshot of example -->
 <div class="section" id="finding-datasets">
-<h3>Finding Datasets<a class="headerlink" href="#finding-datasets" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.1. </span>Finding Datasets<a class="headerlink" href="#finding-datasets" title="Permalink to this headline">¶</a></h3>
 <p>There are several ways to locate datasets to be registered into Wikidata. One consideration is that the dataset has the recommended license and an identifier.</p>
 <p>Example of where open datasets with information about chemical compounds can be found include:</p>
 <ul class="simple">
@@ -853,7 +860,7 @@ For details related to finding datasets and determining the correct licenses, pl
 -->
 </div>
 <div class="section" id="dataset-registration-in-wikidata">
-<h3>Dataset Registration in Wikidata<a class="headerlink" href="#dataset-registration-in-wikidata" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.2. </span>Dataset Registration in Wikidata<a class="headerlink" href="#dataset-registration-in-wikidata" title="Permalink to this headline">¶</a></h3>
 <p>After locating a dataset, check the availability of the details of the dataset. Essential attributes include the
 DOI, the title of the dataset, the author(s) of the dataset, publication date of the dataset, and links to the
 dataset source. You may need this later.</p>
@@ -863,45 +870,45 @@ DOI of the dataset you are registering) to check if your dataset is already list
 Wikidata. If not this page will use the DOI to convert the metadata transformed into a Quickstatements.</p>
 </div>
 <div class="section" id="adding-a-dataset-with-quickstatements">
-<h3>Adding a dataset with Quickstatements<a class="headerlink" href="#adding-a-dataset-with-quickstatements" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.3. </span>Adding a dataset with Quickstatements<a class="headerlink" href="#adding-a-dataset-with-quickstatements" title="Permalink to this headline">¶</a></h3>
 <p>With the Quickstatements of the dataset, the dataset can be added to Wikidata using
 the <a class="reference external" href="https://quickstatements.toolforge.org/">https://quickstatements.toolforge.org/</a> website. This is the step which requires a Wikidata account.</p>
 <div class="section" id="step-1-wikidata-login">
-<h4>Step 1: Wikidata login<a class="headerlink" href="#step-1-wikidata-login" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.3.1. </span>Step 1: Wikidata login<a class="headerlink" href="#step-1-wikidata-login" title="Permalink to this headline">¶</a></h4>
 <p>First, log in with Wikidata or check if you already are.</p>
 </div>
 <div class="section" id="step-2-authorize-quickstatements">
-<h4>Step 2: Authorize Quickstatements<a class="headerlink" href="#step-2-authorize-quickstatements" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.3.2. </span>Step 2: Authorize Quickstatements<a class="headerlink" href="#step-2-authorize-quickstatements" title="Permalink to this headline">¶</a></h4>
 <p>After step 1, authorize Quickstatements with your Wikidata account using the “Log in” button
 in the top right corner of the Quickstatements website.</p>
 </div>
 <div class="section" id="step-3-open-the-scholia-page">
-<h4>Step 3: Open the Scholia page<a class="headerlink" href="#step-3-open-the-scholia-page" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.3.3. </span>Step 3: Open the Scholia page<a class="headerlink" href="#step-3-open-the-scholia-page" title="Permalink to this headline">¶</a></h4>
 <p>If your dataset is not already Wikidata, use the <code class="docutils literal notranslate"><span class="pre">https://scholia.toolforge.org/doi/$DOI</span></code> Scholia
 page to create Quickstatements. The result should look something like this:</p>
 <div class="figure align-default" id="scholia">
 <img alt="Scholia page showing Quickstatements for a dataset not yet in Wikidata" src="../../../_images/scholia.png" />
-<p class="caption"><span class="caption-text">Scholia page showing Quickstatements for a dataset not yet in Wikidata.</span><a class="headerlink" href="#scholia" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.1 </span><span class="caption-text">Scholia page showing Quickstatements for a dataset not yet in Wikidata.</span><a class="headerlink" href="#scholia" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 <div class="section" id="step-4-execute-the-quickstatements">
-<h4>Step 4: Execute the Quickstatements<a class="headerlink" href="#step-4-execute-the-quickstatements" title="Permalink to this headline">¶</a></h4>
+<h4><span class="section-number">5.3.3.4. </span>Step 4: Execute the Quickstatements<a class="headerlink" href="#step-4-execute-the-quickstatements" title="Permalink to this headline">¶</a></h4>
 <p>On the page from Step 3, click the blue “Submit to Quickstatements” button which will take you to the
 Quickstatements website, which will look something like this:</p>
 <div class="figure align-default" id="quickstatements">
 <img alt="Quickstatements showing the same Quickstatements but now parsed and ready for applying to Wikidata" src="../../../_images/quickstatements.png" />
-<p class="caption"><span class="caption-text">Quickstatements showing the same Quickstatements but now parsed and ready for applying to Wikidata.</span><a class="headerlink" href="#quickstatements" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.2 </span><span class="caption-text">Quickstatements showing the same Quickstatements but now parsed and ready for applying to Wikidata.</span><a class="headerlink" href="#quickstatements" title="Permalink to this image">¶</a></p>
 </div>
 <p>After you click “Run”, Quickstatements starts making edits in Wikidata, and when done, it should look
 like this:</p>
 <div class="figure align-default" id="quickstatements2">
 <img alt="Quickstatements showing the same Quickstatements after applying to Wikidata" src="../../../_images/quickstatements2.png" />
-<p class="caption"><span class="caption-text">Quickstatements showing the same Quickstatements after applying to Wikidata.</span><a class="headerlink" href="#quickstatements2" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 5.3 </span><span class="caption-text">Quickstatements showing the same Quickstatements after applying to Wikidata.</span><a class="headerlink" href="#quickstatements2" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="optional-adding-additional-information">
-<h3>Optional: adding additional information<a class="headerlink" href="#optional-adding-additional-information" title="Permalink to this headline">¶</a></h3>
+<h3><span class="section-number">5.3.4. </span>Optional: adding additional information<a class="headerlink" href="#optional-adding-additional-information" title="Permalink to this headline">¶</a></h3>
 <p>The result page from Step 4 will include a link to the newly created Wikidata item. It will have
 a Wikidata identifer starting with an “Q”, for example <a class="reference external" href="https://www.wikidata.org/wiki/Q108653787">Q108653787</a>.</p>
 <p>Additional information that can be provided include:</p>
@@ -916,7 +923,7 @@ but works identical to other research output, such as datasets.</p>
 </div>
 </div>
 <div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.4. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="bibtex-footbibliography-content/recipes/findability/registeringDatasets-0"><dl class="footnote brackets">
 <dt class="label" id="nielsen2017"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
 <dd><p>Finn Årup Nielsen, Daniel Mietchen, and Egon Willighagen. <em>Scholia, Scientometrics and Wikidata</em>, pages 237–259. Volume 10577 of Lecture Notes in Computer Science. Springer International Publishing, 2017. URL: <a class="reference external" href="http://link.springer.com/10.1007/978-3-319-70407-4_36">http://link.springer.com/10.1007/978-3-319-70407-4_36</a>, <a class="reference external" href="https://doi.org/10.1007/978-3-319-70407-4_36">doi:10.1007/978-3-319-70407-4_36</a>.</p>
@@ -929,7 +936,7 @@ but works identical to other research output, such as datasets.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.5. </span>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <table class="colwidths-auto table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Name</p></th>
@@ -960,7 +967,7 @@ but works identical to other research output, such as datasets.</p>
 </div>
 <hr class="docutils" />
 <div class="section" id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">5.6. </span>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
 <p>This page is released under the Creative Commons 4.0 BY license.</p>
 <p><a href="https://creativecommons.org/licenses/by/4.0/"><img src="https://mirrors.creativecommons.org/presskit/buttons/80x15/png/by.png" height="20"/></a></p>
 <hr class="footnotes docutils" />
@@ -992,6 +999,8 @@ but works identical to other research output, such as datasets.</p>
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="zenodo-deposition.html" title="previous page"><span class="section-number">4. </span>Depositing in Zenodo generic repository</a>
+    <a class='right-next' id="next-link" href="checksum-create.html" title="next page"><span class="section-number">6. </span>How to create checksum files</a>
 
         </div>
         
