@@ -44,8 +44,8 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/mermaid.js"></script>
     <script src="../../../_static/mermaid.core.js"></script>
+    <script src="../../../_static/mermaid.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
@@ -117,6 +117,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/priorization.html">
+   Selecting projects for FAIRification
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/FAIRplus-values.html">
    Ethical values of FAIR
   </a>
@@ -159,38 +164,33 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="registeringDatasets.html">
-     5. How to Register a Dataset with Wikidata
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="checksum-create.html">
-     6. Describe data by checksums
+     5. Describe data by checksums
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="checksum-validate.html">
-     7. Validating data by checksums
+     6. Validating data by checksums
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="seo.html">
-     8. Search engine optimization
+     7. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="seo/bioschemas-data-page.html">
-       8.8.1. Data page markup with Bioschemas
+       7.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="seo/bioschemas-dataset.html">
-       8.8.2. Dataset page markup with Schema.org
+       7.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="seo/bioschemas-datacatalog.html">
-       8.8.3. Data catalogue markup
+       7.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -484,6 +484,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../applied-examples/resolute_raw/resolute.html">
      5. ReSOLUTE - transcriptomics datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applied-examples/ehden-ohdsi.html">
+     6. EHDEN-OHDSI
     </a>
    </li>
   </ul>
@@ -900,7 +905,7 @@ $ touch minid-config.cfg
   <img src="https://github.com/nih-cfde/the-fair-cookbook/blob/dev/content/recipes/08/2/images/globus/globus-account-create.png?raw=true" alt="drawing" style="border:1px solid black;" width="650"  align="top" />
 </div> 
  -->
-  <!-- ![](https://i.imgur.com/B5UbkpF.png) -->
+  <!-- ![](/images/B5UbkpF.png) -->
 <div class="figure align-default" id="creating-a-globus-account">
 <a class="reference internal image-reference" href="../../../_images/globus-account-create.png"><img alt="Creating a Globus account" src="../../../_images/globus-account-create.png" style="height: 500px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3.2 </span><span class="caption-text">Creating a Globus account.</span><a class="headerlink" href="#creating-a-globus-account" title="Permalink to this image">¶</a></p>
@@ -915,7 +920,7 @@ $ touch minid-config.cfg
 </div>
 <p>This will open the GlobusID login page. Simply enter your credentials obtained from 2.</p>
 <!-- ![](./images/globus/globus-account-login.png) -->
-<!-- ![](https://i.imgur.com/2OZFcJa.png) -->
+<!-- ![](/images/2OZFcJa.png) -->
 <!-- <div>
 <img src="./images/globus/globus-account-login.png" width="900px" style="padding:1px;border:thin solid black;"/>
 </div>  -->
@@ -928,7 +933,7 @@ $ touch minid-config.cfg
 </div>
 <p>followed by:</p>
 <!-- ![](./images/globus/globus-account-allow.png) -->
-<!-- ![](https://i.imgur.com/avzyAFZ.png) -->
+<!-- ![](/images/avzyAFZ.png) -->
 <!-- <div>
 <img src="./images/globus/globus-account-allow.png" width="900px" style="padding:1px;border:thin solid black;"/>
 </div>  -->
@@ -941,7 +946,7 @@ $ touch minid-config.cfg
 </div>
 <p>If all goes well, the following browser screen will be shown:</p>
 <!-- ![](./images/globus/globus-account-login-success.png) -->
-<!-- ![](https://i.imgur.com/THYPg4E.png) -->
+<!-- ![](/images/THYPg4E.png) -->
 <!-- <div>
 <img src="./images/globus/globus-account-login-success.png" width="650px" style="padding:1px;border:thin solid black;"/>
 </div>  -->

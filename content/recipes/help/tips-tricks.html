@@ -44,8 +44,8 @@
     <script src="../../../_static/togglebutton.js"></script>
     <script src="../../../_static/clipboard.min.js"></script>
     <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/mermaid.js"></script>
     <script src="../../../_static/mermaid.core.js"></script>
+    <script src="../../../_static/mermaid.js"></script>
     <script src="../../../_static/mermaid.min.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../../../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
@@ -117,6 +117,11 @@
   </a>
  </li>
  <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/priorization.html">
+   Selecting projects for FAIRification
+  </a>
+ </li>
+ <li class="toctree-l1">
   <a class="reference internal" href="../introduction/FAIRplus-values.html">
    Ethical values of FAIR
   </a>
@@ -159,38 +164,33 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../findability/registeringDatasets.html">
-     5. How to Register a Dataset with Wikidata
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="../findability/checksum-create.html">
-     6. Describe data by checksums
+     5. Describe data by checksums
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../findability/checksum-validate.html">
-     7. Validating data by checksums
+     6. Validating data by checksums
     </a>
    </li>
    <li class="toctree-l2 collapsible-parent">
     <a class="reference internal" href="../findability/seo.html">
-     8. Search engine optimization
+     7. Search engine optimization
     </a>
     <ul class="collapse-ul">
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-data-page.html">
-       8.8.1. Data page markup with Bioschemas
+       7.8.1. Data page markup with Bioschemas
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-dataset.html">
-       8.8.2. Dataset page markup with Schema.org
+       7.8.2. Dataset page markup with Schema.org
       </a>
      </li>
      <li class="toctree-l3">
       <a class="reference internal" href="../findability/seo/bioschemas-datacatalog.html">
-       8.8.3. Data catalogue markup
+       7.8.3. Data catalogue markup
       </a>
      </li>
     </ul>
@@ -484,6 +484,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../applied-examples/resolute_raw/resolute.html">
      5. ReSOLUTE - transcriptomics datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../applied-examples/ehden-ohdsi.html">
+     6. EHDEN-OHDSI
     </a>
    </li>
   </ul>
@@ -827,7 +832,7 @@ The mermaid element (boxes) can then be suffixed with that short-name using the 
 </tbody>
 </table>
 <p>To cut on the hardship, simply using the following online <a class="reference external" href="https://www.tablesgenerator.com/markdown_tables">Markdown table generator</a></p>
-<p><img alt="" src="https://i.imgur.com/Pek2BoQ.png" /></p>
+<p><img alt="" src="../../../_images/Pek2BoQ.png" /></p>
 <p>The component is intuitive to use and support copy and pate from say Excel for instance. Do the necessary tuning and then hit the <code class="docutils literal notranslate"><span class="pre">Generate</span></code> button to produce the Table in MarkDown format.
 Then, click on the green ‘copy to clipboard button’, go back to your markdown editor or HackMD and paste.</p>
 <p>job done!</p>
@@ -835,13 +840,13 @@ Then, click on the green ‘copy to clipboard button’, go back to your markdow
 <div class="section" id="problem-5-how-to-resize-images-or-figures">
 <h2><span class="section-number">6.5. </span>Problem 5: How to resize images or figures:<a class="headerlink" href="#problem-5-how-to-resize-images-or-figures" title="Permalink to this headline">¶</a></h2>
 <p>When using HackMD, images can be inserting using the common toolbar and these are uploaded to imgur and the markdown looks like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!<span class="o">[](</span>https://i.imgur.com/yI8TRNM.png<span class="o">)</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>!<span class="o">[](</span>/images/yI8TRNM.png<span class="o">)</span>
 </pre></div>
 </div>
 <p>but sizing is not properly supported which leads to rendering issues.</p>
 <p>To solve the issue, the <code class="docutils literal notranslate"><span class="pre">best</span></code> course of action is to use an HTML <code class="docutils literal notranslate"><span class="pre">div</span></code> tag, which can be styled at will, as shown below:</p>
 <div class="highlight-HTML notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">img</span> 
-<span class="na">src</span><span class="o">=</span><span class="s">&quot;https://i.imgur.com/yI8TRNM.png&quot;</span> 
+<span class="na">src</span><span class="o">=</span><span class="s">&quot;/images/yI8TRNM.png&quot;</span> 
 <span class="na">alt</span><span class="o">=</span><span class="s">&quot;drawing&quot;</span> 
 <span class="na">style</span><span class="o">=</span><span class="s">&quot;width:750px;&quot;</span> 
 <span class="na">border</span><span class="o">=</span><span class="s">&quot;1px solid black&quot;</span> 
