@@ -1,7 +1,7 @@
 (fcb-find-zenodo)=
 # Depositing in Zenodo generic repository
 
-+++
+<br/>
 <br/>
 
 ````{panels_fairplus}
@@ -10,7 +10,9 @@
 :difficulty_level: 2
 :recipe_type: hands_on
 :reading_time_minutes: 15
-:intended_audience: principal_investigator, data_manager, data_scientist, funder  
+:intended_audience: principal_investigator, data_manager, data_scientist, funder
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: yeah
 :recipe_name: Depositing in Zenodo generic repository
 ```` 
@@ -26,6 +28,8 @@ The main purpose of this recipe is:
 ## Graphical Overview
 
 <!--
+````{dropdown} 
+:open:
 ```{figure} ./zenodo.svg
 ---
 width: 500px
@@ -34,6 +38,7 @@ alt: The process of depositing to CERN Zenodo
 ---
 The process of depositing to CERN Zenodo.
 ```
+````
 ---
 -->
 
@@ -51,7 +56,7 @@ The process of depositing to CERN Zenodo.
 
 ### What is Zenodo?
 
-Zenodo is a repository developed by [CERN](https://home.cern/), under the [OpenAire](https://www.openaire.eu/) program the focus of which is on **open data**. It was commissioned by the EC to support their nascent Open Data policy by providing a catch-all repository for EC funded research. This of particular relevance for all projects funded under the `Innovative Medicine Initiative (IMI)`.
+Zenodo is a repository developed by [CERN](https://home.cern/) under the [OpenAire](https://www.openaire.eu/) program, the focus of which is on **open data**. It was commissioned by the EC to support their nascent Open Data policy by providing a catch-all repository for EC funded research. This of particular relevance for all projects funded under the `Innovative Medicine Initiative (IMI)`.
 
 ### Why use Zenodo?
 
@@ -63,7 +68,7 @@ To cite `Zenodo's documentation`, here are a few reasons why using the repositor
 * Open or closed — Share e.g. anonymized clinical trial data with only medical professionals via our restricted access mode.
 * Versioning — Easily update your dataset with our versioning feature.
 * GitHub integration — Easily preserve your GitHub repository in Zenodo.
-* Usage statisics — All uploads display standards compliant usage statistics
+* Usage statisics — All uploads display standards compliant usage statistics.
 
 
 ## 1. How to use Zenodo Deposition Web Interface?
@@ -89,43 +94,47 @@ This section guides users through the key steps to perform to organize a deposit
 <!-- <div> <img src="/images/TYpr8jM.png" alt="drawing" style="width:650px;" border="1px solid black" align="top" />
 </div> -->
 
-
+````{dropdown} 
+:open:
 ```{figure} /images/TYpr8jM.png
 ---
-height: 450px
+height: 600px
 name: Uploading files to Zenodo
 alt: Uploading files to Zenodo
 ---
 Uploading files to Zenodo Repository.
 ```
+````
 
 Files can be dragged and dropped, with the following limitations:
 * 5GB max each, 
 * 50 GB total / dataset
 
 
-After adding the set of files associated with the submission, the upload should be initiated by the pressing the `start upload` green button.
+After adding the set of files associated with the submission, the upload should be initiated by pressing the `start upload` green button.
 Failing to do so will result in a failure to proceed with the submission and an error will be thrown, reminding users to do so.
 
 <!-- <img src="/images/LwMorlw.png" alt="drawing" style="width:650px;" border="1px solid black" align="top" /> -->
 
-
+````{dropdown} 
+:open:
 ```{figure} /images/LwMorlw.png
 ---
-height: 450px
+height: 600px
 name: Starting the file upload to Zenodo
 alt: Starting the file upload  to Zenodo
 ---
 Starting the file upload to Zenodo Repository.
 ```
-
+````
 
 The next key step is to select the `upload type`. In this instance, the `Dataset` is selected. This matters as it provide strong typing which is relied on by `search engine` and therefore impacts `findability`.
 
 
 <!-- <img src="/images/OYyz4dT.png" alt="drawing" style="width:500px;" border="1px solid black" align="top" /> -->
 
-
+````{dropdown} 
+:open:
 ```{figure} /images/OYyz4dT.png
 ---
 height: 150px
@@ -134,6 +143,7 @@ alt: Selecting the upload type to Zenodo
 ---
 Selecting the upload type to Zenodo Repository.
 ```
+````
 
 
 ---
@@ -145,45 +155,50 @@ Selecting the upload type to Zenodo Repository.
 
 <!-- <img src="/images/WmlqBjL.png" alt="drawing" style="width:700px;" border="1px solid black" align="top" /> -->
 
-
+````{dropdown} 
+:open:
 ```{figure} /images/WmlqBjL.png
 ---
-height: 450px
+height: 600px
 name: Basic metadata to report 
 alt:  Basic metadata to report 
 ---
 Basic metadata to report .
 ```
+````
 
-
-* **Reserve a Digital Object Identifier**: This is a service provided natively by the Zenodo service, by virtue of its integration with Datacite services. This is quite an important point as it means the a Zenodo submission can be cited. However, remember to carefully review all the data entered in the form as once a doi has been minted, the associated information **can not be changed without creating a new version of the archive and therefore minting a new doi**
+* **Reserve a Digital Object Identifier**: This is a service provided natively by the Zenodo service, by virtue of its integration with Datacite services. This is quite an important point as it means the Zenodo submission can be cited. However, remember to carefully review all the data entered in the form as once a doi has been minted, the associated information **can not be changed without creating a new version of the archive and therefore minting a new doi**
  
 
 
-* 'Keywords' can be adding to tag the submission. These are free text and no controlled terminology can be used in the interface at the moment.
+* 'Keywords' can be added to tag the submission. These are free text and no controlled terminology can be used in the interface at the moment.
 
 <!-- <img src="/images/9Bp91gX.png" alt="drawing" style="width:700px;" border="1px solid black" align="top" /> -->
 
+````{dropdown} 
+:open:
 ```{figure} /images/9Bp91gX.png
 ---
-height: 450px
+height: 600px
 name: Setting keywords associated with the Zenodo deposition
 alt:  Setting keywords associated with the Zenodo deposition
 ---
 Setting keywords associated with the Zenodo deposition .
 ```
-
+````
 
 
 ---
 
 ###  Zenodo Compatible Data Collection - Access and License information
 
-* Zenodo provides facilities to set `Access Conditions` and `License`, `Data Controler Contact Information`, as well as `Embargo Duration` if applicable
+* Zenodo provides facilities to set `Access Conditions` and `License`, `Data Controler Contact Information`, as well as `Embargo Duration` if applicable.
 * As indicated above, it is possible to `set an Embargo Period`, if the option `embargoed access` is selected under the `Access right` section.
 
 <!-- <img src="/images/fSxOjXe.png" alt="drawing" style="width:750px;" border="1px solid black" align="top" /> -->
 
+````{dropdown} 
+:open:
 ```{figure} /images/fSxOjXe.png
 ---
 height: 400px
@@ -192,16 +207,19 @@ alt:  Choosing a License is essential
 ---
 Choosing a License is essential.
 ```
+````
 
 
 
-  * Zenodo places to no limit when it comes to duration of the embargo period. So submitters should check EC and IMI guidelines or local institutional requirements for guidance.
+  * Zenodo places no limit when it comes to duration of the embargo period. So submitters should check EC and IMI guidelines or local institutional requirements for guidance.
 
 
 * Setting Access Conditions/License, Data Controler Contact Information, Embargo Duration if applicable
 
 <!-- <img src="/images/ty9rpXF.png" alt="drawing" style="width:750px;" border="1px solid black" align="top" /> -->
 
+````{dropdown} 
+:open:
 ```{figure} /images/ty9rpXF.png
 ---
 height: 350px
@@ -210,19 +228,23 @@ alt:  Setting access conditions
 ---
 Setting access conditions.
 ```
+````
 
 * Start typing to display more licenses available from Zenodo
 
 <!-- <img src="/images/249GhMg.png" alt="drawing" style="width:550px;" border="1px solid black" align="top"/> -->
 
+````{dropdown} 
+:open:
 ```{figure} /images/249GhMg.png
 ---
-height: 100px
+height: 150px
 name: Autocompletion prompts available licenses
 alt:  Autocompletion prompts available licenses
 ---
 Autocompletion prompts available licenses.
 ```
+````
 
 
 
@@ -232,7 +254,9 @@ Autocompletion prompts available licenses.
 Since the Zenodo mission is to collect EC funded data, the repository provides the means to lookup `Grant Information`:
 
 <!-- <img src="/images/STjyFbT.png" alt="drawing" style="width:700px;" border="1px solid black" align="top" /> -->
- 
+
+````{dropdown} 
+:open:
 ```{figure} /images/STjyFbT.png
 ---
 height: 200px
@@ -241,6 +265,7 @@ alt:  Linking Funding to Zenodo Submission
 ---
 Linking Funding to Zenodo Submission.
 ```
+````
 
 
   * Zenodo: openAIRE connected repository
@@ -254,15 +279,17 @@ Linking Funding to Zenodo Submission.
 
 <!-- <img src="/images/uhGZN5t.png" alt="drawing" style="width:700px;" border="1px solid black" align="top" /> -->
 
- 
+````{dropdown} 
+:open:
 ```{figure} /images/uhGZN5t.png
 ---
-height: 300px
+height: 500px
 name: Miscellaneous Information about the Zenodo Submission
 alt:  Miscellaneous Information about the Zenodo Submission
 ---
 Miscellaneous Information about the Zenodo Submission.
 ```
+````
 
 
   * Contributors
@@ -430,14 +457,14 @@ r.status_code
 > The integration with ORCID<!-- TODO add a link to corresponding document --> makes it very easy to obtain an account on CERN's service. 
 > The integration with Datacite<!-- TODO add a link to corresponding document --> means that submitters can reserve and obtain Digital Object Identifiers (DOI) very simply. These can then be cited and used as references to the datasets.
 > The integration with Crossref<!-- TODO add a link to corresponding document --> means that funding information case be easily looked up, thus reducing data entry burden in most conditions but especially for EU funded projects such as IMI.
-> Licensing information can also be easily supplied
+> Licensing information can also be easily supplied.
 > Data access and embargo dates can be reserved.
-> Findability via search engines is enhanced as Zenodo supports content negotiation, serving [schema.org](https://schema.org) based JSON-LD documents
+> Findability via search engines is enhanced as Zenodo supports content negotiation, serving [schema.org](https://schema.org) based JSON-LD documents.
 > Users should however be reminded of the following limitations of the service:
-    > - absence of contraints on the nature of the datafiles being uploaded
-    > - no domain specific awareness and domain specific metadata
-    > - absence of connection with specialized repositories
-    > - size limitation for a given datasets.
+    > - Absence of constraints on the nature of the datafiles being uploaded.
+    > - No domain specific awareness and domain specific metadata.
+    > - Absence of connection with specialized repositories.
+    > - Size limitation for a given datasets.
     
     
 
@@ -465,17 +492,18 @@ r.status_code
 | [JSON-LD](https://fairsharing.org/bsg-s001214/)|||
 
 
----
+
+## References
+````{dropdown} **References**
+````
+
 ## Authors
 
-<!-- TODO seems unlikely that all authors did review, but noone the original draft. Clarify -->
 ````{authors_fairplus}
-Philippe: Writing - Review & Editing, Conceptualization
+Philippe: Writing - Writing, Conceptualization
 Susanna: Writing - Review & Editing, Funding acquisition
 ````
 
-
----
 ## License
 
 ````{license_fairplus}

@@ -1,7 +1,7 @@
 (fcb-interop-ontorobot)=
 # Building an application ontology with ROBOT
 
-+++
+<br/>
 <br/>
 
 ````{panels_fairplus}
@@ -11,6 +11,8 @@
 :recipe_type: hands_on
 :reading_time_minutes: 60
 :intended_audience: terminology_manager, data_manager, data_scientist, ontologist
+:maturity_level: 1
+:maturity_indicator: 1, 2
 :has_executable_code: yeah
 :recipe_name: Building an application ontology with ROBOT
 ```` 
@@ -27,6 +29,8 @@ An application ontology is a semantic artefact which is developed to answer the 
 ## Graphical Overview
 
 
+````{dropdown} 
+:open:
 ```{figure} ontology-robot-recipe.md-figure1.mmd.png
 ---
 name: ontology-robot-recipe-figure1
@@ -34,6 +38,7 @@ alt: Building an ontology with Robot tool
 ---
 Building an ontology with Robot tool.
 ```
+````
 
 
 ## Capability & Maturity Table
@@ -83,7 +88,7 @@ Building an ontology with Robot tool.
 
 ### Preliminary requirements
 
-The development of `application ontology` requires joint contributions from `domain experts`, `use case owners` and `ontology developers`. The domain expert provides essential domain knowledge. The use case owners defines the `competency questions` of the application ontology. And the ontology developers are `IT specialists` working on the construction of the application ontology.
+The development of an `application ontology` requires joint contributions from `domain experts`, `use case owners` and `ontology developers`. The domain expert provides essential domain knowledge. The use case owners defines the `competency questions` of the application ontology. And the ontology developers are `IT specialists` working on the construction of the application ontology.
 
 ### Step 1: Define the goal of the application ontology
 
@@ -170,9 +175,11 @@ _Table 2: Available reference ontologies in selected domains_
 
 This step identifies the seeds needed to perform the knowledge extraction from external sources, i.e., the set of entities to extract in order to be integrated on the application ontology. Ontology Developer can provide the tools to ease and to scale the identification of the seeds. Domain experts can identify the right seeds for a given application ontology.
 
-Besides the fact that is always possible to manually identify the set of seeds needed for the performing of the concept extraction, to have a helper tool allows to run the task at scale. Following, an automatable approach based on using widely known life sciences annotators  - [Zooma](https://www.ebi.ac.uk/spot/zooma/) and [NCBO Annotator](https://bioportal.bioontology.org/annotator) - are depicted.
+Besides, the fact that is always possible to manually identify the set of seeds needed for the performing of the concept extraction, to have a helper tool allows to run the task at scale. Following, an automatable approach based on using widely known life sciences annotators  - [Zooma](https://www.ebi.ac.uk/spot/zooma/) and [NCBO Annotator](https://bioportal.bioontology.org/annotator) - are depicted.
 
 
+````{dropdown} 
+:open:
 ```{figure} ontology-robot-recipe.md-figure2.mmd.png
 ---
 name: ontology-robot-recipe-figure2
@@ -180,6 +187,7 @@ alt: Ontology seed term selection approaches.
 ---
 Ontology seed term selection approaches.
 ```
+````
 
 
 [ZOOMA](https://www.ebi.ac.uk/spot/zooma/) is a web service for discovering optimal ontology mappings, developed by the Samples, Phenotypes and Ontologies Team at the [European Bioinformatics Institute (EMBL-EBI)](https://www.ebi.ac.uk)
@@ -380,12 +388,12 @@ The `robot` extract command takes several arguments:
 * *method*: `ROBOT` uses 4 different algorithms to generate a module.  `TOP`, `BOT`, `STAR` (all from the SLME method), and `MIREOT`. The first two will create a module  below or above the seed classes (the classes of interest in the target ontology) respectively. The `STAR` method creates a module by pulling all the properties and axioms of the seed classes but nothing else. `MIREOT` uses a different methods and offers some more options, in particular when it comes to how many levels up or down (parent and children) are needed.     
 * *input*: this argument is to specify the target ontology you want to extract a module from. It can be the original artefact or a filtered version of it.
 * *imports*: this argument allows to specify whether or not to include imported ontologies. Note that the default is to do so using the value `include`. Choose `exclude` otherwise.
-* *term-file*: the text file holding the list of classes of interested identified by their iri (e.g. http://purl.obolibrary.org/obo/UBERON_0001235 # adrenal cortex)
+* *term-file*: the text file holding the list of classes of interested identified by their iri (e.g. http://purl.obolibrary.org/obo/UBERON_0001235 # adrenal cortex).
 * *intermediates*: specific to the `MIREOT` method, it allows to let the algorithm know how much or how little to extract. It has 3 levels (`all`,`minimal`, `none`).
-* *output*: the path to the owl file holding the results of the module extraction
+* *output*: the path to the owl file holding the results of the module extraction.
 * *copy-ontology-annotations*: a boolean value true/false to pull or not any class annotation from the parent ontology. default is `false`
-* *sources*: optional, a pointer to a file mapping 
-* *annotate-with-source*: a boolean value true/false. default is `false`
+* *sources*: optional, a pointer to a file mapping .
+* *annotate-with-source*: a boolean value true/false. Default is `false`.
 
 
 The above query, saved under `select_anatomy_subset.sparql` can be used to generate a dynamic seed list, then do a `BOT` extraction: 
@@ -478,7 +486,7 @@ robot report --input edit.owl --output report.tsv
 
 Ontology annotation adds metadata to the owl file. It is recommended to provide `ontology IRIs`, `version IRIs`, `ontology title`, `descriptions` and `license` to support future usage and management. 
 
-The annotation can be added either line-by-line or provided in a turtile(.ttl) file. 
+The annotation can be added either line-by-line or provided in a turtle (.ttl) file. 
 ```bash
 #ANNOTATE
 robot annotate --input materialized.owl \
@@ -525,7 +533,7 @@ The final step of the ontology construction is to assess coverage of the ontolog
 
 `ROBOT` provides the `query` command to perform `SPARQL queries`  against an ontology to verify and validate the ontology.
 
-The query command runs SPARQL `ASK`, `SELECT`, and `CONSTRUCT` queries by using the `--query` option with two arguments: `a query file` and `an output file`. Instead of specifying one or more pairs (query file, output file), it is also possible to specify a single `--output-dir` and use the `--queries` option to provide one or more queries of any type. Each output file will be written to the output directory with the same base name as the query file that produced it. An pattern example of this command is shown following.
+The query command runs SPARQL `ASK`, `SELECT`, and `CONSTRUCT` queries by using the `--query` option with two arguments: `a query file` and `an output file`. Instead of specifying one or more pairs (query file, output file), it is also possible to specify a single `--output-dir` and use the `--queries` option to provide one or more queries of any type. Each output file will be written to the output directory with the same base name as the query file that produced it. An pattern example of this command is shown as follows.
 
 ```bash
 robot query --input <input_ontology_file> \
@@ -533,22 +541,24 @@ robot query --input <input_ontology_file> \
     --output-dir <path_to_rsults> results/
 ```
 
----
+
 ## Conclusions
 
 > Creation an application ontology and semantic model to support knowledge discovery is an important process in the data management life cycle. This more advanced recipe has identified and described all the different steps that one needs to consider to build such a resource. While this is important, one should bear in mind the costs associated with maintaining those artefacts and keeping them up to date. It is therefore also critical to understand the benefits of contributing to existing open efforts.    
 
 > ### What should I read next?
 
-> * {ref}`fcb-interop-metadataprofile`  <!-- How to establish a minimal metadata profile?<!-- TODO add a link to corresponding document --> -->
-> * {ref}`fcb-interop-ontorequest` <!-- How to submit/request terms to an ontology ?<!-- TODO add a link to corresponding document --> -->
----
+> * {ref}`fcb-interop-metadataprofile`  <!-- How to establish a minimal metadata profile? --> <!-- TODO add a link to corresponding document -->
+> * {ref}`fcb-interop-ontorequest` <!-- How to submit/request terms to an ontology ?--> <!-- TODO add a link to corresponding document -->
+
+
 
 
 ## References
-
+````{dropdown} **References**
 ```{footbibliography}
 ```
+````
 
 <!-- ```{bibliography} ../../../_bibliography/bibliography-identifier-mapping.bib
 :filter: docname in docnames
@@ -558,15 +568,14 @@ robot query --input <input_ontology_file> \
 <!-- - R.C. Jackson, J.P. Balhoff, E. Douglass, N.L. Harris, C.J. Mungall, and J.A. Overton. [_ROBOT: A tool for automating ontology workflows_](https://link.springer.com/epdf/10.1186/s12859-019-3002-3?author_access_token=bB8BLjFWrdh42vR6DjT-nG_BpE1tBhCbnbw3BuzI2RPCZ2BK7EeexaCNYfT-cCz8Q_mrZomT2_svoQf12CW661Sagzw6JGF9DhJq3Q3fTPdMGFMtais7MRgx8-kDhp6uC9g2qcVh5FumTsveV22XVQ%3D%3D). BMC Bioinformatics, vol. 20, July 2019
 - Arp, Robert, Barry Smith, and Andrew D. Spear. _Building ontologies with basic formal ontology_. Mit Press, 2015. -->
 
----
 
 ## Supplementary material
-
+````{dropdown} **Supplementary material**
 - {download}`Example Dataset <./ontology-robot-recipe/ExternalStudiesKQ.xlsx>`
 - [Competency questions](ontology-robot-recipe/competency-questions.md)
 - [IPython Notebook for the MSIO Build Process](ontology-robot-recipe/MSIO-robot-build-process.ipynb)
+````
 
----
 
 ## Authors
 
@@ -579,10 +588,7 @@ Emiliano: Writing - Review & Editing
 ````
 
 
----
-
 ## License
-
 ````{license_fairplus}
 CC-BY-4.0
 ````

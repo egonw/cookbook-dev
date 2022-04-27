@@ -11,6 +11,8 @@
 :recipe_type: hands_on
 :reading_time_minutes: 15
 :intended_audience: chemoinformatician, data_curator, data_manager, data_scientist  
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: yeah
 :recipe_name: InChI and SMILES identifiers for chemical structures
 ```` 
@@ -24,32 +26,24 @@ The main purpose of this recipe is:
 
 ---
 
-
-## Requirements
-
-* Skill depedency:
-   * Bash experience
-* Technical requirements:
-   * Groovy
-
----
-
-
-## FAIRification Objectives, Inputs and Outputs
-
+```{tabbed} FAIRification Objectives, Inputs and Outputs
 | Actions.Objectives.Tasks  | Input | Output  |
 | :------------- | :------------- | :------------- |
 | [validation](http://edamontology.org/operation_2428)  | [Structure Data File (SDF)](https://fairsharing.org/FAIRsharing.ew26v7)  | [report](http://edamontology.org/data_2048)  |
 | [calculation](http://edamontology.org/operation_3438)  | [Structure Data File (SDF)](https://fairsharing.org/FAIRsharing.ew26v7) | [InChI](https://fairsharing.org/FAIRsharing.ddk9t9) |
 | [calculation](http://edamontology.org/operation_3438)  | [Structure Data File (SDF)](https://fairsharing.org/FAIRsharing.ew26v7)  | [SMILES](https://fairsharing.org/FAIRsharing.qv4b3c)  |
-
----
-
+```
+```{tabbed} Requirements
+* Skill dependency:
+   * Bash experience
+* Technical requirements:
+   * Groovy
+```
 
 ## Creating InChI and SMILES identifiers for chemical structures
 
 To run the below scripts, you need a [Groovy](https://groovy.apache.org/download.html) installation.
-The Groovy scripts use version 2.5 of the [Chemistry Development Kit](https://cdk.github.io/)
+The Groovy scripts use version 2.7.1 of the [Chemistry Development Kit](https://cdk.github.io/)
 (see {footcite}`Willighagen2017`). This library and its use in Groovy is further explain in
 the book [Groovy Cheminformatics with the Chemistry Development Kit](https://egonw.github.io/cdkbook/).
 Check this git repository for more detailed use instructions and where to find the tools:
@@ -99,14 +93,14 @@ with BridgeDb and its metabolite ID mapping databases to get additional identifi
 ### What should I read next?
 * [Identifier mapping with BridgeDb](https://w3id.org/faircookbook/FCB017)
 
----
+
 
 ## References
 
+````{dropdown} **References**
 ```{footbibliography}
 ```
-
----
+````
 
 ## Authors
 
@@ -115,12 +109,10 @@ Egon: Writing - Original Draft, Conceptualization
 Philippe: Writing - Review & Editing
 ````
 
----
 
 ## License
 
 ````{license_fairplus}
 CC-BY-4.0
 ````
-
 

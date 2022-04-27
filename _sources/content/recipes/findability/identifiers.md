@@ -10,11 +10,14 @@
 :difficulty_level: 3
 :recipe_type: background_information
 :reading_time_minutes: 30
-:intended_audience: principal_investigator, data_manager, data_scientist  
+:intended_audience: principal_investigator, data_manager, data_scientist 
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: nope
 :recipe_name: Unique, persistent identifiers
 ```` 
-
+<br>
+<br>
 
 The **FAIR principles**, under the `Findability` and the `Accessibility` chapters respectively, state that: 
 > F1. (Meta)data are assigned a globally unique and persistent identifier
@@ -26,7 +29,7 @@ The **FAIR principles**, under the `Findability` and the `Accessibility` chapter
 The main goals of this recipe are therefore:
 
 > To understand the purpose of a globally unique and persistent identifier and how they can be used to retrieve the associated (meta)data using a standardized communication protocol.
-> To provide explanations on how to generate globaly unique identifiers, explain what IRI are and how they can be generated, retrieved and resolved.
+> To provide explanations on how to generate globaly unique identifiers, explain what IRIs are and how they can be generated, retrieved and resolved.
 
 
 From these principles, it is necessary to explain three key processes, which are: 
@@ -64,6 +67,8 @@ All these key points will be developed in this recipe.
 ---
 
 
+````{dropdown} Identifier services
+:open:  
 ```{figure} ./identifiers-fig1.svg
 ---
 width: 700px
@@ -72,20 +77,7 @@ alt: identifier services
 ---
 Key Processes to sustain Globally Unique Persistent Resolvable Identifiers (GUPRID) .
 ```
-
----
-
-
-## Capability & Maturity Table
-
-| Capability  | Initial Maturity Level | Final Maturity Level  |
-| :------------- | :------------- | :------------- |
-| Findability | minimal | repeatable |
-| Accessibility | minimal | repeatable |
-| Identifier minting||repeatable|
-| URI construction||repeatable|
-| Identifier resolution||repeatable|
-| content negotiation||repeatable|
+````
 
 ---
 <!-- 
@@ -171,8 +163,8 @@ This approach uses 2 inputs:
 - a cryptographic hashing algorithm implemented as a software function
 - a digital resource (e.g. a file)
 
-Indeed, the approach generates an identifier by using all or some of the content of the digital resource as input to the cryptographic hashing function to compute a unique string, which is therefore a signature (or fingerprint) of the the digital resource {footcite}`Retter-1`, {footcite}`Retter-2`.
-A number of algorithms can be used and some are already widely used such as `Message Digest algorithm MD5` specified by the RFC1321 {footcite}`MD5`, the `Secure Hash Algorithm (SHA1)`,  `Secure Hash Algorithm 2 (SHA256)`, `Secure Hash Algorithm 3 (SHA3)` or `BLAKE2b-256` (RFC 7693) {footcite}`Blake2`. 
+Indeed, the approach generates an identifier by using all or some of the content of the digital resource as input to the cryptographic hashing function to compute a unique string, which is therefore a signature (or fingerprint) of the digital resource {footcite}`Retter-1`, {footcite}`Retter-2`.
+A number of algorithms can be used and some are already widely used such as *Message Digest algorithm MD5* specified by the RFC1321 {footcite}`MD5`, the *Secure Hash Algorithm (SHA1)*,  *Secure Hash Algorithm 2 (SHA256)*, *Secure Hash Algorithm 3 (SHA3)* or *BLAKE2b-256* (RFC 7693) {footcite}`Blake2`. 
 The first two are considered obsolete, while the latter two are most advanced and approved by NIST.
 
 ---
@@ -235,19 +227,19 @@ In our context, the use of the hashing function is to generate a unique key whic
  **URI construction is fundamentally about scoping the authority**.
 ```
 
-Having covered the technical details to generated globally unique identifiers, it is now necessary to discuss the issue making identifiers *resolvable (a notion also known as `dereferencable`)*.
+Having covered the technical details to generated globally unique identifiers, it is now necessary to discuss the issue making identifiers *resolvable (a notion also known as `dereferenceable`)*.
 
 In other words, in order to create globally unique identifiers `for the web`, it is necessary to understand what Uniform Resource Locators<!-- TODO add a link to corresponding document --> (a.k.a `URL`) are and how to construct them for use with the Hypertext Transfer Protocol<!-- TODO add a link to corresponding document -->.
 
 This results in URLs of the following form
 
-```
-          userinfo       host      port
-          ┌──┴───┐ ┌──────┴──────┐ ┌┴┐
-  https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
-  └─┬─┘   └───────────┬──────────────┘└───────┬───────┘ └───────────┬─────────────┘ └┬┘
-  scheme          authority                  path                 query           fragment
-```
+````bash
+        userinfo       host      port
+        ┌──┴───┐ ┌──────┴──────┐ ┌┴┐
+https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top
+└─┬─┘   └───────────┬──────────────┘└───────┬───────┘ └───────────┬─────────────┘ └┬┘
+scheme          authority                  path                 query           fragment
+````
 source:[https://en.wikipedia.org/wiki/Uniform_Resource_Identifier](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier)
 
 
@@ -296,7 +288,7 @@ it is often the case the `authority` is reduced to the `host` , which is then re
 ---
 
 ### `path`: 
-The `path` defines the directory on the `host` where the resource is located and consists of a sequence of zeor or more path segements separated by a `/`.
+The `path` defines the directory on the `host` where the resource is located and consists of a sequence of zero or more path segements separated by a `/`.
 
 ### `query`:
 The `query` is an optional part of the URL syntax that starts with a `?`. Typically the `query` component consists of a service of key-value pairs separated by an `&` deliminator.
@@ -316,7 +308,7 @@ In order to achieve the capability of `persistence`, it is necessary for the res
 3. optionally a path: `/dataset-name/`
 4. a local identifier (such as database accession number, such as P12133 from uniprot) or a globally unique identifier (such as a UUID or hash code).
 
-In a virtual example which uses a UUID for the local identifier and does not use a path, it looks like this
+In a virtual example which uses a UUID for the local identifier and does not use a path, it looks like this:
 
 ```bash
 https://www.example.com/5b6d0be2-d47f-11e8-9f9d-ccaf789d94a0
@@ -341,7 +333,7 @@ Once such URIs are available, one may also turn them into compact identifiers ca
 ## Identifier Resolution - Enabling persistence through indirection
 
 
-This relates to this other FAIR principle mentioned in the introduction.
+This relates to the following FAIR principle mentioned in the introduction:
 
 > A1. (Meta)data are retrievable by their identifier using a standardised communications protocol.
 
@@ -382,7 +374,7 @@ CURIEs (short for compact URIs) are defined by a World Wide Web Consortium Worki
 
 The CURIE consists of a **`namespace prefix`** followed by the **`local identifier`**.
 
-There are some widely used and defined CURIEs such as DOIs and ISBN numbers. For example the DOI `[doi:10.1038/sdata.2016.18]` refers to the FAIR Principles paper[^safe-CURIE]. The Digital Object Identifier System web site (https://www.doi.org/) provides a resolution service for DOIs. The service is available as a web form on the site or can be used by appending a DOI to the website.The client will be redirected to the URL where the resource about the concept is located, e.g. for the FAIR Data Principles paper we can use the URL https://www.doi.org/10.1038/sdata.2016.18 to resolve the paper's DOI. This results in the client being taken to the page at https://www.nature.com/articles/sdata201618.
+There are some widely used and defined CURIEs such as DOIs and ISBN numbers. For example the DOI `[doi:10.1038/sdata.2016.18]` refers to the FAIR Principles paper. The Digital Object Identifier System web site (https://www.doi.org/) provides a resolution service for DOIs. The service is available as a web form on the site or can be used by appending a DOI to the website.The client will be redirected to the URL where the resource about the concept is located, e.g. for the FAIR Data Principles paper we can use the URL https://www.doi.org/10.1038/sdata.2016.18 to resolve the paper's DOI. This results in the client being taken to the page at https://www.nature.com/articles/sdata201618.
 
 `Namespaces` can be defined *by convention*, such as the case with `doi`, and registered with services to allow for the resolution of CURIEs (see [Identifier Resolution Services](##identifier-resolution-services) below). These are extensively used to map CURIEs to URLs that can be resolved.
 
@@ -428,6 +420,14 @@ This is very useful for including unambiguous, global identifiers in scientific 
     > N2T can store more than one "target" (forwarding link) for an identifier, as well as any kind or amount of metadata (descriptive information)
         > N2T.net is also a "meta-resolver". In collaboration with identifiers.org, it recognizes over 600 well-known identifier types and knows where their respective servers are. Failing to find forwarding information for a specific individual identifier, it uses the identifier's type to look for an overall target rule.
 
+
+
+* [Bioregistry](https://bioregistry.io/)
+
+    > [Bioregistry](https://bioregistry.io/) is a **Resolution Service**, developed in a [GitHub repository](https://github.com/biopragmatics/bioregistry). Like Identifiers.org it has a registry, but also a registry of registries, and it imports data from Identifiers.org and Name-to-Thing but extends beyond identifiers for things but also supports, for example, ontologies. As a community effort, new namespace prefixes and their identifier patterns can be [registered via GitHub issues](https://github.com/biopragmatics/bioregistry/issues/new/choose). Compact identifiers are supported and the URL https://bioregistry.io/chebi:138488 resolves to the ChEBI page https://www.ebi.ac.uk/chebi/searchId.do?chebiId=CHEBI:138488. Bioregistry provides an [API to query the registry](https://bioregistry.io/apidocs/) itself.
+
+
+
 *For more details, see the [Identifier Resolution Services recipe](fcb-infra-idres).*
 
 ---
@@ -446,22 +446,41 @@ This is very useful for including unambiguous, global identifiers in scientific 
 > 
 >
 > ### What should I read next?
-> * [The Pistoia Alliance FAIRtoolkit use cases: Adoption and Impact of an identifier policy at Astra-Zeneca](https://fairtoolkit.pistoiaalliance.org/use-cases/adoption-and-impact-of-an-identifier-policy-astrazeneca/)
-> * [Identifier Minting with Minid Client](fcb-find-id-minid)
+* [Identifier Minting with Minid Client](fcb-find-id-minid)
 <!-- > * [Why resolvable identifiers matter?](https://www.TODO.org/findability/why-identifiers.html) -->
 > * [Identifier Resolution Services](fcb-infra-idres)
 > * [Identifier Mapping Services](fcb-identifier-mapping)
+> 
+> ````{panels}
+> :column: col-4
+> :card: border-2
+> :header: bg-primary pa_dark
+> ```{image} ../../../images/logos/pistoia_logo.png
+> :height: 40px
+> :align: center
+> :name: FAIRtoolkit_logo
+> ```
+> ^^^
+>[The Pistoia Alliance FAIRtoolkit use cases: Adoption and Impact of an identifier policy at Astra-Zeneca](https://fairtoolkit.pistoiaalliance.org/use-cases/adoption-and-impact-of-an-identifier-policy-astrazeneca/)
+> ---
+> :header: bg-primary pa_dark
+> :body: grey
+  > ```{image} ../../../images/logos/RDMkit_logo_inverted.svg
+> :height: 40px
+> :name: rdmtoolkit_logo
+> ```
+> ^^^
+> [More about `Identifiers` from the `RDM Toolkit`](https://rdmkit.elixir-europe.org/identifiers.html)
+> ````
 
 
----
 
 ## References
-
+`````{dropdown} **References**
 ```{footbibliography}
 ```
+`````
 
-
----
 
 ## Authors
 
@@ -472,9 +491,6 @@ Chris: Writing - Original Draft
 Egon: Writing - Original Draft
 Philippe: Writing - Review & Editing, Conceptualization
 ````
-
-
----
 
 ## License
 

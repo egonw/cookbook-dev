@@ -1,7 +1,7 @@
 (fcb-find-bs-data)=
 # Data page markup with Bioschemas 
 
-+++
+<br/>
 <br/>
 
 ````{panels_fairplus}
@@ -11,6 +11,8 @@
 :recipe_type: guidance
 :reading_time_minutes: 10
 :intended_audience: software_developer, data_scientist  
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: nope
 :recipe_name: Data page markup with Bioschemas
 ```` 
@@ -27,6 +29,8 @@ The main purpose of this recipe is:
 ## Graphical Overview
 
 
+````{dropdown} 
+:open:
 ```{figure} ./bs-data-mermaid.png
 ---
 width: 800px
@@ -35,7 +39,7 @@ alt: The process of annotated a webpage with Bioschemas markup to support machin
 ---
 The process of annotated a webpage with Bioschemas markup to support machine processing of the page.
 ```
-
+````
 
 ---
 
@@ -56,7 +60,7 @@ We will outline the steps for embedding machine processable mark up within a web
 
 2. Open the [Bioschemas Generator](http://www.macs.hw.ac.uk/SWeL/BioschemasGenerator/)
 
-   1.  Select the type of data page that you are marking up, i.e. the primary subject of the page. In the example we will use `Gene`. Here are the Bioschemas [profiles](https://bioschemas.org/profiles/) that you can choose from <sup>[1](#draft-profiles)</sup>. 
+   1.  Select the type of data page that you are marking up, i.e. the primary subject of the page. In the example we will use `Gene`. Here are the Bioschemas [profiles](https://bioschemas.org/profiles/) that you can choose from<sup>[1](#draft-profiles)</sup>. 
 
         - `ChemicalSubstance` for a page about a chemical substance composed of molecular entities
 
@@ -77,6 +81,8 @@ We will outline the steps for embedding machine processable mark up within a web
 <!--    ![Bioschemas Generator start screen](BioschemasGenerator.png) -->
 
 
+````{dropdown} 
+:open:
 ```{figure} BioschemasGenerator.png
 ---
 name: bioschemas-generator-start-screen-2
@@ -85,6 +91,7 @@ alt: Bioschemas Generator start screen.
 ---
 Bioschemas Generator start screen.
 ```
+````
 
 
 3. Complete the profile form with the data relevant for your page. Once completed, click on the `Generate Markup`  button
@@ -96,6 +103,8 @@ Bioschemas Generator start screen.
 <!--    ![Bioschemas Generator Gene profile form](BioschemasGeneratorGeneForm.png) -->
 
 
+````{dropdown} 
+:open:
 ```{figure} BioschemasGeneratorGeneForm.png
 ---
 height: 550px
@@ -104,6 +113,7 @@ alt: Bioschemas Generator Gene profile form
 ---
 Bioschemas Generator Gene profile form.
 ```
+````
 
    
 4. You should now see the generated markup in `JSON-LD` format. You can click on the `Microdata` and `RDFa` tabs to see the same content rendered in the different formats. However, we recommend the use of `JSON-LD`. For our Wikidata example, we get the following markup
@@ -229,7 +239,14 @@ Once you have deployed this on your web server, you can test it with the [Biosch
 | [HTML](http://edamontology.org/format_2331) | | |
 
 
----
+
+
+## References
+````{dropdown} **References**
+<a name="draft-profiles">1</a>: If you do not see your data type listed, tick the `Include Draft Profiles` to see if there is a draft profile for your data type. Otherwise contact the Bioschemas community to suggest development of a new profile.  
+<a name="bioschemas-validator">2</a>: The Bioschemas Validator is currently in an early alpha release and does not include all the profiles.
+````
+
 
 ## Authors
 
@@ -239,15 +256,6 @@ Leyla: Writing - Review & Editing
 Philippe: Writing - Review & Editing
 ````
 
-
----
-
-## Footnotes
-
-<a name="draft-profiles">1</a>: If you do not see your data type listed, tick the `Include Draft Profiles` to see if there is a draft profile for your data type. Otherwise contact the Bioschemas community to suggest development of a new profile.  
-<a name="bioschemas-validator">2</a>: The Bioschemas Validator is currently in an early alpha release and does not include all the profiles.
-
----
 
 ## License
 

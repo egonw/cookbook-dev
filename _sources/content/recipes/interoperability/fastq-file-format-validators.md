@@ -1,7 +1,7 @@
 (fcb-interop-fastqval)=
 # File format validation, FASTQ example
 
-+++
+<br/>
 <br/>
 
 ````{panels_fairplus}
@@ -10,7 +10,9 @@
 :difficulty_level: 2
 :recipe_type: hands_on
 :reading_time_minutes: 15
-:intended_audience: principal_investigator, data_manager, data_scientist  
+:intended_audience: principal_investigator, data_manager, data_scientist 
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: yeah
 :recipe_name: File format validation, FASTQ example
 ```` 
@@ -24,6 +26,9 @@ The main purpose of this recipe is to:
 
 ## Graphical Overview
 
+
+````{dropdown} 
+:open:
 ```{figure} fastq-validation.png
 ---
 width: 350px
@@ -32,7 +37,7 @@ alt: Validating FASTQ open standard file format
 ---
 Validating FASTQ open standard file format.
 ```
-
+````
 
 <!-- [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVEQ7XG4gICAgQVtEYXRhIEFjcXVpc2l0aW9uXSAtLT5CKFJhdyBEYXRhKVxuICAgIEIgLS0-IEN7SXMgc3RhbmRhcmQgZm9ybWF0P31cbiAgICBDIC0tPnxZZXN8IER7RmlsZSBmb3JtYXQgdmFsaWQ_fVxuICAgIEMgLS0-fE5vfCBFW0NvbnZlcnQgdG8gc3RhbmRhcmQgZmlsZSBmb3JtYXRdXG4gICAgRCAtLT4gfFllc3xGWy0gRGF0YSBkZXBvc2l0aW9uIDxicj4gLSBEYXRhIHNoYXJpbmcgPGJyPiAgLSBEb3duc3RyZWFtIGFuYWx5c2lzIF1cbiAgICBEIC0tPiB8Tm98R1tSZXZpc2UgZmlsZV1cbiAgICBFIC0tPiAgRFxuICAgIEcgLS0-IHxyZXZpc2V8RCIsIm1lcm1haWQiOnsidGhlbWUiOiJuZXV0cmFsIn19) -->
 
@@ -87,6 +92,8 @@ This recipe provides an example of validating FASTQ files with _FASTQ-utils_ on 
 <!-- ![](/images/jOYK2ZM.jpg) -->
 
 
+````{dropdown} 
+:open:
 ```{figure} /images/jOYK2ZM.jpg
 ---
 width: 800px
@@ -95,7 +102,7 @@ alt: FASTQutils library
 ---
 the FASTQutils library.
 ```
-
+````
 
 ### Requirements
 
@@ -281,20 +288,18 @@ In this recipe, we have shown how to validate fastq files, and proposed indicato
 - 🐙[FASTQ file specification recipe](TODO include link to recipe https://www.TBD.org )
 - 🐙[FASTQ file validator in Biopython](TODO include link to recipe https://www.TBD.org)
 
----
+
 
 ## References
-
+````{dropdown} **References**
 ```{footbibliography}
 ```
-
+````
 <!-- - Cock, Peter J. A., Christopher J. Fields, Naohisa Goto, Michael L. Heuer, and Peter M. Rice. ‘The Sanger FASTQ File Format for Sequences with Quality Scores, and the Solexa/Illumina FASTQ Variants’. Nucleic Acids Research 38, no. 6 (1 April 2010): 1767-71. https://doi.org/10.1093/nar/gkp1137.
 - ENA. ‘Accepted Read Data Formats — ENA Training Modules 1 Documentation’. Accessed 6 July 2020. https://ena-docs.readthedocs.io/en/latest/submit/fileprep/reads.html#fastq-format.
 - NCBI. ‘File Format Guide’. Accessed 14 July 2020. https://www.ncbi.nlm.nih.gov/sra/docs/submitformats/#fastq-files.
 - Nuno Fonseca, and Jonathan Manning. Nunofonseca/Fastq_utils 0.24.0. Zenodo, 2020. https://doi.org/10.5281/zenodo.3936692. -->
 
-
----
 
 ## Authors
 
@@ -304,8 +309,6 @@ Eva: Writing - Review & Editing
 Peter: Writing - Review & Editing
 ````
 
-
----
 
 ## License
 

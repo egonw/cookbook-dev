@@ -1,7 +1,7 @@
 (fcb-find-bs-catalog)=
 # Data catalogue markup
 
-+++
+<br/>
 <br/>
 
 ````{panels_fairplus}
@@ -10,7 +10,9 @@
 :difficulty_level: 2
 :recipe_type: guidance
 :reading_time_minutes: 10
-:intended_audience: software_developer, data_scientist 
+:intended_audience: software_developer, data_scientist
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: nope
 :recipe_name: Data catalogue markup
 ```` 
@@ -27,6 +29,8 @@ The main purpose of this recipe is:
 ## Graphical Overview
 
 
+````{dropdown} 
+:open:
 ```{figure} ./bs-datacatalog-mermaid.png
 ---
 width: 500px
@@ -35,6 +39,7 @@ alt: The process of annotating a data catalog webpage with bioschema markup for 
 ---
 The process of annotating a data catalog webpage with bioschema markup for Search Engine discovery.
 ```
+````
 
 
 ---
@@ -65,6 +70,8 @@ We will use [FAIRsharing](https://fairsharing.org/) as an example for this recip
    3.  Click on the `Show Form` button
 
 
+````{dropdown} 
+:open:
 ```{figure} BioschemasGenerator.png
 ---
 name: bioschemas-generator-start-screen-1
@@ -73,6 +80,7 @@ alt: Bioschemas Generator start screen.
 ---
 Bioschemas Generator start screen.
 ```
+````
 
 3. Complete the profile form with the information relevant for your page. Once completed, click on the `Generate Markup`  button
 
@@ -85,6 +93,8 @@ Bioschemas Generator start screen.
 
 <!--    ![Bioschemas Generator DataCatalog profile form](BioschemasGeneratorDataCatalogForm.png) -->
 
+````{dropdown} 
+:open:
 ```{figure} BioschemasGeneratorDataCatalogForm.png
 ---
 height: 550px
@@ -93,6 +103,7 @@ alt: Bioschemas Generator DataCatalog profile form
 ---
 Bioschemas Generator DataCatalog profile form.
 ```   
+````
 
 4. You will now see the generated markup in `JSON-LD` format. You can click on the `Microdata` and `RDFa` tabs to see the same content rendered in the different formats. However, we recommend the use of `JSON-LD`. For our FAIRsharing.org example, we get the following markup
 
@@ -248,7 +259,13 @@ Once you have deployed this on your web server, you can test it with the [Biosch
 | [JSON-LD](http://edamontology.org/format_3749)  | [Bioschemas](https://fairsharing.org/FAIRsharing.20sbr9) | [RDF](http://edamontology.org/data_2353)  |
 | [HTML](http://edamontology.org/format_2331) | |  |
 
----
+
+
+
+## References
+````{dropdown} **References**
+<a name="bioschemas-validator">1</a>: The Bioschemas Validator is currently in an early alpha release and does not include all the profiles
+````
 
 ## Authors
 
@@ -257,15 +274,6 @@ Alasdair: Writing - Original Draft
 Leyla: Writing - Review & Editing
 Philippe: Writing - Review & Editing
 ````
-
-
----
-
-## Footnotes
-
-<a name="bioschemas-validator">1</a>: The Bioschemas Validator is currently in an early alpha release and does not include all the profiles.
-
----
 
 ## License
 

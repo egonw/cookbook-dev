@@ -1,7 +1,7 @@
 (fcb-interop-metadataprofile)=
 # Creating a metadata profile
 
-+++
+<br/>
 <br/>
 
 ````{panels_fairplus}
@@ -10,7 +10,9 @@
 :difficulty_level: 4
 :recipe_type: hands_on
 :reading_time_minutes: 20
-:intended_audience: principal_investigator, data_manager, data_scientist  
+:intended_audience: principal_investigator, data_manager, data_scientist 
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: yeah
 :recipe_name: Creating a metadata profile
 ```` 
@@ -20,6 +22,8 @@
 
 
 
+````{dropdown} 
+:open:
 ```{figure} creating-minimal-metadata-profiles-mermaid.png
 ---
 height: 1000px
@@ -28,6 +32,7 @@ alt: Building a minimal metadata profile
 ---
 Building a minimal metadata profile.
 ```
+````
 
 ---
 
@@ -69,7 +74,8 @@ Without a set of competency questions, important variables may easily be forgott
 - Re-iterate the reality check until no more severe errors and gaps are occurring that are relevant for the previously defined competency questions
 
 
----
+
+
 
 ## Authors
 

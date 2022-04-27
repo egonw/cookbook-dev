@@ -2,6 +2,9 @@
 
 # Extraction, transformation, and loading process
 
+<br/>
+<br/>
+
 ````{panels_fairplus}
 :identifier_text: FCB031
 :identifier_link: 'https://w3id.org/faircookbook/FCB031'
@@ -9,6 +12,8 @@
 :recipe_type: survey_review
 :reading_time_minutes: 15
 :intended_audience: data_curator, data_manager, data_scientist  
+:maturity_level: 2
+:maturity_indicator: 1, 2
 :has_executable_code: nope
 :recipe_name: Extraction, transformation, and loading process
 ```` 
@@ -34,7 +39,9 @@ To provide feedback on this content or report issues, please do so via the [FAIR
 
 The figure below shows different ETL-related operations and their relationships, together with related tools and recipes.
 
- 
+
+````{dropdown} 
+:open:
 ```{figure} ETL-tools-mermaid.png
 ---
 width: 800px
@@ -43,6 +50,7 @@ alt: Overview of key aspects in ETL process
 ---
 Overview of key aspects in ETL process
 ```
+````
 
 
 The table below is an overview of ETL tools identified.
@@ -211,14 +219,13 @@ To show how some of these tools may be used, the following related recipes provi
 2. OMOP ETL [link]( TODO link to recipe) (*in prepartion*)
 3. RDF ETL [link]( TODO link to recipe)  (*in prepartion*)
 -->
----
+
 
 ## References
-
+````{dropdown} **References**
 ```{footbibliography}
 ```
-
----
+````
 
 ## Authors
 
@@ -229,8 +236,6 @@ Sukhi: Tool curation
 Philippe: Writing - Review & Editing
 ````
 
-
----
 
 ## License
 
